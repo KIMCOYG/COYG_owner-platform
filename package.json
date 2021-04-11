@@ -1,0 +1,21 @@
+{
+  "name": "kf-owner",
+  "version": "1.0.0",
+  "description": "kids factory small buisiness owner platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon app.js",
+    "front": "cd front && npm start",
+    "start": "concurrently \"npm run server\" \"npm run front\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
