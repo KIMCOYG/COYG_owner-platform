@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon app.js",
-    "front": "cd front && npm start",
-    "start": "concurrently \"npm run server\" \"npm run front\""
+    "start": "nodemon app.js",
+    "front": "cd front && npm start"
   },
   "author": "",
   "license": "ISC",
