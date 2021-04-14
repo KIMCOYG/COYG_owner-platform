@@ -11,9 +11,9 @@ const Header = () => {
                 </Col>
                 <Col>
                     <Row className="justify-content-center">
-                        <Button className="col-xs-5" variant="link" value="로그인">로그인</Button>
+                        <Button className="col-xs-5" variant="link" size="sm">로그인</Button>
                         <div className="pt-1 col-xs-2"> / </div>
-                        <Button className="col-xs-5" variant="link" value="회원가입">회원가입</Button>
+                        <Button className="col-xs-5" variant="link" size="sm">회원가입</Button>
                     </Row>
                 </Col>
             </Row>
