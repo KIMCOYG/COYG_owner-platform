@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '../component/Pagination';
+import { Link } from 'react-router-dom';
 
 //https://code.tutsplus.com/ko/tutorials/working-with-tables-in-react-part-one--cms-29682 참고
 
@@ -44,19 +45,27 @@ const data = [
 
 ]
 
+const options = {
+    onRowClick: (row) => {
+        window.location.href = "/owner/detail/:${row.id}"
+    }
+    
+}
+
 const Table = (props) => {
     return(
         <Row>
-            <BootstrapTable data={props.data}>
+            <BootstrapTable data={props.data} options={options}>
                 <TableHeaderColumn isKey dataField='number'>
                     번호
                 </TableHeaderColumn>
                 <TableHeaderColumn dataField='thumbnail'>
                     썸네일
-                </TableHeaderColumn>
+                </TableHeaderColumn>                
                 <TableHeaderColumn dataField='eventName'>
                     이벤트명
-                </TableHeaderColumn>
+                    <Link to="/owner/detail/:1"></Link>
+                </TableHeaderColumn>                
                 <TableHeaderColumn dataField='eventDetail'>
                     이벤트 상세
                 </TableHeaderColumn>
@@ -84,7 +93,7 @@ const OwnerMainPage = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(1);  // 페이지에 보여지는 목록 수 설정
+    const [postsPerPage] = useState(2);  // 페이지에 보여지는 목록 수 설정
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -125,6 +134,7 @@ const OwnerMainPage = () => {
                 </Col>
             </Row>
             <Row>
+                
                 <Table data={currentPosts}/>
             </Row>
             <Row>
