@@ -3,7 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
-//https://www.daleseo.com/react-table/ 참고
+//https://code.tutsplus.com/ko/tutorials/working-with-tables-in-react-part-one--cms-29682 참고
 
 //db 연결 전 더미 데이터
 const data = [
