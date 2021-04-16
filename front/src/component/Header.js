@@ -18,7 +18,9 @@ const Header = () => {
                           <Button className="col-xs-5" variant="link" size="sm">로그인</Button>
                         </Link>
                         <div className="pt-1 col-xs-2"> / </div>
-                        <Button className="col-xs-5" variant="link" size="sm">회원가입</Button>
+                        <Link to="/customer/join">
+                            <Button className="col-xs-5" variant="link" size="sm">회원가입</Button>
+                        </Link>
                     </Row>
                 </Col>
             </Row>

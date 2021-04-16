@@ -32,6 +32,11 @@ const Login = () => {
                             </Form.Group>
                             <Button variant="primary" type="submit" size="sm" block>로그인</Button>
                         </Form>
+                        <div className="d-flex justify-content-center mt-3">
+                            <Button variant="link" className="mr-3">이메일 찾기</Button>
+                            <Button variant="link" className="mr-3">비밀번호 찾기</Button>
+                            <Button variant="link">회원가입</Button>
+                        </div>
                 </div>
             </Container>
         </>
