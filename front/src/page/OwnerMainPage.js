@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import Pagination from '../component/Pagination';
 
 //https://code.tutsplus.com/ko/tutorials/working-with-tables-in-react-part-one--cms-29682 참고
 
@@ -77,7 +78,30 @@ const Table = (props) => {
 
 const OwnerMainPage = () => {
     //const title = ["번호", "썸네일", "이벤트명", "이벤트 상세", "가게명", "기간", "등록일", "상태"]
-    
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(1);  // 페이지에 보여지는 목록 수 설정
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            setLoading(true);
+            setPosts(data);
+            setLoading(false);
+        }
+
+        fetchPosts();
+    }, []);
+    console.log(posts)
+
+    // Get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+
+    // Change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
     
     return (
         <Container className="mt-3">
@@ -98,7 +122,10 @@ const OwnerMainPage = () => {
                 </Col>
             </Row>
             <Row>
-                <Table data={data}/>
+                <Table data={currentPosts}/>
+            </Row>
+            <Row>
+                <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
             </Row>
         </Container>
     )
