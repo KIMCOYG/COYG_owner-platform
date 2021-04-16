@@ -9,6 +9,7 @@ import Pagination from '../component/Pagination';
 //db 연결 전 더미 데이터
 const data = [
     {
+        id:1,
         number:1,
         thumbnail: "image1",
         eventName: "eventname1",
@@ -19,6 +20,7 @@ const data = [
         state: "진행중"
     },
     {
+        id:2,
         number:2,
         thumbnail: "image2",
         eventName: "eventname2",
@@ -29,6 +31,7 @@ const data = [
         state: "진행중"
     },
     {
+        id:3,
         number:3,
         thumbnail: "image3",
         eventName: "eventname3",
