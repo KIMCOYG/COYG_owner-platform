@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react';
-import { Button, Col, Table } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 //https://www.daleseo.com/react-table/ 참고
 
 //db 연결 전 더미 데이터
-const dataLists = [
+const data = [
     {
         number:1,
         thumbnail: "image1",
@@ -39,73 +40,45 @@ const dataLists = [
 
 ]
 
-const tableData = () => {
-    const columns = useMemo(
-        () => [
-            {
-                accessor: "number",
-                Header: "번호"
-            },
-            {
-                accessor: "thumbnail",
-                Header: "썸네일"
-            },
-            {
-                accessor: "eventName",
-                Header: "이벤트명"
-            },
-            {
-                accessor: "eventDetail",
-                Header: "이벤트 상세"
-            },
-            {
-                accessor: "shopName",
-                Header: "가게명"
-            },
-            {
-                accessor: "term",
-                Header: "기간"
-            },
-            {
-                accessor: "enteredDate",
-                Header: "등록일"
-            },
-            {
-                accessor: "state",
-                Header: "상태"
-            }
-        ],
-        []
-    )
-
-    const data = useMemo(
-        () => 
-            Array(10)
-            .fill()
-            .map(() => ({
-                number: dataLists.number,
-                thumbnail: dataLists.thumbnail,
-                eventName: dataLists.eventName,
-                eventDetail: dataLists.eventDetail,
-                shopName: dataLists.shopName,
-                term: dataLists.term,
-                enteredDate: dataLists.enteredDate,
-                state: dataLists.state
-            }))
-    
-    )
-
+const Table = (props) => {
     return(
-        <Table columns={columns} data={data}/>
+        <Row>
+            <BootstrapTable data={props.data}>
+                <TableHeaderColumn isKey dataField='number'>
+                    번호
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='thumbnail'>
+                    썸네일
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='eventName'>
+                    이벤트명
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='eventDetail'>
+                    이벤트 상세
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='shopName'>
+                    가게명
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='term'>
+                    기간
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='enteredDate'>
+                    등록인
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='state'>
+                    상태
+                </TableHeaderColumn>
+            </BootstrapTable>
+        </Row>
     )
 }
 
 
 
-
-
-const ownerMainPage = ({columns, data}) => {
-    const title = ["번호", "썸네일", "이벤트명", "이벤트 상세", "가게명", "기간", "등록일", "상태"]
+const OwnerMainPage = () => {
+    //const title = ["번호", "썸네일", "이벤트명", "이벤트 상세", "가게명", "기간", "등록일", "상태"]
+    
+    
     return (
         <Container className="mt-3">
             <Header></Header>
@@ -125,32 +98,11 @@ const ownerMainPage = ({columns, data}) => {
                 </Col>
             </Row>
             <Row>
-                <table>
-                    <thead>
-                        <tr>
-                            {columns.map((column) => (
-                                <th key={column}>{column}</th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map(({number, thumbnail, eventName, eventDetail, shopName, term, enteredDate, state}) => (
-                            <tr key={number + thumbnail + eventName}>
-                                <td>{number}</td>
-                                <td>{thumbnail}</td>
-                                <td>{eventName}</td>
-                                <td>{eventDetail}</td>
-                                <td>{shopName}</td>
-                                <td>{term}</td>
-                                <td>{enteredDate}</td>
-                                <td>{state}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <Table data={data}/>
             </Row>
         </Container>
     )
+    
 }
 
-export default ownerMainPage
+export default OwnerMainPage
