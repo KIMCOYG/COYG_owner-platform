@@ -114,7 +114,7 @@ const OwnerJoin = () => {
                     <Form.Group>
                         <Form.Label>주소</Form.Label>
                         <Form.Row>
-                            <Form.Control className="col-6 mr-3" placeholder="우편번호"/>
+                            <Form.Control className="col-3 mr-3" placeholder="우편번호"/>
                             <Button variant="secondary">우편번호 찾기</Button>
                         </Form.Row>
                         <Form.Row className="mt-2">
