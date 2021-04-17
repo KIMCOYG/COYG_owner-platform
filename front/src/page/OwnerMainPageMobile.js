@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+// import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '../component/Pagination';
 import { Link } from 'react-router-dom';
 
