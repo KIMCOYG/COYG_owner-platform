@@ -13,10 +13,6 @@ const RegistHeader = ({props}) => {
     )
 }
 
-const handleGoBack = (props) =>{
-    props.history.goBack();
-}
-
 
 const handleSubmit = (event) => {
     alert('A name was submitted: ');

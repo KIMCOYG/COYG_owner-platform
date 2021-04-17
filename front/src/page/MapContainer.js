@@ -4,6 +4,7 @@ const {kakao} = window;
 
 const MapContainer = () => {
     useEffect(() => {
+        //TODO: 2021.04.18 카카오 지도 api의 src 부분을 html에서 처리가 아닌 js로 가져와서 처리하기 - sunbo
         
         // const script = document.createElement("script");
         // script.async = true;
