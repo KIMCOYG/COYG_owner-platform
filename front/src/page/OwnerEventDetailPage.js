@@ -1,10 +1,28 @@
-import React from "react"
+/*global kakao*/
+
+import React  from "react"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import Header from "../component/HeaderOwner"
+import { useEffect } from "react"
+import MapContainer from "./MapContainer"
+
+
+
+
 
 const OwnerEventDetailPage = ({props}) => {
-    const url = window.location.href
-    const current_id = url.split("/")[5]
+    const url = window.location.href // 현재페이지 url 가져오기
+    const current_id = url.split("/")[5] // 현재 페이지 url에서 id 값만 가져오기
+    
+    useEffect(() => {
+        
+        // const script = document.createElement("script");
+        // script.async = true;
+        // script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=cae618549e6e2a83d5a1f0ff0b8c6c17&autoload=false'
+        // document.head.appendChild(script);
+    })
+        
+    
     return (
         <Container className="mt-3">
             <Header></Header>
@@ -64,6 +82,8 @@ const OwnerEventDetailPage = ({props}) => {
             </Row>
             <Row>
                 MAP
+                <MapContainer>
+                </MapContainer>
             </Row>
         </Container>
     )
