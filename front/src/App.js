@@ -21,8 +21,11 @@ const App = () => {
     
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact/>
-      <Route path="/mobile/owner" component={OwnerMainPageMobile} exact/>
       <Route path="/owner/detail/:id" component={OwnerEventDetailPage} exact/>
+
+      <Route path="/mobile/owner" component={OwnerMainPageMobile} exact/>
+      <Route path="/mobile/owner/detail/:id" component={OwnerMainPageMobile} exact/>
+      
 
       <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact/>
 
