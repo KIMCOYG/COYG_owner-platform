@@ -47,7 +47,8 @@ const data = [
 
 const options = {
     onRowClick: (row) => {
-        window.location.href = "/owner/detail/:${row.id}"
+        window.location.href = `/owner/detail/${row.id}`
+        
     }
     
 }
