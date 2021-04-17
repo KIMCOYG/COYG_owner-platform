@@ -13,12 +13,9 @@
   "dependencies": {
     "concurrently": "^6.0.1",
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "react-bootstrap-table": "^4.3.1"
-=======
+    "react-bootstrap-table": "^4.3.1",
     "react-awesome-slider": "^4.1.0",
     "react-responsive-carousel": "^3.2.18"
->>>>>>> fbad7a1b340c6615d439816dec25b5bfaab07503
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
