@@ -12,16 +12,10 @@ const Header = () => {
                         <Image src={logo} ></Image>
                     </Link>
                 </Col>
-                <Col>
-                    <Row className="justify-content-center">
-                        <Link to="/login">
-                          <Button className="col-xs-5" variant="link" size="sm">로그인</Button>
-                        </Link>
-                        <div className="pt-1 col-xs-2"> / </div>
-                        <Link to="/customer/join">
-                            <Button className="col-xs-5" variant="link" size="sm">회원가입</Button>
-                        </Link>
-                    </Row>
+                <Col className="text-center">
+                    <Link to="/login">
+                        <Button className="col-xs-5" variant="link">로그인</Button>
+                    </Link>
                 </Col>
             </Row>
         </Container>

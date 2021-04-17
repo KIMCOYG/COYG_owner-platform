@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Container, Form, Button} from 'react-bootstrap';
 import '../../App.css';
 import Header from '../../component/Header';
@@ -35,7 +36,12 @@ const Login = () => {
                         <div className="d-flex justify-content-center mt-3">
                             <Button variant="link" className="mr-3">이메일 찾기</Button>
                             <Button variant="link" className="mr-3">비밀번호 찾기</Button>
-                            <Button variant="link">회원가입</Button>
+                            <Link to="/customer/join">
+                                <Button variant="link" className="mr-3">고객 회원가입</Button>
+                            </Link>
+                            <Link to="/owner/join">
+                                <Button variant="link">사장님 회원가입</Button>
+                            </Link>
                         </div>
                 </div>
             </Container>
