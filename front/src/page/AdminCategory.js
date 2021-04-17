@@ -45,11 +45,15 @@ const Table = (props) => {
 const AdminCategory = () => {
     return (
         <>
+        
         <Header/>
         <Sidebar/>
+        <Container className="mt-3"> 
         <div>
-            <Table className="center" data={data}/>
+            <Table data={data}/>
+            
         </div>
+        </Container>
         </>
     );
 }
