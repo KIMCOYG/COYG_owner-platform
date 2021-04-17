@@ -36,6 +36,8 @@ const Login = () => {
                         <div className="d-flex justify-content-center mt-3">
                             <Button variant="link" className="mr-3">이메일 찾기</Button>
                             <Button variant="link" className="mr-3">비밀번호 찾기</Button>
+                        </div>
+                        <div className="d-flex justify-content-center mt-3">
                             <Link to="/customer/join">
                                 <Button variant="link" className="mr-3">고객 회원가입</Button>
                             </Link>
