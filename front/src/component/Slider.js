@@ -1,17 +1,26 @@
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
-// import AwsSliderStyles from 'react-awesome-slider/src/styles.scss';
+import SimpleImageSlider from 'react-simple-image-slider';
 import chicken from '../static/image/chicken.jpg';
 
 const Slider = () => {
+    // const urlPath = "";
+    const images = [
+        { url: chicken},
+        { url: chicken},
+        { url: chicken},
+        { url: chicken},
+        { url: chicken},
+        { url: chicken},
+        { url: chicken},
+    ]
     return (
-        <AwesomeSlider>
-            <div data-src={chicken} />
-            <div data-src={chicken} />
-            <div data-src={chicken} />
-            <div data-src={chicken} />
-        </AwesomeSlider>
+       <div>
+           <SimpleImageSlider
+            width={896} 
+            height={504}
+            images={images}
+           />
+       </div>
     );
 }
 

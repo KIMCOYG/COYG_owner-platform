@@ -2,10 +2,9 @@
 import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Home from "./page/Home";
-
 import OwnerMainPage from './page/OwnerMainPage';
 import OwnerEventDetailPage from './page/OwnerEventDetailPage';
-import { useEffect } from 'react';
+import { React, useEffect } from 'react';
 import OwnerMainPageMobile from './page/OwnerMainPageMobile';
 import EvnetRegist from './page/EventRegist';
 import Login from './page/login/Login';
