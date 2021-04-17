@@ -58,7 +58,7 @@ const options = {
 
 const Table = (props) => {
     const dataList = props.data.map((list) => (
-        <Link to="/owner/detail/${list.id}">
+        <Link to="/mobile/owner/detail/${list.id}">
             <Row>
                 <Col>
                     {list.thumbnail}
@@ -141,7 +141,7 @@ const OwnerMainPageMobile = () => {
                     이벤트
                 </Col>
                 <Col>
-                    <Button className="col-xs-5" variant="link" value="추가">추가</Button>
+                    <Button className="col-xs-5" variant="link" value="추가" onClick={() => window.location.href='/mobile/owner/event/regist'}>추가</Button>
                 </Col>
             </Row>
             <Row>
