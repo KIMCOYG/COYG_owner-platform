@@ -11,6 +11,8 @@ import Login from './page/login/Login';
 import CustomerJoin from './page/login/CustomerJoin';
 import OwnerJoin from './page/login/OwnerJoin';
 import AdminPage from './page/AdminPage';
+import AdminCategory from './page/AdminCategory';
+import AdminOwner from './page/AdminOwner';
 
 const App = () => {
   return (
@@ -30,7 +32,10 @@ const App = () => {
       <Route path="/login" component={Login} />
       <Route path="/customer/join" component={CustomerJoin}></Route>
       <Route path="/owner/join" component={OwnerJoin}></Route>
-      <Route path="/admin" component={AdminPage}></Route>
+      <Route path="/admin" component={AdminPage} exact/>
+      <Route path="/admin/category" component={AdminCategory} exact/>
+      <Route path="/admin/owner" component={AdminOwner} exact/>
+
     </BrowserRouter>
   );
 }

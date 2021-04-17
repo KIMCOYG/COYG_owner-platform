@@ -2,15 +2,14 @@ import React from 'react';
 import Header from '../component/Header';
 import Sidebar from '../component/Sidebar'
 
-const AdminPage = () => {
+const AdminCategory = () => {
     return (
         <>
         <Header/>
         <Sidebar/>
+        <div>category</div>
         </>
     );
 }
 
-
-
-export default AdminPage;
+export default AdminCategory;
