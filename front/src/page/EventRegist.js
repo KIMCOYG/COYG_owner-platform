@@ -2,16 +2,21 @@ import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import Header from '../component/HeaderOwner'
 
-const RegistHeader = () => {
+const RegistHeader = ({props}) => {
     return(
         <Row>
-            <Button>◁</Button>
+            <Button onClick={() => window.history.back()}>◁</Button>
             {/* <Button>등록</Button> */}
             <Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
         </Row>
     )
 }
+
+const handleGoBack = (props) =>{
+    props.history.goBack();
+}
+
 
 const handleSubmit = (event) => {
     alert('A name was submitted: ');
