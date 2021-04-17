@@ -7,6 +7,7 @@ const RegistHeader = ({props}) => {
         <Row>
             <Button onClick={() => window.history.back()}>◁</Button>
             {/* <Button>등록</Button> */}
+            {/*TODO: 2021.04.18 form submit 버튼을 form 밖으로 꺼냈기 때문에 잘 동작하는지 확인 - sunbo*/}
             <Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
         </Row>

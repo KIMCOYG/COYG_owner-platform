@@ -43,6 +43,7 @@ const EvnetModify = () => {
 
                 <Form.Label>이벤트 기간</Form.Label>
                 <Form.Row className="align-items-center">
+                    {/*TODO: 2021.04.18 date의 format에 따라서 값 불러오기. 실패시 react-datePicker 사용 -sunbo*/}
                     <Form.Group as={Col} controlId="formEventStart" value={info.startTerm}>
                         <Form.Label>시작일</Form.Label>
                         <Form.Control  type="date" />
