@@ -7,7 +7,8 @@ const RegistHeader = () => {
         <Row>
             <Button>◁</Button>
             {/* <Button>등록</Button> */}
-            <Button onClick={document.getElementById('registEvent').submit()}>등록</Button>
+            <Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>
+            {/* <Button onClick={() => this.handleSubmit()}></Button> */}
         </Row>
     )
 }
