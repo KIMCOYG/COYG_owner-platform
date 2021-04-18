@@ -29,7 +29,7 @@ const AdminCategory = () => {
         <>
         <Header/>
         <Sidebar/>
-        <div className="ag-theme-alpine" style={{ height: 400, width: 1200 }}>
+        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1205 }}>
             <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}>
