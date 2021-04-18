@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/Header';
 import EventListItem from '../component/EventListItem';
