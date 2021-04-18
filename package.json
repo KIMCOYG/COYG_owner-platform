@@ -12,8 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^6.0.1",
+<<<<<<< HEAD
     "express": "^4.17.1",
     "react-responsive-carousel": "^3.2.18"
+=======
+    "express": "^4.17.1"
+>>>>>>> 9e78b09581678025def1f572d3058357f9bbaa22
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
