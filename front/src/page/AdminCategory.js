@@ -14,36 +14,52 @@ const data = [
     {id: 3, name: '도시락', icon : 'fewf', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 3}
 ];
 
+
 const AdminCategory = () => {
     const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
-
+    
     const [rowData, setRowData] = useState(data);
-
+    
     const onGridReady = params => {
         setGridApi(params.api);
         setGridColumnApi(params.columnApi);
+    }
+
+    const onButtonClick = e => {
+        const selectedNodes = gridApi.getSelectedNodes()
+        const selectedData = selectedNodes.map( node => node.data )
+        const selectedDataStringPresentation = selectedData.map( node => `${node.make} ${node.model}`).join(', ')
+        alert(`Selected nodes: ${selectedDataStringPresentation}`)
     }
 
     return (
         <>
         <Header/>
         <Sidebar/>
-        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1205 }}>
+        
+        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1200 }}>
+            <button onClick={onButtonClick}>수정</button>
+            <button onClick={onButtonClick}>삭제</button>
             <AgGridReact
                 onGridReady={onGridReady}
-                rowData={rowData}>
-                <AgGridColumn field="id" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="name" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="icon" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="createdAt" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="updatedAt" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="location" sortable={ true } filter={ true }></AgGridColumn>
+                rowData={rowData}
+                rowSelection="multiple">
+                <AgGridColumn field = "checkbox" width = "100px" resizable="true" checkboxSelection = {true}></AgGridColumn>
+                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } ></AgGridColumn>
+                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="updatedAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="location" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
             </AgGridReact>
         </div>
+        
         </>
     );
 };
+
+
 
 
 export default AdminCategory;
