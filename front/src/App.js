@@ -13,14 +13,15 @@ import OwnerJoin from './page/login/OwnerJoin';
 import AdminPage from './page/AdminPage';
 import AdminCategory from './page/AdminCategory';
 import AdminOwner from './page/AdminOwner';
+import EventList from './page/EventList';
 
 const App = () => {
   return (
 
     <BrowserRouter>
       <Route path="/" component={Home} exact/>
-    
-    
+      <Route path="/event" component={EventList} exact/>
+        
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact/>
       <Route path="/mobile/owner" component={OwnerMainPageMobile} exact/>
