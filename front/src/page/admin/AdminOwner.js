@@ -37,10 +37,10 @@ const AdminCategory = () => {
     return (
         <>
         <Header/>
-        <Sidebar/>
-        
-        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 910 }}>
-            <button onClick={onButtonClick}>수정</button>
+        <div style={{float:'left' , width:'20%'}}><Sidebar/></div>
+        <div style={{float:'left',marginTop: 30 , width:'33%'}}>
+        <div className="ag-theme-alpine" style={{ height: 400, width: 910 }}>
+        <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 800}}onClick={onButtonClick}>수정</button>
             <button onClick={onButtonClick}>삭제</button>
             <AgGridReact
                 onGridReady={onGridReady}
@@ -53,7 +53,7 @@ const AdminCategory = () => {
                 <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
             </AgGridReact>
         </div>
-        
+        </div>
         </>
     );
 };
