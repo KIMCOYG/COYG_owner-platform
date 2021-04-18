@@ -1,5 +1,5 @@
-import Header from '../component/HeaderAdmin';
-import Sidebar from '../component/Sidebar';
+import Header from '../../component/HeaderAdmin';
+import Sidebar from '../../component/Sidebar';
 
 import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
@@ -9,9 +9,10 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 //https://www.ag-grid.com/react-grid/getting-started/ 참고
 
 const data = [
-    {id: 1, name: '생활용품', icon : 'sfsdf', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 1},
-    {id: 2, name: '가전제품', icon : 'sadfsdf', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 2},
-    {id: 3, name: '도시락', icon : 'fewf', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 3}
+    {createdAt: '2020/1/25', email: 'kim@naver.com', name : '김사장', 
+    phone : '010-0000-1111'},
+    {createdAt: '2020/1/26', email: 'sung@gmail.com', name : '성사장', phone : '010-1111-2222'},
+    {createdAt: '2020/1/27', email: 'park@gmail.com', name : '박사장', phone : '010-2222-3333'}
 ];
 
 
@@ -38,7 +39,7 @@ const AdminCategory = () => {
         <Header/>
         <Sidebar/>
         
-        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1200 }}>
+        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 910 }}>
             <button onClick={onButtonClick}>수정</button>
             <button onClick={onButtonClick}>삭제</button>
             <AgGridReact
@@ -46,12 +47,10 @@ const AdminCategory = () => {
                 rowData={rowData}
                 rowSelection="multiple">
                 <AgGridColumn field = "checkbox" width = "100px" resizable="true" checkboxSelection = {true}></AgGridColumn>
-                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } ></AgGridColumn>
+                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true } ></AgGridColumn>
+                <AgGridColumn field="email" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
                 <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="updatedAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="location" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
             </AgGridReact>
         </div>
         

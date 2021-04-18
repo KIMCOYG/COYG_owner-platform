@@ -10,9 +10,9 @@ import EvnetRegist from './page/EventRegist';
 import Login from './page/login/Login';
 import CustomerJoin from './page/login/CustomerJoin';
 import OwnerJoin from './page/login/OwnerJoin';
-import AdminPage from './page/AdminPage';
-import AdminCategory from './page/AdminCategory';
-import AdminOwner from './page/AdminOwner';
+import AdminPage from './page/admin/AdminPage';
+import AdminCategory from './page/admin/AdminCategory';
+import AdminOwner from './page/admin/AdminOwner';
 
 const App = () => {
   return (
