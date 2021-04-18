@@ -52,11 +52,11 @@ const AdminCategory = () => {
                 rowSelection="multiple">
                 <AgGridColumn field = "checkbox" width = "100px" resizable="true" checkboxSelection = {true}></AgGridColumn>
                 <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } ></AgGridColumn>
-                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
+                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
                 <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
                 <AgGridColumn field="updatedAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="location" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="location" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
             </AgGridReact>
         </div>
     </div>
