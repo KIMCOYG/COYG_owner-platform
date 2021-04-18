@@ -10,14 +10,15 @@ import EvnetRegist from './page/EventRegist';
 import Login from './page/login/Login';
 import CustomerJoin from './page/login/CustomerJoin';
 import OwnerJoin from './page/login/OwnerJoin';
+import EventList from './page/EventList';
 
 const App = () => {
   return (
 
     <BrowserRouter>
       <Route path="/" component={Home} exact/>
-    
-    
+      <Route path="/event" component={EventList} exact/>
+        
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact/>
       <Route path="/mobile/owner" component={OwnerMainPageMobile} exact/>
