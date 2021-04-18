@@ -1,4 +1,4 @@
-import Header from '../component/Header';
+import Header from '../component/HeaderAdmin';
 import Sidebar from '../component/Sidebar';
 
 import React, { useState } from 'react';
