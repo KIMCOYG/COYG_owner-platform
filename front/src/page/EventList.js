@@ -2,6 +2,7 @@ import React from 'react';
 import {Container, Row, Button} from 'react-bootstrap';
 import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../component/Header';
+import EventListItem from '../component/EventListItem';
 
 const EventList = () => {
     let listName = "생활용품"
@@ -33,6 +34,13 @@ const EventList = () => {
                                 <label className="form-check-label" htmlFor="inlineRadio2">거리</label>
                             </div>
                     </div>
+                </div>
+                <div className="row mt-3">
+                    <EventListItem />
+                    <EventListItem />
+                    <EventListItem />
+                    <EventListItem />
+                    <EventListItem />
                 </div>
             </Container>
         </>
