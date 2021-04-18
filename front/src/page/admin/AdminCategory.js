@@ -27,8 +27,18 @@ const AdminCategory = () => {
     }
     
     const gridOptions = { //그리드 옵션
-        columnDefs: data
+        columnDefs: data,
+        DefaultColDef:{
+            headerCheckboxSelection: isFirstColumn,
+            checkboxSelection: isFirstColumn,
+        }
       };
+
+      function isFirstColumn(params) {
+        var displayedColumns = params.columnApi.getAllDisplayedColumns();
+        var thisIsFirstColumn = displayedColumns[0] === params.column;
+        return thisIsFirstColumn;
+      }
 
     const onButtonClick = e => {
         const selectedNodes = gridApi.getSelectedNodes()
@@ -43,15 +53,15 @@ const AdminCategory = () => {
         <div style={{float:'left' , width:'20%'}}><Sidebar/></div>
         
         <div style={{float:'left',marginTop: 30 , width:'33%'}}>
-        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1200 }}>
-            <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 1100}}onClick={onButtonClick}>수정</button>
+        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1110 }}>
+            <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 1000}}onClick={onButtonClick}>수정</button>
             <button onClick={onButtonClick}>삭제</button>
             <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}
-                rowSelection="multiple">
-                <AgGridColumn field = "checkbox" width = "100px" resizable="true" checkboxSelection = {true}></AgGridColumn>
-                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } ></AgGridColumn>
+                rowSelection="multiple"
+                >
+                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } checkboxSelection = {true}headerCheckboxSelection = {true}></AgGridColumn>
                 <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
                 <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
                 <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>

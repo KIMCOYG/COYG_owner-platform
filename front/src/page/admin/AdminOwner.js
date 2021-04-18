@@ -39,15 +39,14 @@ const AdminCategory = () => {
         <Header/>
         <div style={{float:'left' , width:'20%'}}><Sidebar/></div>
         <div style={{float:'left',marginTop: 30 , width:'33%'}}>
-        <div className="ag-theme-alpine" style={{ height: 400, width: 910 }}>
-        <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 800}}onClick={onButtonClick}>수정</button>
+        <div className="ag-theme-alpine" style={{ height: 400, width: 810 }}>
+        <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 700}}onClick={onButtonClick}>수정</button>
             <button onClick={onButtonClick}>삭제</button>
             <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}
                 rowSelection="multiple">
-                <AgGridColumn field = "checkbox" width = "100px" resizable="true" checkboxSelection = {true}></AgGridColumn>
-                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true } ></AgGridColumn>
+                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true } checkboxSelection = {true} headerCheckboxSelection = {true}></AgGridColumn>
                 <AgGridColumn field="email" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
                 <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
                 <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
