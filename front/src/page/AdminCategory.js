@@ -1,9 +1,11 @@
-import React,{Component} from 'react';
 import Header from '../component/Header';
 import Sidebar from '../component/Sidebar';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import "../App.css"
+
+import React, { useState } from 'react';
+import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+
 
 
 const data = [
@@ -12,52 +14,37 @@ const data = [
     {id: 3, name: '도시락', icon : 'fewf', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 3},
 ];
 
-const Table = (props) => {
-    return(
-        <Row>
-            <BootstrapTable data={props.data} pagination>
-                <TableHeaderColumn dataField='number'>
-                    checkbox
-                </TableHeaderColumn>
-                <TableHeaderColumn isKey dataField='thumbnail'>
-                    번호
-                </TableHeaderColumn>                
-                <TableHeaderColumn dataField='eventName'>
-                    카테고리 명
-                </TableHeaderColumn>                
-                <TableHeaderColumn dataField='eventDetail'>
-                    아이콘
-                </TableHeaderColumn>
-                <TableHeaderColumn dataField='shopName'>
-                    최초생성일
-                </TableHeaderColumn>
-                <TableHeaderColumn dataField='term'>
-                    최종변경일
-                </TableHeaderColumn>
-                <TableHeaderColumn dataField='enteredDate'>
-                    위치
-                </TableHeaderColumn>
-            </BootstrapTable>
-        </Row>
-    )
-}
-
 const AdminCategory = () => {
+    const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
+
+    const [rowData, setRowData] = useState([
+        { make: "Toyota", model: "Celica", price: 35000 },
+        { make: "Ford", model: "Mondeo", price: 32000 },
+        { make: "Porsche", model: "Boxter", price: 72000 }
+    ]);
+
+    const onGridReady = params => {
+        setGridApi(params.api);
+        setGridColumnApi(params.columnApi);
+    }
+
     return (
         <>
-        
         <Header/>
         <Sidebar/>
-        <Container className="mt-3"> 
-        <div>
-            <Table data={data}/>
-            
+        <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+            <AgGridReact
+                onGridReady={onGridReady}
+                rowData={rowData}>
+                <AgGridColumn field="make"></AgGridColumn>
+                <AgGridColumn field="model"></AgGridColumn>
+                <AgGridColumn field="price"></AgGridColumn>
+            </AgGridReact>
         </div>
-        </Container>
         </>
     );
-}
-
+};
 
 
 export default AdminCategory;
