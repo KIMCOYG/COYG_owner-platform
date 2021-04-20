@@ -19,6 +19,7 @@ const data = [
     {category : "피자"}
 ]
 const Categories = (props) => {
+    // TODO : 2021.04.20 usestate 글로벌하게 만들기 - sunbo
     const [selected, setSelected] = useState("");
     console.log(selected)
 
