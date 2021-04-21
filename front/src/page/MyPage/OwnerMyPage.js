@@ -23,12 +23,14 @@ const OwnerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-                <img
-                  src={myInfoIcon}
-                  className="rounded"
-                  alt=""
-                  style={{ width: '100%', height: '100%' }}
-                />
+                <a href="/owner/mypage/ownerinfo">
+                  <img
+                    src={myInfoIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </a>
               </button>
               <div className="text-center">내 정보 수정</div>
             </div>
@@ -36,22 +38,37 @@ const OwnerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-                <img
-                  src={scrapIcon}
-                  className="rounded"
-                  alt=""
-                  style={{ width: '100%', height: '100%' }}
-                />
+                <a href="/owner/mypage/eventlist">
+                  <img
+                    src={scrapIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </a>
               </button>
               <div className="text-center">이벤트관리</div>
             </div>
           </div>
         </div>
-        <div className="fixed-bottom text-center mb-5">
-          <button type="button" className="btn btn-secondary btn-lg">
-            로그아웃
-          </button>
+        <div className="row mt-5">
+        <div className="col-6">
+            <div className="d-flex flex-column">
+              <button type="button" className="btn btn-link">
+                <a href="/owner/mypage/manageshop">
+                  <img
+                    src={scrapIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </a>
+              </button>
+              <div className="text-center">가게관리</div>
+            </div>
+          </div>
         </div>
+        
       </Container>
     </>
   );
