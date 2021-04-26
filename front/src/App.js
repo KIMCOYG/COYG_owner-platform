@@ -16,12 +16,14 @@ import AdminOwner from './page/AdminOwner';
 import EventList from './page/EventList';
 import CustomerMyPage from './page/MyPage/CustomerMyPage';
 import PostSearch from './page/PostSearch';
+import DetailEvent from './page/DetailEvent';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Route path="/" component={Home} exact />
       <Route path="/event" component={EventList} exact />
+      <Route path="/event/detail" component={DetailEvent} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
       <Route path="/post" component={PostSearch} exact />
