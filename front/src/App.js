@@ -15,6 +15,7 @@ import AdminCategory from './page/AdminCategory';
 import AdminOwner from './page/AdminOwner';
 import EventList from './page/EventList';
 import CustomerMyPage from './page/MyPage/CustomerMyPage';
+import PostSearch from './page/PostSearch';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <Route path="/event" component={EventList} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
+      <Route path="/post" component={PostSearch} exact />
 
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact />
