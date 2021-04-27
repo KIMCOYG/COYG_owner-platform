@@ -16,30 +16,20 @@ import AdminCategory from './page/AdminCategory';
 import AdminOwner from './page/AdminOwner';
 import EventList from './page/EventList';
 import CustomerMyPage from './page/MyPage/CustomerMyPage';
+import OwnerMyPage from './page/MyPage/OwnerMyPage';
+import ManageUserInfo from './page/MyPage/ManageUserInfo';
+import ChangePassword from "./page/MyPage/ChangePassword";
+import ManageShop from './page/MyPage/ManageShop';
+import ManageEventList from './page/MyPage/ManageEventList';
 
 const App = () => {
   return (
     <BrowserRouter>
-<<<<<<< HEAD
-      <Route path="/" component={Home} exact/>
-      <Route path="/event" component={EventList} exact/>
-        
-      {/* Owner */}
-      <Route path="/owner" component={OwnerMainPage} exact/>
-      <Route path="/owner/detail/:id" component={OwnerEventDetailPage} exact/>
 
-      <Route path="/mobile/owner" component={OwnerMainPageMobile} exact/>
-      <Route path="/mobile/owner/detail/:id" component={OwnerMainPageMobile} exact/>
-      
-
-      <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact/>
-      <Route path="/mobile/owner/event/modify/:id" component={EvnetModify} exact/>
-=======
       <Route path="/" component={Home} exact />
       <Route path="/event" component={EventList} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
->>>>>>> 429286e884924bec8ff2e456754e2f0c72817428
 
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact />
@@ -47,6 +37,14 @@ const App = () => {
       <Route path="/owner/detail/:id" component={OwnerEventDetailPage} exact />
 
       <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact />
+      <Route path="/mobile/owner/event/modify" component={EvnetModify} exact />
+
+      {/* Mypage */}
+      <Route path="/owner/mypage" component={OwnerMyPage} exact></Route>
+      <Route path="/owner/mypage/ownerinfo" component={ManageUserInfo} exact></Route>
+      <Route path="/owner/mypage/changepw" component={ChangePassword} exact></Route>
+      <Route path="/owner/mypage/manageshop" component={ManageShop} exact></Route>
+      <Route path="/owner/mypage/eventlist" component={ManageEventList} exact></Route>
 
       <Route path="/login" component={Login} />
       <Route path="/customer/join" component={CustomerJoin}></Route>
