@@ -47,9 +47,9 @@ const AdminCategory = () => {
                 rowData={rowData}
                 rowSelection="multiple">
                 <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true } checkboxSelection = {true} headerCheckboxSelection = {true}></AgGridColumn>
-                <AgGridColumn field="email" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
-                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
-                <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
+                <AgGridColumn field="email" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
             </AgGridReact>
         </div>
         </div>

@@ -5,6 +5,10 @@ import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import { Button } from 'bootstrap';
+import BtnCellRenderer from "../../component/BtnCellRenderer.js";
+
+
 
 //https://www.ag-grid.com/react-grid/getting-started/ 참고
 
@@ -54,24 +58,53 @@ const AdminCategory = () => {
         
         <div style={{float:'left',marginTop: 30 , width:'33%'}}>
         <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1110 }}>
-            <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 1000}}onClick={onButtonClick}>수정</button>
+            <button style ={{marginBottom : 10, marginRight : 10, marginLeft : 1000}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>           
             <button onClick={onButtonClick}>삭제</button>
+            <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="AddModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
             <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}
                 rowSelection="multiple"
+                frameworkComponents = {{
+                    btnCellRenderer : BtnCellRenderer
+                }}
                 >
                 <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } checkboxSelection = {true}headerCheckboxSelection = {true}></AgGridColumn>
-                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
-                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
+                <AgGridColumn field="name" resizable="true" width = "100px" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
                 <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
                 <AgGridColumn field="updatedAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                <AgGridColumn field="location" resizable="true" sortable={ true } filter={ true } editable={true}></AgGridColumn>
+                <AgGridColumn field="location" resizable="true" width = "150px" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="수정" resizable="true" width = "100px" sortable={ true } filter={ true } cellRenderer="btnCellRenderer"
+                cellRendererParams = {{
+                    clicked: function(field){
+                        alert('${field} was clicked');
+                    }
+                }}></AgGridColumn>
             </AgGridReact>
         </div>
     </div>
         </>
     );
+
 };
 
 

@@ -13,6 +13,7 @@
     "awesome-react-icons": "^1.4.8",
     "bootstrap": "^4.6.0",
     "cross-env": "^7.0.3",
+    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-table": "^4.3.1",
@@ -51,5 +52,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "popper.js": "^1.16.1"
+  }
 }
