@@ -23,6 +23,7 @@ import EventList from './page/EventList';
 import CustomerMyPage from './page/MyPage/CustomerMyPage';
 import PostSearch from './page/PostSearch';
 import DetailEvent from './page/DetailEvent';
+import RegistShop from './page/MyPage/RegistShop';
 
 const App = () => {
   return (
@@ -58,6 +59,11 @@ const App = () => {
       <Route
         path="/owner/mypage/manageshop"
         component={ManageShop}
+        exact
+      ></Route>
+      <Route
+        path="/owner/mypage/registshop"
+        component={RegistShop}
         exact
       ></Route>
       <Route
