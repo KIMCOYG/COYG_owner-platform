@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Header from '../component/Header';
 // import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
@@ -11,9 +12,11 @@ const Home = () => {
     <>
       <Header />
       <Container>
-        <Button variant="light" className="border border-dark mt-3" block>
-          {address}
-        </Button>
+        <Link to="/post">
+          <Button variant="light" className="border border-dark mt-3" block>
+            {address}
+          </Button>
+        </Link>
         {/* <Slider className="mt-3"/> */}
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-5">
