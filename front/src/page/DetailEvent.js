@@ -36,7 +36,7 @@ const DetailEvent = () => {
           </div>
         </div>
         <div className="mt-2">
-          <div>
+          <div className="border-bottom pb-2">
             <img src={logo} alt="event-image" className="img-fluid" />
             <div className="d-flex justify-content-between">
               <MinDiv>*사진 클릭 시 확대</MinDiv>
