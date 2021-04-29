@@ -48,7 +48,7 @@ const App = () => {
       {/* Mypage */}
       <Route path="/owner/mypage" component={OwnerMyPage} exact></Route>
       <Route
-        path="/owner/mypage/ownerinfo"
+        path="/owner/mypage/userinfo"
         component={ManageUserInfo}
         exact
       ></Route>
