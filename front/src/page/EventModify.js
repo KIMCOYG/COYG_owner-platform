@@ -5,7 +5,7 @@ import Header from '../component/HeaderOwner'
 import data from '../dummy/dummyDataforOwner'
 
 
-const RegistHeader = ({props}) => {
+const SecondHeader = ({props}) => {
     return(
         <Row>
             <button onClick={() => window.history.back()}>
@@ -32,7 +32,7 @@ const EvnetModify = () => {
     return(
         <Container>
             <Header></Header>
-            <RegistHeader></RegistHeader>
+            <SecondHeader></SecondHeader>
             <Form onSubmit={handleSubmit} id="registEvent">
                 <Form.Group controlId="formShopName">
                     <Form.Label>가게명</Form.Label>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import Header from '../component/Header';
+
 // import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '../component/Pagination';
 import { Link } from 'react-router-dom';
 import data from '../dummy/dummyDataforOwner';
+import Header from '../component/HeaderOwner';
+import logo from '../static/image/chicken.jpg';
 
-//https://code.tutsplus.com/ko/tutorials/working-with-tables-in-react-part-one--cms-29682 참고
 
 
 const options = {
@@ -22,7 +23,11 @@ const Table = (props) => {
         <Link to="/mobile/owner/detail/${list.id}">
             <Row>
                 <Col>
-                    {list.thumbnail}
+                    <img
+                    src={logo}
+                    alt=""
+                    style={{ width: '100%', heigh: '100%' }}
+                    />
                 </Col>
                 <Col>
                     <Row>
