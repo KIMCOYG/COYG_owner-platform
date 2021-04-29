@@ -2,8 +2,8 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../../component/Header';
-import myInfoIcon from '../../static/image/laptop.jpg';
-import scrapIcon from '../../static/image/vegetables.jpg';
+import myInfoIcon from '../../static/image/myInfo.png';
+import scrapIcon from '../../static/image/scrap.png';
 
 const CustomerMyPage = () => {
   let customerName = '심선보';
@@ -27,7 +27,7 @@ const CustomerMyPage = () => {
                   src={myInfoIcon}
                   className="rounded"
                   alt=""
-                  style={{ width: '100%', height: '100%' }}
+                  style={{ width: '100%', height: '150px' }}
                 />
               </button>
               <div className="text-center">내 정보 수정</div>
@@ -40,7 +40,7 @@ const CustomerMyPage = () => {
                   src={scrapIcon}
                   className="rounded"
                   alt=""
-                  style={{ width: '100%', height: '100%' }}
+                  style={{ width: '100%', height: '150px' }}
                 />
               </button>
               <div className="text-center">스크랩</div>

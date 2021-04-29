@@ -39,10 +39,10 @@ const Home = () => {
             <CategoryButton name="주류" />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton name="" className="mr-3" />
-            <CategoryButton name="" />
-            <CategoryButton name="" />
-            <CategoryButton name="" />
+            <CategoryButton name="치킨" className="mr-3" />
+            <CategoryButton name="피자" />
+            <CategoryButton name="휴대폰" />
+            <CategoryButton name="햄버거" />
           </div>
         </div>
       </Container>
