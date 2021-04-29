@@ -23,12 +23,14 @@ const CustomerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
+              <a href="/owner/mypage/userinfo">
                 <img
                   src={myInfoIcon}
                   className="rounded"
                   alt=""
                   style={{ width: '100%', height: '100%' }}
                 />
+                </a>
               </button>
               <div className="text-center">내 정보 수정</div>
             </div>
@@ -36,12 +38,14 @@ const CustomerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
+              <a href="/mypage/customer/scrap">
                 <img
                   src={scrapIcon}
                   className="rounded"
                   alt=""
                   style={{ width: '100%', height: '100%' }}
                 />
+                </a>
               </button>
               <div className="text-center">스크랩</div>
             </div>

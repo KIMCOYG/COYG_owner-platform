@@ -25,6 +25,7 @@ import PostSearch from './page/PostSearch';
 import DetailEvent from './page/DetailEvent';
 import RegistShop from './page/MyPage/RegistShop';
 import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
+import CustomerScrap from './page/MyPage/CustomerScrap';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
       <Route path="/event/detail" component={DetailEvent} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
+      <Route path="/mypage/customer/scrap" component={CustomerScrap} exact />
       <Route path="/post" component={PostSearch} exact />
 
       {/* Owner */}
