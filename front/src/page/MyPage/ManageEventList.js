@@ -2,9 +2,10 @@ import React from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import EventListItem from '../../component/EventListItem';
+
 import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
+import EventListItem from '../../component/OwnerEventListItem';
 
 const SecondHeader = ({props}) => {
     return(
