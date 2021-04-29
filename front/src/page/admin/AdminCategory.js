@@ -113,6 +113,36 @@ const AdminCategory = () => {
                 </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="UpdateModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="UpdateModalLabel">카테고리 수정</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="category-name" class="col-form-label">카테고리명</label>
+                            <input type="text" class="form-control" id="category-name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="category-image" class="col-form-label">카테고리 이미지</label>
+                            <div><input type="file" id="category-image" accept="image/jpeg,.png"/></div>
+                            
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">네</button>
+                    </div>
+                </div>
+                </div>
+            </div>
             <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}

@@ -10,7 +10,11 @@ class BtnCellRenderer extends Component {
     }
     render() {
       return (
-        <button style={{}}onClick={this.btnClickedHandler}>수정</button>
+        <div>
+        <button className="btn btn-primary" data-toggle="modal" data-target="#UpdateModal">수정</button>
+
+        
+        </div>
       )
     }
   }

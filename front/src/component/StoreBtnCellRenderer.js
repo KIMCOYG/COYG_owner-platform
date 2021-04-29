@@ -10,7 +10,7 @@ class StoreBtnCellRenderer extends Component {
     }
     render() {
       return (
-        <button style={{}}onClick={this.btnClickedHandler}>조회</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".StoreModal">조회</button>
       )
     }
   }
