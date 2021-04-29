@@ -24,6 +24,7 @@ import CustomerMyPage from './page/MyPage/CustomerMyPage';
 import PostSearch from './page/PostSearch';
 import DetailEvent from './page/DetailEvent';
 import RegistShop from './page/MyPage/RegistShop';
+import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
 
 const App = () => {
   return (
@@ -39,7 +40,7 @@ const App = () => {
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact />
       <Route path="/mobile/owner" component={OwnerMainPageMobile} exact />
-      <Route path="/owner/detail/:id" component={OwnerEventDetailPage} exact />
+      <Route path="/mobile/owner/detail/:id" component={OwnerEventDetailPageMobile} exact />
 
       <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact />
       <Route path="/mobile/owner/event/modify" component={EvnetModify} exact />
