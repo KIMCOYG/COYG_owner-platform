@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../../component/Header';
@@ -35,15 +36,19 @@ const CustomerMyPage = () => {
           </div>
           <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <img
-                  src={scrapIcon}
-                  className="rounded"
-                  alt=""
-                  style={{ width: '100%', height: '150px' }}
-                />
-              </button>
-              <div className="text-center">스크랩</div>
+              <Link to="/mypage/customer/scrap">
+                <button type="button" className="btn btn-link">
+                  <img
+                    src={scrapIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '150px' }}
+                  />
+                </button>
+                <div className="text-center" style={{ color: 'black' }}>
+                  스크랩
+                </div>
+              </Link>
             </div>
           </div>
         </div>

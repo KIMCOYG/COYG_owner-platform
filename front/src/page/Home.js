@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Header from '../component/Header';
@@ -14,6 +15,7 @@ const Home = () => {
       <Container>
         <Link to="/post">
           <Button variant="light" className="border border-dark mt-3" block>
+            <BiMap className="mr-3" />
             {address}
           </Button>
         </Link>

@@ -23,6 +23,7 @@ import EventList from './page/EventList';
 import CustomerMyPage from './page/MyPage/CustomerMyPage';
 import PostSearch from './page/PostSearch';
 import DetailEvent from './page/DetailEvent';
+import ScrapList from './page/MyPage/ScrapList';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
       <Route path="/event/detail" component={DetailEvent} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
+      <Route path="/mypage/customer/scrap" component={ScrapList} exact />
       <Route path="/post" component={PostSearch} exact />
 
       {/* Owner */}
