@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { AiOutlineTeam } from 'react-icons/ai'
+import { BsChevronLeft } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Header from '../../component/HeaderOwner'
 
 const SecondHeader = ({props}) => {
     return(
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark" />
+            </button>
             
             <h5>가게 등록</h5>
             {/* TODO: 2021.04.28 가게 추가 페이지 만들고 링크 연결 -sunbo */}

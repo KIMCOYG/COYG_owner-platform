@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
+import { BsChevronLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Header from '../../component/HeaderOwner';
 import userData from "../../dummy/dummyDataUser";
@@ -7,7 +8,10 @@ import userData from "../../dummy/dummyDataUser";
 const SecondHeader = ({props}) => {
     return(
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark" />
+            </button>
+            {/* <Button onClick={() => window.history.back()}>◁</Button> */}
             {/* <Button>등록</Button> */}
             <h5>내 정보 수정</h5>
         </Row>
@@ -17,7 +21,7 @@ const SecondHeader = ({props}) => {
 const ManageUserInfo = () =>{
     const userInfo = userData[0]
     return (
-        <Container>
+        <Container className="mt-3">
             <Header></Header>
             <SecondHeader></SecondHeader>
             <Form>

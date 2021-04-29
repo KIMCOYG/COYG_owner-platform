@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import EventListItem from '../../component/EventListItem';
 import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
@@ -8,11 +9,15 @@ import ListPagination from '../../component/ListPagination';
 const SecondHeader = ({props}) => {
     return(
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
-            {/* <Button>등록</Button> */}
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark" />
+            </button>            {/* <Button>등록</Button> */}
             
-            <h5>가게 관리</h5>
-            <Button >추가</Button>
+            <h5>이벤트 관리</h5>
+            <Link to="/mobile/owner/event/regist">
+              <Button >추가</Button>
+            </Link>
+            
         </Row>
     )
 }
@@ -22,13 +27,11 @@ const ManageEventList = () => {
   return (
     <>
       <Header />
-      <SecondHeader/>
+      
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
-              <BsChevronLeft className="text-dark" />
-            </button>
+            <SecondHeader/>
           </div>
         <div className="row mt-3">
           <EventListItem />

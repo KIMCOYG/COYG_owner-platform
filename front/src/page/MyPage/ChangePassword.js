@@ -1,11 +1,14 @@
 import React from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
+import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../../component/HeaderOwner';
 
 const SecondHeader = ({props}) => {
     return(
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark" />
+            </button>
             {/* <Button>등록</Button> */}
             <h5>비밀번호 변경</h5>
         </Row>

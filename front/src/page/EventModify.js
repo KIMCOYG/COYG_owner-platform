@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import { BsChevronLeft } from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
 import data from '../dummy/dummyDataforOwner'
 
@@ -7,7 +8,9 @@ import data from '../dummy/dummyDataforOwner'
 const RegistHeader = ({props}) => {
     return(
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark" />
+            </button>
             {/* <Button>등록</Button> */}
             <Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}

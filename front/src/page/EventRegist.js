@@ -1,11 +1,14 @@
 import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import { BsChevronLeft } from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
 
 const RegistHeader = ({props}) => {
     return(
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark" />
+            </button>
             {/* <Button>등록</Button> */}
             {/*TODO: 2021.04.18 form submit 버튼을 form 밖으로 꺼냈기 때문에 잘 동작하는지 확인 - sunbo*/}
             <Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>
