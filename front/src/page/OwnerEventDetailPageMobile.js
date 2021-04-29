@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { BsChevronLeft } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import Header from '../component/HeaderOwner'
 import logo from '../static/image/chicken.jpg';
 
@@ -12,7 +13,8 @@ const SecondHeader = ({props}) => {
             </button>
             {/* <Button>등록</Button> */}
             <h5>점심 할인 특가 이벤트</h5>
-            <Button onClick={() => document.getElementById('registEvent').submit()} >이벤트수정</Button>
+            <Link to="/mobile/owner/event/modify"><Button>이벤트수정</Button></Link>
+            
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
         </Row>
     )
