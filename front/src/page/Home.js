@@ -21,28 +21,28 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-5">
           <div className="d-flex mt-2">
-            <CategoryButton className="mr-3" />
-            <CategoryButton />
-            <CategoryButton />
-            <CategoryButton />
+            <CategoryButton name="좋아요" className="mr-3" />
+            <CategoryButton name="가전제품" />
+            <CategoryButton name="도시락" />
+            <CategoryButton name="디저트" />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton className="mr-3" />
-            <CategoryButton />
-            <CategoryButton />
-            <CategoryButton />
+            <CategoryButton name="마트" className="mr-3" />
+            <CategoryButton name="분식" />
+            <CategoryButton name="스포츠" />
+            <CategoryButton name="아시안" />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton className="mr-3" />
-            <CategoryButton />
-            <CategoryButton />
-            <CategoryButton />
+            <CategoryButton name="양식" className="mr-3" />
+            <CategoryButton name="의류" />
+            <CategoryButton name="일식" />
+            <CategoryButton name="주류" />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton className="mr-3" />
-            <CategoryButton />
-            <CategoryButton />
-            <CategoryButton />
+            <CategoryButton name="" className="mr-3" />
+            <CategoryButton name="" />
+            <CategoryButton name="" />
+            <CategoryButton name="" />
           </div>
         </div>
       </Container>
