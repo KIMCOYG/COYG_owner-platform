@@ -31,8 +31,8 @@ const AdminCategory = () => {
     const onButtonClick = e => {
         const selectedNodes = gridApi.getSelectedNodes()
         const selectedData = selectedNodes.map( node => node.data )
-        const selectedDataStringPresentation = selectedData.map( node => `${node.make} ${node.model}`).join(', ')
-        alert(`Selected nodes: ${selectedDataStringPresentation}`)
+        const selectedDataStringPresentation = selectedData.map( node => `${node.name} ${node.email}`).join(', ')
+        alert(`${selectedDataStringPresentation}를 삭제하시겠습니까?`)
     }
 
     return (

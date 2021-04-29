@@ -49,7 +49,7 @@ const AdminCategory = () => {
     const onButtonClick = e => {
         const selectedNodes = gridApi.getSelectedNodes()
         const selectedData = selectedNodes.map( node => node.data )
-        const selectedDataStringPresentation = selectedData.map( node => `${node.make} ${node.model}`).join(', ')
+        const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
         alert(`Selected nodes: ${selectedDataStringPresentation}`)
     }
 
@@ -60,8 +60,10 @@ const AdminCategory = () => {
         
         <div style={{float:'left',marginTop: 30 , width:'33%'}}>
         <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1110 }}>
-            <button style ={{marginRight : 10, marginLeft : 950}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>           
+            <button style ={{marginRight : 10, marginLeft : 950}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>
+
             <button type = "button" data-toggle="modal" data-target="#DeleteModal" className="btn btn-primary">삭제</button>
+
             <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -72,15 +74,26 @@ const AdminCategory = () => {
                     </button>
                     </div>
                     <div class="modal-body">
-                    add
+                    <form>
+                        <div class="form-group">
+                            <label for="category-name" class="col-form-label">카테고리명</label>
+                            <input type="text" class="form-control" id="category-name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="category-image" class="col-form-label">카테고리 이미지</label>
+                            <div><input type="file" id="category-image" accept="image/jpeg,.png"/></div>
+                            
+                        </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary">추가</button>
                     </div>
                 </div>
                 </div>
             </div>
+
             <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -91,11 +104,11 @@ const AdminCategory = () => {
                     </button>
                     </div>
                     <div class="modal-body">
-                    delete
+                        삭제하시겠습니까?
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary">네</button>
                     </div>
                 </div>
                 </div>
