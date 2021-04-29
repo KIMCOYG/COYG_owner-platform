@@ -23,7 +23,7 @@ const OwnerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/ownerinfo">
+                <a href="/owner/mypage/userinfo">
                   <img
                     src={myInfoIcon}
                     className="rounded"
