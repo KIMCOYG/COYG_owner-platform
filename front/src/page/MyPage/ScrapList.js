@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
-import Header from '../../component/Header';
-import EventListItem from '../../component/EventListItem';
 import ListPagination from '../../component/ListPagination';
+import Header from "../../component/HeaderCustomer";
+import EventListItem from "../../component/EventListItemScrap";
 
 const ScrapList = () => {
   return (
@@ -12,8 +12,8 @@ const ScrapList = () => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
-              <BsChevronLeft className="text-dark" />
+            <button onClick={() => window.history.back()}>
+              <BsChevronLeft className="text-dark"/>
             </button>
           </div>
           <div className="col-xs-4 pl-3 pt-1">

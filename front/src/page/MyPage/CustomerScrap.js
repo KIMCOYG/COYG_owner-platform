@@ -2,8 +2,8 @@ import React from 'react';
 import {Container, Row} from 'react-bootstrap';
 import {BsChevronLeft} from 'react-icons/bs';
 import EventListItem from '../../component/EventListItemScrap';
-import Header from '../../component/Header';
 import ListPagination from '../../component/ListPagination';
+import Header from "../../component/HeaderCustomer";
 
 const SecondHeader = ({props}) => {
     return (
