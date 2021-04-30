@@ -7,7 +7,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { Button } from 'bootstrap';
 import BtnCellRenderer from "../../component/BtnCellRenderer.js";
-
+import ListPagination from '../../component/ListPagination';
 
 
 //https://www.ag-grid.com/react-grid/getting-started/ 그리드 참고
