@@ -18,6 +18,7 @@ const Login = () => {
                 name="inlineRadioOptions"
                 id="inlineRadio1"
                 value="option1"
+                defaultChecked
               />
               <label className="form-check-label" htmlFor="inlineRadio1">
                 customer

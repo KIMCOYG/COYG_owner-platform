@@ -13,8 +13,8 @@
     "awesome-react-icons": "^1.4.8",
     "bootstrap": "^4.6.0",
     "cross-env": "^7.0.3",
+    "jquery": "^3.6.0",
     "react": "^17.0.2",
-    "react-awesome-slider": "^4.1.0",
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-table": "^4.3.1",
     "react-daum-postcode": "^2.0.6",
@@ -24,6 +24,7 @@
     "react-pro-sidebar": "^0.6.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-slideshow-image": "^3.4.6",
     "react-table": "^7.6.3",
     "styled-components": "^5.2.3",
     "web-vitals": "^1.1.1"
@@ -52,5 +53,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "popper.js": "^1.16.1"
+  }
 }

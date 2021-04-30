@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
-import myInfoIcon from '../../static/image/laptop.jpg';
-import scrapIcon from '../../static/image/vegetables.jpg';
 import Header from "../../component/HeaderCustomer";
 
 
+import myInfoIcon from '../../static/image/myInfo.png';
+import scrapIcon from '../../static/image/scrap.png';
 
 const CustomerMyPage = () => {
   let customerName = '심선보';
@@ -25,13 +26,13 @@ const CustomerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-              <a href="/owner/mypage/userinfo">
-                <img
-                  src={myInfoIcon}
-                  className="rounded"
-                  alt=""
-                  style={{ width: '100%', height: '100%' }}
-                />
+                <a href="/owner/mypage/userinfo">
+                  <img
+                    src={myInfoIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '150px' }}
+                  />
                 </a>
               </button>
               <div className="text-center">내 정보 수정</div>
@@ -40,13 +41,13 @@ const CustomerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-              <a href="/mypage/customer/scrap">
-                <img
-                  src={scrapIcon}
-                  className="rounded"
-                  alt=""
-                  style={{ width: '100%', height: '100%' }}
-                />
+                <a href="/mypage/customer/scrap">
+                  <img
+                    src={scrapIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
                 </a>
               </button>
               <div className="text-center">스크랩</div>
