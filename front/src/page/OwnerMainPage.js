@@ -1,49 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import Pagination from '../component/Pagination';
 import { Link } from 'react-router-dom';
+import data from '../dummy/dummyDataforOwner';
 
 //https://code.tutsplus.com/ko/tutorials/working-with-tables-in-react-part-one--cms-29682 참고
 
 //db 연결 전 더미 데이터
-const data = [
-    {
-        id:1,
-        number:1,
-        thumbnail: "image1",
-        eventName: "eventname1",
-        eventDetail: "eventDetail1",
-        shopName: "shopName1",
-        term: "04.01" + " ~ " + "04.05",
-        enteredDate: "2021.04.01",
-        state: "진행중"
-    },
-    {
-        id:2,
-        number:2,
-        thumbnail: "image2",
-        eventName: "eventname2",
-        eventDetail: "eventDetail2",
-        shopName: "shopName2",
-        term: "04.02" + " ~ " + "04.04",
-        enteredDate: "2021.04.02",
-        state: "진행중"
-    },
-    {
-        id:3,
-        number:3,
-        thumbnail: "image3",
-        eventName: "eventname3",
-        eventDetail: "eventDetail3",
-        shopName: "shopName3",
-        term: "03.29" + " ~ " + "03.31",
-        enteredDate: "2021.03.29",
-        state: "종료"
-    },
 
-]
 
 const options = {
     onRowClick: (row) => {

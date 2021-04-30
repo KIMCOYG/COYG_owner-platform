@@ -1,4 +1,7 @@
 import React from 'react';
+import { BsChevronLeft } from 'react-icons/bs';
+import { BiMap } from 'react-icons/bi';
+import { Button, Container } from 'react-bootstrap';
 import DaumPostcode from 'react-daum-postcode';
 import Header from '../component/Header';
 
@@ -6,8 +9,8 @@ const postCodeStyle = {
   display: 'block',
   position: 'absolute',
   //   top: '50%',
-  width: '400px',
-  height: '500px',
+  width: '100%',
+  height: '100%',
   padding: '7px',
 };
 
@@ -33,7 +36,25 @@ const PostSearch = () => {
   return (
     <>
       <Header />
-      <div className="mt-2">
+      <div className="mt-4">
+        <div className="row">
+          <div className="col-2 pl-3 text-center">
+            <button type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
+            </button>
+          </div>
+          <div className="col-9 text-center">
+            <Button
+              variant="light"
+              className="border border-dark w-100"
+              style={{ width: '100%' }}
+              block
+            >
+              <BiMap className="mr-3" />
+              현재 위치
+            </Button>
+          </div>
+        </div>
         <DaumPostcode style={postCodeStyle} onComplete={handleComplete} />
       </div>
     </>

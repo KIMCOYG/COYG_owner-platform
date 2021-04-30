@@ -2,6 +2,8 @@ import React from 'react'
 import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
+import data from '../dummy/dummyDataforOwner'
+
 
 const SecondHeader = ({props}) => {
     return (
@@ -9,10 +11,9 @@ const SecondHeader = ({props}) => {
             <button onClick={() => window.history.back()}>
                 <BsChevronLeft className="text-dark"/>
             </button>
-            <h4>이벤트 등록</h4>
-            {/*TODO: 2021.04.18 form submit 버튼을 form 밖으로 꺼냈기 때문에 잘 동작하는지 확인 - sunbo*/}
-            {/*<Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>*/}
-            <Button onClick={() => window.history.back()}>등록</Button>
+            <h4>이벤트 수정</h4>
+            {/*<Button onClick={() => document.getElementById('registEvent').submit()}>저장</Button>*/}
+            <Button onClick={() => window.history.back()}>저장</Button>
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
         </Row>
     )
@@ -24,7 +25,11 @@ const handleSubmit = (event) => {
     event.preventDefault();
 }
 
-const EvnetRegist = () => {
+const EvnetModify = () => {
+    const url = window.location.href // 현재페이지 url 가져오기
+    const current_id = url.split("/")[7] // 현재 페이지 url에서 id 값만 가져오기
+
+    const info = data[current_id - 1]
     return (
         <>
             <Header/>
@@ -35,39 +40,40 @@ const EvnetRegist = () => {
                 <Form onSubmit={handleSubmit} id="registEvent">
                     <Form.Group controlId="formShopName">
                         <Form.Label>가게명</Form.Label>
-                        <Form.Control type="input" placeholder="가게명 입력"/>
+                        <Form.Control type="input" defaultValue={"KFC"} disabled></Form.Control>
                     </Form.Group>
 
                     <Form.Group controlId="formEventName">
                         <Form.Label>이벤트명</Form.Label>
-                        <Form.Control type="input" placeholder="이벤트명 입력"/>
+                        <Form.Control type="input" defaultValue={"점심 할인 특가 이벤트"}></Form.Control>
                     </Form.Group>
 
                     <Form.Label>이벤트 기간</Form.Label>
                     <Form.Row className="align-items-center">
-                        <Form.Group as={Col} controlId="formEventStart">
+                        {/*TODO: 2021.04.18 date의 format에 따라서 값 불러오기. 실패시 react-datePicker 사용 -sunbo*/}
+                        <Form.Group as={Col} controlId="formEventStart" value="info.startTerm">
                             <Form.Label>시작일</Form.Label>
-                            <Form.Control type="date"/>
+                            <Form.Control type="date" value="2021-04-03"/>
                         </Form.Group>
-                        <Form.Group as={Col} controlId="formEventEnd">
+                        <Form.Group as={Col} controlId="formEventEnd" value="info.endTerm">
                             <Form.Label>종료일</Form.Label>
-                            <Form.Control type="date"/>
+                            <Form.Control type="date" value="2021-04-09"/>
                         </Form.Group>
                     </Form.Row>
 
                     <Form.Group controlId="formEventDetail">
                         <Form.Label>이벤트 내용</Form.Label>
-                        <Form.Control as="textarea" rows={4}/>
+                        <Form.Control as="textarea" rows={4} value="점심에 치킨이 할인됩니다"/>
                     </Form.Group>
 
                     <Form.Group controlId="formEventDetail">
                         <Form.File id="formFile" label="사진첨부"/>
                     </Form.Group>
-                    <Button type="submit">등록</Button>
+                    {/*<Button type="submit">등록</Button>*/}
                 </Form>
             </Container>
         </>
     )
 }
 
-export default EvnetRegist
+export default EvnetModify
