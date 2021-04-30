@@ -31,9 +31,10 @@ const ChangePassword = () => {
     return (
         <>
             <Header/>
-            <SecondHeader/>
-            <Container>
-
+            <Container className="mt-3">
+                <Row className="col-xs-2 pl-3 text-center">
+                    <SecondHeader/>
+                </Row>
                 <Form>
                     <Form.Group>
                         <Form.Label>신규 비밀번호</Form.Label>

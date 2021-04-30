@@ -41,9 +41,10 @@ const RegistShop = () => {
     return (
         <>
             <Header/>
-            <SecondHeader/>
-            <Container>
-
+            <Container className="mt-3">
+                <Row className="col-xs-2 pl-3 text-center">
+                    <SecondHeader/>
+                </Row>
 
                 <Form>
                     <Form.Group>

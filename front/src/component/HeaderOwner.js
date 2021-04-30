@@ -17,7 +17,7 @@ const Header = () => {
                         <Button className="col-xs-5" variant="link" value="마이페이지">
                             <Link to="/owner/mypage">마이페이지</Link>
                         </Button>
-                        
+
                     </Row>
                 </Col>
             </Row>
