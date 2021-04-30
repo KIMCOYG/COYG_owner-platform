@@ -14,7 +14,7 @@ const SecondHeader = ({props}) => {
                 <BsChevronLeft className="text-dark" />
             </button>            {/* <Button>등록</Button> */}
             
-            <h5>이벤트 관리</h5>
+            <h4>이벤트 관리</h4>
             <Link to="/mobile/owner/event/regist">
               <Button >추가</Button>
             </Link>
@@ -28,7 +28,7 @@ const ManageEventList = () => {
   return (
     <>
       <Header />
-      
+      <SecondHeader/>
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">

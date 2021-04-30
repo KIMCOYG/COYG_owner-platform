@@ -1,15 +1,15 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
-import Header from '../../component/Header';
 import myInfoIcon from '../../static/image/laptop.jpg';
 import scrapIcon from '../../static/image/vegetables.jpg';
+import HeaderOwner from "../../component/HeaderOwner";
 
 const OwnerMyPage = () => {
   let customerName = '심선보';
   return (
     <>
-      <Header />
+      <HeaderOwner />
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">

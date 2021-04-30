@@ -1,11 +1,21 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import {Container, Row} from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import EventListItem from '../../component/EventListItemScrap';
 import Header from '../../component/Header';
 import ListPagination from '../../component/ListPagination';
 
-
+const SecondHeader = ({props}) => {
+  return (
+      <Row>
+        <button onClick={() => window.history.back()}>
+          <BsChevronLeft className="text-dark"/>
+        </button>
+        {/* <Button>등록</Button> */}
+        <h4>스크랩</h4>
+      </Row>
+  )
+}
 
 
 const CustomerScrap = () => {
