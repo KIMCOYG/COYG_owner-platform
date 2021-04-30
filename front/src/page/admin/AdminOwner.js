@@ -47,8 +47,8 @@ const AdminCategory = () => {
         <Header/>
         <div style={{float:'left' , width:'20%'}}><Sidebar/></div>
         <div style={{float:'left',marginTop: 30 , width:'33%'}}>
-        <div className="ag-theme-alpine" style={{ height: 400, width: 1110 }}>
-        <button style ={{marginRight : 10, marginLeft : 1000}}type = "button" data-toggle="modal" data-target="#DeleteModal2" className="btn btn-primary">삭제</button>
+        <div className="ag-theme-alpine" style={{ height: 400, width: 1010 }}>
+        <button style ={{marginRight : 10, marginLeft : 920, marginBottom: 10}}type = "button" data-toggle="modal" data-target="#DeleteModal2" className="btn btn-primary">삭제</button>
 
         <div class="modal fade" id="DeleteModal2" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
                 <div class="modal-dialog" role="document">
