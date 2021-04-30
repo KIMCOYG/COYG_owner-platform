@@ -13,10 +13,10 @@ const SecondHeader = ({title, buttonName, link}) => {
             </Col>
             {/* <Button>등록</Button> */}
             <Col xs={8}>
-                <h4 style={{fontSize: '20px'}}>{title}</h4>
+                <h4 style={{marginLeft:'10px', fontSize: '20px'}}>{title}</h4>
             </Col>
             <Col xs={3}>
-                <Link to={link}><Button style={{fontSize: '6px', blockSize: '5em'}}>{buttonName}</Button></Link>
+                <Link to={link}><Button style={{fontSize: '6px'}}>{buttonName}</Button></Link>
             </Col>
 
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
