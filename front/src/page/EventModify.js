@@ -2,22 +2,23 @@ import React from 'react'
 import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
+import SecondHeader from '../component/SecondHeader'
 import data from '../dummy/dummyDataforOwner'
 
 
-const SecondHeader = ({props}) => {
-    return (
-        <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
-            </button>
-            <h4>이벤트 수정</h4>
-            {/*<Button onClick={() => document.getElementById('registEvent').submit()}>저장</Button>*/}
-            <Button onClick={() => window.history.back()}>저장</Button>
-            {/* <Button onClick={() => this.handleSubmit()}></Button> */}
-        </Row>
-    )
-}
+// const SecondHeader = ({props}) => {
+//     return (
+//         <Row>
+//             <button onClick={() => window.history.back()}>
+//                 <BsChevronLeft className="text-dark"/>
+//             </button>
+//             <h4>이벤트 수정</h4>
+//             {/*<Button onClick={() => document.getElementById('registEvent').submit()}>저장</Button>*/}
+//             <Button onClick={() => window.history.back()}>저장</Button>
+//             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
+//         </Row>
+//     )
+// }
 
 
 const handleSubmit = (event) => {
@@ -34,9 +35,7 @@ const EvnetModify = () => {
         <>
             <Header/>
             <Container className="mt-3">
-                <Row className="col-xs-2 pl-3 text-center">
-                    <SecondHeader/>
-                </Row>
+                    <SecondHeader title="이벤트수정" link="/" buttonName="저장" />
                 <Form onSubmit={handleSubmit} id="registEvent">
                     <Form.Group controlId="formShopName">
                         <Form.Label>가게명</Form.Label>
