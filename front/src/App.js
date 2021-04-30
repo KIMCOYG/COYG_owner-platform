@@ -37,8 +37,8 @@ const App = () => {
       <Route path="/event/detail" component={DetailEvent} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
-      {/* <Route path="/mypage/customer/scrap" component={ScrapList} exact /> */}
-      <Route path="/mypage/customer/scrap" component={CustomerScrap} exact />
+      <Route path="/mypage/customer/scrap" component={ScrapList} exact />
+      {/* <Route path="/mypage/customer/scrap" component={CustomerScrap} exact /> */}
       <Route path="/post" component={PostSearch} exact />
 
       {/* Owner */}

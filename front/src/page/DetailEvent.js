@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../component/Header';
 import styled from 'styled-components';
 import { BsHeart } from 'react-icons/bs';
@@ -16,6 +16,14 @@ const MidDiv = styled.div`
 
 const DetailEvent = () => {
   let eventName = '맥도날드 야탑점';
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src =
+      'https://dapi.kakao.com/v2/maps/sdk.js?appkey=db1c6fa0f0115d1e559a2e0c4d4c056e&autoload=false';
+    document.head.appendChild(script);
+  });
 
   return (
     <>
@@ -113,6 +121,7 @@ const DetailEvent = () => {
             >
               MAP
             </div>
+            <div id="map" style={{ width: '100%', height: '400px' }}></div>
           </div>
         </div>
       </Container>
