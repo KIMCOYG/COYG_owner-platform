@@ -24,6 +24,9 @@ import CustomerMyPage from './page/MyPage/CustomerMyPage';
 import PostSearch from './page/PostSearch';
 import DetailEvent from './page/DetailEvent';
 import ScrapList from './page/MyPage/ScrapList';
+import RegistShop from './page/MyPage/RegistShop';
+import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
+import CustomerScrap from './page/MyPage/CustomerScrap';
 
 const App = () => {
   return (
@@ -34,13 +37,18 @@ const App = () => {
       <Route path="/event/detail" component={DetailEvent} exact />
 
       <Route path="/mypage/customer" component={CustomerMyPage} exact />
-      <Route path="/mypage/customer/scrap" component={ScrapList} exact />
+      {/* <Route path="/mypage/customer/scrap" component={ScrapList} exact /> */}
+      <Route path="/mypage/customer/scrap" component={CustomerScrap} exact />
       <Route path="/post" component={PostSearch} exact />
 
       {/* Owner */}
       <Route path="/owner" component={OwnerMainPage} exact />
       <Route path="/mobile/owner" component={OwnerMainPageMobile} exact />
-      <Route path="/owner/detail/:id" component={OwnerEventDetailPage} exact />
+      <Route
+        path="/mobile/owner/detail/:id"
+        component={OwnerEventDetailPageMobile}
+        exact
+      />
 
       <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact />
       <Route path="/mobile/owner/event/modify" component={EvnetModify} exact />
@@ -48,7 +56,7 @@ const App = () => {
       {/* Mypage */}
       <Route path="/owner/mypage" component={OwnerMyPage} exact></Route>
       <Route
-        path="/owner/mypage/ownerinfo"
+        path="/owner/mypage/userinfo"
         component={ManageUserInfo}
         exact
       ></Route>
@@ -60,6 +68,11 @@ const App = () => {
       <Route
         path="/owner/mypage/manageshop"
         component={ManageShop}
+        exact
+      ></Route>
+      <Route
+        path="/owner/mypage/registshop"
+        component={RegistShop}
         exact
       ></Route>
       <Route

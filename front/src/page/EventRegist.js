@@ -1,14 +1,18 @@
 import React from 'react'
-import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import {Button, Col, Container, Form, Row} from 'react-bootstrap'
+import {BsChevronLeft} from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
 
-const RegistHeader = ({props}) => {
-    return(
+const SecondHeader = ({props}) => {
+    return (
         <Row>
-            <Button onClick={() => window.history.back()}>◁</Button>
-            {/* <Button>등록</Button> */}
+            <button onClick={() => window.history.back()}>
+                <BsChevronLeft className="text-dark"/>
+            </button>
+            <h4>이벤트 등록</h4>
             {/*TODO: 2021.04.18 form submit 버튼을 form 밖으로 꺼냈기 때문에 잘 동작하는지 확인 - sunbo*/}
-            <Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>
+            {/*<Button onClick={() => document.getElementById('registEvent').submit()} >등록</Button>*/}
+            <Button onClick={() => window.history.back()}>등록</Button>
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
         </Row>
     )
@@ -21,44 +25,48 @@ const handleSubmit = (event) => {
 }
 
 const EvnetRegist = () => {
-    return(
-        <Container>
-            <Header></Header>
-            <RegistHeader></RegistHeader>
-            <Form onSubmit={handleSubmit} id="registEvent">
-                <Form.Group controlId="formShopName">
-                    <Form.Label>가게명</Form.Label>
-                    <Form.Control type="input" placeholder="가게명 입력"/>
-                </Form.Group>
-
-                <Form.Group controlId="formEventName">
-                    <Form.Label>이벤트명</Form.Label>
-                    <Form.Control type="input" placeholder="이벤트명 입력"/>
-                </Form.Group>
-
-                <Form.Label>이벤트 기간</Form.Label>
-                <Form.Row className="align-items-center">
-                    <Form.Group as={Col} controlId="formEventStart">
-                        <Form.Label>시작일</Form.Label>
-                        <Form.Control  type="date" />
+    return (
+        <>
+            <Header/>
+            <Container className="mt-3">
+                <Row className="col-xs-2 pl-3 text-center">
+                    <SecondHeader/>
+                </Row>
+                <Form onSubmit={handleSubmit} id="registEvent">
+                    <Form.Group controlId="formShopName">
+                        <Form.Label>가게명</Form.Label>
+                        <Form.Control type="input" placeholder="가게명 입력"/>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formEventEnd">
-                        <Form.Label>종료일</Form.Label>
-                        <Form.Control  type="date" />
+
+                    <Form.Group controlId="formEventName">
+                        <Form.Label>이벤트명</Form.Label>
+                        <Form.Control type="input" placeholder="이벤트명 입력"/>
                     </Form.Group>
-                </Form.Row>
 
-                <Form.Group controlId="formEventDetail">
-                    <Form.Label>이벤트 내용</Form.Label>
-                    <Form.Control as="textarea" rows={4}/>
-                </Form.Group>
+                    <Form.Label>이벤트 기간</Form.Label>
+                    <Form.Row className="align-items-center">
+                        <Form.Group as={Col} controlId="formEventStart">
+                            <Form.Label>시작일</Form.Label>
+                            <Form.Control type="date"/>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formEventEnd">
+                            <Form.Label>종료일</Form.Label>
+                            <Form.Control type="date"/>
+                        </Form.Group>
+                    </Form.Row>
 
-                <Form.Group controlId="formEventDetail">
-                    <Form.File id="formFile" label="사진첨부"/>
-                </Form.Group>
-                <Button type="submit">등록</Button>
-            </Form>
-        </Container>
+                    <Form.Group controlId="formEventDetail">
+                        <Form.Label>이벤트 내용</Form.Label>
+                        <Form.Control as="textarea" rows={4}/>
+                    </Form.Group>
+
+                    <Form.Group controlId="formEventDetail">
+                        <Form.File id="formFile" label="사진첨부"/>
+                    </Form.Group>
+                    <Button type="submit">등록</Button>
+                </Form>
+            </Container>
+        </>
     )
 }
 

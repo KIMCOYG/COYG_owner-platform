@@ -1,19 +1,19 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
-import Header from '../../component/Header';
 import myInfoIcon from '../../static/image/laptop.jpg';
 import scrapIcon from '../../static/image/vegetables.jpg';
+import HeaderOwner from "../../component/HeaderOwner";
 
 const OwnerMyPage = () => {
   let customerName = '심선보';
   return (
     <>
-      <Header />
+      <HeaderOwner />
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
+            <button onClick={() => window.history.back()}>
               <BsChevronLeft className="text-dark" />
             </button>
           </div>
@@ -23,7 +23,7 @@ const OwnerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/ownerinfo">
+                <a href="/owner/mypage/userinfo">
                   <img
                     src={myInfoIcon}
                     className="rounded"

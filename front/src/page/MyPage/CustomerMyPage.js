@@ -24,31 +24,31 @@ const CustomerMyPage = () => {
           <div className="col-6">
             <div className="d-flex flex-column">
               <button type="button" className="btn btn-link">
-                <img
-                  src={myInfoIcon}
-                  className="rounded"
-                  alt=""
-                  style={{ width: '100%', height: '150px' }}
-                />
+                <a href="/owner/mypage/userinfo">
+                  <img
+                    src={myInfoIcon}
+                    className="rounded"
+                    alt=""
+                    style={{ width: '100%', height: '150px' }}
+                  />
+                </a>
               </button>
               <div className="text-center">내 정보 수정</div>
             </div>
           </div>
           <div className="col-6">
             <div className="d-flex flex-column">
-              <Link to="/mypage/customer/scrap">
-                <button type="button" className="btn btn-link">
+              <button type="button" className="btn btn-link">
+                <a href="/mypage/customer/scrap">
                   <img
                     src={scrapIcon}
                     className="rounded"
                     alt=""
-                    style={{ width: '100%', height: '150px' }}
+                    style={{ width: '100%', height: '100%' }}
                   />
-                </button>
-                <div className="text-center" style={{ color: 'black' }}>
-                  스크랩
-                </div>
-              </Link>
+                </a>
+              </button>
+              <div className="text-center">스크랩</div>
             </div>
           </div>
         </div>
