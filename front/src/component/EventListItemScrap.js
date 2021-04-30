@@ -24,8 +24,9 @@ const EventListItem = () => {
                 />
               </div>
               <div className="col-8">
-                <div className="font-weight-bold"><h5>점심 할인 특가 이벤트</h5>
-                    <Link to="/delete">x</Link>
+                <div className="font-weight-bold">
+                  <h5 >점심 할인 특가 이벤트 <Link to="/delete">x</Link></h5>
+
                 </div>
                 <div className="d-flex">
                   <div className="d-flex flex-column mr-5">

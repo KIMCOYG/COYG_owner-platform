@@ -4,8 +4,9 @@ import {AiOutlineTeam} from 'react-icons/ai'
 import {BsChevronLeft} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 import Header from '../../component/HeaderOwner'
+import SecondHeader from "../../component/SecondHeader";
 
-const SecondHeader = ({props}) => {
+/*const SecondHeader = ({props}) => {
     return (
         <Row>
             <button onClick={() => window.history.back()}>
@@ -19,7 +20,7 @@ const SecondHeader = ({props}) => {
 
         </Row>
     )
-}
+}*/
 
 const data = [
     {category: "생활용품"},
@@ -59,7 +60,7 @@ const ManageShop = () => {
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
-                    <SecondHeader/>
+                    <SecondHeader title="가게 관리" link="/owner/mypage/registshop" buttonName="추가"/>
                 </Row>
 
                 <Form.Label>가게 선택</Form.Label>

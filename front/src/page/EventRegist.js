@@ -63,7 +63,6 @@ const EvnetRegist = () => {
                     <Form.Group controlId="formEventDetail">
                         <Form.File id="formFile" label="사진첨부"/>
                     </Form.Group>
-                    <Button type="submit">등록</Button>
                 </Form>
             </Container>
         </>

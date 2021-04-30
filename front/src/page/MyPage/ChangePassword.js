@@ -2,18 +2,19 @@ import React from 'react'
 import {Button, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../../component/HeaderOwner';
+import SecondHeader from "../../component/SecondHeader";
 
-const SecondHeader = ({props}) => {
-    return (
-        <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
-            </button>
-            {/* <Button>등록</Button> */}
-            <h4>비밀번호 변경</h4>
-        </Row>
-    )
-}
+// const SecondHeader = ({props}) => {
+//     return (
+//         <Row>
+//             <button onClick={() => window.history.back()}>
+//                 <BsChevronLeft className="text-dark"/>
+//             </button>
+//             {/* <Button>등록</Button> */}
+//             <h4>비밀번호 변경</h4>
+//         </Row>
+//     )
+// }
 
 const checkPW = () => {
     const pw1 = document.getElementById('pw1').value;
@@ -33,7 +34,7 @@ const ChangePassword = () => {
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
-                    <SecondHeader/>
+                    <SecondHeader title="비밀번호 변경"></SecondHeader>
                 </Row>
                 <Form>
                     <Form.Group>

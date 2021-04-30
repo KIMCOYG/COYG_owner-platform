@@ -6,14 +6,15 @@ import {Link} from 'react-router-dom';
 import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
 import EventListItem from '../../component/OwnerEventListItem';
+import SecondHeader from "../../component/SecondHeader";
 
-const SecondHeader = ({props}) => {
+/*const SecondHeader = ({props}) => {
     return (
         <Row>
             <button onClick={() => window.history.back()}>
                 <BsChevronLeft className="text-dark"/>
             </button>
-            {/* <Button>등록</Button> */}
+            {/!* <Button>등록</Button> *!/}
 
             <h4>이벤트 관리</h4>
             <Link to="/mobile/owner/event/regist">
@@ -22,7 +23,7 @@ const SecondHeader = ({props}) => {
 
         </Row>
     )
-}
+}*/
 
 const ManageEventList = () => {
     let listName = '치킨';
@@ -31,7 +32,7 @@ const ManageEventList = () => {
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
-                    <SecondHeader/>
+                    <SecondHeader title="이벤트 관리" link="/mobile/owner/event/regist" buttonName="추가"/>
                 </Row>
                 <div className="row">
                     <div className="row mt-3">

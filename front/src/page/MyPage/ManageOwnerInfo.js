@@ -2,8 +2,8 @@ import React from 'react'
 import {Button, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import {Link} from 'react-router-dom';
+import Header from '../../component/HeaderOwner';
 import userData from "../../dummy/dummyDataUser";
-import Header from "../../component/HeaderCustomer";
 
 const SecondHeader = ({props}) => {
     return (

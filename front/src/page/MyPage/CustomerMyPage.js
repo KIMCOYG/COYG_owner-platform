@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
-import Header from '../../component/Header';
 import myInfoIcon from '../../static/image/laptop.jpg';
 import scrapIcon from '../../static/image/vegetables.jpg';
+import Header from "../../component/HeaderCustomer";
+
+
 
 const CustomerMyPage = () => {
   let customerName = '심선보';
