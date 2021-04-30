@@ -6,6 +6,7 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import StoreBtnCellRenderer from "../../component/StoreBtnCellRenderer.js";
+import ListPagination from '../../component/ListPagination';
 //https://www.ag-grid.com/react-grid/getting-started/ 참고
 
 const data = [
@@ -115,6 +116,9 @@ const AdminCategory = () => {
                 }}></AgGridColumn>
             </AgGridReact>
         </div>
+        </div>
+        <div style = {{position:"fixed",bottom:0,left:"50%"}}>
+        <ListPagination/>
         </div>
         </>
     );

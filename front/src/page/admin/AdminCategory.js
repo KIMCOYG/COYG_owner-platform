@@ -166,6 +166,9 @@ const AdminCategory = () => {
             </AgGridReact>
         </div>
     </div>
+    <div style = {{position:"fixed",bottom:0,left:"50%"}}>
+        <ListPagination/>
+    </div>
         </>
     );
 
