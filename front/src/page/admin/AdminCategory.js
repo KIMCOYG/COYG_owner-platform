@@ -7,7 +7,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { Button } from 'bootstrap';
 import BtnCellRenderer from "../../component/BtnCellRenderer.js";
-
+import ListPagination from '../../component/ListPagination';
 
 
 //https://www.ag-grid.com/react-grid/getting-started/ 그리드 참고
@@ -46,7 +46,7 @@ const AdminCategory = () => {
         return thisIsFirstColumn;
       }
 
-    const onButtonClick = e => {
+    const onButtonClick = e => { //checkbox된 데이터 추출 양식
         const selectedNodes = gridApi.getSelectedNodes()
         const selectedData = selectedNodes.map( node => node.data )
         const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
@@ -59,10 +59,10 @@ const AdminCategory = () => {
         <div style={{float:'left' , width:'20%'}}><Sidebar/></div>
         
         <div style={{float:'left',marginTop: 30 , width:'33%'}}>
-        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1110 }}>
-            <button style ={{marginRight : 10, marginLeft : 950}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>
+        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1060 }}>
+            <button style ={{marginRight : 10, marginLeft : 900, marginBottom : 10}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>
 
-            <button type = "button" data-toggle="modal" data-target="#DeleteModal" className="btn btn-primary">삭제</button>
+            <button style = {{marginBottom : 10}}type = "button" data-toggle="modal" data-target="#DeleteModal" className="btn btn-primary">삭제</button>
 
             <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -151,7 +151,7 @@ const AdminCategory = () => {
                     btnCellRenderer : BtnCellRenderer
                 }}
                 >
-                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } checkboxSelection = {true}headerCheckboxSelection = {true}></AgGridColumn>
+                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } checkboxSelection = {true} headerCheckboxSelection = {true}></AgGridColumn>
                 <AgGridColumn field="name" resizable="true" width = "100px" sortable={ true } filter={ true }></AgGridColumn>
                 <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
                 <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
@@ -165,6 +165,9 @@ const AdminCategory = () => {
                 }}></AgGridColumn>
             </AgGridReact>
         </div>
+    </div>
+    <div style = {{position:"fixed",bottom:0,left:"50%"}}>
+        <ListPagination/>
     </div>
         </>
     );
