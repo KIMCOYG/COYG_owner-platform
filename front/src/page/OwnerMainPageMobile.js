@@ -1,52 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import Header from '../component/Header';
+
 // import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '../component/Pagination';
 import { Link } from 'react-router-dom';
+import data from '../dummy/dummyDataforOwner';
+import Header from '../component/HeaderOwner';
+import logo from '../static/image/chicken.jpg';
 
-//https://code.tutsplus.com/ko/tutorials/working-with-tables-in-react-part-one--cms-29682 참고
 
-//db 연결 전 더미 데이터
-const data = [
-    {
-        id:1,
-        number:1,
-        thumbnail: "image1",
-        eventName: "eventname1",
-        eventDetail: "eventDetail1",
-        shopName: "shopName1",
-        term: "04.01" + " ~ " + "04.05",
-        enteredDate: "2021.04.01",
-        likes: 224,
-        state: "진행중"
-    },
-    {
-        id:2,
-        number:2,
-        thumbnail: "image2",
-        eventName: "eventname2",
-        eventDetail: "eventDetail2",
-        shopName: "shopName2",
-        term: "04.02" + " ~ " + "04.04",
-        enteredDate: "2021.04.02",
-        likes: 214,
-        state: "진행중"
-    },
-    {
-        id:3,
-        number:3,
-        thumbnail: "image3",
-        eventName: "eventname3",
-        eventDetail: "eventDetail3",
-        shopName: "shopName3",
-        term: "03.29" + " ~ " + "03.31",
-        enteredDate: "2021.03.29",
-        likes: 187,
-        state: "종료"
-    },
-
-]
 
 const options = {
     onRowClick: (row) => {
@@ -58,10 +20,14 @@ const options = {
 
 const Table = (props) => {
     const dataList = props.data.map((list) => (
-        <Link to="/owner/detail/${list.id}">
+        <Link to="/mobile/owner/detail/${list.id}">
             <Row>
                 <Col>
-                    {list.thumbnail}
+                    <img
+                    src={logo}
+                    alt=""
+                    style={{ width: '100%', heigh: '100%' }}
+                    />
                 </Col>
                 <Col>
                     <Row>
@@ -141,7 +107,7 @@ const OwnerMainPageMobile = () => {
                     이벤트
                 </Col>
                 <Col>
-                    <Button className="col-xs-5" variant="link" value="추가">추가</Button>
+                    <Button className="col-xs-5" variant="link" value="추가" onClick={() => window.location.href='/mobile/owner/event/regist'}>추가</Button>
                 </Col>
             </Row>
             <Row>

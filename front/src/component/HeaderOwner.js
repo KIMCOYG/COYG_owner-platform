@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Row, Col, Image, Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../static/image/home.png';
 
 const Header = () => {
@@ -7,13 +8,16 @@ const Header = () => {
         <Container className="mt-3">
             <Row>
                 <Col>
-                    <Image src={logo}></Image>
+                    <Link to="/">
+                        <Image src={logo}></Image>
+                    </Link>
                 </Col>
                 <Col>
                     <Row className="justify-content-center">
-                        <Button className="col-xs-5" variant="link" value="마이페이지">마이페이지</Button>
-                        <div className="pt-1 col-xs-2"> / </div>
-                        <Button className="col-xs-5" variant="link" value="로그아웃">로그아웃</Button>
+                        <Button className="col-xs-5" variant="link" value="마이페이지">
+                            <Link to="/owner/mypage">마이페이지</Link>
+                        </Button>
+
                     </Row>
                 </Col>
             </Row>
