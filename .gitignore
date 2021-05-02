@@ -6,3 +6,5 @@ front/package-lock.json
 .DS_Store*
 Icon?
 ._*
+
+config/config.json
