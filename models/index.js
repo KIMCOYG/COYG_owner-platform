@@ -22,6 +22,8 @@ const sequelize = new Sequelize(
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.Category = require("./category")(sequelize, Sequelize);
+
 module.exports = db;
 
 /*let sequelize;
