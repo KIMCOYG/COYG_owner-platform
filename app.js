@@ -1,6 +1,7 @@
 const express = require("express");
 const sequelize = require("./models/index").sequelize;
 const Category = require("./models").Category;
+const Event = require("./models").Event;
 // const mysql = require("mysql");
 // const bodyParser = require("body-parser");
 
@@ -19,7 +20,7 @@ sequelize
   });
 app.set("port", process.env.PORT || PORT);
 app.get("/test", (req, res) => {
-  Category.findAll()
+  Event.findAll()
     .then((users) => {
       res.send({ users });
     })
