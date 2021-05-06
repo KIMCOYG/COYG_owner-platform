@@ -28,6 +28,7 @@ db.Image = require("./image")(sequelize, Sequelize);
 db.Like = require("./like")(sequelize, Sequelize);
 db.Scrap = require("./scrap")(sequelize, Sequelize);
 db.Shop = require("./shop")(sequelize, Sequelize);
+db.User = require("./user")(sequelize, Sequelize);
 
 module.exports = db;
 
