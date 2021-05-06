@@ -3,7 +3,7 @@ import {Button, Col, Row} from "react-bootstrap";
 import {BsChevronLeft} from "react-icons/bs";
 import {Link} from "react-router-dom";
 
-const SecondHeader = ({title, buttonName, link}) => {
+const SecondHeader = ({title, buttonName, link, what}) => {
     return (
         <Row>
             <Col xs={1}>
@@ -16,7 +16,7 @@ const SecondHeader = ({title, buttonName, link}) => {
                 <h4 style={{marginLeft:'10px', fontSize: '20px'}}>{title}</h4>
             </Col>
             <Col xs={3}>
-                <Link to={link}><Button style={{fontSize: '6px'}}>{buttonName}</Button></Link>
+                <Link to={link}><Button style={{fontSize: '6px', display: `${what}`}}>{buttonName}</Button></Link>
             </Col>
 
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}
