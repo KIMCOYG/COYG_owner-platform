@@ -4,6 +4,8 @@ const Category = require("./models").Category;
 const Event = require("./models").Event;
 const Image = require("./models").Image;
 const Like = require("./models").Like;
+const Scrap = require("./models").Scrap;
+const Shop = require("./models").Shop;
 // const mysql = require("mysql");
 // const bodyParser = require("body-parser");
 
@@ -22,7 +24,7 @@ sequelize
   });
 app.set("port", process.env.PORT || PORT);
 app.get("/test", (req, res) => {
-  Like.findAll()
+  Shop.findAll()
     .then((users) => {
       res.send({ users });
     })
