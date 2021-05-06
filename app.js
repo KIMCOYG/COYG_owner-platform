@@ -2,6 +2,7 @@ const express = require("express");
 const sequelize = require("./models/index").sequelize;
 const Category = require("./models").Category;
 const Event = require("./models").Event;
+const Image = require("./models").Image;
 // const mysql = require("mysql");
 // const bodyParser = require("body-parser");
 
@@ -20,7 +21,7 @@ sequelize
   });
 app.set("port", process.env.PORT || PORT);
 app.get("/test", (req, res) => {
-  Event.findAll()
+  Image.findAll()
     .then((users) => {
       res.send({ users });
     })
