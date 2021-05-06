@@ -25,6 +25,7 @@ db.Sequelize = Sequelize;
 db.Category = require("./category")(sequelize, Sequelize);
 db.Event = require("./event")(sequelize, Sequelize);
 db.Image = require("./image")(sequelize, Sequelize);
+db.Like = require("./like")(sequelize, Sequelize);
 
 module.exports = db;
 
