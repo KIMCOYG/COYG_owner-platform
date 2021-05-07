@@ -1,4 +1,10 @@
 const express = require("express");
+const path = require("path");
+const logger = require("morgan");
+// const bodyParser = require("body-parser"); //express 내장
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
 const sequelize = require("./models/index").sequelize;
 const Category = require("./models").Category;
 const Event = require("./models").Event;
@@ -7,14 +13,11 @@ const Like = require("./models").Like;
 const Scrap = require("./models").Scrap;
 const Shop = require("./models").Shop;
 const User = require("./models").User;
-// const mysql = require("mysql");
-// const bodyParser = require("body-parser");
-
-// app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = 5000;
 
 const app = express();
+
 sequelize
   .sync()
   .then(() => {
@@ -23,7 +26,26 @@ sequelize
   .catch((err) => {
     console.log("mysql error");
   });
-app.set("port", process.env.PORT || PORT);
+
+app.use(logger("dev")); //요청 기록
+app.use(express.static(path.join(__dirname, "public"))); //정적 파일 저장소, morgan 아래, 다른 미들웨어 위에 위치
+app.use(express.json());
+app.use(express.urlencoded({ extended: false })); //false면 querystring, trye면 qs module
+app.use(cookieParser("secret code"));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "secret code",
+    cookie: {
+      //store 고려!
+      httpOnly: true,
+      secure: false,
+    },
+  })
+);
+app.use(flash());
+
 app.get("/test", (req, res) => {
   User.findAll()
     .then((users) => {
@@ -39,6 +61,7 @@ app.get("/", (req, res) => {
   res.send("Hello Express!!");
 });
 
+app.set("port", process.env.PORT || PORT);
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "번 포트에서 대기 중입니다.");
 });
