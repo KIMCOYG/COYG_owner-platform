@@ -31,7 +31,7 @@ const ManageEventList = () => {
         <>
             <Header/>
             <Container className="mt-3">
-                    <SecondHeader title="이벤트 관리" link="/mobile/owner/event/regist" buttonName="추가"/>
+                    <SecondHeader title="이벤트 관리" link="/mobile/owner/event/regist" buttonName="추가" what='none' />
                 <div className="row">
                     <div className="row mt-3">
                         <EventListItem/>
