@@ -1,5 +1,13 @@
 const express = require("express");
-const mysql = require("mysql");
+const sequelize = require("./models/index").sequelize;
+const Category = require("./models").Category;
+const Event = require("./models").Event;
+const Image = require("./models").Image;
+const Like = require("./models").Like;
+const Scrap = require("./models").Scrap;
+const Shop = require("./models").Shop;
+const User = require("./models").User;
+// const mysql = require("mysql");
 // const bodyParser = require("body-parser");
 
 // app.use(bodyParser.urlencoded({ extended: true }));
@@ -7,16 +15,25 @@ const mysql = require("mysql");
 const PORT = 5000;
 
 const app = express();
+sequelize
+  .sync()
+  .then(() => {
+    console.log("mysql success");
+  })
+  .catch((err) => {
+    console.log("mysql error");
+  });
 app.set("port", process.env.PORT || PORT);
-// app.get("/test", (req, res) => {
-//   connection.query("SELECT * FROM CATEGORIES", function (err, result, fields) {
-//     if (err) {
-//       res.send("err: " + err);
-//     } else {
-//       res.send("성공");
-//     }
-//   });
-// });
+app.get("/test", (req, res) => {
+  User.findAll()
+    .then((users) => {
+      res.send({ users });
+    })
+    .catch((err) => {
+      console.log(err);
+      next(err);
+    });
+});
 
 app.get("/", (req, res) => {
   res.send("Hello Express!!");

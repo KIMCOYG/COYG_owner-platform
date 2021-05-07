@@ -6,3 +6,5 @@ config
 .DS_Store*
 Icon?
 ._*
+
+config/config.json

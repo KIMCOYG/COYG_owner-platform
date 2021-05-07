@@ -15,11 +15,16 @@
     "concurrently": "^6.0.1",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "mysql": "^2.18.1",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0"
+=======
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+>>>>>>> 81f2aa05a06c2ca1a869845d8091769ec6d03e97
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
