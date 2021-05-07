@@ -5,11 +5,11 @@ import {BsChevronLeft} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 import Header from '../../component/HeaderOwner'
 
-const SecondHeader = ({props}) => {
+const SecondHeader = ({history}) => {
     return (
         <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
+            <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
             </button>
             <h4>가게 등록</h4>
         </Row>

@@ -6,10 +6,11 @@ import userData from "../../dummy/dummyDataUser";
 import Header from "../../component/HeaderCustomer";
 
 const SecondHeader = ({props}) => {
+      
     return (
         <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
+            <button onClick={() => window.history.back()} type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
             </button>
             {/* <Button onClick={() => window.history.back()}>◁</Button> */}
             {/* <Button>등록</Button> */}

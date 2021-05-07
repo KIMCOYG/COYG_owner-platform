@@ -29,13 +29,16 @@ import SecondHeader from "../component/SecondHeader";
     )
 }*/
 
-const OwnerEventDetailPageMobile = () => {
+const OwnerEventDetailPageMobile = ({history}) => {
     //TODO:2021.04.18 기획서에 따라서 페이지 제작. customer 상세와 제작이 겹치지 않게 주의 - sunbo
     return (
         <>
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
+                    <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+                        <BsChevronLeft className="text-dark" />
+                    </button>
                     <SecondHeader title="점심 할인 특가 이벤트" buttonName="수정" link="/mobile/owner/event/modify" />
                 </Row>
                 <Row>

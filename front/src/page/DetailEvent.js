@@ -14,7 +14,7 @@ const MidDiv = styled.div`
   font-size: 0.7rem;
 `;
 
-const DetailEvent = () => {
+const DetailEvent = ({history}) => {
   let eventName = '맥도날드 야탑점';
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const DetailEvent = () => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
+            <button onClick = {() => history.goBack()} type="button" className="btn btn-link border-dark">
               <BsChevronLeft className="text-dark" />
             </button>
           </div>

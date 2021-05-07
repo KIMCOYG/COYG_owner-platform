@@ -14,7 +14,10 @@ const postCodeStyle = {
   padding: '7px',
 };
 
-const PostSearch = () => {
+const PostSearch = ({history}) => {
+  const goBack = () => {
+    history.goBack();
+  }
   const handleComplete = (data) => {
     let fullAddress = data.address;
     let extraAddress = '';
@@ -39,7 +42,7 @@ const PostSearch = () => {
       <div className="mt-4">
         <div className="row">
           <div className="col-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
+            <button type="button" className="btn btn-link border-dark" onClick={goBack}>
               <BsChevronLeft className="text-dark" />
             </button>
           </div>

@@ -5,11 +5,11 @@ import Header from '../component/HeaderOwner'
 import data from '../dummy/dummyDataforOwner'
 
 
-const SecondHeader = ({props}) => {
+const SecondHeader = () => {
     return (
         <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
+            <button onClick={() => window.history.back()} type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
             </button>
             <h4>이벤트 수정</h4>
             {/*<Button onClick={() => document.getElementById('registEvent').submit()}>저장</Button>*/}

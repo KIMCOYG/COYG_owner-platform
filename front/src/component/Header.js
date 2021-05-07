@@ -3,7 +3,7 @@ import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../static/image/home.png';
 
-const Header = () => {
+const Header = ({history}) => {
   return (
     <Container className="mt-3">
       <Row>

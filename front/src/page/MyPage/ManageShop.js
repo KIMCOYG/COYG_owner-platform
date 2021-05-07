@@ -54,12 +54,15 @@ const Categories = (props) => {
 }
 
 
-const ManageShop = () => {
+const ManageShop = ({history}) => {
     return (
         <>
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
+                    <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+                        <BsChevronLeft className="text-dark" />
+                    </button>
                     <SecondHeader title="가게 관리" link="/owner/mypage/registshop" buttonName="추가"/>
                 </Row>
 
