@@ -12,6 +12,7 @@ import categoryRouter from "./routers/categoryRouter";
 import imageRouter from "./routers/imageRouter";
 import userRouter from "./routers/userRouter";
 import shopRouter from "./routers/shopRouter";
+import likeRouter from "./routers/likeRouter";
 
 // import routes from "./routes";
 // const express = require("express");
@@ -67,6 +68,7 @@ app.use(routes.category, categoryRouter);
 app.use(routes.image, imageRouter);
 app.use(routes.user, userRouter);
 app.use(routes.shop, shopRouter);
+app.use(routes.like, likeRouter);
 
 // 에러 처리 핸들러 필요
 
