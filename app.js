@@ -1,30 +1,31 @@
-// import express from "express";
-// import path from "path";
-// import logger from "morgan";
-// import cookieParser from "cookie-parser";
-// import session from "express-session";
-// import flash from "connect-flash";
-// import seq from "./models/index";
-// import categoryRouter from "./routers/categoryRouter";
-// import routes from "./routes";
-// const sequelize = seq.sequelize;
-const express = require("express");
-const path = require("path");
-const logger = require("morgan");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
-const flash = require("connect-flash");
-const sequelize = require("./models/index").sequelize;
-const routes = require("./routes");
-const categoryRouter = require("./routers/categoryRouter");
+import express from "express";
+import path from "path";
+import logger from "morgan";
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import flash from "connect-flash";
+import seq from "./models/index";
+const sequelize = seq.sequelize;
+import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
+import categoryRouter from "./routers/categoryRouter";
+import imageRouter from "./routers/imageRouter";
+
+// import routes from "./routes";
+// const express = require("express");
+// const path = require("path");
+// const logger = require("morgan");
+// const cookieParser = require("cookie-parser");
+// const session = require("express-session");
+// const flash = require("connect-flash");
+// const sequelize = require("./models/index").sequelize;
 // const Category = require("./models").Category;
 // const Event = require("./models").Event;
 // const Image = require("./models").Image;
 // const Like = require("./models").Like;
 // const Scrap = require("./models").Scrap;
 // const Shop = require("./models").Shop;
-const User = require("./models").User;
+// const User = require("./models").User;
 
 const PORT = 5000;
 
@@ -40,7 +41,7 @@ sequelize
   });
 
 app.use(logger("dev")); //요청 기록
-// app.use(express.static(path.join(__dirname, "public"))); //정적 파일 저장소, morgan 아래, 다른 미들웨어 위에 위치
+app.use(express.static(path.join(__dirname, "public"))); //정적 파일 저장소, morgan 아래, 다른 미들웨어 위에 위치
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); //false면 querystring, trye면 qs module
 app.use(cookieParser("secret code"));
@@ -57,23 +58,13 @@ app.use(
   })
 );
 app.use(flash());
-// app.use(routes.category, categoryRouter);
+
+// router
 app.use(routes.home, globalRouter);
+app.use(routes.category, categoryRouter);
+app.use(routes.image, imageRouter);
 
-app.get("/test", (req, res) => {
-  User.findAll()
-    .then((users) => {
-      res.send({ users });
-    })
-    .catch((err) => {
-      console.log(err);
-      next(err);
-    });
-});
-
-// app.get("/", (req, res) => {
-//   res.send("Hello Express!!");
-// });
+// 에러 처리 핸들러 필요
 
 app.set("port", process.env.PORT || PORT);
 app.listen(app.get("port"), () => {

@@ -1,16 +1,11 @@
-const express = require("express");
-const routes = require("../routes");
-// const getCategory = require("../controller/categoryController").getCategory;
+// const express = require("express");
+// const routes = require("../routes");
+import express from "express";
+import routes from "../routes";
+import { getCategories } from "../controller/categoryController";
 
 var categoryRouter = express.Router();
 
-// const hello = () => {
-//   console.log("hello");
-// };
+categoryRouter.get(routes.read, getCategories);
 
-categoryRouter.get(routes.category, function (req, res, next) {
-  console.log("asfasd");
-  next();
-});
-
-module.exports = categoryRouter;
+export default categoryRouter;
