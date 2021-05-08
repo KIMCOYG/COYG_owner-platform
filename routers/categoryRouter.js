@@ -4,8 +4,8 @@ import express from "express";
 import routes from "../routes";
 import { getCategories } from "../controller/categoryController";
 
-var categoryRouter = express.Router();
+const categoryRouter = express.Router();
 
-categoryRouter.get(routes.read, getCategories);
+categoryRouter.get(routes.readAll, getCategories);
 
 export default categoryRouter;

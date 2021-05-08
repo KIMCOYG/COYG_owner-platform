@@ -12,7 +12,25 @@ export const getImages = (req, res, next) => {
     });
 };
 
-export const postImage = (req, res, next) => {
+export const getImage = (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  Image.findOne({
+    where: {
+      image_id: id,
+    },
+  })
+    .then((list) => {
+      res.send(list);
+    })
+    .catch((err) => {
+      console.error(err);
+      next(err);
+    });
+};
+
+export const createImage = (req, res, next) => {
   Image.create({
     image_name: req.body.image_name,
     image_path: req.body.image_path,
@@ -21,6 +39,68 @@ export const postImage = (req, res, next) => {
     .then((result) => {
       console.log(result);
       res.status(201).json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      next(err);
+    });
+};
+
+export const updateImage = (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  Image.update(
+    {
+      image_name: req.body.image_name,
+      image_path: req.body.image_path,
+      removed_datetime: req.body.removed_datetime,
+      //   enabled: req.body.enabled,
+    },
+    {
+      where: { image_id: id },
+    }
+  )
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      next(err);
+    });
+};
+
+export const deleteImage = (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  Image.update(
+    {
+      removed_datetime: Date.now(),
+      enabled: false,
+    },
+    {
+      where: { image_id: id },
+    }
+  )
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      next(err);
+    });
+};
+
+export const realDeleteImage = (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  Image.destroy({
+    where: { image_id: id },
+  })
+    .then((list) => {
+      res.json(list);
     })
     .catch((err) => {
       console.error(err);

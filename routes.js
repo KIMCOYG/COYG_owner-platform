@@ -2,11 +2,12 @@ const home = "/";
 
 //db rest api
 
-//CURD
+//CRUD
 const create = "/create";
-const read = "/read";
-const update = "/update";
-const remove = "/delete";
+const readAll = "/read-all";
+const read = "/read/:id";
+const update = "/update/:id";
+const remove = "/delete/:id";
 
 // model
 const category = "/category";
@@ -20,9 +21,28 @@ const user = "/user";
 const routes = {
   home,
   create,
-  read,
-  update,
-  remove,
+  readAll,
+  read: (id) => {
+    if (id) {
+      return `/read/${id}`;
+    } else {
+      return read;
+    }
+  },
+  update: (id) => {
+    if (id) {
+      return `/update/${id}`;
+    } else {
+      return update;
+    }
+  },
+  remove: (id) => {
+    if (id) {
+      return `/delete/${id}`;
+    } else {
+      return remove;
+    }
+  },
   category,
   event,
   image,
