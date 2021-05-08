@@ -4,6 +4,8 @@ import { BsChevronLeft } from 'react-icons/bs';
 import ListPagination from '../../component/ListPagination';
 import Header from "../../component/HeaderCustomer";
 import EventListItem from "../../component/EventListItemScrap";
+import EventListItemScrap from "../../component/EventListItemScrap";
+import PostListContainer from '../../container/PostListContainer';
 
 const ScrapList = () => {
   return (
@@ -48,16 +50,7 @@ const ScrapList = () => {
           </div>
         </div>
         <div className="row mt-3">
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
+          <PostListContainer/>
         </div>
         <div className="d-flex justify-content-center mt-3">
           <ListPagination />

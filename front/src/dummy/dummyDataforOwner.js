@@ -3,7 +3,7 @@ const data = [
     {
         id:1,
         number:1,
-        thumbnail: "image1",
+        image: "logo",
         eventName: "eventname1",
         eventDetail: "eventDetail1",
         shopName: "shopName1",
@@ -15,7 +15,7 @@ const data = [
     {
         id:2,
         number:2,
-        thumbnail: "image2",
+        image: "logo",
         eventName: "eventname2",
         eventDetail: "eventDetail2",
         shopName: "shopName2",
@@ -27,7 +27,7 @@ const data = [
     {
         id:3,
         number:3,
-        thumbnail: "image3",
+        image: "logo",
         eventName: "eventname3",
         eventDetail: "eventDetail3",
         shopName: "shopName3",
