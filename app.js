@@ -10,6 +10,7 @@ import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
 import categoryRouter from "./routers/categoryRouter";
 import imageRouter from "./routers/imageRouter";
+import userRouter from "./routers/userRouter";
 
 // import routes from "./routes";
 // const express = require("express");
@@ -63,6 +64,7 @@ app.use(flash());
 app.use(routes.home, globalRouter);
 app.use(routes.category, categoryRouter);
 app.use(routes.image, imageRouter);
+app.use(routes.user, userRouter);
 
 // 에러 처리 핸들러 필요
 
