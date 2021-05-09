@@ -13,22 +13,7 @@ import imageRouter from "./routers/imageRouter";
 import userRouter from "./routers/userRouter";
 import shopRouter from "./routers/shopRouter";
 import likeRouter from "./routers/likeRouter";
-
-// import routes from "./routes";
-// const express = require("express");
-// const path = require("path");
-// const logger = require("morgan");
-// const cookieParser = require("cookie-parser");
-// const session = require("express-session");
-// const flash = require("connect-flash");
-// const sequelize = require("./models/index").sequelize;
-// const Category = require("./models").Category;
-// const Event = require("./models").Event;
-// const Image = require("./models").Image;
-// const Like = require("./models").Like;
-// const Scrap = require("./models").Scrap;
-// const Shop = require("./models").Shop;
-// const User = require("./models").User;
+import scrapRouter from "./routers/scrapRouter";
 
 const PORT = 5000;
 
@@ -69,6 +54,7 @@ app.use(routes.image, imageRouter);
 app.use(routes.user, userRouter);
 app.use(routes.shop, shopRouter);
 app.use(routes.like, likeRouter);
+app.use(routes.scrap, scrapRouter);
 
 // 에러 처리 핸들러 필요
 
