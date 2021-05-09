@@ -14,6 +14,7 @@ import userRouter from "./routers/userRouter";
 import shopRouter from "./routers/shopRouter";
 import likeRouter from "./routers/likeRouter";
 import scrapRouter from "./routers/scrapRouter";
+import eventRouter from "./routers/eventRouter";
 
 const PORT = 5000;
 
@@ -55,6 +56,7 @@ app.use(routes.user, userRouter);
 app.use(routes.shop, shopRouter);
 app.use(routes.like, likeRouter);
 app.use(routes.scrap, scrapRouter);
+app.use(routes.event, eventRouter);
 
 // 에러 처리 핸들러 필요
 
