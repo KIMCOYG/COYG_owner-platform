@@ -38,7 +38,9 @@ export const createImage = (req, res, next) => {
   })
     .then((result) => {
       console.log(result);
-      res.status(201).json(result);
+      req.body.image_id = result.dataValues.image_id;
+      console.log(`이미지 아이디: ${req.body.image_id}`);
+      next();
     })
     .catch((err) => {
       console.error(err);

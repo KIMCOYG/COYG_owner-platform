@@ -38,6 +38,7 @@ export const createScrap = (req, res, next) => {
   })
     .then((result) => {
       console.log(result);
+      console.log(`스크랩 아이디: ${result.dataValues.scrap_id}`);
       res.status(201).json(result);
     })
     .catch((err) => {
