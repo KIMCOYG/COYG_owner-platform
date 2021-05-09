@@ -1,4 +1,4 @@
-import React from 'react'
+import React,  {useState} from 'react'
 import {Button, Col, Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import {Link, Route} from 'react-router-dom';
@@ -7,6 +7,7 @@ import logo from '../static/image/chicken.jpg';
 import map from '../static/image/map.png';
 import '../static/css/OwnerEventDetailPageMobile.css'
 import SecondHeader from "../component/SecondHeader";
+import KakaoMap from "./KakaoMap"
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -30,6 +31,8 @@ import SecondHeader from "../component/SecondHeader";
 }*/
 
 const OwnerEventDetailPageMobile = ({history}) => {
+    const [markerPositions, setMarkerPositions] = useState([]);
+    const [mapSize, setMapSize] = useState([100, 400]);
     //TODO:2021.04.18 기획서에 따라서 페이지 제작. customer 상세와 제작이 겹치지 않게 주의 - sunbo
     return (
         <>
@@ -121,7 +124,7 @@ const OwnerEventDetailPageMobile = ({history}) => {
                             <h5>지도</h5>
                         </Row>
                         <Row>
-                            <img src={map} alt="" style={{width: '90%', heigh: '100%', marginBottom: '1em'}}/>
+                            <KakaoMap markerPositions={markerPositions} size={mapSize} />
                         </Row>
                     </Col>
                 </Row>

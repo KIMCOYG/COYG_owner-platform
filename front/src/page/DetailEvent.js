@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Header from '../component/Header';
 import styled from 'styled-components';
 import { BsHeart } from 'react-icons/bs';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Container } from 'react-bootstrap';
 import logo from '../static/image/chicken.jpg';
+import KakaoMap from "./KakaoMap"
 
 const MinDiv = styled.div`
   font-size: 0.5rem;
@@ -15,6 +16,10 @@ const MidDiv = styled.div`
 `;
 
 const DetailEvent = ({history}) => {
+
+  const [markerPositions, setMarkerPositions] = useState([]);
+  const [mapSize, setMapSize] = useState([100, 400]);
+
   let eventName = '맥도날드 야탑점';
 
   useEffect(() => {
@@ -121,7 +126,7 @@ const DetailEvent = ({history}) => {
             >
               MAP
             </div>
-            <div id="map" style={{ width: '100%', height: '400px' }}></div>
+            <KakaoMap markerPositions={markerPositions} size={mapSize} />
           </div>
         </div>
       </Container>
