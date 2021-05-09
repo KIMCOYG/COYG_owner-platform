@@ -17,7 +17,7 @@ const MidDiv = styled.div`
 
 const DetailEvent = ({history}) => {
 
-  const [markerPositions, setMarkerPositions] = useState([]);
+  const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
   const [mapSize, setMapSize] = useState([100, 400]);
 
   let eventName = '맥도날드 야탑점';
