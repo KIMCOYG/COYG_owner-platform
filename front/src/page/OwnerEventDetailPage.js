@@ -4,7 +4,7 @@ import React  from "react"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import Header from "../component/HeaderOwner"
 import { useEffect } from "react"
-import MapContainer from "./MapContainer"
+import MapContainer from "../container/MapContainer"
 
 
 

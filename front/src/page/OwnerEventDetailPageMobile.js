@@ -7,6 +7,7 @@ import logo from '../static/image/chicken.jpg';
 import map from '../static/image/map.png';
 import '../static/css/OwnerEventDetailPageMobile.css'
 import SecondHeader from "../component/SecondHeader";
+import MapContainer from "../container/MapContainer";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -33,6 +34,7 @@ const OwnerEventDetailPageMobile = ({match}) => {
     //TODO:2021.04.18 기획서에 따라서 페이지 제작. customer 상세와 제작이 겹치지 않게 주의 - sunbo
     const id = match.params;
     const eventId = parseInt(id, 10);
+    MapContainer()
     return (
         <>
             <Header/>
@@ -118,10 +120,11 @@ const OwnerEventDetailPageMobile = ({match}) => {
                     <Col>
                         <Row className="divi">
                             <h5>지도</h5>
+                            <MapContainer/>
                         </Row>
-                        <Row>
+                        {/*<Row>
                             <img src={map} alt="" style={{width: '90%', heigh: '100%', marginBottom: '1em'}}/>
-                        </Row>
+                        </Row>*/}
                     </Col>
                 </Row>
             </Container>

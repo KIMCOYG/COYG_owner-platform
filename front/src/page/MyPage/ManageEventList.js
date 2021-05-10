@@ -7,6 +7,7 @@ import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
 import EventListItem from '../../component/OwnerEventListItem';
 import SecondHeader from "../../component/SecondHeader";
+import PostListContainer from "../../container/PostListContainer";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -34,16 +35,7 @@ const ManageEventList = () => {
                     <SecondHeader title="이벤트 관리" link="/mobile/owner/event/regist" buttonName="추가" what='none' />
                 <div className="row">
                     <div className="row mt-3">
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
-                        <EventListItem/>
+                        <PostListContainer/>
                     </div>
                     <div className="d-flex justify-content-center mt-3">
                         <ListPagination/>
