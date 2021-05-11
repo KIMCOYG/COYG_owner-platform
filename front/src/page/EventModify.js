@@ -4,7 +4,6 @@ import {BsChevronLeft} from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
 import data from '../dummy/dummyDataforOwner'
 
-
 const SecondHeader = () => {
     return (
         <Row>

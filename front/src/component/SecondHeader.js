@@ -7,8 +7,8 @@ const SecondHeader = ({title, buttonName, link}) => {
     return (
         <Row>
             <Col xs={1}>
-                <button onClick={() => window.history.back()}>
-                    <BsChevronLeft className="text-dark"/>
+                <button onClick={() => window.history.back()} type="button" className="btn btn-link border-dark">
+                    <BsChevronLeft className="text-dark" />
                 </button>
             </Col>
             {/* <Button>등록</Button> */}

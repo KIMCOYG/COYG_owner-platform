@@ -39,9 +39,7 @@ const OwnerEventDetailPageMobile = ({history}) => {
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
-                    <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
-                        <BsChevronLeft className="text-dark" />
-                    </button>
+                    
                     <SecondHeader title="점심 할인 특가 이벤트" buttonName="수정" link="/mobile/owner/event/modify" />
                 </Row>
                 <Row>
