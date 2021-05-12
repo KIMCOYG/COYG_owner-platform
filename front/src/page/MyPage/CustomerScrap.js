@@ -5,11 +5,16 @@ import EventListItem from '../../component/EventListItemScrap';
 import ListPagination from '../../component/ListPagination';
 import Header from "../../component/HeaderCustomer";
 
-const SecondHeader = ({props}) => {
+const SecondHeader = ({history}) => {
+
+    const goBack = () => {
+        history.goBack();
+    };
+
     return (
         <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
+            <button onClick={goBack} type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
             </button>
             {/* <Button>등록</Button> */}
             <h4>스크랩</h4>

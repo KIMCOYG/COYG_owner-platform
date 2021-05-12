@@ -1,4 +1,4 @@
-import React from 'react'
+import React,  {useState} from 'react'
 import {Button, Col, Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import {Link, Route} from 'react-router-dom';
@@ -7,7 +7,7 @@ import logo from '../static/image/chicken.jpg';
 import map from '../static/image/map.png';
 import '../static/css/OwnerEventDetailPageMobile.css'
 import SecondHeader from "../component/SecondHeader";
-import MapContainer from "../container/MapContainer";
+import KakaoMap from "./KakaoMap"
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -30,16 +30,18 @@ import MapContainer from "../container/MapContainer";
     )
 }*/
 
-const OwnerEventDetailPageMobile = ({match}) => {
+const OwnerEventDetailPageMobile = ({history}) => {
+    const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
+    const [mapSize, setMapSize] = useState([100, 400]);
     //TODO:2021.04.18 기획서에 따라서 페이지 제작. customer 상세와 제작이 겹치지 않게 주의 - sunbo
-    const id = match.params;
-    const eventId = parseInt(id, 10);
-    MapContainer()
     return (
         <>
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
+                    <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+                        <BsChevronLeft className="text-dark" />
+                    </button>
                     <SecondHeader title="점심 할인 특가 이벤트" buttonName="수정" link="/mobile/owner/event/modify" />
                 </Row>
                 <Row>
@@ -120,11 +122,10 @@ const OwnerEventDetailPageMobile = ({match}) => {
                     <Col>
                         <Row className="divi">
                             <h5>지도</h5>
-                            <MapContainer/>
                         </Row>
-                        {/*<Row>
-                            <img src={map} alt="" style={{width: '90%', heigh: '100%', marginBottom: '1em'}}/>
-                        </Row>*/}
+                        <Row>
+                            <KakaoMap markerPositions={markerPositions} size={mapSize} />
+                        </Row>
                     </Col>
                 </Row>
             </Container>

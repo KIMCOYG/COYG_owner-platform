@@ -5,7 +5,7 @@ import myInfoIcon from '../../static/image/laptop.jpg';
 import scrapIcon from '../../static/image/vegetables.jpg';
 import HeaderOwner from "../../component/HeaderOwner";
 
-const OwnerMyPage = () => {
+const OwnerMyPage = ({history}) => {
   let customerName = '심선보';
   return (
     <>
@@ -13,8 +13,8 @@ const OwnerMyPage = () => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button onClick={() => window.history.back()}>
-              <BsChevronLeft className="text-dark" />
+            <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+                <BsChevronLeft className="text-dark" />
             </button>
           </div>
           <h5 className="ml-4 pt-1 font-weight-bold">{`${customerName}님 환영합니다.`}</h5>

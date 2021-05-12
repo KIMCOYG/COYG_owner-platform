@@ -6,7 +6,7 @@ import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 
-const Home = () => {
+const Home = ({history}) => {
   let address = '경기도 파주시 조리읍';
 
   return (

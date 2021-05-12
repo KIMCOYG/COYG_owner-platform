@@ -21,7 +21,7 @@ const Login = () => {
                 defaultChecked
               />
               <label className="form-check-label" htmlFor="inlineRadio1">
-                customer
+                고객
               </label>
             </div>
             <div className="form-check form-check-inline">
@@ -33,7 +33,7 @@ const Login = () => {
                 value="option2"
               />
               <label className="form-check-label" htmlFor="inlineRadio2">
-                ownser
+                업주
               </label>
             </div>
             <div className="form-check form-check-inline">
@@ -45,7 +45,7 @@ const Login = () => {
                 value="option2"
               />
               <label className="form-check-label" htmlFor="inlineRadio2">
-                admin
+                최고관리자
               </label>
             </div>
           </div>

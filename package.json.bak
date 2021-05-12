@@ -17,13 +17,16 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "mysql": "^2.18.1",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+=======
     "express-session": "^1.17.1",
     "morgan": "^1.10.0",
+>>>>>>> a87dd307b19a242f35ee1f49b014b8aafd7a396a
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   },

@@ -8,7 +8,6 @@ import data from '../dummy/dummyDataforOwner'
 
 
 
-
 const handleSubmit = (event) => {
     alert('A name was submitted: ');
     event.preventDefault();

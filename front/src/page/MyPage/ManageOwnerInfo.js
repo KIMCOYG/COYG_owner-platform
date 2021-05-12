@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom';
 import Header from '../../component/HeaderOwner';
 import userData from "../../dummy/dummyDataUser";
 
-const SecondHeader = ({props}) => {
+const SecondHeader = ({history}) => {
     return (
         <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
+            <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
             </button>
             {/* <Button onClick={() => window.history.back()}>◁</Button> */}
             {/* <Button>등록</Button> */}

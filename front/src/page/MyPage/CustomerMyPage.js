@@ -8,7 +8,10 @@ import Header from "../../component/HeaderCustomer";
 import myInfoIcon from '../../static/image/myInfo.png';
 import scrapIcon from '../../static/image/scrap.png';
 
-const CustomerMyPage = () => {
+const CustomerMyPage = ({history}) => {
+  const goBack = () => {
+    history.goBack();
+  };
   let customerName = '심선보';
   return (
     <>
@@ -16,8 +19,8 @@ const CustomerMyPage = () => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button onClick={() => window.history.back()}>
-              <BsChevronLeft className="text-dark"/>
+          <button onClick={goBack} type="button" className="btn btn-link border-dark">
+              <BsChevronLeft className="text-dark" />
             </button>
           </div>
           <h5 className="ml-4 pt-1 font-weight-bold">{`${customerName}님 환영합니다.`}</h5>

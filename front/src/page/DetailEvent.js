@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Header from '../component/Header';
 import styled from 'styled-components';
 import { BsHeart } from 'react-icons/bs';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Container } from 'react-bootstrap';
 import logo from '../static/image/chicken.jpg';
+import KakaoMap from "./KakaoMap"
 
 const MinDiv = styled.div`
   font-size: 0.5rem;
@@ -14,16 +15,14 @@ const MidDiv = styled.div`
   font-size: 0.7rem;
 `;
 
-const DetailEvent = () => {
+const DetailEvent = ({history}) => {
+
+  const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
+  const [mapSize, setMapSize] = useState([100, 400]);
+
   let eventName = '맥도날드 야탑점';
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src =
-      'https://dapi.kakao.com/v2/maps/sdk.js?appkey=db1c6fa0f0115d1e559a2e0c4d4c056e&autoload=false';
-    document.head.appendChild(script);
-  });
+
 
   return (
     <>
@@ -31,7 +30,7 @@ const DetailEvent = () => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
+            <button onClick = {() => history.goBack()} type="button" className="btn btn-link border-dark">
               <BsChevronLeft className="text-dark" />
             </button>
           </div>
@@ -121,7 +120,7 @@ const DetailEvent = () => {
             >
               MAP
             </div>
-            <div id="map" style={{ width: '100%', height: '400px' }}></div>
+            <KakaoMap markerPositions={markerPositions} size={mapSize} />
           </div>
         </div>
       </Container>

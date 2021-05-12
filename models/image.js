@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       created_datetime: {
         type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.NOW,
       },
       removed_datetime: {
         type: DataTypes.DATE,

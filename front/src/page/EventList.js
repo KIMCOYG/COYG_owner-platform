@@ -5,7 +5,10 @@ import Header from '../component/Header';
 import EventListItem from '../component/EventListItem';
 import ListPagination from '../component/ListPagination';
 
-const EventList = () => {
+const EventList = ({history}) => {
+  const goBack = () => {
+    history.goBack();
+  };
   let listName = '생활용품';
 
   return (
@@ -14,7 +17,7 @@ const EventList = () => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark">
+            <button onClick={goBack} type="button" className="btn btn-link border-dark">
               <BsChevronLeft className="text-dark" />
             </button>
           </div>
