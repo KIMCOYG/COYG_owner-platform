@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Header from '../../component/HeaderOwner';
 import userData from "../../dummy/dummyDataUser";
 
@@ -19,6 +19,7 @@ const SecondHeader = ({history}) => {
 }
 
 const ManageUserInfo = () => {
+    let history = useHistory();
     const userInfo = userData[0]
     return (
         <>
@@ -45,14 +46,14 @@ const ManageUserInfo = () => {
                         <Form.Control type="email" value={userInfo.email} disabled></Form.Control>
                     </Form.Group>
                     <Row>
-                        <Link to="/owner/mypage/changepw">비밀번호 변경</Link>
+                        <Button onClick={() => history.push("/owner/mypage/changepw")}>비밀번호 변경</Button>
                     </Row>
                     <Row>
                         <Button type="submit">적용하기</Button>
                     </Row>
                 </Form>
             </Container>
-            <Link to="owner/change-password"></Link>
+            <Button onClick={() => history.push("owner/change-password")}></Button>)
         </>
     )
 }
