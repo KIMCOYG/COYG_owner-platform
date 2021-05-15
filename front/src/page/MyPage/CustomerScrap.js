@@ -51,7 +51,6 @@ const SecondHeader = ({history}) => {
 
 
 const CustomerScrap = () => {
-    let listName = '생활용품';
 
     return (
         <>

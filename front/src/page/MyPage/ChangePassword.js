@@ -1,6 +1,5 @@
 import React from 'react'
 import {Button, Container, Form, Row} from 'react-bootstrap'
-import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../../component/HeaderOwner';
 import SecondHeader from "../../component/SecondHeader";
 

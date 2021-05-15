@@ -1,5 +1,5 @@
 import React,  {useState} from 'react'
-import {Button, Col, Container, Row} from 'react-bootstrap'
+import { Col, Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../component/HeaderOwner'
 import '../static/css/OwnerEventDetailPageMobile.css'

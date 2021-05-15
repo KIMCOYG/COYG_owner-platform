@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/Header';
 import EventListItem from '../component/EventListItem';

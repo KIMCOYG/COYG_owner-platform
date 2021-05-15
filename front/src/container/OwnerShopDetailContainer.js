@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getPostById, getPosts} from '../modules/posts';
-import EventListItemScrap from "../component/EventListItemScrap";
-import Home from "../component/Home";
-import EventDetail from "../component/EventDetail";
+import {getPostById} from '../modules/posts';
 import ShopDetail from "../component/ShopDetail";
 
 

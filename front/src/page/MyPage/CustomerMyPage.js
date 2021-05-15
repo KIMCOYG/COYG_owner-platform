@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from "../../component/HeaderCustomer";

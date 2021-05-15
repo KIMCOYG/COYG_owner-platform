@@ -16,7 +16,6 @@ const EvnetModify = () => {
     const url = window.location.href // 현재페이지 url 가져오기
     const current_id = url.split("/")[7] // 현재 페이지 url에서 id 값만 가져오기
 
-    const info = data[current_id - 1]
     return (
         <>
             <Header/>

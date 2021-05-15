@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsChevronLeft } from 'react-icons/bs';
 import { BiMap } from 'react-icons/bi';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import DaumPostcode from 'react-daum-postcode';
 import Header from '../component/Header';
 

@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import { Button } from 'bootstrap';
 import BtnCellRenderer from "../../component/BtnCellRenderer.js";
 import ListPagination from '../../component/ListPagination';
 

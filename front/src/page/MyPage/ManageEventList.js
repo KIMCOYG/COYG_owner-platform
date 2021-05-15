@@ -10,7 +10,6 @@ import PostListContainer from "../../container/PostListContainer";
 
 
 const ManageEventList = ({history}) => {
-    let listName = '치킨';
     return (
         <>
             <Header/>

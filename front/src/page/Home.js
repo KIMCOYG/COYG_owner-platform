@@ -1,11 +1,10 @@
 import React from 'react';
 import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
-import HomeContainer from "../container/HomeContainer";
 
 const Home = () => {
   let address = '경기도 파주시 조리읍';

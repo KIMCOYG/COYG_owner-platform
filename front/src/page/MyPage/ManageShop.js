@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {Button, Col, Container, Form, Row} from 'react-bootstrap'
-import {AiOutlineTeam} from 'react-icons/ai'
 import {BsChevronLeft} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 import Header from '../../component/HeaderOwner'

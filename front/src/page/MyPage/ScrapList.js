@@ -3,8 +3,6 @@ import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import ListPagination from '../../component/ListPagination';
 import Header from "../../component/HeaderCustomer";
-import EventListItem from "../../component/EventListItemScrap";
-import EventListItemScrap from "../../component/EventListItemScrap";
 import PostListContainer from '../../container/PostListContainer';
 
 const ScrapList = ({history}) => {

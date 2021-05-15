@@ -80,3 +80,15 @@ export default function posts(state = initialState, action){
 
     }
 }
+
+export default function post(state = initialState, action){
+    switch(action.type){
+        case GET_POST:
+        case GET_POST_SUCCESS:
+        case GET_POST_ERROR:
+            return getPostReducer(state, action)
+        default:
+            return state;
+
+    }
+}
