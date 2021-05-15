@@ -7,7 +7,8 @@ import EventDetail from "../component/EventDetail";
 import ShopDetail from "../component/ShopDetail";
 
 
-const OwnerEventDetail = (match) =>{
+const OwnerEventDetailContainer = (match) =>{
+    console.log(match)
     const {data, loading, error} = useSelector(state => state.posts.posts);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -23,4 +24,4 @@ const OwnerEventDetail = (match) =>{
     )
 
 }
-export default OwnerEventDetail
+export default OwnerEventDetailContainer
