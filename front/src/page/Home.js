@@ -1,29 +1,40 @@
 import React from 'react';
+<<<<<<< HEAD
 import {BiMap} from 'react-icons/bi';
 import {Container, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+=======
+import { BiMap } from 'react-icons/bi';
+import { Container, Button } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
+>>>>>>> bf0cca738037ca776e443cf31e3647b5ee342da0
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 import HomeContainer from "../container/HomeContainer";
 
-const Home = ({history}) => {
-    let address = '경기도 파주시 조리읍';
+const Home = () => {
+  let address = '경기도 파주시 조리읍';
+  let history = useHistory();
 
-    return (
-        <>
-            <Header/>
-            <Container>
-                <Link to="/post">
-                    <Button variant="light" className="border border-dark mt-3" block>
-                        <BiMap className="mr-3"/>
-                        {address}
-                    </Button>
-                </Link>
-                <Slider/>
-                {/* <CategoryButton className="col-1"/> */}
-                <HomeContainer/>
-                {/*<div className="mt-3">
+  return (
+    <>
+      <Header />
+      <Container>
+        {/* <Link to="/post"> */}
+        <Button
+          variant="light"
+          className="border border-dark mt-3"
+          block
+          onClick={() => history.push('/post')}
+        >
+          <BiMap className="mr-3" />
+          {address}
+        </Button>
+        {/* </Link> */}
+        <Slider />
+        {/* <CategoryButton className="col-1"/> */}
+        <div className="mt-3">
           <div className="d-flex mt-2">
             <CategoryButton name="좋아요" className="mr-3" />
             <CategoryButton name="가전제품" />

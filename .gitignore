@@ -3,6 +3,8 @@ package-lock.json
 front/node_modules/
 front/package-lock.json
 config
+.idea/
+
 .DS_Store*
 Icon?
 ._*

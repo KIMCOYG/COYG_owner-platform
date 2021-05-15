@@ -4,6 +4,9 @@ import logger from "morgan";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import flash from "connect-flash";
+import cors from "cors";
+import passport from "passport";
+import passportConfig from "./passport/index";
 import seq from "./models/index";
 const sequelize = seq.sequelize;
 import routes from "./routes";
@@ -17,8 +20,13 @@ import scrapRouter from "./routers/scrapRouter";
 import eventRouter from "./routers/eventRouter";
 
 const PORT = 5000;
-
+const corsOptions = {
+  origin: "http://localhost:3000", // 접근 권한 부여 도메인
+  credentials: true, //응답 헤더에 access-control-allow credentials 추가
+  optionSuccessStatus: 200, //응답상태 200으로 설정
+};
 const app = express();
+app.use(cors(corsOptions));
 
 sequelize
   .sync()
@@ -28,6 +36,7 @@ sequelize
   .catch((err) => {
     console.log("mysql error");
   });
+passportConfig(passport);
 
 app.use(logger("dev")); //요청 기록
 app.use(express.static(path.join(__dirname, "public"))); //정적 파일 저장소, morgan 아래, 다른 미들웨어 위에 위치
@@ -47,6 +56,8 @@ app.use(
   })
 );
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // router
 app.use(routes.home, globalRouter);
