@@ -7,12 +7,13 @@ import EventDetail from "../component/EventDetail";
 import ShopDetail from "../component/ShopDetail";
 
 
-const OwnerShopDetailContainer = (match) => {
-    console.log(match)
+const OwnerShopDetailContainer = (params) => {
+    const id = parseInt(params.id)
     const {data, loading, error} = useSelector(state => state.posts.posts);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPostById(match.id, 'shopDetail'));
+        //id 객체로 넘어와서 값을 전송하기위해 . 사용
+        dispatch(getPostById(id, 'shops'));
     }, [dispatch])
 
     if (loading) return '로딩중'
@@ -20,7 +21,7 @@ const OwnerShopDetailContainer = (match) => {
     if (!data) return null
     console.log('container    ', data)
     return (
-        <ShopDetail list={data}></ShopDetail>
+        <ShopDetail list={data}/>
     )
 
 }

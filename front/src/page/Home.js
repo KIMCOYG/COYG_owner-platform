@@ -1,13 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
-import {BiMap} from 'react-icons/bi';
-import {Container, Button} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-=======
 import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
->>>>>>> bf0cca738037ca776e443cf31e3647b5ee342da0
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';

@@ -1,15 +1,10 @@
 import React,  {useState} from 'react'
 import {Button, Col, Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
-import {Link, Route} from 'react-router-dom';
 import Header from '../component/HeaderOwner'
-import logo from '../static/image/chicken.jpg';
-import map from '../static/image/map.png';
 import '../static/css/OwnerEventDetailPageMobile.css'
 import SecondHeader from "../component/SecondHeader";
 import KakaoMap from "./KakaoMap"
-import EventDetail from "../component/EventDetail";
-import ShopDetail from "../component/ShopDetail";
 import OwnerEventDetailContainer from "../container/OwnerEventDetailContainer";
 import OwnerShopDetailContainer from "../container/OwnerShopDetailContainer";
 
@@ -34,10 +29,10 @@ import OwnerShopDetailContainer from "../container/OwnerShopDetailContainer";
     )
 }*/
 
-const OwnerEventDetailPageMobile = ({history}) => {
+const OwnerEventDetailPageMobile = ({history, match}) => {
     const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
     const [mapSize, setMapSize] = useState([100, 400]);
-    debugger
+    console.log("page", match.params.id)
     //TODO:2021.04.18 기획서에 따라서 페이지 제작. customer 상세와 제작이 겹치지 않게 주의 - sunbo
     return (
         <>
@@ -49,8 +44,8 @@ const OwnerEventDetailPageMobile = ({history}) => {
                     </button>
                     <SecondHeader title="점심 할인 특가 이벤트" buttonName="수정" link="/mobile/owner/event/modify" />
                 </Row>
-                <OwnerEventDetailContainer/>
-                <OwnerShopDetailContainer/>
+                <OwnerEventDetailContainer id={match.params.id}/>
+                <OwnerShopDetailContainer id ={match.params.id}/>
                 <Row className="section">
                     <Col>
                         <Row className="divi">

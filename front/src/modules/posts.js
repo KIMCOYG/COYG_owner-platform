@@ -45,17 +45,21 @@ const homeData = [
     return response.data;
 }*/
 
-export const getPostById = async (id) => {
+export const getPostById = async (id, pName) => {
+    console.log("posts", typeof id)
+
     let response;
-  /*  switch (pName){
-        case 'userinfo':
-            response = await axios.get(`http://localhost:5000/user/read/${id}`)
+    switch (pName){
+        case 'events':
+            response = await axios.get(`http://localhost:5000/event/read/${id}`)
             break
-        case 'eventScrap':
+        case 'shops':
             console.log("scrap")
+            response = await axios.get(`http://localhost:5000/shop/read/${id}`)
             break
-    }*/
-    response = await axios.get(`http://localhost:5000/user/read/${id}`)
+    }
+    // response = await axios.get(`http://localhost:5000/event/read/${id}`)
+    console.log(response.data)
     return response.data;
 }
 const initialState = {
