@@ -19,6 +19,7 @@ export const createPromiseThunk = (type, promiseCreator) => {
     
     }
 }
+
 const defaultIdSelector = param => param;
 export const createPromiseThunkById = (type, promiseCreator, idSelector = defaultIdSelector) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
