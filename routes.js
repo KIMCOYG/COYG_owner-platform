@@ -18,6 +18,11 @@ const scrap = "/scrap";
 const shop = "/shop";
 const user = "/user";
 
+//auth
+const profile = "/profile";
+const join = "/join";
+const login = "/login";
+
 const routes = {
   home,
   create,
@@ -50,6 +55,9 @@ const routes = {
   scrap,
   shop,
   user,
+  profile,
+  join,
+  login,
 };
 
 export default routes;
