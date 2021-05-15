@@ -1,6 +1,5 @@
 import React from 'react'
-import {Button, Col, Container, Form, Row} from 'react-bootstrap'
-import {BsChevronLeft} from 'react-icons/bs'
+import { Col, Container, Form} from 'react-bootstrap'
 import Header from '../component/HeaderOwner'
 import SecondHeader from '../component/SecondHeader'
 import data from '../dummy/dummyDataforOwner'

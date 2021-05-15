@@ -4,6 +4,7 @@ import {BsChevronLeft} from 'react-icons/bs';
 import {Link} from 'react-router-dom';
 import userData from "../../dummy/dummyDataUser";
 import Header from "../../component/HeaderCustomer";
+import UserContainer from "../../container/UserContainer";
 
 const SecondHeader = ({props}) => {
       
@@ -28,30 +29,7 @@ const ManageUserInfo = () => {
                 <Row className="col-xs-2 pl-3 text-center">
                     <SecondHeader/>
                 </Row>
-                <Form>
-                    <Form.Group>
-                        <Form.Label>이름</Form.Label>
-                        <Form.Control type="input" defaultValue={userInfo.name} onChange={(event) => {
-                            userInfo.name = event.target.value
-                        }}></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>전화번호</Form.Label>
-                        <Form.Control type="input" defaultValue={userInfo.phone} onChange={(event) => {
-                            userInfo.phone = event.target.value
-                        }}></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>이메일</Form.Label>
-                        <Form.Control type="email" value={userInfo.email} disabled></Form.Control>
-                    </Form.Group>
-                    <Row>
-                        <Link to="/owner/mypage/changepw">비밀번호 변경</Link>
-                    </Row>
-                    <Row>
-                        <Button type="submit">적용하기</Button>
-                    </Row>
-                </Form>
+                <UserContainer/>
             </Container>
             <Link to="owner/change-password"></Link>
         </>

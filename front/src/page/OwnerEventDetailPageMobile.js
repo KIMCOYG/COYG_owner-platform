@@ -8,6 +8,10 @@ import map from '../static/image/map.png';
 import '../static/css/OwnerEventDetailPageMobile.css'
 import SecondHeader from "../component/SecondHeader";
 import KakaoMap from "./KakaoMap"
+import EventDetail from "../component/EventDetail";
+import ShopDetail from "../component/ShopDetail";
+import OwnerEventDetailContainer from "../container/OwnerEventDetailContainer";
+import OwnerShopDetailContainer from "../container/OwnerShopDetailContainer";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -33,6 +37,7 @@ import KakaoMap from "./KakaoMap"
 const OwnerEventDetailPageMobile = ({history}) => {
     const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
     const [mapSize, setMapSize] = useState([100, 400]);
+    debugger
     //TODO:2021.04.18 기획서에 따라서 페이지 제작. customer 상세와 제작이 겹치지 않게 주의 - sunbo
     return (
         <>
@@ -44,40 +49,8 @@ const OwnerEventDetailPageMobile = ({history}) => {
                     </button>
                     <SecondHeader title="점심 할인 특가 이벤트" buttonName="수정" link="/mobile/owner/event/modify" />
                 </Row>
-                <Row>
-                    <div>
-                        <img
-                            src={logo}
-                            alt=""
-                            style={{width: '100%', heigh: '100%', marginTop: '1em'}}
-                        />
-                    </div>
-                </Row>
-                <Row className="section">
-                    <Col><small>*사진을 클릭시 확대</small></Col>
-                    <Col xs={2}><small>1/2</small></Col>
-                </Row>
-                <Row className="section">
-                    <Col>
-                        <Row className="divi">
-                            <h5>이벤트</h5>
-                        </Row>
-                        <Row>
-                            <Col xs={4}>기간</Col>
-                            <Col xs={8}>2021/04/03 ~ 2021/04/09</Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                상세
-                                <Row>
-                                    <Col>
-                                        점심에 치킨이 할인 됩니다
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
+                <OwnerEventDetailContainer/>
+                <OwnerShopDetailContainer/>
                 <Row className="section">
                     <Col>
                         <Row className="divi">

@@ -1,27 +1,29 @@
 import React from 'react';
-import { BiMap } from 'react-icons/bi';
-import { Container, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {BiMap} from 'react-icons/bi';
+import {Container, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
+import HomeContainer from "../container/HomeContainer";
 
 const Home = ({history}) => {
-  let address = '경기도 파주시 조리읍';
+    let address = '경기도 파주시 조리읍';
 
-  return (
-    <>
-      <Header />
-      <Container>
-        <Link to="/post">
-          <Button variant="light" className="border border-dark mt-3" block>
-            <BiMap className="mr-3" />
-            {address}
-          </Button>
-        </Link>
-        <Slider />
-        {/* <CategoryButton className="col-1"/> */}
-        <div className="mt-3">
+    return (
+        <>
+            <Header/>
+            <Container>
+                <Link to="/post">
+                    <Button variant="light" className="border border-dark mt-3" block>
+                        <BiMap className="mr-3"/>
+                        {address}
+                    </Button>
+                </Link>
+                <Slider/>
+                {/* <CategoryButton className="col-1"/> */}
+                <HomeContainer/>
+                {/*<div className="mt-3">
           <div className="d-flex mt-2">
             <CategoryButton name="좋아요" className="mr-3" />
             <CategoryButton name="가전제품" />
@@ -46,10 +48,10 @@ const Home = ({history}) => {
             <CategoryButton name="휴대폰" />
             <CategoryButton name="햄버거" />
           </div>
-        </div>
-      </Container>
-    </>
-  );
+        </div>*/}
+            </Container>
+        </>
+    );
 };
 
 export default Home;

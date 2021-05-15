@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../component/Header';
 import styled from 'styled-components';
 import { BsHeart } from 'react-icons/bs';
