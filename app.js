@@ -4,6 +4,8 @@ import logger from "morgan";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import flash from "connect-flash";
+import passport from "passport";
+import passportConfig from "./passport/index";
 import seq from "./models/index";
 const sequelize = seq.sequelize;
 import routes from "./routes";
@@ -28,6 +30,7 @@ sequelize
   .catch((err) => {
     console.log("mysql error");
   });
+passportConfig(passport);
 
 app.use(logger("dev")); //요청 기록
 app.use(express.static(path.join(__dirname, "public"))); //정적 파일 저장소, morgan 아래, 다른 미들웨어 위에 위치
@@ -47,6 +50,8 @@ app.use(
   })
 );
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // router
 app.use(routes.home, globalRouter);

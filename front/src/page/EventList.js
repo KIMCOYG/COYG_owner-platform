@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/Header';
 import EventListItem from '../component/EventListItem';
 import ListPagination from '../component/ListPagination';
 
-const EventList = ({history}) => {
+const EventList = ({ history }) => {
+  // let history = useHistory();
+
   const goBack = () => {
     history.goBack();
   };
@@ -17,7 +20,11 @@ const EventList = ({history}) => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button onClick={goBack} type="button" className="btn btn-link border-dark">
+            <button
+              onClick={goBack}
+              type="button"
+              className="btn btn-link border-dark"
+            >
               <BsChevronLeft className="text-dark" />
             </button>
           </div>

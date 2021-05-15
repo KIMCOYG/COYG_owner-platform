@@ -1,24 +1,30 @@
 import React from 'react';
 import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 
-const Home = ({history}) => {
+const Home = () => {
   let address = '경기도 파주시 조리읍';
+  let history = useHistory();
 
   return (
     <>
       <Header />
       <Container>
-        <Link to="/post">
-          <Button variant="light" className="border border-dark mt-3" block>
-            <BiMap className="mr-3" />
-            {address}
-          </Button>
-        </Link>
+        {/* <Link to="/post"> */}
+        <Button
+          variant="light"
+          className="border border-dark mt-3"
+          block
+          onClick={() => history.push('/post')}
+        >
+          <BiMap className="mr-3" />
+          {address}
+        </Button>
+        {/* </Link> */}
         <Slider />
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3">
