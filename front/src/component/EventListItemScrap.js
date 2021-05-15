@@ -9,7 +9,7 @@ const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
 
-const EventListItemScrap = ({lists}) => {
+const EventListItemScrap = ({history, lists}) => {
     return (
         <>
             <Link to="/event/detail">
@@ -18,7 +18,7 @@ const EventListItemScrap = ({lists}) => {
                         <div className="row">
                             <ul>
                                 {lists.map(e => (
-                                    <div>
+                                    <div onClick={() => history.push(`/event/detail`)}>
                                         <div className="col-4">
                                             <img
                                                 src={logo}
