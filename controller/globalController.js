@@ -2,6 +2,7 @@ import models from "../models";
 const Category = models.Category;
 const Image = models.Image;
 const Event = models.Event;
+const Shop = models.Shop;
 
 export const hello = (req, res, next) => {
   res.send("sfsdfsdf");
@@ -33,6 +34,23 @@ export const getCategoryList = async (req, res, next) => {
   try {
     const result = await Event.findAll({
       where: { category_id: id },
+    });
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 이벤트 상세 조회
+export const getDetailEvent = async (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const result = await Event.findOne({
+      where: { event_id: id },
+      include: [Image, Shop],
     });
     res.send(result);
   } catch (err) {

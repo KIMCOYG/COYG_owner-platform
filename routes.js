@@ -31,6 +31,9 @@ const cusPwUpdate = "/mypage/customer/:id/update/password";
 //category
 const categoryList = "/category/:id/list";
 
+//detail event
+const detailEvent = "/event/:id/detail";
+
 const test = "/test";
 
 const routes = {
@@ -87,6 +90,13 @@ const routes = {
       return `/category/${id}/list`;
     } else {
       return categoryList;
+    }
+  },
+  detailEvent: (id) => {
+    if (id) {
+      return `/event/:id/detail`;
+    } else {
+      return detailEvent;
     }
   },
   test,
