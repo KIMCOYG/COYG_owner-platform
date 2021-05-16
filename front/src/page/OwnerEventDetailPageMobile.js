@@ -44,7 +44,7 @@ const OwnerEventDetailPageMobile = ({history}) => {
                 </Row>
                 <Row>
                     <div>
-                        <img
+                        <img onClick={()=>window.open(logo)} //확대
                             src={logo}
                             alt=""
                             style={{width: '100%', heigh: '100%', marginTop: '1em'}}
