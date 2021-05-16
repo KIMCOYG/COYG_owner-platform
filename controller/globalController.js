@@ -1,6 +1,7 @@
 import models from "../models";
 const Category = models.Category;
 const Image = models.Image;
+const Event = models.Event;
 
 export const hello = (req, res, next) => {
   res.send("sfsdfsdf");
@@ -11,13 +12,40 @@ export const HomeBanner = (req, res, next) => {
   //현재 날짜, 위치, 이벤트 정보 비교 후 이미지 가져오기
 };
 
-//카테고리 리스트 조회
-export const getCategoryList = async (req, res, next) => {
+// 홈 화면 카테고리 이미지 조회
+export const getCategoryImage = async (req, res, next) => {
   try {
     const result = await Category.findAll({ include: Image });
     if (result) {
       res.send(result);
     }
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 카테고리 리스트 정보 조회
+export const getCategoryList = async (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const result = await Event.findAll({
+      where: { category_id: id },
+    });
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+//test
+export const getEventList = async (req, res, next) => {
+  try {
+    const result = await Event.findAll({ include: Image });
+    res.send(result);
   } catch (err) {
     console.log(err);
     next(err);

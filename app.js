@@ -34,7 +34,7 @@ sequelize
     console.log("mysql success");
   })
   .catch((err) => {
-    console.log("mysql error");
+    console.log(err);
   });
 passportConfig(passport);
 

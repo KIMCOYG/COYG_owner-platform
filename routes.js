@@ -28,6 +28,11 @@ const login = "/login";
 const cusUpdate = "/mypage/customer/:id/update";
 const cusPwUpdate = "/mypage/customer/:id/update/password";
 
+//category
+const categoryList = "/category/:id/list";
+
+const test = "/test";
+
 const routes = {
   home,
   create,
@@ -77,6 +82,14 @@ const routes = {
       return cusPwUpdate;
     }
   },
+  categoryList: (id) => {
+    if (id) {
+      return `/category/${id}/list`;
+    } else {
+      return categoryList;
+    }
+  },
+  test,
 };
 
 export default routes;

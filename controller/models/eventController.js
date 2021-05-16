@@ -38,6 +38,7 @@ export const createEvent = (req, res, next) => {
     event_content: req.body.event_content,
     shop_id: req.body.shop_id,
     image_id: req.body.image_id,
+    category_id: req.body.category_id,
     enabled: true,
   })
     .then((result) => {
@@ -61,6 +62,7 @@ export const updateEvent = (req, res, next) => {
       event_content: req.body.event_content,
       shop_id: req.body.shop_id,
       image_id: req.body.image_id,
+      category_id: req.body.category_id,
       updated_datetime: req.body.updated_datetime,
       //   enabled: req.body.enabled,
     },
