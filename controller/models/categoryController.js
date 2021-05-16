@@ -1,24 +1,24 @@
-import models from "../models";
-const User = models.User;
+import models from "../../models";
+const Category = models.Category;
 
-export const getUsers = (req, res, next) => {
-  User.findAll()
+export const getCategories = (req, res, next) => {
+  Category.findAll()
     .then((list) => {
       res.send(list);
     })
     .catch((err) => {
-      console.err(err);
+      console.error(err);
       next(err);
     });
 };
 
-export const getUser = (req, res, next) => {
+export const getCategory = (req, res, next) => {
   const {
     params: { id },
   } = req;
-  User.findOne({
+  Category.findOne({
     where: {
-      user_id: id,
+      category_id: id,
     },
   })
     .then((list) => {
@@ -30,13 +30,10 @@ export const getUser = (req, res, next) => {
     });
 };
 
-export const createUser = (req, res, next) => {
-  User.create({
-    email: req.body.email,
-    password: req.body.password, //암호화 필요
+export const createCategory = (req, res, next) => {
+  Category.create({
     name: req.body.name,
-    phone: req.body.phone,
-    role: req.body.role,
+    image_id: req.body.image_id,
     enabled: true,
   })
     .then((result) => {
@@ -44,24 +41,24 @@ export const createUser = (req, res, next) => {
       res.status(201).json(result);
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       next(err);
     });
 };
 
-export const updateUser = (req, res, next) => {
+export const updateCategory = (req, res, next) => {
   const {
     params: { id },
   } = req;
-  User.update(
+  Category.update(
     {
-      password: req.body.password, //암호화 필요
       name: req.body.name,
-      phone: req.body.phone,
+      image_id: req.body.image_id,
       updated_datetime: Date.now(),
+      //   enabled: req.body.enabled,
     },
     {
-      where: { user_id: id },
+      where: { category_id: id },
     }
   )
     .then((result) => {
@@ -73,17 +70,17 @@ export const updateUser = (req, res, next) => {
     });
 };
 
-export const deleteUser = (req, res, next) => {
+export const deleteCategory = (req, res, next) => {
   const {
     params: { id },
   } = req;
-  User.update(
+  Scrap.update(
     {
       removed_datetime: Date.now(),
       enabled: false,
     },
     {
-      where: { user_id: id },
+      where: { category_id: id },
     }
   )
     .then((result) => {

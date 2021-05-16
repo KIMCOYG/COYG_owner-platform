@@ -1,12 +1,12 @@
 import express from "express";
-import routes from "../routes";
+import routes from "../../routes";
 import {
   createImage,
   deleteImage,
   getImage,
   getImages,
   updateImage,
-} from "../controller/imageController";
+} from "../../controller/models/imageController";
 
 const imageRouter = express.Router();
 

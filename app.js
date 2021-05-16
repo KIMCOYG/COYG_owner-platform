@@ -11,13 +11,13 @@ import seq from "./models/index";
 const sequelize = seq.sequelize;
 import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
-import categoryRouter from "./routers/categoryRouter";
-import imageRouter from "./routers/imageRouter";
-import userRouter from "./routers/userRouter";
-import shopRouter from "./routers/shopRouter";
-import likeRouter from "./routers/likeRouter";
-import scrapRouter from "./routers/scrapRouter";
-import eventRouter from "./routers/eventRouter";
+import categoryRouter from "./routers/models/categoryRouter";
+import imageRouter from "./routers/models/imageRouter";
+import userRouter from "./routers/models/userRouter";
+import shopRouter from "./routers/models/shopRouter";
+import likeRouter from "./routers/models/likeRouter";
+import scrapRouter from "./routers/models/scrapRouter";
+import eventRouter from "./routers/models/eventRouter";
 
 const PORT = 5000;
 const corsOptions = {
