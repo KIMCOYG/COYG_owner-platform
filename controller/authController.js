@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import passport from "passport";
 import models from "../models";
 const User = models.User;
+const Shop = models.Shop;
 
 export const getProfile = (req, res, next) => {
   res.send({
@@ -10,7 +11,27 @@ export const getProfile = (req, res, next) => {
 };
 
 export const postJoin = async (req, res, next) => {
-  const { email, password, name, phone, role } = req.body;
+  const {
+    email,
+    password,
+    name,
+    phone,
+    role,
+    shop_name,
+    tel,
+    register_number,
+    start_time,
+    end_time,
+    holiday,
+    shop_content,
+    zonecode,
+    basic_address,
+    road_address,
+    detail_address,
+    latitude,
+    longitude,
+    category_id,
+  } = req.body;
   try {
     const exUser = await User.findOne({ where: { email } });
     if (exUser) {
@@ -18,7 +39,7 @@ export const postJoin = async (req, res, next) => {
       return res.send({ message: "가입된 이메일입니다." });
     }
     const hash = await bcrypt.hash(password, 12);
-    const result = await User.create({
+    const userResult = await User.create({
       email,
       password: hash,
       name,
@@ -26,7 +47,26 @@ export const postJoin = async (req, res, next) => {
       role,
       enabled: true,
     });
-    return res.send({ result, message: hash });
+    const shopResult = await Shop.create({
+      name: shop_name,
+      tel,
+      register_number,
+      start_time,
+      end_time,
+      holiday,
+      shop_content,
+      zonecode,
+      basic_address,
+      road_address,
+      detail_address,
+      latitude,
+      longitude,
+      category_id,
+      user_id: userResult.dataValues.user_id,
+      enabled: true,
+    });
+
+    return res.send({ shopResult, userResult, message: hash });
   } catch (error) {
     console.log(error);
     return next(error);
