@@ -30,6 +30,23 @@ db.Scrap = require("./scrap")(sequelize, Sequelize);
 db.Shop = require("./shop")(sequelize, Sequelize);
 db.User = require("./user")(sequelize, Sequelize);
 
+// Image : Category => 1:1
+db.Image.hasOne(db.Category, { foreignKey: "image_id", sourceKey: "image_id" });
+db.Category.belongsTo(db.Image, {
+  foreignKey: "image_id",
+  sourceKey: "image_id",
+});
+
+// Event : Image => 1:N
+db.Event.hasMany(db.Image, { foreignKey: "image_id", sourceKey: "image_id" });
+db.Image.belongsTo(db.Event, { foreignKey: "image_id", targetKey: "image_id" });
+
+// Shop : Event => 1:N
+db.Shop.hasMany(db.Event, { foreignKey: "shop_id", sourceKey: "shop_id" });
+db.Event.belongsTo(db.Shop, { foreignKey: "shop_id", targetKey: "shop_id" });
+
+//
+
 module.exports = db;
 
 /*let sequelize;

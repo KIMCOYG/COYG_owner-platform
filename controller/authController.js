@@ -10,6 +10,7 @@ export const getProfile = (req, res, next) => {
   });
 };
 
+//회원가입
 export const postJoin = async (req, res, next) => {
   const {
     email,
@@ -93,7 +94,7 @@ export const localLogin = async (email, password, done) => {
   }
 };
 
-//globalRouter
+//globalRouter 로그인
 export const postLogin = async (req, res, next) => {
   passport.authenticate("local", (authError, user, info) => {
     if (authError) {
