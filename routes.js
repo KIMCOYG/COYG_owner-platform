@@ -23,6 +23,11 @@ const profile = "/profile";
 const join = "/join";
 const login = "/login";
 
+//mypage
+//customer
+const cusUpdate = "/mypage/customer/:id/update";
+const cusPwUpdate = "/mypage/customer/:id/update/password";
+
 const routes = {
   home,
   create,
@@ -58,6 +63,20 @@ const routes = {
   profile,
   join,
   login,
+  cusUpdate: (id) => {
+    if (id) {
+      return `/mypage/customer/${id}/update`;
+    } else {
+      return cusUpdate;
+    }
+  },
+  cusPwUpdate: (id) => {
+    if (id) {
+      return `/mypage/customer/${id}/update/password`;
+    } else {
+      return cusPwUpdate;
+    }
+  },
 };
 
 export default routes;
