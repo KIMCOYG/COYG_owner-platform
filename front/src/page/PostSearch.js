@@ -8,6 +8,7 @@ import $ from'jquery';
 import Geocode from "react-geocode";
 
 Geocode.setApiKey("AIzaSyCNDPEwEVKChg2oF0Yzb7ttIBmiM-pl-NQ");
+Geocode.setLanguage('ko')
 Geocode.enableDebug();
 
 const postCodeStyle = {
@@ -45,7 +46,7 @@ const PostSearch = ({history}) => {
     Geocode.fromLatLng(lat, lon).then(
       response => {
         const address = response.results[0].formatted_address;
-        console.log(address);
+        alert(address+"\n로 설정되었습니다.")
         return address;
       },
       error => {
