@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import { Op } from "sequelize";
 import models from "../models";
 const User = models.User;
 const Scrap = models.Scrap;
@@ -50,16 +51,32 @@ export const updateUserPw = async (req, res, next) => {
   }
 };
 
+// 개선 필요
 export const scrapList = async (req, res, next) => {
   const {
     params: { id },
   } = req;
   try {
-    const scrapList = await Scrap.findAll({
+    let events = await Scrap.findAll({
       where: { user_id: id },
-      include: [User, Event],
+      attributes: [["event_id", "event_id"]],
+      raw: true,
     });
-    res.send(scrapList);
+    events = events.map((i) => i.event_id);
+    console.log(events);
+
+    const result = await Event.findAll({
+      where: {
+        event_id: {
+          [Op.or]: events,
+        },
+      },
+      order: [["likes_count", "DESC"]],
+      raw: true,
+      // limit: 10,
+      // offset: (page - 1) * 10,
+    });
+    res.send({ result });
   } catch (err) {
     console.log(err);
     next(err);
