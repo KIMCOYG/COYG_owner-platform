@@ -99,6 +99,46 @@ db.Shop.belongsTo(db.User, {
   targetKey: "user_id",
 });
 
+// User : Like => 1:N
+db.User.hasMany(db.Like, {
+  foreignKey: "user_id",
+  sourceKey: "user_id",
+});
+db.Like.belongsTo(db.User, {
+  foreignKey: "user_id",
+  targetKey: "user_id",
+});
+
+// Event : Like => 1:N
+db.Event.hasMany(db.Like, {
+  foreignKey: "event_id",
+  sourceKey: "event_id",
+});
+db.Like.belongsTo(db.Event, {
+  foreignKey: "event_id",
+  targetKey: "event_id",
+});
+
+// User : Scrap => 1:N
+db.User.hasMany(db.Scrap, {
+  foreignKey: "user_id",
+  sourceKey: "user_id",
+});
+db.Scrap.belongsTo(db.User, {
+  foreignKey: "user_id",
+  targetKey: "user_id",
+});
+
+// Event : Scrap => 1:N
+db.Event.hasMany(db.Scrap, {
+  foreignKey: "event_id",
+  sourceKey: "event_id",
+});
+db.Scrap.belongsTo(db.Event, {
+  foreignKey: "event_id",
+  targetKey: "event_id",
+});
+
 // constraints: false,
 //   allowNull: true,
 //   defaultValue: null,
