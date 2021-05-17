@@ -19,6 +19,8 @@ import shopRouter from "./routers/models/shopRouter";
 import likeRouter from "./routers/models/likeRouter";
 import scrapRouter from "./routers/models/scrapRouter";
 import eventRouter from "./routers/models/eventRouter";
+import postImageRouter from "./routers/postImageRouter";
+import { mkFolder } from "./controller/postImageController";
 
 const PORT = 5000;
 const corsOptions = {
@@ -70,6 +72,7 @@ app.use(routes.shop, shopRouter);
 app.use(routes.like, likeRouter);
 app.use(routes.scrap, scrapRouter);
 app.use(routes.event, eventRouter);
+app.use(routes.post, mkFolder, postImageRouter);
 
 // 에러 처리 핸들러 필요
 

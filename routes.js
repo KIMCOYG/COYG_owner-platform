@@ -41,6 +41,9 @@ const categoryList = "/category/:id/list";
 //detail event
 const detailEvent = "/event/:id/detail";
 
+// post image
+const post = "/post";
+
 const test = "/test";
 
 const routes = {
@@ -136,6 +139,7 @@ const routes = {
       return eventList;
     }
   },
+  post,
 };
 
 export default routes;
