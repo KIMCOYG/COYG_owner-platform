@@ -4,8 +4,8 @@ import {
   deleteScrap,
   getScrap,
   getScraps,
-} from "../controller/scrapController";
-import routes from "../routes";
+} from "../../controller/models/scrapController";
+import routes from "../../routes";
 
 const scrapRouter = express.Router();
 

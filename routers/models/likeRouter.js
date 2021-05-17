@@ -4,8 +4,8 @@ import {
   getLike,
   getLikes,
   realDeleteLike,
-} from "../controller/likeController";
-import routes from "../routes";
+} from "../../controller/models/likeController";
+import routes from "../../routes";
 
 const likeRouter = express.Router();
 
