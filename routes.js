@@ -26,6 +26,7 @@ const login = "/login";
 //mypage
 const cusUpdate = "/mypage/:id/update";
 const cusPwUpdate = "/mypage/:id/update/password";
+const scrapList = "/scrap/:id/list";
 
 //owner
 const owner = "/owner";
@@ -140,6 +141,13 @@ const routes = {
     }
   },
   post,
+  scrapList: (id) => {
+    if (id) {
+      return `/scrap/${id}/list`;
+    } else {
+      return scrapList;
+    }
+  },
 };
 
 export default routes;

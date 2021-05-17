@@ -7,7 +7,11 @@ import {
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
 import { getProfile, postJoin, postLogin } from "../controller/authController";
-import { updateUserData, updateUserPw } from "../controller/myPageController";
+import {
+  scrapList,
+  updateUserData,
+  updateUserPw,
+} from "../controller/myPageController";
 
 const globalRouter = express.Router();
 
@@ -21,6 +25,9 @@ globalRouter.post(routes.login, postLogin);
 // Customer MyPage
 globalRouter.post(routes.cusUpdate(), updateUserData);
 globalRouter.post(routes.cusPwUpdate(), updateUserPw);
+
+// 스크랩 리스트
+globalRouter.get(routes.scrapList(), scrapList);
 
 // Category List
 globalRouter.get(routes.categoryList(), getCategoryList);

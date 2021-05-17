@@ -1,6 +1,8 @@
 import bcrypt from "bcrypt";
 import models from "../models";
 const User = models.User;
+const Scrap = models.Scrap;
+const Event = models.Event;
 
 //customer
 export const updateUserData = async (req, res, next) => {
@@ -42,6 +44,22 @@ export const updateUserPw = async (req, res, next) => {
       }
     );
     res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+export const scrapList = async (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const scrapList = await Scrap.findAll({
+      where: { user_id: id },
+      include: [User, Event],
+    });
+    res.send(scrapList);
   } catch (err) {
     console.log(err);
     next(err);
