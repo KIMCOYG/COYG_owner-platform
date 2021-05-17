@@ -11,6 +11,7 @@ import seq from "./models/index";
 const sequelize = seq.sequelize;
 import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
+import ownerRouter from "./routers/ownerRouter";
 import categoryRouter from "./routers/models/categoryRouter";
 import imageRouter from "./routers/models/imageRouter";
 import userRouter from "./routers/models/userRouter";
@@ -61,6 +62,7 @@ app.use(passport.session());
 
 // router
 app.use(routes.home, globalRouter);
+app.use(routes.owner, ownerRouter);
 app.use(routes.category, categoryRouter);
 app.use(routes.image, imageRouter);
 app.use(routes.user, userRouter);

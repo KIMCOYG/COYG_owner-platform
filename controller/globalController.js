@@ -58,14 +58,3 @@ export const getDetailEvent = async (req, res, next) => {
     next(err);
   }
 };
-
-//test
-export const getEventList = async (req, res, next) => {
-  try {
-    const result = await Event.findAll({ include: Image });
-    res.send(result);
-  } catch (err) {
-    console.log(err);
-    next(err);
-  }
-};

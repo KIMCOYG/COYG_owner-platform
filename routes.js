@@ -24,9 +24,16 @@ const join = "/join";
 const login = "/login";
 
 //mypage
-//customer
-const cusUpdate = "/mypage/customer/:id/update";
-const cusPwUpdate = "/mypage/customer/:id/update/password";
+const cusUpdate = "/mypage/:id/update";
+const cusPwUpdate = "/mypage/:id/update/password";
+
+//owner
+const owner = "/owner";
+const shopList = "/shop/:id/list";
+const updateShop = "/shop/:id/update";
+const createEvent = "/event/create";
+const updateEvent = "/event/:id/update";
+const eventList = "/event/:id/list";
 
 //category
 const categoryList = "/category/:id/list";
@@ -73,14 +80,14 @@ const routes = {
   login,
   cusUpdate: (id) => {
     if (id) {
-      return `/mypage/customer/${id}/update`;
+      return `/mypage/${id}/update`;
     } else {
       return cusUpdate;
     }
   },
   cusPwUpdate: (id) => {
     if (id) {
-      return `/mypage/customer/${id}/update/password`;
+      return `/mypage/${id}/update/password`;
     } else {
       return cusPwUpdate;
     }
@@ -94,12 +101,41 @@ const routes = {
   },
   detailEvent: (id) => {
     if (id) {
-      return `/event/:id/detail`;
+      return `/event/${id}/detail`;
     } else {
       return detailEvent;
     }
   },
-  test,
+  owner,
+  shopList: (id) => {
+    if (id) {
+      return `/shop/${id}/list`;
+    } else {
+      return shopList;
+    }
+  },
+  updateShop: (id) => {
+    if (id) {
+      return `/shop/${id}/update`;
+    } else {
+      return updateShop;
+    }
+  },
+  createEvent,
+  updateEvent: (id) => {
+    if (id) {
+      return `/event/${id}/update`;
+    } else {
+      return updateEvent;
+    }
+  },
+  eventList: (id) => {
+    if (id) {
+      return `/event/${id}/list`;
+    } else {
+      return eventList;
+    }
+  },
 };
 
 export default routes;
