@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getPostById} from '../modules/posts';
-import User from "../component/User";
+import { getUserById} from '../modules/posts';
+import User from "../component/UserInfo";
 
 
 const UserContainer = (id) => {
     const {data, loading, error} = useSelector(state => state.posts.posts);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPostById(id));
+        dispatch(getUserById(id));
     }, [dispatch])
 
     if (loading) return '로딩중'

@@ -1,25 +1,27 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {getPostById} from '../modules/posts';
+import { getEventById} from '../modules/posts';
 import EventDetail from "../component/EventDetail";
+import {reducerUtils} from "../lib/asyncUtils";
 
 
-const OwnerEventDetailContainer = (params) =>{
+const EventDetailContainer = async (params) =>{
     console.log(params.id)
     const id = parseInt(params.id)
-    const {data, loading, error} = useSelector(state => state.posts.posts);
+    const {data, loading, error} = await useSelector(state => state.posts.post[id] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPostById(id, 'events'));
-    }, [dispatch])
+        dispatch(getEventById(id));
 
-    if(loading) return '로딩중'
+    }, [id, dispatch])
+
+    if(loading || !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
     console.log('container    ', data)
     return (
         <EventDetail list={data}/>
-    )
+    );
 
 }
-export default OwnerEventDetailContainer
+export default EventDetailContainer

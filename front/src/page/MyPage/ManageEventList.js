@@ -5,7 +5,7 @@ import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
 import SecondHeader from '../../component/SecondHeader';
-import PostListContainer from "../../container/PostListContainer";
+import EventListOwnerContainer from "../../container/EventListOwnerContainer";
 
 
 
@@ -22,7 +22,7 @@ const ManageEventList = ({history}) => {
                 </Row>
                 <div className="row">
                     <div className="row mt-3">
-                        <PostListContainer/>
+                        <EventListOwnerContainer/>
                     </div>
                     <div className="d-flex justify-content-center mt-3">
                         <ListPagination/>

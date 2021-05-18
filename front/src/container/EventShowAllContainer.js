@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPosts } from '../modules/posts';
-import EventListItemScrap from "../component/EventListItemScrap";
+import { getEvents} from '../modules/posts';
+import EventShowAll from "../component/EventShowAll";
 
 
-const PostListContainer = () =>{
+const EventShowAllContainer = () =>{
     const {data, loading, error} = useSelector(state => state.posts.posts);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPosts());
+        dispatch(getEvents());
     }, [dispatch])
 
-    if(loading) return '로딩중'
+    if(loading && !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
     console.log('container    ', data)
     return (
-        <EventListItemScrap lists={data}></EventListItemScrap>
+        <EventShowAll lists={data}/>
     )
 
 }
-export default PostListContainer
+export default EventShowAllContainer

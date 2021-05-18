@@ -2,9 +2,8 @@ import React from 'react'
 import { Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import {Link} from 'react-router-dom';
-import userData from "../../dummy/dummyDataUser";
 import Header from "../../component/HeaderCustomer";
-import UserContainer from "../../container/UserContainer";
+import UserInfoContainer from "../../container/UserInfoContainer";
 
 const SecondHeader = ({props}) => {
       
@@ -28,9 +27,9 @@ const ManageUserInfo = () => {
                 <Row className="col-xs-2 pl-3 text-center">
                     <SecondHeader/>
                 </Row>
-                <UserContainer/>
+                <UserInfoContainer/>
             </Container>
-            <Link to="owner/change-password"></Link>
+            <button onClick={() => history.push("owner/change-password")}></button>
         </>
     )
 }

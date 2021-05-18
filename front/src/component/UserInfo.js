@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, Row} from 'react-bootstrap';
 
 
-const Home = ({history, list}) => {
+const UserInfo = ({history, list}) => {
     return (
         <>
             {list.map(e =>(
@@ -37,4 +37,4 @@ const Home = ({history, list}) => {
     );
 };
 
-export default Home;
+export default UserInfo;

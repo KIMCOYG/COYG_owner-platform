@@ -24,7 +24,7 @@ const defaultIdSelector = param => param;
 export const createPromiseThunkById = (type, promiseCreator, idSelector = defaultIdSelector) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
 
-    return param => async dispatch =>{
+    return (param) => async dispatch =>{
         const id = idSelector(param)
         dispatch({type, meta: id})
         try{
@@ -46,7 +46,7 @@ export const createPromiseThunkById = (type, promiseCreator, idSelector = defaul
     }
 }
 
-export const handleAsyncActions = (type, key, keepData) => {
+export const  handleAsyncActions = (type, key, keepData) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
     return (state, action) => {
         switch (action.type){

@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPosts } from '../modules/posts';
-import Home from "../component/Home";
+import { getShops} from '../modules/posts';
 import {reducerUtils} from "../lib/asyncUtils";
+import SelectShop from "../component/SelectShop";
 
 
-const PostListContainer = () =>{
+const SelectShopsContainer = () =>{
     const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPosts());
+        dispatch(getShops());
     }, [dispatch])
 
-    if(loading) return '로딩중'
+    if(loading && !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
     console.log('container    ', data)
     return (
-        <Home lists={data}></Home>
+        <SelectShop lists={data}/>
     )
 
 }
-export default PostListContainer
+export default SelectShopsContainer

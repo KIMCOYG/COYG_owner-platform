@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import {AiFillHeart} from 'react-icons/ai';
-import {Link} from 'react-router-dom';
-import {Container} from 'react-bootstrap';
-import logo from '../static/image/chicken.jpg';
+import logo from "../static/image/chicken.jpg";
+import {Link} from "react-router-dom";
+import {AiFillHeart} from "react-icons/ai";
+import React from "react";
+import styled from "styled-components";
 
 const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
 
-const OwnerEventListItem = ({lists}) => {
+const CategoryEventList = ({history, lists}) => {
     return (
+
         lists.map(e => (
                 <div onClick={() => history.push(`/event/detail/${e.id}`)}>
                     <div className="col-4">
@@ -35,7 +35,6 @@ const OwnerEventListItem = ({lists}) => {
                                 <div className="d-flex">
                                     <AiFillHeart className="text-danger mr-1"/>
                                     <MinDiv>{e.like}</MinDiv>
-                                    <MinDiv>{e.state}</MinDiv>
                                 </div>
                                 {/*거리계산*/}
                                 <MinDiv>150m</MinDiv>
@@ -46,6 +45,6 @@ const OwnerEventListItem = ({lists}) => {
             )
         )
     )
-};
+}
 
-export default OwnerEventListItem;
+export default CategoryEventList;

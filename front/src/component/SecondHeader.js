@@ -16,7 +16,7 @@ const SecondHeader = ({title, buttonName, link, what}) => {
                 <h4 style={{marginLeft:'10px', fontSize: '20px'}}>{title}</h4>
             </Col>
             <Col xs={3}>
-                <Link to={link}><Button style={{fontSize: '6px', display: `${what}`}}>{buttonName}</Button></Link>
+                <button style={{fontSize: '6px'}} onClick={() => history.push(link)}>{buttonName}</button>
             </Col>
 
             {/* <Button onClick={() => this.handleSubmit()}></Button> */}

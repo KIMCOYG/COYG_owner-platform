@@ -4,6 +4,7 @@ import {BsChevronLeft} from 'react-icons/bs';
 import EventListItem from '../../component/EventListItemScrap';
 import ListPagination from '../../component/ListPagination';
 import Header from "../../component/HeaderCustomer";
+import EventListItemScrapContainer from "../../container/EventListItemScrapContainer";
 
 const SecondHeader = ({history}) => {
 
@@ -64,16 +65,7 @@ const CustomerScrap = () => {
 
                 </div>
                 <div className="row mt-3">
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
-                    <EventListItem/>
+                    <EventListItemScrapContainer/>
                 </div>
                 <div className="d-flex justify-content-center mt-3">
                     <ListPagination/>
