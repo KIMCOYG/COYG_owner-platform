@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import { Router } from "express";
 import passport from "passport";
 import models from "../models";
 const User = models.User;
@@ -141,4 +142,11 @@ export const postLogin = async (req, res, next) => {
       });
     });
   })(req, res, next);
+};
+
+//로그아웃
+export const logout = async (req, res, next) => {
+  req.logout();
+  req.session.destroy();
+  res.send({ message: "로그아웃 성공" });
 };

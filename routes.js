@@ -23,6 +23,7 @@ const profile = "/profile";
 const join = "/owner/join";
 const customerJoin = "/customer/join";
 const login = "/login";
+const logout = "/logout";
 
 //mypage
 const cusUpdate = "/mypage/:id/update";
@@ -82,6 +83,7 @@ const routes = {
   join,
   customerJoin,
   login,
+  logout,
   cusUpdate: (id) => {
     if (id) {
       return `/mypage/${id}/update`;
