@@ -1,15 +1,17 @@
 import React from 'react';
 import {Container, Row} from 'react-bootstrap';
-import {BsChevronLeft} from 'react-icons/bs';
 
 import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
 import SecondHeader from '../../component/SecondHeader';
 import EventListOwnerContainer from "../../container/EventListOwnerContainer";
+import {useHistory} from "react-router-dom";
 
 
 
-const ManageEventList = ({history}) => {
+const ManageEventList = () => {
+    let history = useHistory();
+
     return (
         <>
             <Header/>
@@ -19,7 +21,7 @@ const ManageEventList = ({history}) => {
                 </Row>
                 <div className="row">
                     <div className="row mt-3">
-                        <EventListOwnerContainer/>
+                        <EventListOwnerContainer uId={1}/>
                     </div>
                     <div className="d-flex justify-content-center mt-3">
                         <ListPagination/>

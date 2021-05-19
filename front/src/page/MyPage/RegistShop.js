@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import Header from '../../component/HeaderOwner'
 
-const SecondHeader = ({history}) => {
+const SecondHeader = () => {
+    let history = useHistory();
+
     return (
         <Row>
             <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
@@ -23,6 +25,7 @@ const data = [
 
 
 const Categories = (props) => {
+
     // TODO : 2021.04.20 usestate 글로벌하게 만들기 - sunbo
     const [selected, setSelected] = useState("");
     console.log(selected)

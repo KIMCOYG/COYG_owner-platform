@@ -1,8 +1,10 @@
 import React from 'react';
 import CategoryButton from "./CategoryButton";
+import {useHistory} from "react-router-dom";
 
 
-const Home = ({history, lists}) => {
+const Home = ({lists}) => {
+    let history = useHistory();
     let n = 0;
     return (
 
@@ -18,8 +20,8 @@ const Home = ({history, lists}) => {
                         {lists.map(e => {
                             n += 1
                             return (
-                                n % 4 === 0 ? <CategoryButton name={e.name} className="mr-3"/>
-                                    : <CategoryButton name={e.name} className="mr-3"/>
+                                n % 4 === 0 ? <CategoryButton onClick={()=>history.push(`http://localhost:5000/category/${e.category_id}/list`)} name={e.name} image={e.image_name} className="mr-3"/>
+                                    : <CategoryButton name={e.name} image={e.image_name} className="mr-3"/>
                             )
                         })}
                     </div>

@@ -1,21 +1,19 @@
 import axios from "axios";
 
+
+
+
 export const getEvents = async () => {
     // event + image
     const response = await axios.get(`http://localhost:5000/event/read-all`)
     return response.data;
 }
 
-export const getScrapEvents = async () => {
-    // event + image + scrap
-    /*const response = await axios.get(`http://localhost:5000/owner/read-all`)
-    return response.data;*/
-    return null
-}
 
-export const getShops = async () => {
+
+export const getCategoriesImage = async () => {
     // shopid , shopname
-    const response = await axios.get(`http://localhost:5000/shop/read-all`)
+    const response = await axios.get(`http://localhost:5000`)
     console.log("api", response.data)
     return response.data;
 }
@@ -25,8 +23,15 @@ export const getCategories = async () => {
     const response = await axios.get(`http://localhost:5000/category/read-all`)
     return response.data;
 }
+export const getScrapEventsById = async id => {
+    // user_id
+    // event + image + scrap
+    const response = await axios.get(`http://localhost:5000/scrap/${id}/list`)
+    return response.data;
+}
 
 export const getEventById = async id => {
+    // evnet_id
     // event + shop + scrap
     const response = await axios.get(`http://localhost:5000/event/${id}/detail`)
     console.log("event",response.data)
@@ -34,13 +39,34 @@ export const getEventById = async id => {
 }
 
 export const getShopById = async id => {
+    //shop_id
     const response = await axios.get(`http://localhost:5000/shop/read/${id}`)
     return response.data;
 }
 
+export const getMyShopsById = async id => {
+    //user_id
+    const response = await axios.get(`http://localhost:5000/shop/${id}/list`)
+    return response.data;
+}
+
 export const getUserById = async id => {
+    // user_id
     console.log(id)
     const response = await axios.get(`http://localhost:5000/user/read/${id}`)
     console.log("api", response.data)
     return response.data;
 }
+
+export const getCategoryListsById = async id =>{
+    // category_id
+    const response = await axios.get(`http://localhost:5000/category/${id}/list`)
+    console.log("getCategoryListsById api", response.data)
+    return response.data;
+};
+
+export const getOwnerEventListById = async id =>{
+    // user_id
+    const response = await axios.get(`http://localhost:5000/event/${id}/list`)
+    return response.data;
+};

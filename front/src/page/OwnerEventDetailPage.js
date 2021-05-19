@@ -24,7 +24,7 @@ const OwnerEventDetailPage = ({props}) => {
     
     return (
         <Container className="mt-3">
-            <Header></Header>
+            <Header/>
             <Row>
                 <Col>
                     이벤트 상세

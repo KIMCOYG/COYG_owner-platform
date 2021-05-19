@@ -11,10 +11,11 @@ const MinDiv = styled.div`
 
 const EventListItemScrap = ({lists}) => {
     let history = useHistory();
+    console.log("lists", lists)
     return (
         <>
 
-            {lists.map(e => (
+            {lists.result.map(e => (
                     <div onClick={() => history.push(`/event/detail/${e.event_id}`)}>
                         <div className="col-4">
                             <img
@@ -25,12 +26,12 @@ const EventListItemScrap = ({lists}) => {
                         </div>
                         <div className="col-8">
                             <div className="font-weight-bold">
-                                <h5>{e.event.name}<Link to="/delete">x</Link></h5>
+                                <h5>{e.name}<Link to="/delete">x</Link></h5>
 
                             </div>
                             <div className="d-flex">
                                 <div className="d-flex flex-column mr-5">
-                                    <MinDiv>{e.shop.name}</MinDiv>
+                                    {/*<MinDiv>{e.shop.name}</MinDiv>*/}
                                     <MinDiv>{e.start_datetime} ~ {e.end_datetime}</MinDiv>
                                     <MinDiv>{e.created_datetime}</MinDiv>
                                 </div>

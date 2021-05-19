@@ -3,17 +3,17 @@ import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/Header';
 import ListPagination from '../component/ListPagination';
-import CategoryEventList from "../component/CategoryEventList";
 import {useHistory} from "react-router-dom";
+import CategoryEventListContainer from "../container/CategoryEventListContainer";
 
-const EventList = ( ) => {
+const EventList = ({match}) => {
   let history = useHistory();
 
   const goBack = () => {
     history.goBack();
   };
-  let listName = '생활용품';
-
+  let listName = '생활용품'; // 전 페이지에서 전달 받을수 있도로ㅠㄱ
+  const { id } = match.params;
   return (
     <>
       <Header />
@@ -72,7 +72,7 @@ const EventList = ( ) => {
           </div>
         </div>
         <div className="row mt-3">
-          <CategoryEventList/>
+          <CategoryEventListContainer cId={parseInt(id, 10)}/>
         </div>
         <div className="d-flex justify-content-center mt-3">
           <ListPagination />

@@ -11,7 +11,7 @@ const SelectShop = ({lists}) => {
                 setSelected(event.target.value.name)
                 setSelectedId(event.target.value.id)
             }}>
-                {lists.map((shopname) => <option key={shopname.name} value={shopname}>{shopname.name}</option>)}
+                {lists.map((s) => <option key={s.name} value={s}>{s.name}</option>)}
             </select>
             <ShopManageContainer id={selectedId}/>
         </>

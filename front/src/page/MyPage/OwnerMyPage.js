@@ -4,8 +4,10 @@ import { BsChevronLeft } from 'react-icons/bs';
 import myInfoIcon from '../../static/image/laptop.jpg';
 import scrapIcon from '../../static/image/vegetables.jpg';
 import HeaderOwner from "../../component/HeaderOwner";
+import {useHistory} from "react-router-dom";
 
-const OwnerMyPage = ({history}) => {
+const OwnerMyPage = () => {
+  let history = useHistory();
   let customerName = '심선보';
   return (
     <>

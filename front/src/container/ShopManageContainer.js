@@ -5,12 +5,12 @@ import {reducerUtils} from "../lib/asyncUtils";
 import ShopManage from "../component/ShopManage";
 
 
-const ShopManageContainer = (id) =>{
-    const {data, loading, error} = useSelector(state => state.posts.post[id] || reducerUtils.initial());
+const ShopManageContainer = (sId) =>{
+    const {data, loading, error} = useSelector(state => state.posts.post[sId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getShopById(id));
-    }, [dispatch])
+        dispatch(getShopById(sId));
+    }, [sId, dispatch])
 
     if(loading && !data) return '로딩중'
     if(error) return 'error'

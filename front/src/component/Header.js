@@ -13,6 +13,10 @@ const Header = () => {
           <Image src={logo} onClick={() => history.push('/')}></Image>
           {/* </Link> */}
         </Col>
+        <Col>
+          <Button onClick={() => history.push('/customer')}>사용자</Button>
+          <Button onClick={() => history.push('/owner')}>사장</Button>
+        </Col>
         <Col className="text-center">
           {/* <Link to="/login"> */}
           <Button

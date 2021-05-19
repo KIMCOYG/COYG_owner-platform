@@ -5,8 +5,10 @@ import EventListItem from '../../component/EventListItemScrap';
 import ListPagination from '../../component/ListPagination';
 import Header from "../../component/HeaderCustomer";
 import EventListItemScrapContainer from "../../container/EventListItemScrapContainer";
+import {useHistory} from "react-router-dom";
 
-const SecondHeader = ({history}) => {
+const SecondHeader = () => {
+    let history = useHistory();
 
     const goBack = () => {
         history.goBack();

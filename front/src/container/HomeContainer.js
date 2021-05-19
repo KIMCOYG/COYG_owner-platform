@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPosts } from '../modules/posts';
+import { getCategoriesImage} from '../modules/posts';
 import Home from "../component/Home";
 import {reducerUtils} from "../lib/asyncUtils";
 
 
-const PostListContainer = () =>{
+const HomeContainer = () =>{
+    console.log("home")
     const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPosts());
+        dispatch(getCategoriesImage());
     }, [dispatch])
 
     if(loading) return '로딩중'
@@ -21,4 +22,4 @@ const PostListContainer = () =>{
     )
 
 }
-export default PostListContainer
+export default HomeContainer

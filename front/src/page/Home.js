@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
+import HomeContainer from "../container/HomeContainer";
 
 const Home = () => {
   let address = '경기도 파주시 조리읍';
@@ -27,6 +28,7 @@ const Home = () => {
         {/* </Link> */}
         <Slider />
         {/* <CategoryButton className="col-1"/> */}
+        <HomeContainer/>
         <div className="mt-3">
           <div className="d-flex mt-2">
             <CategoryButton name="좋아요" className="mr-3" />
@@ -52,7 +54,7 @@ const Home = () => {
             <CategoryButton name="휴대폰" />
             <CategoryButton name="햄버거" />
           </div>
-        </div>*/}
+        </div>
             </Container>
         </>
     );

@@ -11,14 +11,13 @@ const EventDetailContainer =  ({eId}) =>{
     useEffect(() => {
         dispatch(getEventById(eId));
     }, [dispatch, eId])
-    console.log('container 1    ', data)
 
     if(loading || !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
     console.log('container    ', data)
     return (
-        <EventDetail list={data}/>
+        <EventDetail lists={data}/>
     );
 
 }

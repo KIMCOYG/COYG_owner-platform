@@ -49,7 +49,7 @@ export const getCategoryList = async (req, res, next) => {
     const result = await Event.findAll({
       where: {
         shop_id: {
-          [Op.or]: shops,
+          [Op.or]: [1,4],
         },
       },
       include: Image,

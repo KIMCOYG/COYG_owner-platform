@@ -10,7 +10,7 @@ const MinDiv = styled.div`
 
 const OwnerEventListItem = ({lists}) => {
     let history = useHistory();
-
+    console.log(typeof lists)
     return (
         lists.map(e => (
                  <div onClick={() => history.push(`/event/detail/${e.event_id}`)}>

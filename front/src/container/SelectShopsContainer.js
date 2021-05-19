@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getShops} from '../modules/posts';
+import {getMyShopsById} from '../modules/posts';
 import {reducerUtils} from "../lib/asyncUtils";
 import SelectShop from "../component/SelectShop";
 
 
-const SelectShopsContainer = () =>{
-    const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
+const SelectShopsContainer = ({uId}) =>{
+    const {data, loading, error} = useSelector(state => state.posts.post[uId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getShops());
-    }, [dispatch])
+        dispatch(getMyShopsById(uId));
+    }, [uId, dispatch])
 
     if(loading && !data) return '로딩중'
     if(error) return 'error'

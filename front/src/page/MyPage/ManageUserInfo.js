@@ -29,7 +29,7 @@ const ManageUserInfo = () => {
                 <Row className="col-xs-2 pl-3 text-center">
                     <SecondHeader/>
                 </Row>
-                <UserInfoContainer/>
+                <UserInfoContainer uId={1}/>
             </Container>
             <text onClick={() => history.push("owner/change-password")}></text>)
         </>

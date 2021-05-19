@@ -6,7 +6,9 @@ import Header from '../../component/HeaderOwner';
 import userData from "../../dummy/dummyDataUser";
 import UserInfoContainer from "../../container/UserInfoContainer";
 
-const SecondHeader = ({history}) => {
+const SecondHeader = () => {
+    let history = useHistory();
+
     return (
         <Row>
             <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">

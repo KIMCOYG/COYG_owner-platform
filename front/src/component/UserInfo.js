@@ -3,28 +3,26 @@ import { Button, Form, Row} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 
 
-const UserInfo = ({list}) => {
+const UserInfo = ({lists}) => {
     let history = useHistory();
-
     return (
         <>
-            {list.map(e =>(
                 <Form>
                     <Form.Group>
                         <Form.Label>이름</Form.Label>
-                        <Form.Control type="input" defaultValue={e.name} onChange={(event) => {
-                            e.name = event.target.value
-                        }}></Form.Control>
+                        <Form.Control type="input" defaultValue={lists.name} onChange={(event) => {
+                            lists.name = event.target.value
+                        }}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>전화번호</Form.Label>
-                        <Form.Control type="input" defaultValue={e.phone} onChange={(event) => {
-                            e.phone = event.target.value
-                        }}></Form.Control>
+                        <Form.Control type="input" defaultValue={lists.phone} onChange={(event) => {
+                            lists.phone = event.target.value
+                        }}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>이메일</Form.Label>
-                        <Form.Control type="email" value={e.email} disabled></Form.Control>
+                        <Form.Control type="email" value={lists.email} disabled/>
                     </Form.Group>
                     <Row>
                         <Button onClick={() => history.push(`/owner/mypage/changepw`)}>비밀번호 변경</Button>
@@ -33,7 +31,7 @@ const UserInfo = ({list}) => {
                         <Button type="submit">적용하기</Button>
                     </Row>
                 </Form>
-            ))}
+            
         
         </>
 

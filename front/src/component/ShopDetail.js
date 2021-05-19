@@ -1,11 +1,9 @@
 import {Col, Row} from "react-bootstrap";
 import React from "react";
-import {useHistory} from "react-router-dom";
 
 
 
 const ShopDetail = ({list}) => {
-    let history = useHistory();
 
     return(
         <>
