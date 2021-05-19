@@ -1,7 +1,12 @@
 import React from 'react'
 import { Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
+<<<<<<< HEAD
 import {Link} from 'react-router-dom';
+=======
+import {useHistory} from 'react-router-dom';
+import userData from "../../dummy/dummyDataUser";
+>>>>>>> b56ad67e3a58990e4bb8be823b05744d34c06fc6
 import Header from "../../component/HeaderCustomer";
 import UserInfoContainer from "../../container/UserInfoContainer";
 
@@ -19,7 +24,9 @@ const SecondHeader = ({props}) => {
     )
 }
 
-const ManageUserInfo = (history) => {
+const ManageUserInfo = () => {
+    let history = useHistory();
+    const userInfo = userData[0]
     return (
         <>
             <Header/>
@@ -29,7 +36,7 @@ const ManageUserInfo = (history) => {
                 </Row>
                 <UserInfoContainer/>
             </Container>
-            <button onClick={() => history.push("owner/change-password")}></button>
+            <text onClick={() => history.push("owner/change-password")}></text>)
         </>
     )
 }

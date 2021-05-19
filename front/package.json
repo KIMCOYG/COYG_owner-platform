@@ -20,6 +20,7 @@
     "react-bootstrap-table": "^4.3.1",
     "react-daum-postcode": "^2.0.6",
     "react-dom": "^17.0.2",
+    "react-geocode": "^0.2.3",
     "react-icons": "^4.2.0",
     "react-kakao-maps": "^0.0.13",
     "react-minimal-side-navigation": "^1.8.0",

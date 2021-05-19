@@ -39,9 +39,7 @@ const OwnerEventDetailPageMobile = ({history, match}) => {
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
-                    <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
-                        <BsChevronLeft className="text-dark" />
-                    </button>
+                    
                     <SecondHeader title="점심 할인 특가 이벤트" buttonName="수정" link="/mobile/owner/event/modify" />
                 </Row>
                 <EventDetailContainer params={match.params.id}/>
@@ -53,15 +51,24 @@ const OwnerEventDetailPageMobile = ({history, match}) => {
                                     style={{width: '100%', heigh: '100%', marginTop: '1em'}}
                                 />
                             </div>
-                        </Row>
-                        <Row className="section">
-                            <Col><small>*사진을 클릭시 확대</small></Col>
-                            <Col xs={2}><small>1/2</small></Col>
-                        </Row>
-                        <Row className="section">
-                            <Col>
-                                <Row className="divi">
-                                    <h5>이벤트</h5>
+=======
+                <Row>
+                    <div>
+                        <img onClick={()=>window.open(logo)} //확대
+                            src={logo}
+                            alt=""
+                            style={{width: '100%', heigh: '100%', marginTop: '1em'}}
+                        />
+                    </div>
+                </Row>
+                <Row className="section">
+                    <Col><small>*사진을 클릭시 확대</small></Col>
+                    <Col xs={2}><small>1/2</small></Col>
+                </Row>
+                <Row className="section">
+                    <Col>
+                        <Row className="divi">
+                            <h5>이벤트</h5>
                                 </Row>
                                 <Row>
                                     <Col xs={4}>기간</Col>

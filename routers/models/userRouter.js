@@ -5,8 +5,8 @@ import {
   getUser,
   getUsers,
   updateUser,
-} from "../controller/userController";
-import routes from "../routes";
+} from "../../controller/models/userController";
+import routes from "../../routes";
 
 const userRouter = express.Router();
 

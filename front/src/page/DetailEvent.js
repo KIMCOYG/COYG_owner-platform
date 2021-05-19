@@ -23,8 +23,6 @@ const DetailEvent = ({history, match}) => {
 
   let eventName = '맥도날드 야탑점';
 
-
-
   return (
     <>
       <Header />

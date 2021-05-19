@@ -1,4 +1,6 @@
+import local from "./localStrategy";
 import models from "../models";
+// import { passport } from "passport";
 const User = models.User;
 
 // module.exports = (passport) => {
@@ -23,4 +25,6 @@ export default (passport) => {
       .then((user) => done(null, user))
       .catch((err) => done(err));
   });
+
+  local(passport);
 };

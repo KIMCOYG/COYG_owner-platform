@@ -1,27 +1,25 @@
 import React from 'react';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import logo from '../static/image/home.png';
+import { useHistory } from 'react-router-dom';
 
 const Header = () => {
+    let history = useHistory();
     return (
         <Container className="mt-3">
             <Row>
                 <Col>
-                    <Link to="/">
-                        <Image src={logo}></Image>
-                    </Link>
+                    <Image src={logo} onClick={() => history.push('/')}></Image>
                 </Col>
                 <Col className="text-center">
-                    <Link to="/mypage/customer">
                         <Button
+                            onClick = {() => history.push("/mypage/customer")}
                             className="col-xs-5"
                             variant="link"
                             style={{ color: 'black' }}
                         >
                             마이페이지
                         </Button>
-                    </Link>
                 </Col>
             </Row>
         </Container>

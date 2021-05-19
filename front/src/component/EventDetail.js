@@ -28,7 +28,8 @@ const EventDetail = ({history, list}) => {
                         </div>
                         <div className="mt-2">
                             <div className="border-bottom pb-2">
-                                <img src={e.image_name} alt="event-image" className="img-fluid"/>
+                                <img onClick={()=>window.open(logo)} //확대
+                                     src={e.image_name} alt="event-image" className="img-fluid"/>
                                 <div className="d-flex justify-content-between">
                                     <MinDiv>*사진 클릭 시 확대</MinDiv>
                                     <MinDiv>1/2</MinDiv>

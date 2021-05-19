@@ -1,21 +1,20 @@
 import React from 'react';
 import {Container, Row, Col, Image, Button} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import logo from '../static/image/home.png';
 
 const Header = () => {
+    let history = useHistory();
     return (
         <Container className="mt-3">
             <Row>
                 <Col>
-                    <Link to="/">
-                        <Image src={logo}></Image>
-                    </Link>
+                    <Image src={logo} onClick={() => history.push('/')}></Image>
                 </Col>
                 <Col>
                     <Row className="justify-content-center">
-                        <Button className="col-xs-5" variant="link" value="마이페이지">
-                            <Link to="/owner/mypage">마이페이지</Link>
+                        <Button onClick ={()=>history.push("/owner/mypage")} className="col-xs-5" variant="link" value="마이페이지">
+                            마이페이지
                         </Button>
 
                     </Row>

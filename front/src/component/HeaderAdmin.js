@@ -1,16 +1,16 @@
 import React from 'react';
 import {Container, Row, Col, Image, Button} from 'react-bootstrap';
 import logo from '../static/image/home.png';
-import { Link } from 'react-router-dom';
-
+import {useHistory} from 'react-router-dom'
 const Header = () => {
+    let history = useHistory();
     return (
         <Container className="mt-3">
             <Row>
                 <Col>
-                    <Link to = "/admin">
-                        <Image src={logo}></Image>
-                    </Link>
+
+                    <Image src={logo} onClick={() => history.push('/admin')}></Image>
+
                 </Col>
                 <Col>
                     <Row className="justify-content-center">

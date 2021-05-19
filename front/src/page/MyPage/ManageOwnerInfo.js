@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Header from '../../component/HeaderOwner';
 import userData from "../../dummy/dummyDataUser";
 import UserInfoContainer from "../../container/UserInfoContainer";
@@ -20,6 +20,7 @@ const SecondHeader = ({history}) => {
 }
 
 const ManageUserInfo = () => {
+    let history = useHistory();
     const userInfo = userData[0]
     return (
         <>
@@ -30,7 +31,7 @@ const ManageUserInfo = () => {
                 </Row>
                 <UserInfoContainer/>
             </Container>
-            <button onClick={() => history.push("owner/change-password")}></button>
+            <Button onClick={() => history.push("owner/change-password")}></Button>)
         </>
     )
 }

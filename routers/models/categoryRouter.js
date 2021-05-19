@@ -1,15 +1,15 @@
 // const express = require("express");
 // const routes = require("../routes");
 import express from "express";
-import routes from "../routes";
+import routes from "../../routes";
 import {
   createCategory,
   deleteCategory,
   getCategories,
   getCategory,
   updateCategory,
-} from "../controller/categoryController";
-import { createImage } from "../controller/imageController";
+} from "../../controller/models/categoryController";
+import { createImage } from "../../controller/models/imageController";
 
 const categoryRouter = express.Router();
 
