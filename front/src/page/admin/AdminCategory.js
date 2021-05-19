@@ -8,6 +8,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { Button } from 'bootstrap';
 import BtnCellRenderer from "../../component/BtnCellRenderer.js";
 import ListPagination from '../../component/ListPagination';
+import axios from 'axios';
 
 
 //https://www.ag-grid.com/react-grid/getting-started/ 그리드 참고
@@ -52,7 +53,19 @@ const AdminCategory = () => {
         const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
         alert(`Selected nodes: ${selectedDataStringPresentation}`)
     }
-
+    const [img, setImage] = useState(null);
+    const onChange = (e) => {
+        setImage(e.target.files[0]);
+      }
+    
+      const onClick = async () => {
+        const formData = new FormData();
+        formData.append('img', img);
+        // 서버의 upload API 호출
+        const res = await axios.post("/post/img", formData);
+        console.log(res);
+      }
+    
     return (
         <>
         <Header/>
@@ -81,14 +94,14 @@ const AdminCategory = () => {
                         </div>
                         <div class="form-group">
                             <label for="category-image" class="col-form-label">카테고리 이미지</label>
-                            <div><input type="file" id="category-image" accept="image/jpeg,.png"/></div>
+                            <div><input type="file" onChange={onChange} id="category-image" accept="image/jpeg,.png"/></div>
                             
                         </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">추가</button>
+                    <button type="button" onClick={onClick} name = "img" class="btn btn-primary">추가</button>
                     </div>
                 </div>
                 </div>
