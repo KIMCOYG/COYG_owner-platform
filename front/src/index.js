@@ -10,7 +10,7 @@ import rootReducer from './modules';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk'
 const store = createStore(rootReducer, composeWithDevTools(
-    applyMiddleware(ReduxThunk.withExtraArgument(undefined))
+    applyMiddleware(ReduxThunk)
 ));
 
 ReactDOM.render(

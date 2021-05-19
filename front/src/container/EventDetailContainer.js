@@ -5,16 +5,13 @@ import EventDetail from "../component/EventDetail";
 import {reducerUtils} from "../lib/asyncUtils";
 
 
-const EventDetailContainer = async (params) =>{
-    console.log(params.id)
-    // const id = parseInt(params.id)
-    const id = 4
-    const {data, loading, error} = await useSelector(state => state.posts.post[id] || reducerUtils.initial());
+const EventDetailContainer =  ({eId}) =>{
+    const {data, loading, error} =  useSelector(state => state.posts.post[eId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getEventById(id));
-
-    }, [id, dispatch])
+        dispatch(getEventById(eId));
+    }, [dispatch, eId])
+    console.log('container 1    ', data)
 
     if(loading || !data) return '로딩중'
     if(error) return 'error'

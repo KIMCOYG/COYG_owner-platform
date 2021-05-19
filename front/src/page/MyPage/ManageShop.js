@@ -5,6 +5,7 @@ import Header from '../../component/HeaderOwner'
 import SecondHeader from "../../component/SecondHeader";
 import SelectShop from "../../component/SelectShop";
 import {useHistory} from "react-router-dom";
+import SelectShopsContainer from "../../container/SelectShopsContainer";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -41,7 +42,7 @@ const ManageShop = () => {
                 </Row>
 
                 <Form.Label>가게 선택</Form.Label>
-                <SelectShop/>
+                <SelectShopsContainer/>
 
             </Container>
         </>

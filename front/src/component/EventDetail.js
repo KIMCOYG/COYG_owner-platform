@@ -10,13 +10,11 @@ const MidDiv = styled.div`
   font-size: 0.7rem;
 `;
 
-const EventDetail = ({list}) => {
+const EventDetail = ({e}) => {
     let history = useHistory();
 
     return (
-        <>
-            {
-                list.map(e => (
+
                     <>
                         <div className="col-xs-4 pl-3 pt-1 text-center">
                             <h5 className="font-weight-bold pt-1">{e.name}</h5>
@@ -31,8 +29,8 @@ const EventDetail = ({list}) => {
                         </div>
                         <div className="mt-2">
                             <div className="border-bottom pb-2">
-                                <img onClick={()=>window.open(e.image_name)} //확대
-                                     src={e.image_name} alt="event-image" className="img-fluid"/>
+                                <img onClick={()=>window.open(e.image.image_name)} //확대
+                                     src={e.image.image_name} alt="event-image" className="img-fluid"/>
                                 <div className="d-flex justify-content-between">
                                     <MinDiv>*사진 클릭 시 확대</MinDiv>
                                     <MinDiv>1/2</MinDiv>
@@ -72,35 +70,34 @@ const EventDetail = ({list}) => {
                                 </div>
                                 <div className="d-flex pt-2 border-bottom border-dark">
                                     <div className="col-3 font-weight-bold">운영시간</div>
-                                    <MidDiv className="col-9 text-center">{e.start_time} ~ {e.end_time}</MidDiv>
+                                    <MidDiv className="col-9 text-center">{e.shop.start_time} ~ {e.shop.end_time}</MidDiv>
                                 </div>
                                 <div className="d-flex pt-2 border-bottom border-dark">
                                     <div className="col-3 font-weight-bold">휴무일</div>
-                                    <MidDiv className="col-9 text-center">{e.holiday}</MidDiv>
+                                    <MidDiv className="col-9 text-center">{e.shop.holiday}</MidDiv>
                                 </div>
                                 <div className="d-flex pt-2 border-bottom border-dark">
                                     <div className="col-3 font-weight-bold">TEL</div>
-                                    <MidDiv className="col-9 text-center">{e.tel}</MidDiv>
+                                    <MidDiv className="col-9 text-center">{e.shop.tel}</MidDiv>
                                 </div>
                                 <div className="border-bottom border-dark pl-3">
                                     <div className="font-weight-bold">주소</div>
                                     <div className="mt-1">
-                                        <MidDiv>{e.basic_address}{e.road_address}</MidDiv>
-                                        <MidDiv>{e.detail_address}</MidDiv>
+                                        <MidDiv>{e.shop.basic_address}{e.shop.road_address}</MidDiv>
+                                        <MidDiv>{e.shop.detail_address}</MidDiv>
                                     </div>
                                 </div>
                                 <div className="border-bottom border-dark pl-3">
                                     <div className="font-weight-bold">상세 설명</div>
-                                    <MidDiv>{e.shop_content}</MidDiv>
+                                    <MidDiv>{e.shop.shop_content}</MidDiv>
                                 </div>
                             </div>
                         </div>
                     </>
 
 
-                ))}
-        </>
-    )
+                )
+
 };
 
 export default EventDetail;

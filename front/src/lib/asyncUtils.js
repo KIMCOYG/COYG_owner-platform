@@ -25,12 +25,13 @@ export const createPromiseThunk = (type, promiseCreator) => {
 const defaultIdSelector = param => param;
 export const createPromiseThunkById = (type, promiseCreator, idSelector = defaultIdSelector) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
-
-    return (param) => async dispatch =>{
+    return param => async dispatch =>{
         const id = idSelector(param)
+        console.log("createPromiseThunkById", id)
         dispatch({type, meta: id})
         try{
             const payload = await promiseCreator(param);
+            console.log("payload", payload)
             dispatch({
                 type: SUCCESS,
                 payload,
@@ -76,6 +77,7 @@ export const  handleAsyncActions = (type, key, keepData) => {
 export const handleAsyncActionsById = (type, key, keepData) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
     return (state, action) => {
+        console.log("여기 0", action.payload)
         const id = action.meta
         switch (action.type){
             case type:
@@ -87,6 +89,7 @@ export const handleAsyncActionsById = (type, key, keepData) => {
                     }
                 };
             case SUCCESS:
+                console.log("여기", action.payload)
                 return{
                     ...state,
                     [key]: {

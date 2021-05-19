@@ -6,12 +6,15 @@ import KakaoMap from "./KakaoMap"
 import {useHistory} from "react-router-dom";
 import EventDetailContainer from "../container/EventDetailContainer";
 
-const DetailEvent = (match) => {
+const DetailEvent = ({match}) => {
+  console.log("match",match)
+
   let history = useHistory();
 
   const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
   const [mapSize, setMapSize] = useState([100, 400]);
-
+  const { id } = match.params; // URL 파라미터 조회하기
+      console.log("match.params",id)
 
   return (
     <>
@@ -25,7 +28,7 @@ const DetailEvent = (match) => {
           </div>
         </div>
         {/* 이미지 시작 */}
-        <EventDetailContainer params={match.params.id}/>
+        <EventDetailContainer eId={parseInt(id, 10)}/>
           {/* 지도 */}
           <div className="mt-2 border-bottom pb-3 mb-5">
             <div

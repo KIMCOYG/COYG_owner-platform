@@ -20,6 +20,7 @@ const SecondHeader = ({history}) => {
 }
 
 const ManageUserInfo = (match) => {
+    const user_id = localStorage.getItem('user_id')
     let history = useHistory();
     const userInfo = userData[0]
     return (
@@ -29,7 +30,7 @@ const ManageUserInfo = (match) => {
                 <Row className="col-xs-2 pl-3 text-center">
                     <SecondHeader/>
                 </Row>
-                <UserInfoContainer params={match.params.id}/>
+                <UserInfoContainer params={user_id}/>
             </Container>
             <Button onClick={() => history.push("owner/change-password")}></Button>)
         </>

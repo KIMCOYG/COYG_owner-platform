@@ -16,6 +16,7 @@ export const getScrapEvents = async () => {
 export const getShops = async () => {
     // shopid , shopname
     const response = await axios.get(`http://localhost:5000/shop/read-all`)
+    console.log("api", response.data)
     return response.data;
 }
 
@@ -27,7 +28,7 @@ export const getCategories = async () => {
 
 export const getEventById = async id => {
     // event + shop + scrap
-    const response = await axios.get(`http://localhost:5000/event/read/${id.id}`)
+    const response = await axios.get(`http://localhost:5000/event/${id}/detail`)
     console.log("event",response.data)
     return response.data;
 }

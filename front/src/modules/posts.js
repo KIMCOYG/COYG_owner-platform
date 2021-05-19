@@ -33,7 +33,7 @@ export const clearPost = () => ({type: CLEAR_POST})
 
 const initialState = {
     posts: reducerUtils.initial(),
-    post: {}
+    post: reducerUtils.initial()
 };
 
 const getPostsReducer = handleAsyncActions(GET_POSTS, 'posts', true); // keep data는 로딩중에 데이터 초기화 true면 안함
@@ -50,11 +50,6 @@ export default function posts(state = initialState, action){
         case GET_POST_SUCCESS:
         case GET_POST_ERROR:
             return getPostReducer(state, action)
-        case CLEAR_POST:
-            return{
-                ...state,
-                post: reducerUtils.initial()
-            }
         default:
             return state;
 
