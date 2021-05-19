@@ -1,4 +1,4 @@
-import models from "../models";
+import models from "../../models";
 const Shop = models.Shop;
 
 export const getShops = (req, res, next) => {

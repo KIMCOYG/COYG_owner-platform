@@ -18,6 +18,35 @@ const scrap = "/scrap";
 const shop = "/shop";
 const user = "/user";
 
+//auth
+const profile = "/profile";
+const join = "/join";
+const login = "/login";
+
+//mypage
+const cusUpdate = "/mypage/:id/update";
+const cusPwUpdate = "/mypage/:id/update/password";
+const scrapList = "/scrap/:id/list";
+
+//owner
+const owner = "/owner";
+const shopList = "/shop/:id/list";
+const updateShop = "/shop/:id/update";
+const createEvent = "/event/create";
+const updateEvent = "/event/:id/update";
+const eventList = "/event/:id/list";
+
+//category
+const categoryList = "/category/:id/list";
+
+//detail event
+const detailEvent = "/event/:id/detail";
+
+// post image
+const post = "/post";
+
+const test = "/test";
+
 const routes = {
   home,
   create,
@@ -50,6 +79,75 @@ const routes = {
   scrap,
   shop,
   user,
+  profile,
+  join,
+  login,
+  cusUpdate: (id) => {
+    if (id) {
+      return `/mypage/${id}/update`;
+    } else {
+      return cusUpdate;
+    }
+  },
+  cusPwUpdate: (id) => {
+    if (id) {
+      return `/mypage/${id}/update/password`;
+    } else {
+      return cusPwUpdate;
+    }
+  },
+  categoryList: (id) => {
+    if (id) {
+      return `/category/${id}/list`;
+    } else {
+      return categoryList;
+    }
+  },
+  detailEvent: (id) => {
+    if (id) {
+      return `/event/${id}/detail`;
+    } else {
+      return detailEvent;
+    }
+  },
+  owner,
+  shopList: (id) => {
+    if (id) {
+      return `/shop/${id}/list`;
+    } else {
+      return shopList;
+    }
+  },
+  updateShop: (id) => {
+    if (id) {
+      return `/shop/${id}/update`;
+    } else {
+      return updateShop;
+    }
+  },
+  createEvent,
+  updateEvent: (id) => {
+    if (id) {
+      return `/event/${id}/update`;
+    } else {
+      return updateEvent;
+    }
+  },
+  eventList: (id) => {
+    if (id) {
+      return `/event/${id}/list`;
+    } else {
+      return eventList;
+    }
+  },
+  post,
+  scrapList: (id) => {
+    if (id) {
+      return `/scrap/${id}/list`;
+    } else {
+      return scrapList;
+    }
+  },
 };
 
 export default routes;
