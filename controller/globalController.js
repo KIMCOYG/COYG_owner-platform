@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import models from "../models";
 const Category = models.Category;
 const Image = models.Image;
@@ -32,10 +33,29 @@ export const getCategoryList = async (req, res, next) => {
     params: { id },
   } = req;
   try {
-    const result = await Event.findAll({
+    // const result = await Event.findAll({
+    //   where: { category_id: id },
+    //   order: [["likes_count", "DESC"]],
+    //   raw: true,
+    // });
+    // res.send(result);
+    let shops = await Shop.findAll({
       where: { category_id: id },
+      attributes: [["shop_id", "shop_id"]],
+      raw: true,
     });
-    res.send(result);
+    shops = shops.map((i) => i.shop_id);
+
+    const result = await Event.findAll({
+      where: {
+        shop_id: {
+          [Op.or]: shops,
+        },
+      },
+      order: [["likes_count", "DESC"]],
+      raw: true,
+    });
+    res.send({ result });
   } catch (err) {
     console.log(err);
     next(err);
