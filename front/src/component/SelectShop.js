@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+    import React, {useState} from "react";
 import ShopManageContainer from "../container/ShopManageContainer";
 
-const SelectShop = (lists) => {
+const SelectShop = ({lists}) => {
     const [selected, setSelected] = useState("");
     const [selectedId, setSelectedId] = useState(0);
 

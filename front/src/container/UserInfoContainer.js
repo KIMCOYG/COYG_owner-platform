@@ -5,7 +5,9 @@ import {reducerUtils} from "../lib/asyncUtils";
 import UserInfo from "../component/UserInfo";
 
 
-const UserInfoContainer = (id) =>{
+const UserInfoContainer = (params) =>{
+    const id = parseInt(params.id)
+    console.log(params)
     const {data, loading, error} = useSelector(state => state.posts.post[id] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {

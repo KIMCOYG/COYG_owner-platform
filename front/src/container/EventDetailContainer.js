@@ -7,7 +7,8 @@ import {reducerUtils} from "../lib/asyncUtils";
 
 const EventDetailContainer = async (params) =>{
     console.log(params.id)
-    const id = parseInt(params.id)
+    // const id = parseInt(params.id)
+    const id = 4
     const {data, loading, error} = await useSelector(state => state.posts.post[id] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {

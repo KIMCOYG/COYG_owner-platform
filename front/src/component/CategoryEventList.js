@@ -29,7 +29,7 @@ const CategoryEventList = ({lists}) => {
                         </div>
                         <div className="d-flex">
                             <div className="d-flex flex-column mr-5">
-                                <MinDiv>{e.shopName}</MinDiv>
+                                {/*<MinDiv>{e.shopName}</MinDiv>*/}
                                 <MinDiv>{e.start_datetime} ~ {e.end_datetime}</MinDiv>
                                 <MinDiv>{e.created_datetime}</MinDiv>
                             </div>

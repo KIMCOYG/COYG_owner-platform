@@ -27,7 +27,7 @@ export const getCategories = async () => {
 
 export const getEventById = async id => {
     // event + shop + scrap
-    const response = await axios.get(`http://localhost:5000/event/read/${id}`)
+    const response = await axios.get(`http://localhost:5000/event/read/${id.id}`)
     console.log("event",response.data)
     return response.data;
 }
@@ -38,6 +38,8 @@ export const getShopById = async id => {
 }
 
 export const getUserById = async id => {
+    console.log(id)
     const response = await axios.get(`http://localhost:5000/user/read/${id}`)
+    console.log("api", response.data)
     return response.data;
 }

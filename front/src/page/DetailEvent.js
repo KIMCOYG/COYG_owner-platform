@@ -3,8 +3,8 @@ import Header from '../component/Header';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Container } from 'react-bootstrap';
 import KakaoMap from "./KakaoMap"
-import EventDetail from "../component/EventDetail";
 import {useHistory} from "react-router-dom";
+import EventDetailContainer from "../container/EventDetailContainer";
 
 const DetailEvent = (match) => {
   let history = useHistory();
@@ -25,7 +25,7 @@ const DetailEvent = (match) => {
           </div>
         </div>
         {/* 이미지 시작 */}
-        <EventDetail params={match.params.id}/>
+        <EventDetailContainer params={match.params.id}/>
           {/* 지도 */}
           <div className="mt-2 border-bottom pb-3 mb-5">
             <div

@@ -19,7 +19,7 @@ const SecondHeader = ({history}) => {
     )
 }
 
-const ManageUserInfo = () => {
+const ManageUserInfo = (match) => {
     let history = useHistory();
     const userInfo = userData[0]
     return (
@@ -29,7 +29,7 @@ const ManageUserInfo = () => {
                 <Row className="col-xs-2 pl-3 text-center">
                     <SecondHeader/>
                 </Row>
-                <UserInfoContainer/>
+                <UserInfoContainer params={match.params.id}/>
             </Container>
             <Button onClick={() => history.push("owner/change-password")}></Button>)
         </>
