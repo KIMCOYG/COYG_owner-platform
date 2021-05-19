@@ -20,7 +20,7 @@ const checkPW = () => {
     const pw2 = document.getElementById('pw2').value;
     const pwText = document.getElementById('pw2Text');
 
-    if (pw1 == pw2) {
+    if (pw1 === pw2) {
         pwText.innerHTML = '비밀번호가 일치합니다'
     } else {
         pwText.innerHTML = '비밀번호가 일치하지 않습니다'

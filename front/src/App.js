@@ -8,7 +8,7 @@ import EvnetRegist from './page/EventRegist';
 import Login from './page/login/Login';
 import CustomerJoin from './page/login/CustomerJoin';
 import OwnerJoin from './page/login/OwnerJoin';
-import EvnetModify from './page/EventModify';
+import EventModify from './page/EventModify';
 import OwnerMyPage from './page/MyPage/OwnerMyPage';
 import ManageUserInfo from './page/MyPage/ManageUserInfo';
 import ChangePassword from './page/MyPage/ChangePassword';
@@ -49,7 +49,7 @@ const App = () => {
           />
 
           <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact />
-          <Route path="/mobile/owner/event/modify" component={EvnetModify} exact />
+          <Route path="/mobile/owner/event/modify" component={EventModify} exact />
 
           {/* Mypage */}
           <Route path="/owner/mypage" component={OwnerMyPage} exact/>

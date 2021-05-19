@@ -2,7 +2,6 @@ import React from 'react'
 import { Col, Container, Form} from 'react-bootstrap'
 import Header from '../component/HeaderOwner'
 import SecondHeader from '../component/SecondHeader'
-import data from '../dummy/dummyDataforOwner'
 
 
 
@@ -12,9 +11,8 @@ const handleSubmit = (event) => {
     event.preventDefault();
 }
 
-const EvnetModify = () => {
+const EventModify = (match) => {
     const url = window.location.href // 현재페이지 url 가져오기
-    const current_id = url.split("/")[7] // 현재 페이지 url에서 id 값만 가져오기
 
     return (
         <>
@@ -60,4 +58,4 @@ const EvnetModify = () => {
     )
 }
 
-export default EvnetModify
+export default EventModify

@@ -1,9 +1,11 @@
 import React from 'react'
-import {Button, Col, Row} from "react-bootstrap";
+import { Col, Row} from "react-bootstrap";
 import {BsChevronLeft} from "react-icons/bs";
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
-const SecondHeader = ({history, title, buttonName, link, what}) => {
+const SecondHeader = ({ title, buttonName, link, what}) => {
+    let history = useHistory();
+
     return (
         <Row>
             <Col xs={1}>

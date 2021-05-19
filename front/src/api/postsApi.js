@@ -3,7 +3,6 @@ import axios from "axios";
 export const getEvents = async () => {
     // event + image
     const response = await axios.get(`http://localhost:5000/event/read-all`)
-    console.log("post api", response.data)
     return response.data;
 }
 

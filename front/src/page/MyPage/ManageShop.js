@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
-import {Button, Col, Container, Form, Row} from 'react-bootstrap'
+import React from 'react'
+import { Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
-import {Link} from 'react-router-dom'
 import Header from '../../component/HeaderOwner'
 import SecondHeader from "../../component/SecondHeader";
 import SelectShop from "../../component/SelectShop";
+import {useHistory} from "react-router-dom";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -22,20 +22,13 @@ import SelectShop from "../../component/SelectShop";
     )
 }*/
 
-const data = [
-    {category: "생활용품"},
-    {category: "치킨"},
-    {category: "피자"}
-]
-
-const shopname = [
-    {name: "정호네 꽃가게"},
-    {name: "유진이네 햄버거"}
-]
 
 
 
-const ManageShop = ({history}) => {
+
+const ManageShop = () => {
+    let history = useHistory();
+
     return (
         <>
             <Header/>
@@ -48,7 +41,7 @@ const ManageShop = ({history}) => {
                 </Row>
 
                 <Form.Label>가게 선택</Form.Label>
-                <SelectShop></SelectShop>
+                <SelectShop/>
 
             </Container>
         </>

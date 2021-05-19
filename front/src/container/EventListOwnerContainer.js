@@ -12,7 +12,6 @@ const EventListOwnerContainer = () =>{
         dispatch(getEvents());
 
     }, [dispatch])
-    console.log("data", data)
     if(loading && !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null

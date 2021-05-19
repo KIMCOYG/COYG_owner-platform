@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {clearPost, getShopById} from '../modules/posts';
+import {getShopById} from '../modules/posts';
 import ShopDetail from "../component/ShopDetail";
 import {reducerUtils} from "../lib/asyncUtils";
 
@@ -16,7 +16,6 @@ const OwnerShopDetailContainer = async (params) => {
     if(loading || !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
-    console.log('container    ', data)
     return (
         <ShopDetail list={data}/>
     )

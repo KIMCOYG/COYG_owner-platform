@@ -22,7 +22,6 @@ const SecondHeader = ({props}) => {
 
 const ManageUserInfo = () => {
     let history = useHistory();
-    const userInfo = userData[0]
     return (
         <>
             <Header/>

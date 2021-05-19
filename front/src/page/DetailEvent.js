@@ -1,27 +1,17 @@
 import React, { useState } from 'react';
 import Header from '../component/Header';
-import styled from 'styled-components';
-import { BsHeart } from 'react-icons/bs';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Container } from 'react-bootstrap';
-import logo from '../static/image/chicken.jpg';
 import KakaoMap from "./KakaoMap"
 import EventDetail from "../component/EventDetail";
+import {useHistory} from "react-router-dom";
 
-const MinDiv = styled.div`
-  font-size: 0.5rem;
-`;
-
-const MidDiv = styled.div`
-  font-size: 0.7rem;
-`;
-
-const DetailEvent = ({history, match}) => {
+const DetailEvent = (match) => {
+  let history = useHistory();
 
   const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
   const [mapSize, setMapSize] = useState([100, 400]);
 
-  let eventName = '맥도날드 야탑점';
 
   return (
     <>
