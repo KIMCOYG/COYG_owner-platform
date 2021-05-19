@@ -84,6 +84,7 @@ export const getOwnerEventList = async (req, res, next) => {
           [Op.or]: shops,
         },
       },
+      raw: true,
     });
     res.send(result);
   } catch (err) {
