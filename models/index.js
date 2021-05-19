@@ -58,20 +58,20 @@ db.Event.belongsTo(db.Shop, {
 });
 
 // Category: Event => 1:N
-db.Category.hasMany(db.Event, {
-  foreignKey: "category_id",
-  sourceKey: "category_id",
-  constraints: false,
-  allowNull: true,
-  defaultValue: null,
-});
-db.Event.belongsTo(db.Category, {
-  foreignKey: "category_id",
-  targetKey: "category_id",
-  constraints: false,
-  allowNull: true,
-  defaultValue: null,
-});
+// db.Category.hasMany(db.Event, {
+//   foreignKey: "category_id",
+//   sourceKey: "category_id",
+//   constraints: false,
+//   allowNull: true,
+//   defaultValue: null,
+// });
+// db.Event.belongsTo(db.Category, {
+//   foreignKey: "category_id",
+//   targetKey: "category_id",
+//   constraints: false,
+//   allowNull: true,
+//   defaultValue: null,
+// });
 
 // Category : Shop => 1:N
 db.Category.hasMany(db.Shop, {
