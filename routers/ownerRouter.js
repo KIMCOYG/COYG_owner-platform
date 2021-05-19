@@ -3,7 +3,7 @@ import { getDetailEvent } from "../controller/globalController";
 import { createEvent, updateEvent } from "../controller/models/eventController";
 import { createShop } from "../controller/models/shopController";
 import {
-  getOwnerEvent,
+  getOwnerEventList,
   getShopList,
   updateShop,
 } from "../controller/ownerController";
@@ -20,8 +20,8 @@ ownerRouter.put(routes.updateShop(), updateShop);
 //가게 등록
 ownerRouter.post(routes.create, createShop);
 
-//이벤트 관리 event 테이블에 user_id가 필요할 수도...
-// ownerRouter.get(routes.eventList(), getOwnerEvent);
+//이벤트 관리
+ownerRouter.get(routes.eventList(), getOwnerEventList);
 
 //이벤트 상세 조회(만들 필요가 있을까)
 ownerRouter.get(routes.detailEvent(), getDetailEvent);

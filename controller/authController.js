@@ -134,7 +134,11 @@ export const postLogin = async (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
-      return res.send({ message: "로그인 성공" });
+      return res.send({
+        session: req.session,
+        user: req.user,
+        _passport: req._passport,
+      });
     });
   })(req, res, next);
 };
