@@ -4,17 +4,12 @@ import path from "path";
 import fs from "fs";
 import models from "../models";
 import routes from "../routes";
-import { getTest } from "../controller/postImageController";
+import { getTest, upload,  imgDefine ,uploadAll, imgDefineAll} from "../controller/postImageController";
+import {isLoggedIn} from "../middlewares/authMiddleware"
 const Image = models.User;
 
 const postImageRouter = express.Router();
-// fs.readdir("public", (err, files) => {
-//   if (err) {
-//     console.log(err);
-//   }
-//   console.log(files);
-// });
 
 postImageRouter.get(routes.home, getTest);
-
+postImageRouter.post(routes.img, upload.single('img'),imgDefine);
 export default postImageRouter;

@@ -15,7 +15,7 @@ const event = "/event";
 const image = "/image";
 const like = "/like";
 const scrap = "/scrap";
-const shop = "/shop";
+const shop = "/shon";
 const user = "/user";
 
 //auth
@@ -46,6 +46,7 @@ const detailEvent = "/event/:id/detail";
 const post = "/post";
 
 const test = "/test";
+const img = "/img";
 
 const routes = {
   home,
@@ -148,6 +149,7 @@ const routes = {
       return scrapList;
     }
   },
+  img,
 };
 
 export default routes;
