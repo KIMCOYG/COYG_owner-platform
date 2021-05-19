@@ -10,7 +10,7 @@ export const getProfile = (req, res, next) => {
   });
 };
 
-//회원가입
+//오너 회원가입
 export const postJoin = async (req, res, next) => {
   const {
     email,
@@ -71,6 +71,30 @@ export const postJoin = async (req, res, next) => {
   } catch (error) {
     console.log(error);
     return next(error);
+  }
+};
+
+export const postCustomerJoin = async (req, res, next) => {
+  const { email, password, name, phone, role } = req.body;
+  try {
+    const exUser = await User.findOne({ where: { email } });
+    if (exUser) {
+      req.flash("joinError", "이미 가입된 이메일입니다.");
+      return res.send({ message: "가입된 이메일입니다." });
+    }
+    const hash = await bcrypt.hash(password, 12);
+    const userResult = await User.create({
+      email,
+      password: hash,
+      name,
+      phone,
+      role,
+      enabled: true,
+    });
+    return res.send({ userResult, message: hash });
+  } catch (err) {
+    console.log(err);
+    next(err);
   }
 };
 
