@@ -10,7 +10,7 @@ const MidDiv = styled.div`
   font-size: 0.7rem;
 `;
 
-const EventDetail = ({ list}) => {
+const EventDetail = ({list}) => {
     let history = useHistory();
 
     return (
@@ -19,7 +19,7 @@ const EventDetail = ({ list}) => {
                 list.map(e => (
                     <>
                         <div className="col-xs-4 pl-3 pt-1 text-center">
-                            <h5 className="font-weight-bold pt-1">{e.eventName}</h5>
+                            <h5 className="font-weight-bold pt-1">{e.name}</h5>
                         </div>
                         <div className="col-xs-6 pl-3">
                             <button type="button" className="btn btn-link btn-lg">
@@ -49,7 +49,7 @@ const EventDetail = ({ list}) => {
                                 <div className="d-flex pt-2 border-bottom border-dark">
                                     <div className="col-3 font-weight-bold">기간</div>
                                     <MidDiv className="col-9 text-center">
-                                        {e.startTerm} ~ {e.endTerm}
+                                        {e.start_datetime} ~ {e.end_datetime}
                                     </MidDiv>
                                 </div>
                                 <div className="border-bottom border-dark pl-3">
@@ -68,11 +68,11 @@ const EventDetail = ({ list}) => {
                                     가게
                                 </div>
                                 <div className="border-bottom border-dark pl-3 font-weight-bold">
-                                    {e.shopName}
+                                    {e.shop.name}
                                 </div>
                                 <div className="d-flex pt-2 border-bottom border-dark">
                                     <div className="col-3 font-weight-bold">운영시간</div>
-                                    <MidDiv className="col-9 text-center">{e.startTime} ~ {e.endTime}</MidDiv>
+                                    <MidDiv className="col-9 text-center">{e.start_time} ~ {e.end_time}</MidDiv>
                                 </div>
                                 <div className="d-flex pt-2 border-bottom border-dark">
                                     <div className="col-3 font-weight-bold">휴무일</div>

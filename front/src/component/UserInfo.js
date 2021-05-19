@@ -1,8 +1,11 @@
 import React from 'react';
 import { Button, Form, Row} from 'react-bootstrap';
+import {useHistory} from "react-router-dom";
 
 
-const UserInfo = ({history, list}) => {
+const UserInfo = ({list}) => {
+    let history = useHistory();
+
     return (
         <>
             {list.map(e =>(

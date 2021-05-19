@@ -2,16 +2,19 @@ import logo from "../static/image/chicken.jpg";
 import {AiFillHeart} from "react-icons/ai";
 import React from "react";
 import styled from "styled-components";
+import {useHistory} from "react-router-dom";
 
 const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
 
-const CategoryEventList = ({history, lists}) => {
+const CategoryEventList = ({lists}) => {
+    let history = useHistory();
+
     return (
 
         lists.map(e => (
-                <div onClick={() => history.push(`/event/detail/${e.id}`)}>
+                <div onClick={() => history.push(`/event/detail/${e.event_id}`)}>
                     <div className="col-4">
                         <img
                             src={logo}
@@ -21,14 +24,14 @@ const CategoryEventList = ({history, lists}) => {
                     </div>
                     <div className="col-8">
                         <div className="font-weight-bold">
-                            <h5>{e.title}</h5>
+                            <h5>{e.name}</h5>
 
                         </div>
                         <div className="d-flex">
                             <div className="d-flex flex-column mr-5">
                                 <MinDiv>{e.shopName}</MinDiv>
-                                <MinDiv>{e.startTerm} ~ {e.endTerm}</MinDiv>
-                                <MinDiv>{e.enteredDate}</MinDiv>
+                                <MinDiv>{e.start_datetime} ~ {e.end_datetime}</MinDiv>
+                                <MinDiv>{e.created_datetime}</MinDiv>
                             </div>
                             <div className="d-flex flex-column justify-content-end">
                                 <div className="d-flex">

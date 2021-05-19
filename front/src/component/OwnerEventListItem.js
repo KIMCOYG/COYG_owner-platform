@@ -8,7 +8,7 @@ const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
 
-const OwnerEventListItem = ({ lists}) => {
+const OwnerEventListItem = ({lists}) => {
     let history = useHistory();
 
     return (
@@ -28,9 +28,9 @@ const OwnerEventListItem = ({ lists}) => {
                         </div>
                         <div className="d-flex">
                             <div className="d-flex flex-column mr-5">
-                                {/*<MinDiv>{e.shopName}</MinDiv>*/}
-                                <MinDiv>{e.startTerm} ~ {e.endTerm}</MinDiv>
-                                <MinDiv>{e.enteredDate}</MinDiv>
+                                {/*<MinDiv>{e.shop.name}</MinDiv>*/}
+                                <MinDiv>{e.start_datetime} ~ {e.end_datetime}</MinDiv>
+                                <MinDiv>{e.created_datetime}</MinDiv>
                             </div>
                             <div className="d-flex flex-column justify-content-end">
                                 <div className="d-flex">
