@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getEvents} from '../modules/posts';
+import { getOwnerEventListById} from '../modules/posts';
 import {reducerUtils} from "../lib/asyncUtils";
 import OwnerEventListItem from "../component/OwnerEventListItem";
 
 
-const EventListOwnerContainer = () => {
-    const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
+const EventListOwnerContainer = ({uId}) => {
+    const {data, loading, error} = useSelector(state => state.posts.post[uId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getEvents());
-    }, [dispatch])
+        dispatch(getOwnerEventListById(uId));
+    }, [uId, dispatch])
     if (loading && !data) return '로딩중'
     if (error) return 'error'
     if (!data) return null
