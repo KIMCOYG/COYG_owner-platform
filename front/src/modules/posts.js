@@ -19,10 +19,10 @@ const GET_POST_ERROR = 'GET_POSTS_ERROR' // 요청 실패
 const CLEAR_POST = "CLEAR_POST"
 
 
-export const getEvents = createPromiseThunk(GET_POSTS, postsAPI.getEvents());
-export const getScrapEvents = createPromiseThunk(GET_POSTS, postsAPI.getScrapEvents());
-export const getShops = createPromiseThunk(GET_POSTS, postsAPI.getShops());
-export const getCategories = createPromiseThunk(GET_POSTS, postsAPI.getCategories());
+export const getEvents = createPromiseThunk(GET_POSTS, postsAPI.getEvents);
+export const getScrapEvents = createPromiseThunk(GET_POSTS, postsAPI.getScrapEvents);
+export const getShops = createPromiseThunk(GET_POSTS, postsAPI.getShops);
+export const getCategories = createPromiseThunk(GET_POSTS, postsAPI.getCategories);
 
 export const getEventById = createPromiseThunkById(GET_POST, postsAPI.getEventById);
 export const getShopById = createPromiseThunkById(GET_POST, postsAPI.getShopById);

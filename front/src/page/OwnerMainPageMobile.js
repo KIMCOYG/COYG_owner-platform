@@ -1,4 +1,3 @@
-/*
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
@@ -122,4 +121,4 @@ const OwnerMainPageMobile = () => {
     
 }
 
-export default OwnerMainPageMobile*/
+export default OwnerMainPageMobile

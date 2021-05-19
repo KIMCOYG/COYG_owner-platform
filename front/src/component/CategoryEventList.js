@@ -1,5 +1,4 @@
 import logo from "../static/image/chicken.jpg";
-import {Link} from "react-router-dom";
 import {AiFillHeart} from "react-icons/ai";
 import React from "react";
 import styled from "styled-components";
@@ -34,7 +33,7 @@ const CategoryEventList = ({history, lists}) => {
                             <div className="d-flex flex-column justify-content-end">
                                 <div className="d-flex">
                                     <AiFillHeart className="text-danger mr-1"/>
-                                    <MinDiv>{e.like}</MinDiv>
+                                    <MinDiv>{e.likes_count}</MinDiv>
                                 </div>
                                 {/*거리계산*/}
                                 <MinDiv>150m</MinDiv>

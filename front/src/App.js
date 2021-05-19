@@ -2,7 +2,6 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './page/Home';
-import OwnerMainPage from './page/OwnerMainPage';
 import React from 'react';
 import OwnerMainPageMobile from './page/OwnerMainPageMobile';
 import EvnetRegist from './page/EventRegist';
@@ -42,7 +41,6 @@ const App = () => {
           <Route path="/post" component={PostSearch} exact />
 
           {/* Owner */}
-          <Route path="/owner" component={OwnerMainPage} exact />
           <Route path="/mobile/owner" component={OwnerMainPageMobile} exact />
           <Route
             path="/mobile/owner/detail/:id"
@@ -54,36 +52,36 @@ const App = () => {
           <Route path="/mobile/owner/event/modify" component={EvnetModify} exact />
 
           {/* Mypage */}
-          <Route path="/owner/mypage" component={OwnerMyPage} exact></Route>
+          <Route path="/owner/mypage" component={OwnerMyPage} exact/>
           <Route
             path="/owner/mypage/userinfo"
             component={ManageUserInfo}
             exact
-          ></Route>
+          />
           <Route
             path="/owner/mypage/changepw"
             component={ChangePassword}
             exact
-          ></Route>
+          />
           <Route
             path="/owner/mypage/manageshop"
             component={ManageShop}
             exact
-          ></Route>
+          />
           <Route
             path="/owner/mypage/registshop"
             component={RegistShop}
             exact
-          ></Route>
+          />
           <Route
-            path="/owner/mypage/eventlist"
-            component={ManageEventList}
-            exact
-          ></Route>
+    path="/owner/mypage/eventlist"
+    component={ManageEventList}
+    exact
+    />
 
           <Route path="/login" component={Login} />
-          <Route path="/customer/join" component={CustomerJoin}></Route>
-          <Route path="/owner/join" component={OwnerJoin}></Route>
+          <Route path="/customer/join" component={CustomerJoin}/>
+          <Route path="/owner/join" component={OwnerJoin}/>
           <Route path="/admin" component={AdminPage} exact />
           <Route path="/admin/category" component={AdminCategory} exact />
           <Route path="/admin/owner" component={AdminOwner} exact />
