@@ -1,4 +1,4 @@
-import models from "../models";
+import models from "../../models";
 const Image = models.Image;
 
 export const getImages = (req, res, next) => {

@@ -1,4 +1,4 @@
-import models from "../models";
+import models from "../../models";
 const Scrap = models.Scrap;
 
 export const getScraps = (req, res, next) => {

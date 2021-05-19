@@ -1,4 +1,4 @@
-import models from "../models";
+import models from "../../models";
 const Like = models.Like;
 
 export const getLikes = (req, res, next) => {

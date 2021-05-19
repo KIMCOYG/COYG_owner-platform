@@ -5,9 +5,8 @@ import {
   getShop,
   getShops,
   updateShop,
-} from "../controller/shopController";
-import shop from "../models/shop";
-import routes from "../routes";
+} from "../../controller/models/shopController";
+import routes from "../../routes";
 
 const shopRouter = express.Router();
 

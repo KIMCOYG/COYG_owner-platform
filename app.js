@@ -4,19 +4,23 @@ import logger from "morgan";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import flash from "connect-flash";
+import cors from "cors";
 import passport from "passport";
 import passportConfig from "./passport/index";
 import seq from "./models/index";
 const sequelize = seq.sequelize;
 import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
-import categoryRouter from "./routers/categoryRouter";
-import imageRouter from "./routers/imageRouter";
-import userRouter from "./routers/userRouter";
-import shopRouter from "./routers/shopRouter";
-import likeRouter from "./routers/likeRouter";
-import scrapRouter from "./routers/scrapRouter";
-import eventRouter from "./routers/eventRouter";
+import ownerRouter from "./routers/ownerRouter";
+import categoryRouter from "./routers/models/categoryRouter";
+import imageRouter from "./routers/models/imageRouter";
+import userRouter from "./routers/models/userRouter";
+import shopRouter from "./routers/models/shopRouter";
+import likeRouter from "./routers/models/likeRouter";
+import scrapRouter from "./routers/models/scrapRouter";
+import eventRouter from "./routers/models/eventRouter";
+import postImageRouter from "./routers/postImageRouter";
+import { mkFolder } from "./controller/postImageController";
 
 
 var MySQLStore = require("express-mysql-session")(session);
@@ -39,14 +43,14 @@ const corsOptions = {
 };
 
 const app = express();
-
+app.use(cors(corsOptions));
 sequelize
   .sync()
   .then(() => {
     console.log("mysql success");
   })
   .catch((err) => {
-    console.log("mysql error");
+    console.log(err);
   });
 passportConfig(passport);
 
@@ -75,6 +79,7 @@ app.use(passport.session());
 
 // router
 app.use(routes.home, globalRouter);
+app.use(routes.owner, ownerRouter);
 app.use(routes.category, categoryRouter);
 app.use(routes.image, imageRouter);
 app.use(routes.user, userRouter);
@@ -82,6 +87,7 @@ app.use(routes.shop, shopRouter);
 app.use(routes.like, likeRouter);
 app.use(routes.scrap, scrapRouter);
 app.use(routes.event, eventRouter);
+app.use(routes.post, mkFolder, postImageRouter);
 
 // 에러 처리 핸들러 필요
 
