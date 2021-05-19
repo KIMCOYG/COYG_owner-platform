@@ -5,11 +5,11 @@ import {reducerUtils} from "../lib/asyncUtils";
 import UserInfo from "../component/UserInfo";
 
 
-const UserInfoContainer = () =>{
+const UserInfoContainer = (id) =>{
     const {data, loading, error} = useSelector(state => state.posts.post[id] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getUserById());
+        dispatch(getUserById(id));
     }, [dispatch])
 
     if(loading && !data) return '로딩중'

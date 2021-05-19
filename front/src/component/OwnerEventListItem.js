@@ -9,7 +9,7 @@ const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
 
-const OwnerEventListItem = ({lists}) => {
+const OwnerEventListItem = ({history, lists}) => {
     return (
         lists.map(e => (
                 <div onClick={() => history.push(`/event/detail/${e.id}`)}>

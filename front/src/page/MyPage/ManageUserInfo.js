@@ -19,7 +19,7 @@ const SecondHeader = ({props}) => {
     )
 }
 
-const ManageUserInfo = () => {
+const ManageUserInfo = (history) => {
     return (
         <>
             <Header/>

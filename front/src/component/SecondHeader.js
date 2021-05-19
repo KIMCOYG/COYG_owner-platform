@@ -3,7 +3,7 @@ import {Button, Col, Row} from "react-bootstrap";
 import {BsChevronLeft} from "react-icons/bs";
 import {Link} from "react-router-dom";
 
-const SecondHeader = ({title, buttonName, link, what}) => {
+const SecondHeader = ({history, title, buttonName, link, what}) => {
     return (
         <Row>
             <Col xs={1}>

@@ -1,8 +1,13 @@
-import {Col, Row} from "react-bootstrap";
-import logo from "../static/image/chicken.jpg";
 import React from "react";
 import {BsHeart} from "react-icons/bs";
+import styled from "styled-components";
 
+const MinDiv = styled.div`
+  font-size: 0.5rem;
+`;
+const MidDiv = styled.div`
+  font-size: 0.7rem;
+`;
 
 const EventDetail = ({history, list}) => {
     return (
