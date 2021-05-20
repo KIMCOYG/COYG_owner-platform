@@ -15,7 +15,7 @@ const event = "/event";
 const image = "/image";
 const like = "/like";
 const scrap = "/scrap";
-const shop = "/shop";
+const shop = "/shon";
 const user = "/user";
 
 //login, join, profile
@@ -23,6 +23,7 @@ const profile = "/profile";
 const join = "/owner/join";
 const customerJoin = "/customer/join";
 const login = "/login";
+const logout = "/logout";
 
 //mypage
 const cusUpdate = "/mypage/:id/update";
@@ -45,6 +46,9 @@ const detailEvent = "/event/:id/detail";
 
 // post image
 const post = "/post";
+
+const test = "/test";
+const img = "/img";
 
 const routes = {
   home,
@@ -82,6 +86,7 @@ const routes = {
   join,
   customerJoin,
   login,
+  logout,
   cusUpdate: (id) => {
     if (id) {
       return `/mypage/${id}/update`;
@@ -148,6 +153,7 @@ const routes = {
       return scrapList;
     }
   },
+  img,
 };
 
 export default routes;

@@ -3,10 +3,10 @@ import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/Header';
 import ListPagination from '../component/ListPagination';
-import {useHistory} from "react-router-dom";
-import CategoryEventListContainer from "../container/CategoryEventListContainer";
+import { useHistory } from 'react-router-dom';
+import CategoryEventListContainer from '../container/CategoryEventListContainer';
 
-const EventList = ({match}) => {
+const EventList = ({ match }) => {
   let history = useHistory();
 
   const goBack = () => {
@@ -72,7 +72,7 @@ const EventList = ({match}) => {
           </div>
         </div>
         <div className="row mt-3">
-          <CategoryEventListContainer cId={parseInt(id, 10)}/>
+          <CategoryEventListContainer cId={parseInt(id, 10)} />
         </div>
         <div className="d-flex justify-content-center mt-3">
           <ListPagination />

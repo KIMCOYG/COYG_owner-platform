@@ -8,6 +8,7 @@ import {
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
 import {
   getProfile,
+  logout,
   postCustomerJoin,
   postJoin,
   postLogin,
@@ -23,10 +24,11 @@ const globalRouter = express.Router();
 // globalRouter.get(routes.home, hello);
 globalRouter.get(routes.profile, isLoggedIn, getProfile);
 
-// Join, Login
+// Join, Login, Logout
 globalRouter.post(routes.join, postJoin);
 globalRouter.post(routes.customerJoin, postCustomerJoin);
 globalRouter.post(routes.login, postLogin);
+globalRouter.get(routes.logout, logout);
 
 // Customer MyPage
 globalRouter.post(routes.cusUpdate(), updateUserData);
