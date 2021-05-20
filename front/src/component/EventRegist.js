@@ -1,18 +1,16 @@
 import React from "react";
-import { useHistory} from "react-router-dom";
-import styled from "styled-components";
 import {Col, Form} from "react-bootstrap";
 
 
 
-const EventRegist = ({uId, sId}) => {
-
+const EventRegist = ({uId, sId, sName}) => {
+    console.log(sName)
     return (
 
                 <Form  id="registEvent">
                     <Form.Group controlId="formShopName">
                         <Form.Label>가게명</Form.Label>
-                        <Form.Control type="input" placeholder="가게명 입력"/>
+                        <Form.Control type="input" placeholder="가게명 입력" defaultValue={sName}/>
                     </Form.Group>
 
                     <Form.Group controlId="formEventName">

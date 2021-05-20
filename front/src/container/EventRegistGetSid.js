@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import EventRegist from "./EventRegist";
+import EventRegist from "../component/EventRegist";
 
 const EventRegistGetSid = ({lists, uId}) => {
     const [selected, setSelected] = useState("");

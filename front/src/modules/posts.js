@@ -42,8 +42,6 @@ const getPostReducer = handleAsyncActionsById(GET_POST, 'post', true);
 
 
 export default function posts(state = initialState, action){
-    console.log("statewwww", state)
-    console.log("postswwww", action.type)
     switch(action.type){
         case GET_POSTS:
         case GET_POSTS_SUCCESS:

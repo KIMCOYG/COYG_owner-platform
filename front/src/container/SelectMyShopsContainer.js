@@ -15,7 +15,6 @@ const SelectMyShopsContainer = ({uId}) =>{
     if(loading && !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
-    console.log('container    ', data)
     return (
         <SelectMyShops lists={data}/>
     )

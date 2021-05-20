@@ -34,7 +34,7 @@ const ManageUserInfo = (match) => {
                 </Row>
                 <UserInfoContainer params={user_id}/>
             </Container>
-            <Button onClick={() => history.push("owner/change-password")}></Button>)
+            <Button onClick={() => history.push("owner/change-password")}></Button>
         </>
     )
 }

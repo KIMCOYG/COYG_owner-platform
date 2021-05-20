@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getEventById} from '../modules/posts';
 import EventDetail from "../component/EventDetail";
 import {reducerUtils} from "../lib/asyncUtils";
+import EventDetailOwner from "../component/EventDetailOwner";
 
 
-const EventDetailContainer =  ({eId}) =>{
+const EventDetailOwnerContainer =  ({eId}) =>{
     const {data, loading, error} =  useSelector(state => state.posts.post[eId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
@@ -16,8 +17,8 @@ const EventDetailContainer =  ({eId}) =>{
     if(error) return 'error'
     if(!data) return null
     return (
-        <EventDetail lists={data}/>
+        <EventDetailOwner lists={data}/>
     );
 
 }
-export default EventDetailContainer
+export default EventDetailOwnerContainer

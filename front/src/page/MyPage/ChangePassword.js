@@ -2,6 +2,8 @@ import React from 'react'
 import {Button, Container, Form, Row} from 'react-bootstrap'
 import Header from '../../component/HeaderOwner';
 import SecondHeader from "../../component/SecondHeader";
+import {BsChevronLeft, BsHeart} from "react-icons/bs";
+import {useHistory} from "react-router-dom";
 
 // const SecondHeader = ({props}) => {
 //     return (
@@ -28,13 +30,23 @@ const checkPW = () => {
 }
 
 const ChangePassword = () => {
+    let history = useHistory();
     return (
         <>
             <Header/>
             <Container className="mt-3">
-                <Row className="col-xs-2 pl-3 text-center">
-                    <SecondHeader title="비밀번호 변경"></SecondHeader>
-                </Row>
+                <div className="row">
+                    <div className="col-xs-2 pl-3 text-center">
+                        <button
+                            onClick={() => history.goBack()}
+                            type="button"
+                            className="btn btn-link border-dark"
+                        >
+                            <BsChevronLeft className="text-dark" />
+                        </button>
+                        비밀번호 변경
+                    </div>
+                </div>
                 <Form>
                     <Form.Group>
                         <Form.Label>신규 비밀번호</Form.Label>

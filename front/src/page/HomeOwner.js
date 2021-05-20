@@ -3,11 +3,10 @@ import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import Slider from '../component/Slider';
-import CategoryButton from '../component/CategoryButton';
-import HomeContainer from "../container/HomeContainer";
 import Header from "../component/HeaderOwner";
+import CategoryButton from "../component/CategoryButton";
 
-const Home = () => {
+const HomeOwner = () => {
   let address = '경기도 파주시 조리읍';
   let history = useHistory();
 
@@ -59,4 +58,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomeOwner;

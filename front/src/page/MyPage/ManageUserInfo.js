@@ -30,7 +30,7 @@ const ManageUserInfo = () => {
                 </Row>
                 <UserInfoContainer uId={1}/>
             </Container>
-            <text onClick={() => history.push("owner/change-password")}></text>)
+            <text onClick={() => history.push("owner/change-password")}></text>
         </>
     )
 }

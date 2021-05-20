@@ -5,7 +5,7 @@ import {reducerUtils} from "../lib/asyncUtils";
 import SelectCategory from "../component/SelectCategory";
 
 
-const SelecetCategoriesContainer = () =>{
+const SelectCategoriesContainer = () =>{
     const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
@@ -15,10 +15,9 @@ const SelecetCategoriesContainer = () =>{
     if(loading && !data) return '로딩중'
     if(error) return 'error'
     if(!data) return null
-    console.log('container    ', data)
     return (
         <SelectCategory lists={data}/>
     )
 
 }
-export default SelecetCategoriesContainer
+export default SelectCategoriesContainer

@@ -9,7 +9,7 @@ const EventModify = ({lists}) => {
             <Form  id="registEvent">
                 <Form.Group controlId="formShopName">
                     <Form.Label>가게명</Form.Label>
-                    <Form.Control type="input" defaultValue="{lists.shop.name}" disabled></Form.Control>
+                    <Form.Control type="input" defaultValue={lists.shop.name} disabled></Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="formEventName">

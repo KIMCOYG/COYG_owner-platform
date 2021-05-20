@@ -16,7 +16,6 @@ const HomeContainer = () =>{
     if(loading) return '로딩중'
     if(error) return 'error'
     if(!data) return null
-    console.log('container    ', data)
     return (
         <Home lists={data}></Home>
     )

@@ -83,6 +83,16 @@ const Login = () => {
               <Button variant="link">사장님 회원가입</Button>
             </Link>
           </div>
+          <div className="d-flex justify-content-center mt-3">
+            <Link to="/customer">
+              <Button variant="link" className="mr-3">
+                고객 페이지
+              </Button>
+            </Link>
+            <Link to="/owner/">
+              <Button variant="link">사장님 페이지</Button>
+            </Link>
+          </div>
         </div>
       </Container>
     </>

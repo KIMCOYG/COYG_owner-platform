@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Col, Form, Row} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import SelecetCategoriesContainer from "../container/SelecetCategoriesContainer";
+import SelectCategoriesContainer from "../container/SelectCategoriesContainer";
 
 
 
@@ -63,7 +63,7 @@ const ShopManage = ({lists}) => {
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>카테고리</Form.Label>
-                        <SelecetCategoriesContainer/>
+                        <SelectCategoriesContainer/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>상세정보</Form.Label>

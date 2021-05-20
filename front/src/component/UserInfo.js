@@ -25,14 +25,12 @@ const UserInfo = ({lists}) => {
                         <Form.Control type="email" value={lists.email} disabled/>
                     </Form.Group>
                     <Row>
-                        <Button onClick={() => history.push(`/owner/mypage/changepw`)}>비밀번호 변경</Button>
+                        <Button variant="link" onClick={() => history.push(`/owner/mypage/changepw`)}>비밀번호 변경</Button>
                     </Row>
                     <Row>
-                        <Button type="submit">적용하기</Button>
+                        <Button variant="link" type="submit">적용하기</Button>
                     </Row>
                 </Form>
-            
-        
         </>
 
     );

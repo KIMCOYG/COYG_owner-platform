@@ -7,7 +7,6 @@ import {useHistory} from "react-router-dom";
 import EventDetailContainer from "../container/EventDetailContainer";
 
 const DetailEvent = ({match, location}) => {
-    console.log("match", match)
 
     let history = useHistory();
     const eName = location.state.eName;

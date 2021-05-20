@@ -1,9 +1,7 @@
 import React from 'react'
-import { Container, Form, Row} from 'react-bootstrap'
-import {BsChevronLeft} from 'react-icons/bs'
+import { Container, Row} from 'react-bootstrap'
 import Header from '../../component/HeaderOwner'
 import SecondHeader from "../../component/SecondHeader";
-import {useHistory} from "react-router-dom";
 import ShopManageContainer from "../../container/ShopManageContainer";
 
 /*const SecondHeader = ({props}) => {
@@ -27,7 +25,6 @@ import ShopManageContainer from "../../container/ShopManageContainer";
 
 
 const ManageShop = ({match}) => {
-    let history = useHistory();
     const { id } = match.params;
     return (
         <>

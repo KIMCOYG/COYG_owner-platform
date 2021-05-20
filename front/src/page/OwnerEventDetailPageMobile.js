@@ -1,11 +1,11 @@
 import React,  {useState} from 'react'
-import { Col, Container, Row} from 'react-bootstrap'
+import {  Container} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../component/HeaderOwner'
 import '../static/css/OwnerEventDetailPageMobile.css'
 import KakaoMap from "./KakaoMap"
-import EventDetailContainer from "../container/EventDetailContainer";
 import {useHistory} from "react-router-dom";
+import EventDetailOwnerContainer from "../container/EventDetailOwnerContainer";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -28,13 +28,12 @@ import {useHistory} from "react-router-dom";
     )
 }*/
 
-const OwnerEventDetailPageMobile = ({match}) => {
+const OwnerEventDetailPageMobile = ({match, location}) => {
     let history = useHistory();
-
+    const eName = location.state.eName;
     const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
     const [mapSize, setMapSize] = useState([100, 400]);
     const { id } = match.params; // URL 파라미터 조회하기
-    console.log("match.params",id)
 
     return (
         <>
@@ -45,10 +44,14 @@ const OwnerEventDetailPageMobile = ({match}) => {
                         <button onClick = {() => history.goBack()} type="button" className="btn btn-link border-dark">
                             <BsChevronLeft className="text-dark" />
                         </button>
+                        {eName}
+                        <button onClick = {() => history.push(`/mobile/owner/event/${parseInt(id,10)}/modify`)} type="button" className="btn btn-link border-dark">
+                            수정
+                        </button>
                     </div>
                 </div>
                 {/* 이미지 시작 */}
-                <EventDetailContainer eId={parseInt(id, 10)}/>
+                <EventDetailOwnerContainer eId={parseInt(id, 10)}/>
                 {/* 지도 */}
                 <div className="mt-2 border-bottom pb-3 mb-5">
                     <div

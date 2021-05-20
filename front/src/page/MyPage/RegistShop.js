@@ -3,6 +3,7 @@ import {Button, Col, Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
 import {Link, useHistory} from 'react-router-dom'
 import Header from '../../component/HeaderOwner'
+import SelectCategoriesContainer from "../../container/SelectCategoriesContainer";
 
 const SecondHeader = () => {
     let history = useHistory();
@@ -18,9 +19,19 @@ const SecondHeader = () => {
 }
 
 const data = [
-    {category: "생활용품"},
+    {category: "일식"},
     {category: "치킨"},
-    {category: "피자"}
+    {category: "피자"},
+    {category: "가전제품"},
+    {category: "도시락"},
+    {category: "디저트"},
+    {category: "마트"},
+    {category: "분식"},
+    {category: "스포츠"},
+    {category: "아시안"},
+    {category: "양식"},
+    {category: "의류"},
+    {category: "주류"}
 ]
 
 
@@ -90,7 +101,7 @@ const RegistShop = () => {
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>카테고리</Form.Label>
-                        <Categories></Categories>
+                        <Categories/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>상세정보</Form.Label>

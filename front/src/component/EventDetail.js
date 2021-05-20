@@ -31,7 +31,7 @@ const EventDetail = ({lists}) => {
                             <div className="d-flex pt-2 border-bottom border-dark">
                                 <div className="col-3 font-weight-bold">기간</div>
                                 <MidDiv className="col-9 text-center">
-                                    {lists.start_datetime} ~ {lists.end_datetime}
+                                    {lists.start_datetime}~ {lists.end_datetime}
                                 </MidDiv>
                             </div>
                             <div className="border-bottom border-dark pl-3">
@@ -47,7 +47,7 @@ const EventDetail = ({lists}) => {
                                 className="border-bottom border-dark pl-3 font-weight-bold"
                                 style={{fontSize: '1.2rem'}}
                             >
-                                가게 {lists.shop_id}
+                                가게
                             </div>
                             <div className="border-bottom border-dark pl-3 font-weight-bold">
                                 {/*{lists.shop.name}*/}
@@ -59,7 +59,7 @@ const EventDetail = ({lists}) => {
                             </div>
                             <div className="d-flex pt-2 border-bottom border-dark">
                                 <div className="col-3 font-weight-bold">휴무일</div>
-                                <MidDiv className="col-9 text-center">{lists.holiday}</MidDiv>
+                                <MidDiv className="col-9 text-center">{lists.shop.holiday}</MidDiv>
                             </div>
                             <div className="d-flex pt-2 border-bottom border-dark">
                                 <div className="col-3 font-weight-bold">TEL</div>

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {reducerUtils} from "../lib/asyncUtils";
 import {getMyShopsById} from "../modules/posts";
-import EventRegistGetSid from "../component/EventRegistGetSid";
+import EventRegistGetSid from "./EventRegistGetSid";
 
 
 const EventRegistContainer = ({uId}) => {

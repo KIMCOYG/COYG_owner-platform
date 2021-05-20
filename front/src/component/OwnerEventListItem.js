@@ -13,7 +13,7 @@ const OwnerEventListItem = ({lists}) => {
     console.log(typeof lists)
     return (
         lists.map(e => (
-                 <div onClick={() => history.push(`/event/detail/${e.event_id}`)}>
+                 <div onClick={() => history.push({pathname:`/mobile/owner/detail/${e.event_id}`, state: {eName:e.name}})}>
                     <div className="col-4">
                         <img
                             src={logo}
