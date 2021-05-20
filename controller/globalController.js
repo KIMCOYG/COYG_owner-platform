@@ -10,8 +10,19 @@ export const hello = (req, res, next) => {
   next();
 };
 
-export const HomeBanner = (req, res, next) => {
+export const HomeBanner = async (req, res, next) => {
   //현재 날짜, 위치, 이벤트 정보 비교 후 이미지 가져오기
+  const {
+    body: { longitude, latitude },
+  } = req;
+  try {
+    if (!latitude || !lognitude) {
+      res.send({ message: "유효성 검사 실패" });
+    }
+    const shops = Shop.findAll({
+      attributes: ["id", "name", [sequelize.fn("ST_Distance")]],
+    });
+  } catch (err) {}
 };
 
 // 홈 화면 카테고리 이미지 조회
