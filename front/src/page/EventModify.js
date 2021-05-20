@@ -9,15 +9,15 @@ const EventModify = ({match}) => {
     console.log(match)
     const { id } = match.params;
 
-    return (
-        <>
-            <Header/>
-            <Container className="mt-3">
-                    <SecondHeader title="이벤트수정" link="/" buttonName="저장" />
-                <EventModifyContainer eId={parseInt(id, 10)}/>
-            </Container>
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
+      <Container className="mt-3">
+        <SecondHeader title="이벤트수정" link="/" buttonName="저장" />
+        <EventModifyContainer eId={parseInt(id, 10)} />
+      </Container>
+    </>
+  );
+};
 
-export default EventModify
+export default EventModify;

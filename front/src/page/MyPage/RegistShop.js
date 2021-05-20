@@ -6,17 +6,21 @@ import Header from '../../component/HeaderOwner'
 import SelectCategoriesContainer from "../../container/SelectCategoriesContainer";
 
 const SecondHeader = () => {
-    let history = useHistory();
+  let history = useHistory();
 
-    return (
-        <Row>
-            <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
-              <BsChevronLeft className="text-dark" />
-            </button>
-            <h4>가게 등록</h4>
-        </Row>
-    )
-}
+  return (
+    <Row>
+      <button
+        onClick={() => history.goBack()}
+        type="button"
+        className="btn btn-link border-dark"
+      >
+        <BsChevronLeft className="text-dark" />
+      </button>
+      <h4>가게 등록</h4>
+    </Row>
+  );
+};
 
 const data = [
     {category: "일식"},
@@ -36,28 +40,32 @@ const data = [
 
 
 const Categories = (props) => {
+  // TODO : 2021.04.20 usestate 글로벌하게 만들기 - sunbo
+  const [selected, setSelected] = useState('');
+  console.log(selected);
 
-    // TODO : 2021.04.20 usestate 글로벌하게 만들기 - sunbo
-    const [selected, setSelected] = useState("");
-    console.log(selected)
-
-    return (
-        <select value={selected} onChange={(event) => setSelected(event.target.value)}>
-            {data.map((list) => <option key={list.category} value={list.category}>{list.category}</option>)}
-        </select>
-    )
-
-}
-
+  return (
+    <select
+      value={selected}
+      onChange={(event) => setSelected(event.target.value)}
+    >
+      {data.map((list) => (
+        <option key={list.category} value={list.category}>
+          {list.category}
+        </option>
+      ))}
+    </select>
+  );
+};
 
 const RegistShop = () => {
-    return (
-        <>
-            <Header/>
-            <Container className="mt-3">
-                <Row className="col-xs-2 pl-3 text-center">
-                    <SecondHeader/>
-                </Row>
+  return (
+    <>
+      <Header />
+      <Container className="mt-3">
+        <Row className="col-xs-2 pl-3 text-center">
+          <SecondHeader />
+        </Row>
 
                 <Form>
                     <Form.Group>
@@ -108,13 +116,13 @@ const RegistShop = () => {
                         <Form.Control type="text"></Form.Control>
                     </Form.Group>
 
-                    <Row>
-                        <Button type="submit">저장하기</Button>
-                    </Row>
-                </Form>
-            </Container>
-        </>
-    )
-}
+          <Row>
+            <Button type="submit">저장하기</Button>
+          </Row>
+        </Form>
+      </Container>
+    </>
+  );
+};
 
-export default RegistShop
+export default RegistShop;

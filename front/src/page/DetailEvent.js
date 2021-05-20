@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import Header from '../component/Header';
-import {BsChevronLeft, BsHeart} from 'react-icons/bs';
-import {Container} from 'react-bootstrap';
-import KakaoMap from "./KakaoMap"
-import {useHistory} from "react-router-dom";
-import EventDetailContainer from "../container/EventDetailContainer";
+import { BsChevronLeft, BsHeart } from 'react-icons/bs';
+import { Container } from 'react-bootstrap';
+import KakaoMap from './KakaoMap';
+import { useHistory } from 'react-router-dom';
+import EventDetailContainer from '../container/EventDetailContainer';
 
-const DetailEvent = ({match, location}) => {
+const DetailEvent = ({ match, location }) => {
 
     let history = useHistory();
     const eName = location.state.eName;

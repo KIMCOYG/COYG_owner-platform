@@ -67,4 +67,4 @@ const OwnerEventDetailPageMobile = ({match, location}) => {
     )
 }
 
-export default OwnerEventDetailPageMobile
+export default OwnerEventDetailPageMobile;

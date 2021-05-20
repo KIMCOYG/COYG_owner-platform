@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './page/Home';
 import React from 'react';
 import OwnerMainPageMobile from './page/OwnerMainPageMobile';
@@ -29,44 +29,52 @@ import HomeOwner from "./page/HomeOwner";
 import ManageMyShops from "./page/MyPage/ManageMyShops";
 
 const App = () => {
-    return (
-        <BrowserRouter>
-            <div>
-                <Switch>
-                    <Route path="/" component={Home} exact/>
-                    <Route path="/customer" component={HomeCustomer} exact/>
-                    <Route path="/owner" component={HomeOwner} exact/>
-                    <Route path="/category/:id/event" component={EventList} exact/>
+  return (
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/customer" component={HomeCustomer} exact />
+          <Route path="/owner" component={HomeOwner} exact />
+          <Route path="/category/:id/event" component={EventList} exact />
 
-                    <Route path="/event/detail/:id" component={DetailEvent} exact/>
+          <Route path="/event/detail/:id" component={DetailEvent} exact />
 
-                    <Route path="/mypage/customer" component={CustomerMyPage} exact/>
-                    <Route path="/mypage/customer/scrap" component={ScrapList} exact/>
-                    {/* <Route path="/mypage/customer/scrap" component={CustomerScrap} exact /> */}
-                    <Route path="/post" component={PostSearch} exact/>
+          <Route path="/mypage/customer" component={CustomerMyPage} exact />
+          <Route path="/mypage/customer/scrap" component={ScrapList} exact />
+          {/* <Route path="/mypage/customer/scrap" component={CustomerScrap} exact /> */}
+          <Route path="/post" component={PostSearch} exact />
 
-                    {/* Owner */}
-                    <Route
-                        path="/mobile/owner/detail/:id"
-                        component={OwnerEventDetailPageMobile}
-                        exact
-                    />
+          {/* Owner */}
+          <Route
+            path="/mobile/owner/detail/:id"
+            component={OwnerEventDetailPageMobile}
+            exact
+          />
 
-                    <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact/>
-                    <Route path="/mobile/owner/event/:id/modify" component={EventModify} exact/>
+          <Route
+            path="/mobile/owner/event/regist"
+            component={EvnetRegist}
+            exact
+          />
+          <Route
+            path="/mobile/owner/event/:id/modify"
+            component={EventModify}
+            exact
+          />
 
-                    {/* Mypage */}
-                    <Route path="/owner/mypage" component={OwnerMyPage} exact/>
-                    <Route
-                        path="/owner/mypage/userinfo"
-                        component={ManageUserInfo}
-                        exact
-                    />
-                    <Route
-                        path="/owner/mypage/changepw"
-                        component={ChangePassword}
-                        exact
-                    />
+          {/* Mypage */}
+          <Route path="/owner/mypage" component={OwnerMyPage} exact />
+          <Route
+            path="/owner/mypage/userinfo"
+            component={ManageUserInfo}
+            exact
+          />
+          <Route
+            path="/owner/mypage/changepw"
+            component={ChangePassword}
+            exact
+          />
                     <Route
                         path="/owner/mypage/manageshop/:id"
                         component={ManageShop}
@@ -82,22 +90,22 @@ const App = () => {
                         component={RegistShop}
                         exact
                     />
-                    <Route
-                        path="/owner/mypage/eventlist"
-                        component={ManageEventList}
-                        exact
-                    />
+          <Route
+            path="/owner/mypage/eventlist"
+            component={ManageEventList}
+            exact
+          />
 
-                    <Route path="/login" component={Login}/>
-                    <Route path="/customer/join" component={CustomerJoin}/>
-                    <Route path="/owner/join" component={OwnerJoin}/>
-                    <Route path="/admin" component={AdminPage} exact/>
-                    <Route path="/admin/category" component={AdminCategory} exact/>
-                    <Route path="/admin/owner" component={AdminOwner} exact/>
-                </Switch>
-            </div>
-        </BrowserRouter>
-    );
+          <Route path="/login" component={Login} />
+          <Route path="/customer/join" component={CustomerJoin} />
+          <Route path="/owner/join" component={OwnerJoin} />
+          <Route path="/admin" component={AdminPage} exact />
+          <Route path="/admin/category" component={AdminCategory} exact />
+          <Route path="/admin/owner" component={AdminOwner} exact />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
 };
 
 export default App;

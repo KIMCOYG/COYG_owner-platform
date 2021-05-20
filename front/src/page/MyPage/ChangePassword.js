@@ -1,5 +1,6 @@
-import React from 'react'
-import {Button, Container, Form, Row} from 'react-bootstrap'
+import React from 'react';
+import { Button, Container, Form, Row } from 'react-bootstrap';
+// import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../../component/HeaderOwner';
 import SecondHeader from "../../component/SecondHeader";
 import {BsChevronLeft, BsHeart} from "react-icons/bs";
@@ -18,16 +19,16 @@ import {useHistory} from "react-router-dom";
 // }
 
 const checkPW = () => {
-    const pw1 = document.getElementById('pw1').value;
-    const pw2 = document.getElementById('pw2').value;
-    const pwText = document.getElementById('pw2Text');
+  const pw1 = document.getElementById('pw1').value;
+  const pw2 = document.getElementById('pw2').value;
+  const pwText = document.getElementById('pw2Text');
 
-    if (pw1 === pw2) {
-        pwText.innerHTML = '비밀번호가 일치합니다'
-    } else {
-        pwText.innerHTML = '비밀번호가 일치하지 않습니다'
-    }
-}
+  if (pw1 === pw2) {
+    pwText.innerHTML = '비밀번호가 일치합니다';
+  } else {
+    pwText.innerHTML = '비밀번호가 일치하지 않습니다';
+  }
+};
 
 const ChangePassword = () => {
     let history = useHistory();
@@ -58,10 +59,10 @@ const ChangePassword = () => {
                         <Form.Text id="pw2Text" className="text-muted"></Form.Text>
                     </Form.Group>
 
-                    <Button type="submit">변경하기</Button>
-                </Form>
-            </Container>
-        </>
-    )
-}
-export default ChangePassword
+          <Button type="submit">변경하기</Button>
+        </Form>
+      </Container>
+    </>
+  );
+};
+export default ChangePassword;

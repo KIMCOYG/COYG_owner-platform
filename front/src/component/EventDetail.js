@@ -8,13 +8,15 @@ const MidDiv = styled.div`
 `;
 
 const EventDetail = ({lists}) => {
+    console.log( lists.image.image_name)
     return (
                 <>
 
                     <div className="mt-2">
                         <div className="border-bottom pb-2">
-                            <img onClick={() => window.open(`${lists.image.image_path}`)} //확대
-                                 src={lists.image.image_path} alt="event-image" className="img-fluid"/>
+                            <img src={"uploads/laptop1621483528904.jpg"} alt=""/>
+                            <img onClick={() => window.open(`${lists.image.image_name}`)} //확대
+                                 src={'uploads/' + lists.image.image_name} alt="event-image" className="img-fluid"/>
                             <div className="d-flex justify-content-between">
                                 <MinDiv>*사진 클릭 시 확대</MinDiv>
                                 <MinDiv>1/2</MinDiv>

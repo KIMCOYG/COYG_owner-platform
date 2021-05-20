@@ -35,10 +35,9 @@ const ManageShop = ({match}) => {
                 </Row>
 
                 <ShopManageContainer sId={parseInt(id, 10)}/>
-
             </Container>
-        </>
-    )
-}
+    </>
+  );
+};
 
-export default ManageShop
+export default ManageShop;
