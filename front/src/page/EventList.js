@@ -6,13 +6,13 @@ import ListPagination from '../component/ListPagination';
 import {useHistory} from "react-router-dom";
 import CategoryEventListContainer from "../container/CategoryEventListContainer";
 
-const EventList = ({match}) => {
+const EventList = ({match, location}) => {
   let history = useHistory();
-
+  const listName = location.state.name
+  console.log(location)
   const goBack = () => {
     history.goBack();
   };
-  let listName = '생활용품'; // 전 페이지에서 전달 받을수 있도로ㅠㄱ
   const { id } = match.params;
   return (
     <>

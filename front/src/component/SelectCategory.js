@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const SelectCategory = (lists) => {
+const SelectCategory = ({lists}) => {
     const [selected, setSelected] = useState("");
 
     return (

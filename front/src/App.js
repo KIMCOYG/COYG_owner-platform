@@ -26,6 +26,7 @@ import RegistShop from './page/MyPage/RegistShop';
 import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
 import HomeCustomer from "./page/HomeCustomer";
 import HomeOwner from "./page/HomeOwner";
+import ManageMyShops from "./page/MyPage/ManageMyShops";
 
 const App = () => {
     return (
@@ -68,8 +69,13 @@ const App = () => {
                         exact
                     />
                     <Route
-                        path="/owner/mypage/manageshop"
+                        path="/owner/mypage/manageshop/:id"
                         component={ManageShop}
+                        exact
+                    />
+                    <Route
+                        path="/owner/mypage/myshops"
+                        component={ManageMyShops}
                         exact
                     />
                     <Route

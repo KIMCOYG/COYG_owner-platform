@@ -10,42 +10,43 @@ const MinDiv = styled.div`
 
 const CategoryEventList = ({lists}) => {
     let history = useHistory();
-
+    console.log("여기오나 ", lists)
     return (
-
-        lists.map(e => (
-                <div onClick={() => history.push(`/event/detail/${e.event_id}`)}>
-                    <div className="col-4">
-                        <img
-                            src={logo}
-                            alt=""
-                            style={{width: '100%', heigh: '100%'}}
-                        />
-                    </div>
-                    <div className="col-8">
-                        <div className="font-weight-bold">
-                            <h5>{e.name}</h5>
-
+        <>
+            {lists.map(e => (
+                    <div onClick={() => history.push({pathname:`/event/detail/${e.event_id}`, state: {eName: e.name}})}>
+                        <div className="col-4">
+                            <img
+                                src={logo}
+                                alt=""
+                                style={{width: '100%', heigh: '100%'}}
+                            />
                         </div>
-                        <div className="d-flex">
-                            <div className="d-flex flex-column mr-5">
-                                {/*<MinDiv>{e.shopName}</MinDiv>*/}
-                                <MinDiv>{e.start_datetime} ~ {e.end_datetime}</MinDiv>
-                                <MinDiv>{e.created_datetime}</MinDiv>
+                        <div className="col-8">
+                            <div className="font-weight-bold">
+                                <h5>{e.name}</h5>
+
                             </div>
-                            <div className="d-flex flex-column justify-content-end">
-                                <div className="d-flex">
-                                    <AiFillHeart className="text-danger mr-1"/>
-                                    <MinDiv>{e.likes_count}</MinDiv>
+                            <div className="d-flex">
+                                <div className="d-flex flex-column mr-5">
+                                    {/*<MinDiv>{e.shop.name}</MinDiv>*/}
+                                    <MinDiv>{e.start_datetime} ~ {e.end_datetime}</MinDiv>
+                                    <MinDiv>{e.created_datetime}</MinDiv>
                                 </div>
-                                {/*거리계산*/}
-                                <MinDiv>150m</MinDiv>
+                                <div className="d-flex flex-column justify-content-end">
+                                    <div className="d-flex">
+                                        <AiFillHeart className="text-danger mr-1"/>
+                                        <MinDiv>{e.likes_count}</MinDiv>
+                                    </div>
+                                    {/*거리계산*/}
+                                    <MinDiv>150m</MinDiv>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )
-        )
+                )
+            )}
+        </>
     )
 }
 

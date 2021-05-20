@@ -24,30 +24,26 @@ const OwnerMyPage = () => {
         <div className="row mt-5">
           <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/userinfo">
+              <button type="button" className="btn btn-link" onClick={() => history.push("/owner/mypage/userinfo")} >
                   <img
                     src={myInfoIcon}
                     className="rounded"
                     alt=""
                     style={{ width: '100%', height: '100%' }}
                   />
-                </a>
               </button>
               <div className="text-center">내 정보 수정</div>
             </div>
           </div>
           <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/eventlist">
+              <button type="button" className="btn btn-link" onClick={() => history.push("/owner/mypage/eventlist")}>
                   <img
                     src={scrapIcon}
                     className="rounded"
                     alt=""
                     style={{ width: '100%', height: '100%' }}
                   />
-                </a>
               </button>
               <div className="text-center">이벤트관리</div>
             </div>
@@ -56,15 +52,13 @@ const OwnerMyPage = () => {
         <div className="row mt-5">
         <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/manageshop">
+              <button type="button" className="btn btn-link" onClick={() => history.push("/owner/mypage/myshops")}>
                   <img
                     src={scrapIcon}
                     className="rounded"
                     alt=""
                     style={{ width: '100%', height: '100%' }}
                   />
-                </a>
               </button>
               <div className="text-center">가게관리</div>
             </div>

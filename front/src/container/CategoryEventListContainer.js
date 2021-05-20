@@ -6,7 +6,7 @@ import {getCategoryListsById} from "../modules/posts";
 
 
 const CategoryEventListContainer = ({cId}) =>{
-    const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
+    const {data, loading, error} = useSelector(state => state.posts.post[cId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getCategoryListsById(cId));

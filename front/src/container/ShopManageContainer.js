@@ -5,7 +5,7 @@ import {reducerUtils} from "../lib/asyncUtils";
 import ShopManage from "../component/ShopManage";
 
 
-const ShopManageContainer = (sId) =>{
+const ShopManageContainer = ({sId}) =>{
     const {data, loading, error} = useSelector(state => state.posts.post[sId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {

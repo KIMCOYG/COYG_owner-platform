@@ -16,7 +16,7 @@ const EventListItemScrap = ({lists}) => {
         <>
 
             {lists.result.map(e => (
-                    <div onClick={() => history.push(`/event/detail/${e.event_id}`)}>
+                    <div onClick={() => history.push({pathname:`/event/detail/${e.event_id}`, state: {eName: e.name}})}>
                         <div className="col-4">
                             <img
                                 src={logo}

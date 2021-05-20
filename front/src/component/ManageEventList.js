@@ -19,7 +19,7 @@ const ManageEventList = ({lists}) => {
                         <div className="row">
                             <ul>
                                 {lists.map(e => (
-                                        <div onClick={() => history.push(`mobile/owner/detail/${e.event_id}`)}>
+                                        <div onClick={() => history.push({pathname:`/event/detail/${e.event_id}`, state: {eName: e.name}})}>
                                             <div className="col-4">
                                                 <img
                                                     src={e.image_name}

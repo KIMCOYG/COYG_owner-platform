@@ -88,7 +88,7 @@ export const handleAsyncActionsById = (type, key, keepData) => {
                     }
                 };
             case SUCCESS:
-                console.log("여기", action.payload)
+                console.log("SUCCESS", action.payload)
                 return{
                     ...state,
                     [key]: {

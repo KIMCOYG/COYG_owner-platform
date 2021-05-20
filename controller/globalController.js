@@ -42,7 +42,6 @@ export const getCategoryList = async (req, res, next) => {
     let shops = await Shop.findAll({
       where: { category_id: id },
       attributes: [["shop_id", "shop_id"]],
-      raw: true,
     });
     shops = shops.map((i) => i.shop_id);
 
@@ -52,9 +51,8 @@ export const getCategoryList = async (req, res, next) => {
           [Op.or]: [1,4],
         },
       },
-      include: Image,
+      include: [Image, Shop],
       order: [["likes_count", "DESC"]],
-      raw: true,
     });
     res.send({ result });
   } catch (err) {
@@ -72,7 +70,6 @@ export const getDetailEvent = async (req, res, next) => {
     const result = await Event.findOne({
       where: { event_id: id },
       include: [Image, Shop],
-      raw: true,
     });
     res.send(result);
   } catch (err) {

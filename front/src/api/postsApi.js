@@ -46,7 +46,7 @@ export const getShopById = async id => {
 
 export const getMyShopsById = async id => {
     //user_id
-    const response = await axios.get(`http://localhost:5000/shop/${id}/list`)
+    const response = await axios.get(`http://localhost:5000/owner/shop/${id}/list`)
     return response.data;
 }
 
@@ -61,12 +61,12 @@ export const getUserById = async id => {
 export const getCategoryListsById = async id =>{
     // category_id
     const response = await axios.get(`http://localhost:5000/category/${id}/list`)
-    console.log("getCategoryListsById api", response.data)
-    return response.data;
+    console.log("getCategoryListsById api", response.data.result)
+    return response.data.result;
 };
 
 export const getOwnerEventListById = async id =>{
     // user_id
-    const response = await axios.get(`http://localhost:5000/event/${id}/list`)
+    const response = await axios.get(`http://localhost:5000/owner/event/${id}/list`)
     return response.data;
 };

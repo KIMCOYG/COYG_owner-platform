@@ -9,7 +9,7 @@ const SecondHeader = ({ title, buttonName, link, what}) => {
     return (
         <Row>
             <Col xs={1}>
-                <button onClick={() => window.history.back()} type="button" className="btn btn-link border-dark">
+                <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
                     <BsChevronLeft className="text-dark" />
                 </button>
             </Col>
@@ -17,7 +17,7 @@ const SecondHeader = ({ title, buttonName, link, what}) => {
             <Col xs={8}>
                 <h4 style={{marginLeft:'10px', fontSize: '20px'}}>{title}</h4>
             </Col>
-            <Col xs={3}>
+            <Col xs={2}>
                 <button style={{fontSize: '6px'}} onClick={() => history.push(link)}>{buttonName}</button>
             </Col>
 

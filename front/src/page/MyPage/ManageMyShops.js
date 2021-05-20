@@ -3,8 +3,9 @@ import { Container, Form, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
 import Header from '../../component/HeaderOwner'
 import SecondHeader from "../../component/SecondHeader";
+import SelectShop from "../../component/SelectShop";
 import {useHistory} from "react-router-dom";
-import ShopManageContainer from "../../container/ShopManageContainer";
+import SelectShopsContainer from "../../container/SelectShopsContainer";
 
 /*const SecondHeader = ({props}) => {
     return (
@@ -26,22 +27,26 @@ import ShopManageContainer from "../../container/ShopManageContainer";
 
 
 
-const ManageShop = ({match}) => {
+const ManageMyShops = () => {
     let history = useHistory();
-    const { id } = match.params;
+
     return (
         <>
             <Header/>
             <Container className="mt-3">
                 <Row className="col-xs-2 pl-3 text-center">
+                   {/* <button onClick={() => history.goBack()} type="button" className="btn btn-link border-dark">
+                        <BsChevronLeft className="text-dark" />
+                    </button>*/}
                     <SecondHeader title="가게 관리" link="/owner/mypage/registshop" buttonName="추가"/>
                 </Row>
 
-                <ShopManageContainer sId={parseInt(id, 10)}/>
+                <Form.Label>가게 선택</Form.Label>
+                <SelectShopsContainer uId={1}/>
 
             </Container>
         </>
     )
 }
 
-export default ManageShop
+export default ManageMyShops

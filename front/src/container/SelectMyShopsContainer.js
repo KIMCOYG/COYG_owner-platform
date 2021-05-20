@@ -5,7 +5,7 @@ import {reducerUtils} from "../lib/asyncUtils";
 import SelectMyShops from "../component/SelectMyShops";
 
 
-const SelectShopsContainer = ({uId}) =>{
+const SelectMyShopsContainer = ({uId}) =>{
     const {data, loading, error} = useSelector(state => state.posts.post[uId] || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {
@@ -21,4 +21,4 @@ const SelectShopsContainer = ({uId}) =>{
     )
 
 }
-export default SelectShopsContainer
+export default SelectMyShopsContainer
