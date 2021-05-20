@@ -1,14 +1,12 @@
 import React from 'react';
 import {Button, Col, Form, Row} from 'react-bootstrap';
-import {Link, useHistory} from "react-router-dom";
-import SelectCategory from "./SelectCategory";
+import {Link} from "react-router-dom";
 import SelecetCategoriesContainer from "../container/SelecetCategoriesContainer";
 
 
 
 
 const ShopManage = ({lists}) => {
-    let history = useHistory();
 
     return (
         <>

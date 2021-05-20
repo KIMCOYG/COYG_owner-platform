@@ -1,4 +1,4 @@
-    import React, {useState} from "react";
+import React, {useState} from "react";
 
 const SelectShop = ({lists}) => {
     const [selected, setSelected] = useState("");

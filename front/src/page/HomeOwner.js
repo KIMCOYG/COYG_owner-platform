@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';

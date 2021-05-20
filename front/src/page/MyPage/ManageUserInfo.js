@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import {useHistory} from 'react-router-dom';
-import userData from "../../dummy/dummyDataUser";
 import Header from "../../component/HeaderCustomer";
 import UserInfoContainer from "../../container/UserInfoContainer";
 

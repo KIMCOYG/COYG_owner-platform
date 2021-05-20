@@ -1,7 +1,5 @@
 import React from "react";
-import {BsHeart} from "react-icons/bs";
 import styled from "styled-components";
-import {useHistory} from "react-router-dom";
 const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
@@ -10,7 +8,6 @@ const MidDiv = styled.div`
 `;
 
 const EventDetail = ({lists}) => {
-    let history = useHistory();
     return (
                 <>
 

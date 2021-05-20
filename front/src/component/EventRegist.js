@@ -3,12 +3,9 @@ import { useHistory} from "react-router-dom";
 import styled from "styled-components";
 import {Col, Form} from "react-bootstrap";
 
-const MinDiv = styled.div`
-  font-size: 0.5rem;
-`;
+
 
 const EventRegist = ({uId, sId}) => {
-    let history = useHistory();
 
     return (
 

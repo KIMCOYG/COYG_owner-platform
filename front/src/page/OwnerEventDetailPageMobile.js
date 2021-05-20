@@ -3,10 +3,8 @@ import { Col, Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../component/HeaderOwner'
 import '../static/css/OwnerEventDetailPageMobile.css'
-import SecondHeader from "../component/SecondHeader";
 import KakaoMap from "./KakaoMap"
 import EventDetailContainer from "../container/EventDetailContainer";
-import OwnerShopDetailContainer from "../container/OwnerShopDetailContainer";
 import {useHistory} from "react-router-dom";
 
 /*const SecondHeader = ({props}) => {

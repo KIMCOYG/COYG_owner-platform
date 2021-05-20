@@ -5,12 +5,10 @@ import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
 import SecondHeader from '../../component/SecondHeader';
 import EventListOwnerContainer from "../../container/EventListOwnerContainer";
-import {useHistory} from "react-router-dom";
 
 
 
 const ManageEventList = () => {
-    let history = useHistory();
 
     return (
         <>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Col, Container, Form, Row} from 'react-bootstrap'
+import {Button, Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs'
 import Header from '../component/HeaderOwner'
 import EventRegistContainer from "../container/EventRegistContainer";
@@ -20,10 +20,7 @@ const SecondHeader = () => {
 }
 
 
-const handleSubmit = (event) => {
-    alert('A name was submitted: ');
-    event.preventDefault();
-}
+
 
 const EvnetRegist = () => {
     //user_id 와 Shop_id

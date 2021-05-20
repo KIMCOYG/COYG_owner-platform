@@ -1,16 +1,8 @@
-import logo from "../static/image/chicken.jpg";
-import {Link, useHistory} from "react-router-dom";
-import {AiFillHeart} from "react-icons/ai";
 import React from "react";
-import styled from "styled-components";
 import {Col, Form} from "react-bootstrap";
 
-const MinDiv = styled.div`
-  font-size: 0.5rem;
-`;
 
 const EventModify = ({lists}) => {
-    let history = useHistory();
 
     return (
 

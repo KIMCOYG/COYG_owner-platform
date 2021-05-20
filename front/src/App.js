@@ -46,12 +46,6 @@ const App = () => {
                     <Route path="/post" component={PostSearch} exact/>
 
                     {/* Owner */}
-                    <Route path="/mobile/owner" component={OwnerMainPageMobile} exact/>
-                    <Route
-                        path="/mobile/owner/detail/:id"
-                        component={OwnerEventDetailPageMobile}
-                        exact
-                    />
 
                     <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact/>
                     <Route path="/mobile/owner/event/:id/modify" component={EventModify} exact/>
