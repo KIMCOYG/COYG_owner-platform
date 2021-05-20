@@ -12,10 +12,17 @@ const Home = () => {
   let history = useHistory();
 
   const [data, setData] = useState({ hits: [] });
-  useEffect(async () => {
-    const result = await axios('http://localhost:5000/image/read/13');
-    console.log(result.data);
-    setData(result.data);
+  // useEffect(async () => {
+  //   const result = await axios('http://localhost:5000/image/read/13');
+  //   console.log(result.data);
+  //   setData(result.data);
+  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get('http://localhost:5000/image/read/13');
+      setData(result.data);
+    };
+    fetchData();
   }, []);
 
   return (
