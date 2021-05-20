@@ -10,6 +10,7 @@ import axios from 'axios';
 const Home = () => {
   let address = 'DB에 저장된 유저 위치정보';
   let history = useHistory();
+<<<<<<< HEAD
   const [data, setData] = useState([]);
   useEffect(() => {
     let completed = false;
@@ -23,6 +24,21 @@ const Home = () => {
         completed = true
       }
       console.log(setData);
+=======
+
+  const [data, setData] = useState({ hits: [] });
+  // useEffect(async () => {
+  //   const result = await axios('http://localhost:5000/image/read/13');
+  //   console.log(result.data);
+  //   setData(result.data);
+  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get('http://localhost:5000/image/read/13');
+      setData(result.data);
+    };
+    fetchData();
+>>>>>>> 634cffd6b1d4db73a09f12fe73792620922b257e
   }, []);
 
   

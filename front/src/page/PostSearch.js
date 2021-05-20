@@ -1,13 +1,13 @@
 import React from 'react';
 import { BsChevronLeft } from 'react-icons/bs';
 import { BiMap } from 'react-icons/bi';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import DaumPostcode from 'react-daum-postcode';
 import Header from '../component/Header';
-import Geocode from "react-geocode";
+import Geocode from 'react-geocode';
 
-Geocode.setApiKey("AIzaSyCNDPEwEVKChg2oF0Yzb7ttIBmiM-pl-NQ");
-Geocode.setLanguage('ko')
+Geocode.setApiKey('AIzaSyCNDPEwEVKChg2oF0Yzb7ttIBmiM-pl-NQ');
+Geocode.setLanguage('ko');
 Geocode.enableDebug();
 
 const postCodeStyle = {
@@ -19,10 +19,10 @@ const postCodeStyle = {
   padding: '7px',
 };
 
-const PostSearch = ({history}) => {
+const PostSearch = ({ history }) => {
   const goBack = () => {
     history.goBack();
-  }
+  };
   const handleComplete = (data) => {
     let fullAddress = data.address;
     let extraAddress = '';
@@ -41,43 +41,49 @@ const PostSearch = ({history}) => {
     console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
   };
 
-   const getAddressFromLatLng = (lat, lon) => {
+  const getAddressFromLatLng = (lat, lon) => {
     Geocode.fromLatLng(lat, lon).then(
-      response => {
-        const address = response.results[0].formatted_address;   
-        window.alert(address+"\n로 설정되었습니다.");
+      (response) => {
+        const address = response.results[0].formatted_address;
+        window.alert(address + '\n로 설정되었습니다.');
         return address;
       },
-      error => {
+      (error) => {
         console.log(error);
-        
-      }
+      },
     );
   };
 
   return (
     <>
-    
       <Header />
       <div className="mt-4">
         <div className="row">
           <div className="col-2 pl-3 text-center">
-            <button type="button" className="btn btn-link border-dark" onClick={goBack}>
+            <button
+              type="button"
+              className="btn btn-link border-dark"
+              onClick={goBack}
+            >
               <BsChevronLeft className="text-dark" />
             </button>
           </div>
           <div className="col-9 text-center">
-            <Button data-toggle="modal" data-target="#PostModal" onClick ={() => {navigator.geolocation.getCurrentPosition(function(pos){
-              var lat = pos.coords.latitude;
-              var lon = pos.coords.longitude;
-              getAddressFromLatLng(lat,lon);
-            })}}
+            <Button
+              data-toggle="modal"
+              data-target="#PostModal"
+              onClick={() => {
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                  var lat = pos.coords.latitude;
+                  var lon = pos.coords.longitude;
+                  getAddressFromLatLng(lat, lon);
+                });
+              }}
               variant="light"
               className="border border-dark w-100"
               style={{ width: '100%' }}
               block
             >
-              
               <BiMap className="mr-3" />
               현재 위치
             </Button>

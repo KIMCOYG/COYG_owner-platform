@@ -1,11 +1,11 @@
-import React, { useEffect,useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../component/Header';
 import styled from 'styled-components';
 import { BsHeart } from 'react-icons/bs';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Container } from 'react-bootstrap';
 import logo from '../static/image/chicken.jpg';
-import KakaoMap from "./KakaoMap"
+import KakaoMap from './KakaoMap';
 
 const MinDiv = styled.div`
   font-size: 0.5rem;
@@ -15,9 +15,10 @@ const MidDiv = styled.div`
   font-size: 0.7rem;
 `;
 
-const DetailEvent = ({history}) => {
-
-  const [markerPositions, setMarkerPositions] = useState([[37.50802, 127.062835]]);
+const DetailEvent = ({ history }) => {
+  const [markerPositions, setMarkerPositions] = useState([
+    [37.50802, 127.062835],
+  ]);
   const [mapSize, setMapSize] = useState([100, 400]);
 
   let eventName = '맥도날드 야탑점';
@@ -28,7 +29,11 @@ const DetailEvent = ({history}) => {
       <Container className="mt-3">
         <div className="row">
           <div className="col-xs-2 pl-3 text-center">
-            <button onClick = {() => history.goBack()} type="button" className="btn btn-link border-dark">
+            <button
+              onClick={() => history.goBack()}
+              type="button"
+              className="btn btn-link border-dark"
+            >
               <BsChevronLeft className="text-dark" />
             </button>
           </div>
@@ -47,7 +52,12 @@ const DetailEvent = ({history}) => {
         {/* 이미지 시작 */}
         <div className="mt-2">
           <div className="border-bottom pb-2">
-            <img onClick={() => window.open(logo)} src={logo} alt="event-image" className="img-fluid" />
+            <img
+              onClick={() => window.open(logo)}
+              src={logo}
+              alt="event-image"
+              className="img-fluid"
+            />
             <div className="d-flex justify-content-between">
               <MinDiv>*사진 클릭 시 확대</MinDiv>
               <MinDiv>1/2</MinDiv>

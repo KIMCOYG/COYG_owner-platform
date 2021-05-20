@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './page/Home';
 import OwnerMainPage from './page/OwnerMainPage';
-import OwnerEventDetailPage from './page/OwnerEventDetailPage';
 import React from 'react';
 import OwnerMainPageMobile from './page/OwnerMainPageMobile';
 import EvnetRegist from './page/EventRegist';
@@ -26,7 +25,6 @@ import DetailEvent from './page/DetailEvent';
 import ScrapList from './page/MyPage/ScrapList';
 import RegistShop from './page/MyPage/RegistShop';
 import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
-import CustomerScrap from './page/MyPage/CustomerScrap';
 
 const App = () => {
   return (
@@ -52,8 +50,16 @@ const App = () => {
             exact
           />
 
-          <Route path="/mobile/owner/event/regist" component={EvnetRegist} exact />
-          <Route path="/mobile/owner/event/modify" component={EvnetModify} exact />
+          <Route
+            path="/mobile/owner/event/regist"
+            component={EvnetRegist}
+            exact
+          />
+          <Route
+            path="/mobile/owner/event/modify"
+            component={EvnetModify}
+            exact
+          />
 
           {/* Mypage */}
           <Route path="/owner/mypage" component={OwnerMyPage} exact></Route>
@@ -89,7 +95,7 @@ const App = () => {
           <Route path="/admin" component={AdminPage} exact />
           <Route path="/admin/category" component={AdminCategory} exact />
           <Route path="/admin/owner" component={AdminOwner} exact />
-          </Switch>
+        </Switch>
       </div>
     </BrowserRouter>
   );

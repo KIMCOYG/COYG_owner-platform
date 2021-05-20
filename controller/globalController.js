@@ -16,7 +16,7 @@ export const HomeBanner = async (req, res, next) => {
     body: { longitude, latitude },
   } = req;
   try {
-    if (!latitude || !lognitude) {
+    if (!latitude || !longitude) {
       res.send({ message: "유효성 검사 실패" });
     }
     const shops = Shop.findAll({

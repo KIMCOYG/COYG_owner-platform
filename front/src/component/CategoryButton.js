@@ -1,6 +1,8 @@
 import React from 'react';
 // import styled from 'styled-components';
-import { useHistory} from 'react-router-dom';
+
+import { useHistory } from 'react-router-dom';
+// import logo from '../static/image/chicken.jpg';
 
 // const ImgBtn = styled.div`
 //     background-image : url(${props => props.url});
@@ -15,14 +17,18 @@ const CategoryButton = ({ name, image }) => {
       <div className="container">
         <div className="row">
           {/* <Link to="/event"> */}
-            <button type="button" className="btn btn-link" onClick = {() => history.push("/event")}>
-              <img
-                src={image}
-                alt=""
-                className="rounded"
-                style={{ width: '100%', height: '100%' }}
-              />
-            </button>
+          <button
+            type="button"
+            className="btn btn-link"
+            onClick={() => history.push('/event')}
+          >
+            <img
+              src={image}
+              alt=""
+              className="rounded"
+              style={{ width: '100%', height: '100%' }}
+            />
+          </button>
           {/* </Link> */}
         </div>
         <div className="row justify-content-center">
