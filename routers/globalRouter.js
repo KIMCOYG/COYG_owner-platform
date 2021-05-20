@@ -4,6 +4,7 @@ import {
   getCategoryImage,
   getCategoryList,
   getDetailEvent,
+  HomeBanner,
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
 import {
@@ -46,5 +47,7 @@ globalRouter.get(routes.detailEvent(), getDetailEvent);
 //홈
 //카테고리 리스트 조회
 globalRouter.get(routes.home, getCategoryImage);
+
+globalRouter.get(routes.banner, HomeBanner);
 
 export default globalRouter;

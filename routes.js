@@ -1,3 +1,5 @@
+import { ownerShopList } from "./controller/adminController";
+
 const home = "/";
 
 //db rest api
@@ -49,6 +51,12 @@ const post = "/post";
 
 const test = "/test";
 const img = "/img";
+const banner = "/banner";
+
+//admin
+const admin = "/admin";
+const ownerList = "/owner/list";
+const ownerShop = "/owner/:id/shop/list";
 
 const routes = {
   home,
@@ -154,6 +162,16 @@ const routes = {
     }
   },
   img,
+  banner,
+  admin,
+  ownerList,
+  ownerShop: (id) => {
+    if (id) {
+      return `/owner/${id}/shop/list`;
+    } else {
+      return ownerShopList;
+    }
+  },
 };
 
 export default routes;

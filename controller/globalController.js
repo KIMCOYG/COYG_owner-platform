@@ -12,17 +12,16 @@ export const hello = (req, res, next) => {
 
 export const HomeBanner = async (req, res, next) => {
   //현재 날짜, 위치, 이벤트 정보 비교 후 이미지 가져오기
-  const {
-    body: { longitude, latitude },
-  } = req;
   try {
-    if (!latitude || !longitude) {
-      res.send({ message: "유효성 검사 실패" });
-    }
-    const shops = Shop.findAll({
-      attributes: ["id", "name", [sequelize.fn("ST_Distance")]],
+    const events = await Event.findAll({
+      limit: 4,
+      include: Image,
     });
-  } catch (err) {}
+    res.send(events);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
 };
 
 // 홈 화면 카테고리 이미지 조회

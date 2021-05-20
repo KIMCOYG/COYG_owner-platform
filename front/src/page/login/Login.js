@@ -1,54 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 import '../../App.css';
 import Header from '../../component/Header';
 
 const Login = () => {
+  let history = useHistory();
+
   return (
     <>
       <Header />
       <Container>
         <div className="mt-5">
-          <div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio1"
-                value="option1"
-                defaultChecked
-              />
-              <label className="form-check-label" htmlFor="inlineRadio1">
-                고객
-              </label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio2"
-                value="option2"
-              />
-              <label className="form-check-label" htmlFor="inlineRadio2">
-                업주
-              </label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio2"
-                value="option2"
-              />
-              <label className="form-check-label" htmlFor="inlineRadio2">
-                최고관리자
-              </label>
-            </div>
-          </div>
           <Form className="mt-3">
             <Form.Group contorlid="formEmail">
               <Form.Control type="email" placeholder="이메일을 입력해주세요" />
@@ -64,24 +27,30 @@ const Login = () => {
             </Button>
           </Form>
           <div className="d-flex justify-content-center mt-3">
-            <Link to="/mypage/customer">
-              <Button variant="link" className="mr-3">
-                이메일 찾기
-              </Button>
-            </Link>
+            {/* <Link to="/mypage/customer"> */}
+            <Button
+              variant="link"
+              className="mr-3"
+              onClick={() => history.push('/mypage/customer')}
+            >
+              마이페이지
+            </Button>
+            {/* </Link> */}
             <Button variant="link" className="mr-3">
-              비밀번호 찾기
+              비밀번호 변경
             </Button>
           </div>
           <div className="d-flex justify-content-center mt-3">
-            <Link to="/customer/join">
-              <Button variant="link" className="mr-3">
-                고객 회원가입
-              </Button>
-            </Link>
-            <Link to="/owner/join">
-              <Button variant="link">사장님 회원가입</Button>
-            </Link>
+            <Button
+              variant="link"
+              className="mr-3"
+              onClick={() => history.push('/customer/join')}
+            >
+              고객 회원가입
+            </Button>
+            <Button variant="link" onClick={() => history.push('/owner/join')}>
+              사장님 회원가입
+            </Button>
           </div>
         </div>
       </Container>
