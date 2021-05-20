@@ -1,16 +1,30 @@
-import { React } from 'react';
+import { React , useEffect, useState } from 'react';
 import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
-import logo from '../uploads/laptop1621477852870.jpg';
+import axios from 'axios';
+
+
 const Home = () => {
   let address = "DB에 저장된 유저 위치정보";
   let history = useHistory();
+
+
+  const [data, setData] = useState({ hits: [] });
+  useEffect(async () => {
+    const result = await axios(
+      "/image/read/13",
+    );
+    console.log(result.data);
+    setData(result.data);
+  }, []);
+  
   return (
     <>
+      
       <Header />
       <Container>
         {/* <Link to="/post"> */}
@@ -29,7 +43,7 @@ const Home = () => {
         <div className="mt-3">
           <div className="d-flex mt-2">
             <CategoryButton name="좋아요" className="mr-3" />
-            <CategoryButton image = {logo} name="가전제품" />
+            <CategoryButton image = {"uploads/"+data.image_name} name="가전제품" />
             <CategoryButton name="도시락" />
             <CategoryButton name="디저트" />
           </div>

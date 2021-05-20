@@ -6,10 +6,10 @@ const Image = models.Image;
 
 export const mkFolder = async (req, res, next) => {
   try {
-    const result = await fs.readdir("front/src/uploads", (err, files) => {
+    const result = await fs.readdir("front/public/uploads", (err, files) => {
       if (err) {
         console.log("uploads 폴더가 없어 uploads 폴더를 생성합니다.");
-        fs.mkdirSync("front/src/uploads");
+        fs.mkdirSync("front/public/uploads");
       }
       console.log(files);
       next();
@@ -27,7 +27,7 @@ export const getTest = async (req, res, next) => {
 export const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, cb) {
-      cb(null, "front/src/uploads/");
+      cb(null, "front/public/uploads/");
     },
     filename(req, file, cb) {
       const ext = path.extname(file.originalname);
