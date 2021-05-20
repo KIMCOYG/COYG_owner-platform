@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
-
+import logo from '../uploads/laptop1621477852870.jpg';
 const Home = () => {
   let address = "DB에 저장된 유저 위치정보";
   let history = useHistory();
@@ -29,7 +29,7 @@ const Home = () => {
         <div className="mt-3">
           <div className="d-flex mt-2">
             <CategoryButton name="좋아요" className="mr-3" />
-            <CategoryButton name="가전제품" />
+            <CategoryButton image = {logo} name="가전제품" />
             <CategoryButton name="도시락" />
             <CategoryButton name="디저트" />
           </div>

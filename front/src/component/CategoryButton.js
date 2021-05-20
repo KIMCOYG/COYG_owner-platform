@@ -18,7 +18,7 @@ const CategoryButton = ({ name, image }) => {
           {/* <Link to="/event"> */}
             <button type="button" className="btn btn-link" onClick = {() => history.push("/event")}>
               <img
-                src={logo}
+                src={image}
                 alt=""
                 className="rounded"
                 style={{ width: '100%', height: '100%' }}
