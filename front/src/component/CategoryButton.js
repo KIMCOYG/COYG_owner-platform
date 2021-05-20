@@ -1,7 +1,6 @@
 import React from 'react';
 // import styled from 'styled-components';
 import { useHistory} from 'react-router-dom';
-import logo from '../static/image/chicken.jpg';
 
 // const ImgBtn = styled.div`
 //     background-image : url(${props => props.url});
@@ -36,7 +35,6 @@ const CategoryButton = ({ name, image }) => {
 
 CategoryButton.defaultProps = {
   name: '카테고리',
-  image: 'chicken',
 };
 
 export default CategoryButton;
