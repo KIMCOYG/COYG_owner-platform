@@ -10,7 +10,6 @@ const MinDiv = styled.div`
 
 const CategoryEventList = ({lists}) => {
     let history = useHistory();
-    console.log("여기오나 ", lists)
     return (
         <>
             {lists.map(e => (

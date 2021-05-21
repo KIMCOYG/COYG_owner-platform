@@ -8,7 +8,6 @@ const MidDiv = styled.div`
 `;
 
 const EventDetail = ({lists}) => {
-    console.log( lists.image.image_name)
     const sTemp = lists.start_datetime
     const eTemp = lists.end_datetime
 

@@ -6,7 +6,6 @@ import {reducerUtils} from "../lib/asyncUtils";
 
 
 const HomeContainer = () =>{
-    console.log("home")
     const {data, loading, error} = useSelector(state => state.posts.posts || reducerUtils.initial());
     const dispatch = useDispatch();
     useEffect(() => {

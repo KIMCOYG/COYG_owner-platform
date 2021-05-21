@@ -4,7 +4,6 @@ import {Col, Form} from "react-bootstrap";
 
 
 const EventRegist = ({uId, sId, sName}) => {
-    console.log(sName)
     return (
 
                 <Form  id="registEvent">
