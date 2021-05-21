@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import {Image} from "react-bootstrap";
 const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
@@ -10,13 +9,18 @@ const MidDiv = styled.div`
 
 const EventDetail = ({lists}) => {
     console.log( lists.image.image_name)
+    const sTemp = lists.start_datetime
+    const eTemp = lists.end_datetime
+
+    const sDatetime = sTemp.toString().split(/T/)[0]
+    const eDatetime = eTemp.toString().split(/T/)[0]
     return (
                 <>
 
                     <div className="mt-2">
                         <div className="border-bottom pb-2">
-                            <img  onClick={() => window.open(`${lists.image.image_name}`)} //확대
-                                 src={'uploads/' + lists.image.image_name} alt="event-image" className="img-fluid"/>
+                            <img  //onClick={() => window.open(`${lists.image.image_name}`)} //확대
+                                 src={`uploads/${lists.image.image_name}`} alt="event-image" />
                             <div className="d-flex justify-content-between">
                                 <MinDiv>*사진 클릭 시 확대</MinDiv>
                                 <MinDiv>1/2</MinDiv>
@@ -34,7 +38,7 @@ const EventDetail = ({lists}) => {
                             <div className="d-flex pt-2 border-bottom border-dark">
                                 <div className="col-3 font-weight-bold">기간</div>
                                 <MidDiv className="col-9 text-center">
-                                    {lists.start_datetime}~ {lists.end_datetime}
+                                    {sDatetime} ~ {eDatetime}
                                 </MidDiv>
                             </div>
                             <div className="border-bottom border-dark pl-3">

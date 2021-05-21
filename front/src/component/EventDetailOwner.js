@@ -31,7 +31,7 @@ const EventDetailOwner = ({lists}) => {
                     <div className="d-flex pt-2 border-bottom border-dark">
                         <div className="col-3 font-weight-bold">기간</div>
                         <MidDiv className="col-9 text-center">
-                            {lists.start_datetime}~ {lists.end_datetime}
+                            {lists.start_datetime.toString().split(/T/)[0]}~ {lists.end_datetime.toString().split(/T/)[0]}
                         </MidDiv>
                     </div>
                     <div className="border-bottom border-dark pl-3">

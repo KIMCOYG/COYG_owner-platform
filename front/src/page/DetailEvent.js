@@ -23,14 +23,15 @@ const DetailEvent = ({ match, location }) => {
                         <button onClick={() => history.goBack()} type="button" className="col btn btn-link border-dark">
                             <BsChevronLeft className="text-dark"/>
                         </button>
+                    </div>
                         <h5 className="col-xs-4 pl-3 pt-1 font-weight-bold">{eName}</h5>
                         <button type="button" className="col-xs-6 pl-4 pt-1 btn btn-link btn-lg">
                             <BsHeart style={{color: 'red'}}/>
                         </button>
 
-                    </div>
                 </div>
                 {/* 이미지 시작 */}
+                <img src="uploads/버거킹1621554310515.jpg" alt=""/>
                 <EventDetailContainer eId={parseInt(id, 10)}/>
                 {/* 지도 */}
                 <div className="mt-2 border-bottom pb-3 mb-5">
