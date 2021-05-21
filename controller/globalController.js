@@ -27,7 +27,7 @@ export const HomeBanner = async (req, res, next) => {
 // 홈 화면 카테고리 이미지 조회
 export const getCategoryImage = async (req, res, next) => {
   try {
-    const result = await Category.findAll({ include: Image, raw: true });
+    const result = await Category.findAll({ include: Image });
     if (result) {
       res.send(result);
     }

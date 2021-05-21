@@ -10,37 +10,20 @@ import axios from 'axios';
 const Home = () => {
   let address = 'DB에 저장된 유저 위치정보';
   let history = useHistory();
-  const [data, setData] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
-    let completed = false;
-    const fetchData = async () => {
-      const result = await axios('/image/read/13');
-
-      if (!completed) setData(result.data);
+    const fetchCategory = async () => {
+      try {
+        const result = await axios.get('http://localhost:5000');
+        setCategory(result.data);
+        console.log(category);
+      } catch (err) {
+        console.log(err);
+      }
     };
-    fetchData();
-    return () => {
-      completed = true;
-    };
+    fetchCategory();
   }, []);
 
-  var categoryName = [
-    '좋아요',
-    '가전제품',
-    '도시락',
-    '디저트',
-    '마트',
-    '분식',
-    '스포츠',
-    '아시안',
-    '양식',
-    '의류',
-    '일식',
-    '주류',
-    '치킨',
-    '피자',
-    '휴대폰',
-  ];
   return (
     <>
       <Header />
@@ -61,62 +44,80 @@ const Home = () => {
         <div className="mt-3">
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="좋아요"
-              className="mr-3"
+              className="col-xs-4"
             />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="가전제품"
+              className="col-xs-4"
             />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="도시락"
+              className="col-xs-4"
             />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="디저트"
+              className="col-xs-4"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="마트"
               className="mr-3"
             />
-            <CategoryButton image={'uploads/' + data.image_name} name="분식" />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
+              name="분식"
+            />
+            <CategoryButton
+              image={'uploads/' + category.image_name}
               name="스포츠"
             />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="아시안"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="양식"
               className="mr-3"
             />
-            <CategoryButton image={'uploads/' + data.image_name} name="의류" />
-            <CategoryButton image={'uploads/' + data.image_name} name="일식" />
-            <CategoryButton image={'uploads/' + data.image_name} name="주류" />
+            <CategoryButton
+              image={'uploads/' + category.image_name}
+              name="의류"
+            />
+            <CategoryButton
+              image={'uploads/' + category.image_name}
+              name="일식"
+            />
+            <CategoryButton
+              image={'uploads/' + category.image_name}
+              name="주류"
+            />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="치킨"
               className="mr-3"
             />
-            <CategoryButton image={'uploads/' + data.image_name} name="피자" />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
+              name="피자"
+            />
+            <CategoryButton
+              image={'uploads/' + category.image_name}
               name="휴대폰"
             />
             <CategoryButton
-              image={'uploads/' + data.image_name}
+              image={'uploads/' + category.image_name}
               name="햄버거"
             />
           </div>
