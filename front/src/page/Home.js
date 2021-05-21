@@ -10,43 +10,39 @@ import axios from 'axios';
 const Home = () => {
   let address = 'DB에 저장된 유저 위치정보';
   let history = useHistory();
-<<<<<<< HEAD
   const [data, setData] = useState([]);
   useEffect(() => {
     let completed = false;
     const fetchData = async () => {
       const result = await axios('/image/read/13');
-        
+
       if (!completed) setData(result.data);
     };
-      fetchData();
-      return () => {
-        completed = true
-      }
-      console.log(setData);
-=======
-
-  const [data, setData] = useState({ hits: [] });
-  // useEffect(async () => {
-  //   const result = await axios('http://localhost:5000/image/read/13');
-  //   console.log(result.data);
-  //   setData(result.data);
-  // }, []);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get('http://localhost:5000/image/read/13');
-      setData(result.data);
-    };
     fetchData();
->>>>>>> 634cffd6b1d4db73a09f12fe73792620922b257e
+    return () => {
+      completed = true;
+    };
   }, []);
 
-  
-  var categoryName = ["좋아요","가전제품","도시락","디저트","마트","분식","스포츠","아시안","양식","의류","일식","주류","치킨","피자","휴대폰"]
+  var categoryName = [
+    '좋아요',
+    '가전제품',
+    '도시락',
+    '디저트',
+    '마트',
+    '분식',
+    '스포츠',
+    '아시안',
+    '양식',
+    '의류',
+    '일식',
+    '주류',
+    '치킨',
+    '피자',
+    '휴대폰',
+  ];
   return (
-      
     <>
-    
       <Header />
       <Container>
         {/* <Link to="/post"> */}
@@ -64,7 +60,6 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3">
           <div className="d-flex mt-2">
-            
             <CategoryButton
               image={'uploads/' + data.image_name}
               name="좋아요"
