@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Image} from "react-bootstrap";
 const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
@@ -14,8 +15,7 @@ const EventDetail = ({lists}) => {
 
                     <div className="mt-2">
                         <div className="border-bottom pb-2">
-                            <img src={"uploads/laptop1621483528904.jpg"} alt=""/>
-                            <img onClick={() => window.open(`${lists.image.image_name}`)} //확대
+                            <img  onClick={() => window.open(`${lists.image.image_name}`)} //확대
                                  src={'uploads/' + lists.image.image_name} alt="event-image" className="img-fluid"/>
                             <div className="d-flex justify-content-between">
                                 <MinDiv>*사진 클릭 시 확대</MinDiv>
@@ -24,6 +24,7 @@ const EventDetail = ({lists}) => {
                         </div>
                         {/* 이벤트 */}
                         <div className="mt-2 border-bottom pb-3">
+                            <img src="uploads/" alt=""/>
                             <div
                                 className="border-bottom border-dark pl-3 font-weight-bold"
                                 style={{fontSize: '1.2rem'}}

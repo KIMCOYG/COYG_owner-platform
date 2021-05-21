@@ -43,6 +43,7 @@ const Home = () => {
         <Slider />
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3">
+          <img src="uploads/laptop1621483528904.jpg" alt=""/>
           <div className="d-flex mt-2">
             <CategoryButton cId={1}
               image={'uploads/' + data.image_name}
