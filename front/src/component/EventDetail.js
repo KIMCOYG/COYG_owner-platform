@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import logo from "../static/image/버거킹1621554310515.jpg"
 const MinDiv = styled.div`
   font-size: 0.5rem;
 `;
@@ -18,8 +19,8 @@ const EventDetail = ({lists}) => {
 
                     <div className="mt-2">
                         <div className="border-bottom pb-2">
-                            <img  //onClick={() => window.open(`${lists.image.image_name}`)} //확대
-                                 src={`uploads/${lists.image.image_name}`} alt="event-image" />
+                            <img  onClick={() => window.open(logo)} //확대
+                                 src={logo} alt="event-image" className="img-fluid" />
                             <div className="d-flex justify-content-between">
                                 <MinDiv>*사진 클릭 시 확대</MinDiv>
                                 <MinDiv>1/2</MinDiv>
