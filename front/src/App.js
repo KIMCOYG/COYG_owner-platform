@@ -25,6 +25,7 @@ import DetailEvent from './page/DetailEvent';
 import ScrapList from './page/MyPage/ScrapList';
 import RegistShop from './page/MyPage/RegistShop';
 import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
+import PasswordChange from './page/login/PasswordChange';
 
 const App = () => {
   return (
@@ -92,6 +93,11 @@ const App = () => {
           <Route path="/login" component={Login} />
           <Route path="/customer/join" component={CustomerJoin}></Route>
           <Route path="/owner/join" component={OwnerJoin}></Route>
+          <Route
+            path="/password/change"
+            component={PasswordChange}
+            exact
+          ></Route>
           <Route path="/admin" component={AdminPage} exact />
           <Route path="/admin/category" component={AdminCategory} exact />
           <Route path="/admin/owner" component={AdminOwner} exact />

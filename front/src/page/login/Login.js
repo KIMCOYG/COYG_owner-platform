@@ -26,28 +26,33 @@ const Login = () => {
               로그인
             </Button>
           </Form>
-          <div className="d-flex justify-content-center mt-3">
+          <div className="text-center mt-3">
             {/* <Link to="/mypage/customer"> */}
             <Button
               variant="link"
-              className="mr-3"
               onClick={() => history.push('/mypage/customer')}
             >
               마이페이지
             </Button>
             {/* </Link> */}
-            <Button variant="link" className="mr-3">
+          </div>
+          <div className="text-center                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ter mt-3">
+            <Button
+              variant="link"
+              onClick={() => history.push('/password/change')}
+            >
               비밀번호 변경
             </Button>
           </div>
-          <div className="d-flex justify-content-center mt-3">
+          <div className="text-center mt-3">
             <Button
               variant="link"
-              className="mr-3"
               onClick={() => history.push('/customer/join')}
             >
               고객 회원가입
             </Button>
+          </div>
+          <div className="text-center mt-3">
             <Button variant="link" onClick={() => history.push('/owner/join')}>
               사장님 회원가입
             </Button>

@@ -14,8 +14,8 @@ const Home = () => {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const result = await axios.get('http://localhost:5000');
-        setCategory(result.data);
+        const result = await axios('http://localhost:5000/category/read-all');
+        await setCategory(result.data);
         console.log(category);
       } catch (err) {
         console.log(err);
@@ -41,87 +41,88 @@ const Home = () => {
         {/* </Link> */}
         <Slider />
         {/* <CategoryButton className="col-1"/> */}
-        <div className="mt-3">
+        <div className="mt-3 mb-3">
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'like.png'}
               name="좋아요"
               className="col-xs-4"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'electronic1621529546700.png'}
               name="가전제품"
               className="col-xs-4"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'dosirac1621529538417.png'}
               name="도시락"
               className="col-xs-4"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'desert1621529530613.png'}
               name="디저트"
               className="col-xs-4"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'mart1621529558596.png'}
               name="마트"
               className="mr-3"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'bunsic1621529513166.png'}
               name="분식"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'sports1621529570250.png'}
               name="스포츠"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'asian1621529509447.png'}
               name="아시안"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'yangsic1621529578325.png'}
               name="양식"
               className="mr-3"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'wear1621529574142.png'}
               name="의류"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'japan1621529550796.png'}
               name="일식"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'drink1621529542800.png'}
               name="주류"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'chicken1621529353710.jpg'}
               name="치킨"
               className="mr-3"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'pizza1621529419795.jpg'}
               name="피자"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'phone1621529562260.png'}
               name="휴대폰"
             />
             <CategoryButton
-              image={'uploads/' + category.image_name}
+              image={'uploads/' + 'hamburger1621529374043.jpg'}
               name="햄버거"
             />
           </div>
         </div>
+        <footer></footer>
       </Container>
     </>
   );
