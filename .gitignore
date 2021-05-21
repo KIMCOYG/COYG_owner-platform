@@ -2,7 +2,11 @@ node_modules/
 package-lock.json
 front/node_modules/
 front/package-lock.json
+<<<<<<< HEAD
 config
+=======
+front/public/uploads/
+>>>>>>> 6bd1fe017d428c5b58ab87dc0546b3320f2ba945
 .idea/
 
 .DS_Store*

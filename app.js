@@ -20,8 +20,8 @@ import likeRouter from "./routers/models/likeRouter";
 import scrapRouter from "./routers/models/scrapRouter";
 import eventRouter from "./routers/models/eventRouter";
 import postImageRouter from "./routers/postImageRouter";
+import adminRouter from "./routers/adminRouter";
 import { mkFolder } from "./controller/postImageController";
-
 
 var MySQLStore = require("express-mysql-session")(session);
 
@@ -88,6 +88,7 @@ app.use(routes.like, likeRouter);
 app.use(routes.scrap, scrapRouter);
 app.use(routes.event, eventRouter);
 app.use(routes.post, mkFolder, postImageRouter);
+app.use(routes.admin, adminRouter);
 
 // 에러 처리 핸들러 필요
 
