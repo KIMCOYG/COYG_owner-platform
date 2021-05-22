@@ -7,10 +7,10 @@ const Image = models.Image;
 
 export const mkFolder = async (req, res, next) => {
   try {
-    const result = await fs.readdir("uploads", (err, files) => {
+    const result = await fs.readdir("front/public/uploads", (err, files) => {
       if (err) {
         console.log("uploads 폴더가 없어 uploads 폴더를 생성합니다.");
-        fs.mkdirSync("uploads");
+        fs.mkdirSync("front/public/uploads");
       }
       console.log(files);
       next();
@@ -28,7 +28,7 @@ export const getTest = async (req, res, next) => {
 export const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, cb) {
-      cb(null, "uploads/");
+      cb(null, "front/public/uploads/");
     },
     filename(req, file, cb) {
       const ext = path.extname(file.originalname);
@@ -41,15 +41,16 @@ export const upload = multer({
 export const imgDefine = async (req, res, next) => {
   const image_name = req.file.filename;
   const image_path = req.file.path;
-  try{
+  try {
     const result = await Image.create({
       image_name,
       image_path,
-      enabled: true
-    })
+      enabled: true,
+    });
+    req.body.image_id = result.dataValues.image_id;
     console.log(req.file);
     res.json({ url: `/img/${req.file.filename}` }); 
-  } catch(err) {
+  } catch (err) {
     console.log(err);
     next(err);
   }
@@ -57,12 +58,12 @@ export const imgDefine = async (req, res, next) => {
 
 export const getPostImage = (req, res, next) => {
 
-    fs.readFile('uploads/Dog1621419428094.jpg',function(err,data){
-        res.writeHead(200, {'Content-Type' : 'image/jpg'});
-        res.write(data);
-        res.end();
+  fs.readFile('uploads/Dog1621419428094.jpg',function(err,data){
+      res.writeHead(200, {'Content-Type' : 'image/jpg'});
+      res.write(data);
+      res.end();
 
-    });
+  });
 }
 
 // export const uploadAll = multer();

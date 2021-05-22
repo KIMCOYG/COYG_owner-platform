@@ -10,14 +10,24 @@ export const hello = (req, res, next) => {
   next();
 };
 
-export const HomeBanner = (req, res, next) => {
+export const HomeBanner = async (req, res, next) => {
   //현재 날짜, 위치, 이벤트 정보 비교 후 이미지 가져오기
+  try {
+    const events = await Event.findAll({
+      limit: 4,
+      include: Image,
+    });
+    res.send(events);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
 };
 
 // 홈 화면 카테고리 이미지 조회
 export const getCategoryImage = async (req, res, next) => {
   try {
-    const result = await Category.findAll({ include: Image, raw: true });
+    const result = await Category.findAll({ include: Image });
     if (result) {
       res.send(result);
     }

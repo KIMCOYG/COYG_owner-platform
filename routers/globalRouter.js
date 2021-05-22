@@ -4,10 +4,12 @@ import {
   getCategoryImage,
   getCategoryList,
   getDetailEvent,
+  HomeBanner,
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
 import {
   getProfile,
+  logout,
   postCustomerJoin,
   postJoin,
   postLogin,
@@ -23,10 +25,11 @@ const globalRouter = express.Router();
 // globalRouter.get(routes.home, hello);
 globalRouter.get(routes.profile, isLoggedIn, getProfile);
 
-// Join, Login
+// Join, Login, Logout
 globalRouter.post(routes.join, postJoin);
 globalRouter.post(routes.customerJoin, postCustomerJoin);
 globalRouter.post(routes.login, postLogin);
+globalRouter.get(routes.logout, logout);
 
 // Customer MyPage
 globalRouter.post(routes.cusUpdate(), updateUserData);
@@ -44,5 +47,7 @@ globalRouter.get(routes.detailEvent(), getDetailEvent);
 //홈
 //카테고리 리스트 조회
 globalRouter.get(routes.home, getCategoryImage);
+
+globalRouter.get(routes.banner, HomeBanner);
 
 export default globalRouter;

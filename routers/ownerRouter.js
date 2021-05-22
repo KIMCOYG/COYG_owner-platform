@@ -7,6 +7,7 @@ import {
   getShopList,
   updateShop,
 } from "../controller/ownerController";
+import { imgDefine, upload } from "../controller/postImageController";
 import routes from "../routes";
 
 const ownerRouter = express.Router();
@@ -27,7 +28,12 @@ ownerRouter.get(routes.eventList(), getOwnerEventList);
 ownerRouter.get(routes.detailEvent(), getDetailEvent);
 
 //이벤트 등록
-ownerRouter.post(routes.createEvent, createEvent);
+ownerRouter.post(
+  routes.createEvent,
+  upload.single("img"),
+  imgDefine,
+  createEvent
+);
 
 //이벤트 수정
 ownerRouter.put(routes.updateEvent(), updateEvent);

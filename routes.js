@@ -1,3 +1,5 @@
+import { ownerShopList } from "./controller/adminController";
+
 const home = "/";
 
 //db rest api
@@ -23,6 +25,7 @@ const profile = "/profile";
 const join = "/owner/join";
 const customerJoin = "/customer/join";
 const login = "/login";
+const logout = "/logout";
 
 //mypage
 const cusUpdate = "/mypage/:id/update";
@@ -46,12 +49,16 @@ const detailEvent = "/event/:id/detail";
 // post image
 const post = "/post";
 
-<<<<<<< HEAD
+
 const test = "/test";
 const img = "/img";
+const banner = "/banner";
 
-=======
->>>>>>> de936a7b90613a03fcef0c0f833efce9505917f2
+//admin
+const admin = "/admin";
+const ownerList = "/owner/list";
+const ownerShop = "/owner/:id/shop/list";
+
 const routes = {
   home,
   create,
@@ -88,6 +95,7 @@ const routes = {
   join,
   customerJoin,
   login,
+  logout,
   cusUpdate: (id) => {
     if (id) {
       return `/mypage/${id}/update`;
@@ -155,6 +163,16 @@ const routes = {
     }
   },
   img,
+  banner,
+  admin,
+  ownerList,
+  ownerShop: (id) => {
+    if (id) {
+      return `/owner/${id}/shop/list`;
+    } else {
+      return ownerShopList;
+    }
+  },
 };
 
 export default routes;
