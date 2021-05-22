@@ -26,6 +26,7 @@ import ScrapList from './page/MyPage/ScrapList';
 import RegistShop from './page/MyPage/RegistShop';
 import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
 import PasswordChange from './page/login/PasswordChange';
+import AdminLayout from './component/AdminLayout';
 
 const App = () => {
   return (
