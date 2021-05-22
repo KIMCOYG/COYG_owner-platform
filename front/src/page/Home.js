@@ -64,7 +64,7 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3">
           <div className="d-flex mt-2">
-            
+
             <CategoryButton
               image={'uploads/' + data.image_name}
               name="좋아요"
