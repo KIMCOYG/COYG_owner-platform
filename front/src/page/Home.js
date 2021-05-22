@@ -7,7 +7,7 @@ import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 
 const Home = () => {
-  let address = "DB에 저장된 유저 위치정보";
+  let address = "유저 위치정보";
   let history = useHistory();
   return (
     <>

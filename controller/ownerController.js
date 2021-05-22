@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import models from "../models";
 const Shop = models.Shop;
 const Event = models.Event;
@@ -65,12 +66,26 @@ export const updateShop = async (req, res, next) => {
   }
 };
 
-export const getOwnerEvent = async (req, res, next) => {
+export const getOwnerEventList = async (req, res, next) => {
   const {
     params: { id },
   } = req;
   try {
-    const result = await Event.findAll({ where: { user_id: id } });
+    let shops = await Shop.findAll({
+      where: { user_id: id },
+      attributes: [["shop_id", "shop_id"]],
+      raw: true,
+    });
+    shops = shops.map((i) => i.shop_id);
+
+    const result = await Event.findAll({
+      where: {
+        event_id: {
+          [Op.or]: shops,
+        },
+      },
+      raw: true,
+    });
     res.send(result);
   } catch (err) {
     console.log(err);

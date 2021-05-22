@@ -18,9 +18,10 @@ const scrap = "/scrap";
 const shop = "/shon";
 const user = "/user";
 
-//auth
+//login, join, profile
 const profile = "/profile";
-const join = "/join";
+const join = "/owner/join";
+const customerJoin = "/customer/join";
 const login = "/login";
 
 //mypage
@@ -45,9 +46,12 @@ const detailEvent = "/event/:id/detail";
 // post image
 const post = "/post";
 
+<<<<<<< HEAD
 const test = "/test";
 const img = "/img";
 
+=======
+>>>>>>> de936a7b90613a03fcef0c0f833efce9505917f2
 const routes = {
   home,
   create,
@@ -82,6 +86,7 @@ const routes = {
   user,
   profile,
   join,
+  customerJoin,
   login,
   cusUpdate: (id) => {
     if (id) {

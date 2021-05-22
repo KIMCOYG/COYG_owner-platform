@@ -6,7 +6,12 @@ import {
   getDetailEvent,
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
-import { getProfile, postJoin, postLogin } from "../controller/authController";
+import {
+  getProfile,
+  postCustomerJoin,
+  postJoin,
+  postLogin,
+} from "../controller/authController";
 import {
   scrapList,
   updateUserData,
@@ -20,6 +25,7 @@ globalRouter.get(routes.profile, isLoggedIn, getProfile);
 
 // Join, Login
 globalRouter.post(routes.join, postJoin);
+globalRouter.post(routes.customerJoin, postCustomerJoin);
 globalRouter.post(routes.login, postLogin);
 
 // Customer MyPage
