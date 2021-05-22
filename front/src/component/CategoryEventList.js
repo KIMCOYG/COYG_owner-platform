@@ -11,9 +11,9 @@ const MinDiv = styled.div`
 const CategoryEventList = ({lists}) => {
     let history = useHistory();
     return (
-        <>
+        <div>
             {lists.map(e => (
-                    <div onClick={() => history.push({pathname:`/event/detail/${e.event_id}`, state: {eName: e.name}})}>
+                    <div className="row" onClick={() => history.push({pathname:`/event/detail/${e.event_id}`, state: {eName: e.name}})}>
                         <div className="col-4">
                             <img
                                 src={logo}
@@ -45,7 +45,7 @@ const CategoryEventList = ({lists}) => {
                     </div>
                 )
             )}
-        </>
+        </div>
     )
 }
 
