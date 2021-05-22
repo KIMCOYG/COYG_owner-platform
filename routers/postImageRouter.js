@@ -1,11 +1,11 @@
 import express from "express";
-import multer from "multer";
-import path from "path";
-import fs from "fs";
+// import multer from "multer";
+// import path from "path";
+// import fs from "fs";
 import models from "../models";
 import routes from "../routes";
-import { getTest, upload,  imgDefine ,uploadAll, imgDefineAll, getPostImage} from "../controller/postImageController";
-import {isLoggedIn} from "../middlewares/authMiddleware"
+import { upload,  imgDefine , getPostImage} from "../controller/postImageController";
+// import {isLoggedIn} from "../middlewares/authMiddleware"
 const Image = models.User;
 
 const postImageRouter = express.Router();

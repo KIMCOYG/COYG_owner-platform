@@ -1,7 +1,6 @@
 import React from 'react';
 // import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import logo from '../static/image/chicken.jpg'; //절대 경로로 받아와야함
 
 // import logo from '../static/image/chicken.jpg';
 

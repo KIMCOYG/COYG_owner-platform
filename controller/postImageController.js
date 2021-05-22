@@ -2,7 +2,6 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import models from "../models";
-import { UV_FS_O_FILEMAP } from "constants";
 const Image = models.Image;
 
 export const mkFolder = async (req, res, next) => {

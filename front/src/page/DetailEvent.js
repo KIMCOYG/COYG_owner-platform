@@ -16,10 +16,10 @@ const MidDiv = styled.div`
 `;
 
 const DetailEvent = ({ history }) => {
-  const [markerPositions, setMarkerPositions] = useState([
+  const [markerPositions, ] = useState([
     [37.50802, 127.062835],
   ]);
-  const [mapSize, setMapSize] = useState([100, 400]);
+  const [mapSize, ] = useState([100, 400]);
 
   let eventName = '맥도날드 야탑점';
 
@@ -55,7 +55,7 @@ const DetailEvent = ({ history }) => {
             <img
               onClick={() => window.open(logo)}
               src={logo}
-              alt="event-image"
+              alt="event"
               className="img-fluid"
             />
             <div className="d-flex justify-content-between">

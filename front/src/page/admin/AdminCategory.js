@@ -44,7 +44,7 @@ const AdminCategory = () => {
   //   const [gridApi, setGridApi] = useState(null);
   // const [gridColumnApi, setGridColumnApi] = useState(null);
 
-  const [rowData, setRowData] = useState(data);
+  const [rowData, /*setRowData*/] = useState(data);
 
   const onGridReady = (params) => {
     // setGridApi(params.api);

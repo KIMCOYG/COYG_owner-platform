@@ -23,7 +23,7 @@ const Home = () => {
       }
     };
     fetchCategory();
-  }, []);
+  }, [category]);//warning 떠서 임의로 수정
 
   return (
     <>
