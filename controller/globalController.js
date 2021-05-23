@@ -98,7 +98,7 @@ export const getLikeList = async (req, res, next) => {
     params: { id },
   } = req;
   try {
-    let Id = parseInt(id);
+    const Id = parseInt(id);
     if (isNaN(Id)) {
       return res.send({ error: 1 });
     }
@@ -133,6 +133,59 @@ export const addLikeEvent = async (req, res, next) => {
     body: { event_id, user_id },
   } = req;
   try {
+    const likeResult = await Like.create({
+      user_id,
+      event_id,
+    });
+    let likeCnt = await Event.findOne({
+      where: { event_id },
+      attributes: ["likes_count"],
+    });
+    likeCnt = parseInt(likeCnt.likes_count) + 1;
+    // console.log(likeCnt);
+
+    const eventResult = await Event.update(
+      {
+        likes_count: likeCnt,
+      },
+      {
+        where: { event_id },
+      }
+    );
+    res.send({ likeResult, eventResult });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+export const removeLikeEvent = async (req, res, next) => {
+  const {
+    body: { event_id, user_id },
+  } = req;
+  try {
+    const likeResult = await Like.destroy({
+      where: {
+        event_id,
+        user_id,
+      },
+    });
+
+    let likeCnt = await Event.findOne({
+      where: { event_id },
+      attributes: ["likes_count"],
+    });
+    likeCnt = parseInt(likeCnt.likes_count) - 1;
+
+    const eventResult = await Event.update(
+      {
+        likes_count: likeCnt,
+      },
+      {
+        where: { event_id },
+      }
+    );
+    res.send({ likeResult, eventResult });
   } catch (err) {
     console.log(err);
     next(err);

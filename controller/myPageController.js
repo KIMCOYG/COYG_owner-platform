@@ -28,6 +28,7 @@ export const updateUserData = async (req, res, next) => {
   }
 };
 
+// 유저 패스워드 재설정
 export const updateUserPw = async (req, res, next) => {
   const {
     params: { id },

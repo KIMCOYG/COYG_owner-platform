@@ -1,11 +1,13 @@
 import express from "express";
 import routes from "../routes";
 import {
+  addLikeEvent,
   getCategoryImage,
   getCategoryList,
   getDetailEvent,
   getLikeList,
   HomeBanner,
+  removeLikeEvent,
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
 import {
@@ -41,6 +43,8 @@ globalRouter.get(routes.scrapList(), scrapList);
 
 // 좋아요 리스트
 globalRouter.get(routes.likeList(), getLikeList);
+globalRouter.post(routes.likeCreateBtn, addLikeEvent);
+globalRouter.post(routes.likeRemoveBtn, removeLikeEvent);
 
 // Category List
 globalRouter.get(routes.categoryList(), getCategoryList);

@@ -46,6 +46,8 @@ const categoryList = "/category/:id/list";
 
 //detail event
 const detailEvent = "/event/:id/detail";
+const likeCreateBtn = "/event/like-cnt/create";
+const likeRemoveBtn = "/event/like-cnt/remove";
 
 // post image
 const post = "/post";
@@ -180,6 +182,8 @@ const routes = {
       return ownerShopList;
     }
   },
+  likeCreateBtn,
+  likeRemoveBtn,
 };
 
 export default routes;
