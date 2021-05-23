@@ -6,8 +6,11 @@ import Header from '../../component/HeaderCustomer';
 
 import myInfoIcon from '../../static/image/myInfo.png';
 import scrapIcon from '../../static/image/scrap.png';
+import { useHistory } from 'react-router-dom';
 
-const CustomerMyPage = ({ history }) => {
+const CustomerMyPage = () => {
+  let history = useHistory();
+
   const goBack = () => {
     history.goBack();
   };

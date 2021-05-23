@@ -1,4 +1,4 @@
-import { useState, useEffect, React }  from 'react';
+import { useState, useEffect, React } from 'react';
 import { BsChevronLeft } from 'react-icons/bs';
 import { BiMap } from 'react-icons/bi';
 import { Button } from 'react-bootstrap';
@@ -45,7 +45,7 @@ const PostSearch = ({ history }) => {
     Geocode.fromLatLng(lat, lon).then(
       (response) => {
         const address = response.results[0].formatted_address;
-        window.localStorage.setItem('addr',address);
+        window.localStorage.setItem('addr', address);
         return address;
       },
       (error) => {
@@ -87,21 +87,32 @@ const PostSearch = ({ history }) => {
               <BiMap className="mr-3" />
               현재 위치
             </Button>
-            <div class="modal fade" id="PostModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    
-                    <div class="modal-body">
-                      <p>이 주소가 맞습니까?</p>
-                      <p>{window.localStorage.getItem('addr')}</p>
-                      
-                    </div>
-                    <div class="modal-footer">
-                    <button style ={{textAlign : "center"}} type="button" class="btn btn-primary">현재 위치로 설정</button>
-                    </div>
+            <div
+              className="modal fade"
+              id="PostModal"
+              tabIndex="-1"
+              role="dialog"
+              aria-labelledby="DeleteModalLabel2"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-body">
+                    <p>이 주소가 맞습니까?</p>
+                    <p>{window.localStorage.getItem('addr')}</p>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      style={{ textAlign: 'center' }}
+                      type="button"
+                      className="btn btn-primary"
+                    >
+                      현재 위치로 설정
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
           </div>
         </div>
         <DaumPostcode style={postCodeStyle} onComplete={handleComplete} />

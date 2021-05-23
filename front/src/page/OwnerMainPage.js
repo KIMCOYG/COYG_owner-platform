@@ -1,3 +1,5 @@
+/*
+
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Header from '../component/Header';
@@ -80,4 +82,5 @@ const OwnerMainPage = () => {
   );
 };
 
-export default OwnerMainPage;
+export default OwnerMainPage
+*/

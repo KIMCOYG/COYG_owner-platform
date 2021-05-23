@@ -2,7 +2,9 @@ import React from 'react';
 import { Button, Container, Form, Row } from 'react-bootstrap';
 // import {BsChevronLeft} from 'react-icons/bs';
 import Header from '../../component/HeaderOwner';
-import SecondHeader from '../../component/SecondHeader';
+import SecondHeader from "../../component/SecondHeader";
+import {BsChevronLeft, BsHeart} from "react-icons/bs";
+import {useHistory} from "react-router-dom";
 
 // const SecondHeader = ({props}) => {
 //     return (
@@ -29,27 +31,33 @@ const checkPW = () => {
 };
 
 const ChangePassword = () => {
-  return (
-    <>
-      <Header />
-      <Container className="mt-3">
-        <Row className="col-xs-2 pl-3 text-center">
-          <SecondHeader title="비밀번호 변경"></SecondHeader>
-        </Row>
-        <Form>
-          <Form.Group>
-            <Form.Label>신규 비밀번호</Form.Label>
-            <Form.Control id="pw1" type="password"></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>비밀번호 확인</Form.Label>
-            <Form.Control
-              id="pw2"
-              type="password"
-              onChange={checkPW}
-            ></Form.Control>
-            <Form.Text id="pw2Text" className="text-muted"></Form.Text>
-          </Form.Group>
+    let history = useHistory();
+    return (
+        <>
+            <Header/>
+            <Container className="mt-3">
+                <div className="row">
+                    <div className="col-xs-2 pl-3 text-center">
+                        <button
+                            onClick={() => history.goBack()}
+                            type="button"
+                            className="btn btn-link border-dark"
+                        >
+                            <BsChevronLeft className="text-dark" />
+                        </button>
+                        비밀번호 변경
+                    </div>
+                </div>
+                <Form>
+                    <Form.Group>
+                        <Form.Label>신규 비밀번호</Form.Label>
+                        <Form.Control id="pw1" type="password"></Form.Control>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>비밀번호 확인</Form.Label>
+                        <Form.Control id="pw2" type="password" onChange={checkPW}></Form.Control>
+                        <Form.Text id="pw2Text" className="text-muted"></Form.Text>
+                    </Form.Group>
 
           <Button type="submit">변경하기</Button>
         </Form>

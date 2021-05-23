@@ -10,18 +10,21 @@ import { useHistory } from 'react-router-dom';
 //     background-size: co
 // `;
 
-const CategoryButton = ({ name, image }) => {
+const CategoryButton = ({ name, cId, image }) => {
   let history = useHistory();
   return (
     <>
       <div className="container">
         <div className="row">
-          {/* <Link to="/event"> */}
-
           <button
+            onClick={() =>
+              history.push({
+                pathname: `category/${cId}/event`,
+                state: { name },
+              })
+            }
             type="button"
             className="btn btn-link"
-            onClick={() => history.push('/event')}
           >
             <img
               src={image}

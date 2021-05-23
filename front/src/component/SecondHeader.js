@@ -1,27 +1,37 @@
-import React from 'react'
-import {Button, Col, Row} from "react-bootstrap";
-import {BsChevronLeft} from "react-icons/bs";
-import {Link} from "react-router-dom";
+import React from 'react';
+import { BsChevronLeft } from 'react-icons/bs';
+import { useHistory } from 'react-router-dom';
 
-const SecondHeader = ({title, buttonName, link}) => {
-    return (
-        <Row>
-            <Col xs={1}>
-                <button onClick={() => window.history.back()} type="button" className="btn btn-link border-dark">
-                    <BsChevronLeft className="text-dark" />
-                </button>
-            </Col>
-            {/* <Button>등록</Button> */}
-            <Col xs={8}>
-                <h4 style={{fontSize: '20px'}}>{title}</h4>
-            </Col>
-            <Col xs={3}>
-                <Link to={link}><Button style={{fontSize: '6px', blockSize: '5em'}}>{buttonName}</Button></Link>
-            </Col>
+const SecondHeader = ({ title, buttonName, link }) => {
+  let history = useHistory();
 
-            {/* <Button onClick={() => this.handleSubmit()}></Button> */}
-        </Row>
-    )
-}
+  return (
+    <>
+      <div className="row">
+        <div className="col-xs-2 pl-3 text-center">
+          <button
+            onClick={() => history.goBack()}
+            type="button"
+            className="btn btn-link border-dark"
+          >
+            <BsChevronLeft className="text-dark" />
+          </button>
+        </div>
+        <div className="col-xs-4 pl-3 pt-1">
+          <h5 className="font-weight-bold">{title}</h5>
+        </div>
+        <div className="col-xs-4 text-center ml-4">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => history.push(link)}
+          >
+            {buttonName}
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default SecondHeader
+export default SecondHeader;

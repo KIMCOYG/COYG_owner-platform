@@ -3,9 +3,11 @@ import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import ListPagination from '../../component/ListPagination';
 import Header from "../../component/HeaderCustomer";
-import EventListItem from "../../component/EventListItemScrap";
+import {useHistory} from "react-router-dom";
+import EventListItemScrapContainer from "../../container/EventListItemScrapContainer";
 
-const ScrapList = ({history}) => {
+const ScrapList = () => {
+  let history = useHistory();
   const goBack = () => {
     history.goBack();
   };
@@ -52,16 +54,7 @@ const ScrapList = ({history}) => {
           </div>
         </div>
         <div className="row mt-3">
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
+          <EventListItemScrapContainer uId={1}/>
         </div>
         <div className="d-flex justify-content-center mt-3">
           <ListPagination />

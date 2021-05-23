@@ -2,6 +2,7 @@ node_modules/
 package-lock.json
 front/node_modules/
 front/package-lock.json
+config
 front/public/uploads/
 .idea/
 
@@ -10,4 +11,5 @@ Icon?
 ._*
 
 config/config.json
+COYG_owner-platform.iml
 uploads/

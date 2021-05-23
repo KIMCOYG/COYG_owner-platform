@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
-// import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '../component/Pagination';
 import { useHistory } from 'react-router-dom';
 import data from '../dummy/dummyDataforOwner';
@@ -12,9 +11,14 @@ import logo from '../static/image/chicken.jpg';
 //     onRowClick: (row) => {
 //         window.location.href = `/owner/detail/${row.id}`
 
-//     }
+/*
+const options = {
+    onRowClick: (row) => {
+        window.location.href = `/owner/detail/${row.id}`
 
-// }
+    }
+
+}*/
 
 const Table = (props) => {
   let history = useHistory();
@@ -47,21 +51,19 @@ const Table = (props) => {
 const OwnerMainPageMobile = () => {
   //const title = ["번호", "썸네일", "이벤트명", "이벤트 상세", "가게명", "기간", "등록일", "상태"]
   const [posts, setPosts] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(1); // 페이지에 보여지는 목록 수 설정
 
   useEffect(() => {
     const fetchPosts = async () => {
-      // setLoading(true);
-      setPosts(data);
-      // setLoading(false);
+      setLoading(true);
+      setPosts(posts);
+      setLoading(false);
     };
+  });
 
-    fetchPosts();
-  }, []);
-  console.log(posts);
-
+  if (loading) return 'loading';
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

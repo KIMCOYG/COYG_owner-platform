@@ -3,10 +3,13 @@ import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import myInfoIcon from '../../static/image/myInfo.png';
 import scrapIcon from '../../static/image/scrap.png';
-import shopIcon from '../../static/image/categories/mart.png';
 import HeaderOwner from '../../component/HeaderOwner';
+import { useHistory } from 'react-router-dom';
+import shopIcon from '../../static/image/categories/mart.png';
 
-const OwnerMyPage = ({ history }) => {
+const OwnerMyPage = () => {
+  let history = useHistory();
+
   let customerName = '심선보';
   return (
     <>
@@ -27,30 +30,34 @@ const OwnerMyPage = ({ history }) => {
         <div className="row mt-5">
           <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/userinfo">
-                  <img
-                    src={myInfoIcon}
-                    className="rounded"
-                    alt=""
-                    style={{ width: '100%', height: '150px' }}
-                  />
-                </a>
+              <button
+                type="button"
+                className="btn btn-link"
+                onClick={() => history.push('/owner/mypage/userinfo')}
+              >
+                <img
+                  src={myInfoIcon}
+                  className="rounded"
+                  alt=""
+                  style={{ width: '100%', height: '150px' }}
+                />
               </button>
               <div className="text-center">내 정보 수정</div>
             </div>
           </div>
           <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/eventlist">
-                  <img
-                    src={scrapIcon}
-                    className="rounded"
-                    alt=""
-                    style={{ width: '100%', height: '150px' }}
-                  />
-                </a>
+              <button
+                type="button"
+                className="btn btn-link"
+                onClick={() => history.push('/owner/mypage/eventlist')}
+              >
+                <img
+                  src={scrapIcon}
+                  className="rounded"
+                  alt=""
+                  style={{ width: '100%', height: '150px' }}
+                />
               </button>
               <div className="text-center">이벤트관리</div>
             </div>
@@ -59,15 +66,17 @@ const OwnerMyPage = ({ history }) => {
         <div className="row mt-5">
           <div className="col-6">
             <div className="d-flex flex-column">
-              <button type="button" className="btn btn-link">
-                <a href="/owner/mypage/manageshop">
-                  <img
-                    src={shopIcon}
-                    className="rounded"
-                    alt=""
-                    style={{ width: '100%', height: '150px' }}
-                  />
-                </a>
+              <button
+                type="button"
+                className="btn btn-link"
+                onClick={() => history.push('/owner/mypage/myshops')}
+              >
+                <img
+                  src={shopIcon}
+                  className="rounded"
+                  alt=""
+                  style={{ width: '100%', height: '150px' }}
+                />
               </button>
               <div className="text-center">가게관리</div>
             </div>

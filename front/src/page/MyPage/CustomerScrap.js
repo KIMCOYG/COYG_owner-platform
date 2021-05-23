@@ -4,8 +4,12 @@ import { BsChevronLeft } from 'react-icons/bs';
 import EventListItem from '../../component/EventListItemScrap';
 import ListPagination from '../../component/ListPagination';
 import Header from '../../component/HeaderCustomer';
+import EventListItemScrapContainer from '../../container/EventListItemScrapContainer';
+import { useHistory } from 'react-router-dom';
 
-const SecondHeader = ({ history }) => {
+const SecondHeader = () => {
+  let history = useHistory();
+
   const goBack = () => {
     history.goBack();
   };
@@ -53,8 +57,6 @@ const SecondHeader = ({ history }) => {
 };
 
 const CustomerScrap = () => {
-  // let listName = '생활용품';
-
   return (
     <>
       <Header />
@@ -64,16 +66,7 @@ const CustomerScrap = () => {
         </Row>
         <div className="row"></div>
         <div className="row mt-3">
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
+          <EventListItemScrapContainer />
         </div>
         <div className="d-flex justify-content-center mt-3">
           <ListPagination />
