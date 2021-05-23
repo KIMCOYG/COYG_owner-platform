@@ -1,6 +1,5 @@
-import AdminHeader from '../../component/AdminHeader';
-import AdminLayout from '../../component/AdminLayout';
-
+import Header from '../../component/AdminHeader';
+import Sidebar from '../../component/Sidebar';
 
 import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
@@ -26,105 +25,100 @@ const storeInfo = [
 
 
 
-const AdminOwner = () => {
-    const [/*gridApi*/, setGridApi] = useState(null);
-    const [/*gridColumnApi*/, setGridColumnApi] = useState(null);
+const AdminCategory = () => {
+    const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
     
-    const [rowData, /*setRowData*/] = useState(data);
+    const [rowData, setRowData] = useState(data);
     
     const onGridReady = params => {
         setGridApi(params.api);
         setGridColumnApi(params.columnApi);
     }
 
-    // const onButtonClick = e => {
-    //     const selectedNodes = gridApi.getSelectedNodes()
-    //     const selectedData = selectedNodes.map( node => node.data )
-    //     const selectedDataStringPresentation = selectedData.map( node => `${node.name} ${node.email}`).join(', ')
-    //     alert(`${selectedDataStringPresentation}를 삭제하시겠습니까?`)
-    // }
+    const onButtonClick = e => {
+        const selectedNodes = gridApi.getSelectedNodes()
+        const selectedData = selectedNodes.map( node => node.data )
+        const selectedDataStringPresentation = selectedData.map( node => `${node.name} ${node.email}`).join(', ')
+        alert(`${selectedDataStringPresentation}를 삭제하시겠습니까?`)
+    }
 
     return (
         <>
-        {/* <Header/>
-        <div style={{float:'left' , width:'20%'}}><Sidebar/></div> */}
-        <div className="container-fluid">
-            <div className="container-fluid">
-                    <AdminHeader />
+        <Header/>
+        <div className="row" style={{height: "1000px"}}>
+                <Sidebar className="mt-2"/>
+            
+        <div style={{marginLeft : 30, float:'left',marginTop: 30 , width:'33%'}}>
+        <div className="ag-theme-alpine" style={{ height: 400, width: 1010 }}>
+        <button style ={{marginRight : 10, marginLeft : 920, marginBottom: 10}}type = "button" data-toggle="modal" data-target="#DeleteModal2" className="btn btn-primary">삭제</button>
+
+        <div class="modal fade" id="DeleteModal2" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="DeleteModalLabel2">카테고리 삭제</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        삭제하시겠습니까?
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">네</button>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div className="row" style={{height: "1000px"}}>
-                <AdminLayout/>
-                <div style={{marginLeft : 30, float:'left',marginTop: 30 , width:'33%'}}>
-                    <div className="ag-theme-alpine" style={{ height: 400, width: 1010 }}>
-                        <button style ={{marginRight : 10, marginLeft : 920, marginBottom: 10}}type = "button" data-toggle="modal" data-target="#DeleteModal2" className="btn btn-primary">삭제</button>
 
-                    <div class="modal fade" id="DeleteModal2" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="DeleteModalLabel2">카테고리 삭제</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-body">
-                                    삭제하시겠습니까?
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">네</button>
-                                </div>
-                            </div>
-                            </div>
+            <div class="modal fade StoreModal" tabindex="-1" role="dialog" aria-labelledby="StoreModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="DeleteModalLabel2">가게 정보</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         </div>
-
-                        <div class="modal fade StoreModal" tabindex="-1" role="dialog" aria-labelledby="StoreModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="DeleteModalLabel2">가게 정보</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body" id="store">
-                                        
-                                        {storeInfo.map((data) => (
-                                            <ul>
-                                                <li key = {data.registerNumber}>가게 이름: {data.storeName}</li>
-                                                <li key = {data.registerNumber}>사업자 등록번호: {data.registerNumber}</li>
-                                                <li key = {data.registerNumber}>카테고리: {data.category}</li>
-                                                <li key = {data.registerNumber}>가게 전화번호: {data.tel}</li>
-                                                <li key = {data.registerNumber}>휴무일: {data.closed}</li>
-                                                <li key = {data.registerNumber}>등록일: {data.createdAt}</li>
-                                            </ul>
-                                        ))}
-                                        
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-body" id="store">
+                            
+                            {storeInfo.map((data) => (
+                                <ul>
+                                    <li key = {data.registerNumber}>가게 이름: {data.storeName}</li>
+                                    <li key = {data.registerNumber}>사업자 등록번호: {data.registerNumber}</li>
+                                    <li key = {data.registerNumber}>카테고리: {data.category}</li>
+                                    <li key = {data.registerNumber}>가게 전화번호: {data.tel}</li>
+                                    <li key = {data.registerNumber}>휴무일: {data.closed}</li>
+                                    <li key = {data.registerNumber}>등록일: {data.createdAt}</li>
+                                </ul>
+                            ))}
+                            
                         </div>
-                        <AgGridReact
-                            onGridReady={onGridReady}
-                            rowData={rowData}
-                            rowSelection="multiple"
-                            frameworkComponents = {{
-                                storeBtnCellRenderer : StoreBtnCellRenderer
-                            }}>
-                            <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true } checkboxSelection = {true} headerCheckboxSelection = {true}></AgGridColumn>
-                            <AgGridColumn field="email" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                            <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                            <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
-                            <AgGridColumn field="store" resizable="true" sortable={ true } filter={ true } cellRenderer="storeBtnCellRenderer"
-                            cellRendererParams = {{
-                                clicked: function(field){
-                                    alert('${field} was clicked');
-                                }
-                            }}></AgGridColumn>
-                        </AgGridReact>
                     </div>
                 </div>
             </div>
+            <AgGridReact
+                onGridReady={onGridReady}
+                rowData={rowData}
+                rowSelection="multiple"
+                frameworkComponents = {{
+                    storeBtnCellRenderer : StoreBtnCellRenderer
+                }}>
+                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true } checkboxSelection = {true} headerCheckboxSelection = {true}></AgGridColumn>
+                <AgGridColumn field="email" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="name" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="phone" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="store" resizable="true" sortable={ true } filter={ true } cellRenderer="storeBtnCellRenderer"
+                cellRendererParams = {{
+                    clicked: function(field){
+                        alert('${field} was clicked');
+                    }
+                }}></AgGridColumn>
+            </AgGridReact>
+        </div>
+        </div>
         </div>
         <div style = {{position:"fixed",bottom:0,left:"50%"}}>
         <ListPagination/>
@@ -136,4 +130,4 @@ const AdminOwner = () => {
 
 
 
-export default AdminOwner;
+export default AdminCategory;

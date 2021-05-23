@@ -1,104 +1,79 @@
-import AdminHeader from '../../component/AdminHeader';
-import AdminLayout from '../../component/AdminLayout';
-
+import Header from '../../component/AdminHeader';
+import Sidebar from '../../component/Sidebar';
 
 import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-// import { Button } from 'bootstrap';
-import BtnCellRenderer from '../../component/BtnCellRenderer.js';
+import { Button } from 'bootstrap';
+import BtnCellRenderer from "../../component/BtnCellRenderer.js";
 import ListPagination from '../../component/ListPagination';
 import axios from 'axios';
+
 
 //https://www.ag-grid.com/react-grid/getting-started/ 그리드 참고
 
 //https://getbootstrap.com/docs/4.0/components/modal/ 모달 참고
 
 const data = [
-  {
-    id: 1,
-    name: '치킨',
-    icon: 'chickenicon',
-    createdAt: '2020/1/25',
-    updatedAt: '2020/1/25',
-    location: 1,
-  },
-  {
-    id: 2,
-    name: '가전제품',
-    icon: 'laptopicon',
-    createdAt: '2020/1/25',
-    updatedAt: '2020/1/25',
-    location: 2,
-  },
-  {
-    id: 3,
-    name: '햄버거',
-    icon: 'hamicon',
-    createdAt: '2020/1/25',
-    updatedAt: '2020/1/25',
-    location: 3,
-  },
+    {id: 1, name: '치킨', icon : 'chickenicon', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 1},
+    {id: 2, name: '가전제품', icon : 'laptopicon', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 2},
+    {id: 3, name: '햄버거', icon : 'hamicon', createdAt : '2020/1/25', updatedAt : '2020/1/25', location : 3}
 ];
 
+
 const AdminCategory = () => {
-  //   const [gridApi, setGridApi] = useState(null);
-  // const [gridColumnApi, setGridColumnApi] = useState(null);
+    const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
+    
+    const [rowData, setRowData] = useState(data);
+    
+    const onGridReady = params => {
+        setGridApi(params.api);
+        setGridColumnApi(params.columnApi);
+    }
+    
+    const gridOptions = { //그리드 옵션
+        columnDefs: data,
+        DefaultColDef:{
+            headerCheckboxSelection: isFirstColumn,
+            checkboxSelection: isFirstColumn,
+        }
+      };
 
-  const [rowData, /*setRowData*/] = useState(data);
+      function isFirstColumn(params) {
+        var displayedColumns = params.columnApi.getAllDisplayedColumns();
+        var thisIsFirstColumn = displayedColumns[0] === params.column;
+        return thisIsFirstColumn;
+      }
 
-  const onGridReady = (params) => {
-    // setGridApi(params.api);
-    // setGridColumnApi(params.columnApi);
-  };
-
-  // const gridOptions = { //그리드 옵션
-  //     columnDefs: data,
-  //     DefaultColDef:{
-  //         headerCheckboxSelection: isFirstColumn,
-  //         checkboxSelection: isFirstColumn,
-  //     }
-  //   };
-
-  //   function isFirstColumn(params) {
-  //     var displayedColumns = params.columnApi.getAllDisplayedColumns();
-  //     var thisIsFirstColumn = displayedColumns[0] === params.column;
-  //     return thisIsFirstColumn;
-  //   }
-
-  // const onButtonClick = e => { //checkbox된 데이터 추출 양식
-  //     const selectedNodes = gridApi.getSelectedNodes()
-  //     const selectedData = selectedNodes.map( node => node.data )
-  //     const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
-  //     alert(`Selected nodes: ${selectedDataStringPresentation}`)
-  // }
-  const [img, setImage] = useState(null);
-  const onChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
-  const onClick = async () => {
-    const formData = new FormData();
-    formData.append('img', img);
-    // 서버의 upload API 호출
-    const res = await axios.post('/post/img', formData);
-    console.log(res);
-  };
-
-  return (
-    <>
-      {/* <Header />
-      <div style={{ float: 'left', width: '20%' }}>
-        <Sidebar />
-      </div> */}
-      <div className="container-fluid">
-          <div className="container-fluid">
-                    <AdminHeader />
-          </div>
-          <div className="row" style={{height: "1000px"}}>
-            <AdminLayout/>
-            <div style={{float:'left',marginTop: 30 , width:'33%'}}>
+    const onButtonClick = e => { //checkbox된 데이터 추출 양식
+        const selectedNodes = gridApi.getSelectedNodes()
+        const selectedData = selectedNodes.map( node => node.data )
+        const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
+        alert(`Selected nodes: ${selectedDataStringPresentation}`)
+    }
+    const [img, setImage] = useState(null);
+    const onChange = (e) => {
+        setImage(e.target.files[0]);
+      }
+    
+      const onClick = async () => {
+        const formData = new FormData();
+        formData.append('img', img);
+        // 서버의 upload API 호출
+        const res = await axios.post("/post/img", formData);
+        console.log(res);
+      }
+    
+    return (
+        <>
+        <Header/>
+        <div className="row" style={{height: "1000px"}}>
+              <Sidebar className="mt-2"/>
+        
+        
+        <div style={{marginLeft : 30, float:'left',marginTop: 30 , width:'33%'}}>
         <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1060 }}>
             <button style ={{marginRight : 10, marginLeft : 900, marginBottom : 10}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>
 
@@ -206,13 +181,16 @@ const AdminCategory = () => {
             </AgGridReact>
         </div>
     </div>
-        </div>
-      </div>
-      <div style={{ position: 'fixed', bottom: 0, left: '50%' }}>
-        <ListPagination />
-      </div>
-    </>
-  );
+    </div>
+    <div style = {{position:"fixed",bottom:0,left:"50%"}}>
+        <ListPagination/>
+    </div>
+        </>
+    );
+
 };
+
+
+
 
 export default AdminCategory;
