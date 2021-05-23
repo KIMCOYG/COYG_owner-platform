@@ -57,15 +57,33 @@ const Login = () => {
               사장님 회원가입
             </Button>
           </div>
-          <div className="d-flex justify-content-center mt-3">
-            <Link to="/customer">
-              <Button variant="link" className="mr-3">
-                고객 페이지
-              </Button>
-            </Link>
-            <Link to="/owner/">
-              <Button variant="link">사장님 페이지</Button>
-            </Link>
+
+          <div className="text-center mt-3">
+            {/* <Link to="/mypage/customer"> */}
+            <Button
+              variant="link"
+              onClick={() => history.push('/mypage/customer')}
+            >
+              마이페이지
+            </Button>
+            {/* </Link> */}
+          </div>
+          <div className="text-center mt-3">
+            {/* <Link to="/mypage/customer"> */}
+            <Button
+              variant="link"
+              onClick={() => history.push('/owner/mypage')}
+            >
+              사장님 마이페이지
+            </Button>
+            {/* </Link> */}
+          </div>
+          <div className="text-center mt-3">
+            {/* <Link to="/mypage/customer"> */}
+            <Button variant="link" onClick={() => history.push('/admin')}>
+              관리자
+            </Button>
+            {/* </Link> */}
           </div>
         </div>
       </Container>

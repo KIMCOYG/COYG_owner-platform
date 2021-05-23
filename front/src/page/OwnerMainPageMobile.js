@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
 import Pagination from '../component/Pagination';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import data from '../dummy/dummyDataforOwner';
 import Header from '../component/HeaderOwner';
 import logo from '../static/image/chicken.jpg';
@@ -21,28 +21,29 @@ const options = {
 }*/
 
 const Table = (props) => {
+  let history = useHistory();
   const dataList = props.data.map((list) => (
-    <Link to="/mobile/owner/detail/${list.id}">
-      <Row>
-        <Col>
-          <img src={logo} alt="" style={{ width: '100%', heigh: '100%' }} />
-        </Col>
-        <Col>
-          <Row>{list.eventName}</Row>
-          <Row>
-            <Col>
-              <Row>{list.shopName}</Row>
-              <Row>{list.term}</Row>
-              <Row>{list.enteredDate}</Row>
-            </Col>
-            <Col>
-              <Row>{list.likes}</Row>
-              <Row>{list.state}</Row>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Link>
+    // <Link to="/mobile/owner/detail/${list.id}">
+    <Row onClick={() => history.push('/mobile/owner/detail/${list.id}')}>
+      <Col>
+        <img src={logo} alt="" style={{ width: '100%', heigh: '100%' }} />
+      </Col>
+      <Col>
+        <Row>{list.eventName}</Row>
+        <Row>
+          <Col>
+            <Row>{list.shopName}</Row>
+            <Row>{list.term}</Row>
+            <Row>{list.enteredDate}</Row>
+          </Col>
+          <Col>
+            <Row>{list.likes}</Row>
+            <Row>{list.state}</Row>
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+    // </Link>
   ));
   return <ul>{dataList}</ul>;
 };

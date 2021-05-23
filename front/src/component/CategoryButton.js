@@ -1,7 +1,8 @@
 import React from 'react';
 // import styled from 'styled-components';
-
 import { useHistory } from 'react-router-dom';
+import logo from '../static/image/chicken.jpg'; //절대 경로로 받아와야함
+
 // import logo from '../static/image/chicken.jpg';
 
 // const ImgBtn = styled.div`
@@ -16,10 +17,17 @@ const CategoryButton = ({ name, cId, image }) => {
     <>
       <div className="container">
         <div className="row">
-            <button onClick={() => history.push({
-              pathname:`category/${cId}/event`,
-            state:{name}})} type="button" className="btn btn-link">
-              <img
+          <button
+            onClick={() =>
+              history.push({
+                pathname: `category/${cId}/event`,
+                state: { name },
+              })
+            }
+            type="button"
+            className="btn btn-link"
+          >
+            <img
               src={image}
               alt=""
               className="rounded"

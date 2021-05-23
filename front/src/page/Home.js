@@ -8,6 +8,7 @@ import CategoryButton from '../component/CategoryButton';
 import axios from 'axios';
 
 const Home = () => {
+
   let address = 'DB에 저장된 유저 위치정보';
   let history = useHistory();
   const [category, setCategory] = useState([]);
@@ -42,84 +43,85 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3 mb-3">
           <div className="d-flex mt-2">
+
             <CategoryButton
-              image={'uploads/' + 'like.png'}
+              image={'uploads/like.png'}
               name="좋아요"
               className="col-xs-4"
             />
 
             <CategoryButton
-              image={'uploads/' + 'electronic1621529546700.png'}
+              image={'uploads/electronic1621529546700.png'}
               name="가전제품"
               className="col-xs-4"
             />
 
             <CategoryButton
-              image={'uploads/' + 'dosirac1621529538417.png'}
+              image={'uploads/dosirac1621529538417.png'}
               name="도시락"
               className="col-xs-4"
             />
 
             <CategoryButton
-              image={'uploads/' + 'desert1621529530613.png'}
+              image={'uploads/desert1621529530613.png'}
               name="디저트"
               className="col-xs-4"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + 'mart1621529558596.png'}
+              image={'uploads/mart1621529558596.png'}
               name="마트"
               className="mr-3"
             />
             <CategoryButton
-              image={'uploads/' + 'bunsic1621529513166.png'}
+              image={'uploads/bunsic1621529513166.png'}
               name="분식"
             />
             <CategoryButton
-              image={'uploads/' + 'sports1621529570250.png'}
+              image={'uploads/sports1621529570250.png'}
               name="스포츠"
             />
             <CategoryButton
-              image={'uploads/' + 'asian1621529509447.png'}
+              image={'uploads/asian1621529509447.png'}
               name="아시안"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + 'yangsic1621529578325.png'}
+              image={'uploads/yangsic1621529578325.png'}
               name="양식"
               className="mr-3"
             />
             <CategoryButton
-              image={'uploads/' + 'wear1621529574142.png'}
+              image={'uploads/wear1621529574142.png'}
               name="의류"
             />
             <CategoryButton
-              image={'uploads/' + 'japan1621529550796.png'}
+              image={'uploads/japan1621529550796.png'}
               name="일식"
             />
             <CategoryButton
-              image={'uploads/' + 'drink1621529542800.png'}
+              image={'uploads/drink1621529542800.png'}
               name="주류"
             />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/' + 'chicken1621529353710.jpg'}
+              image={'uploads/chicken1621529353710.jpg'}
               name="치킨"
               className="mr-3"
             />
             <CategoryButton
-              image={'uploads/' + 'pizza1621529419795.jpg'}
+              image={'uploads/pizza1621529419795.jpg'}
               name="피자"
             />
             <CategoryButton
-              image={'uploads/' + 'phone1621529562260.png'}
+              image={'uploads/phone1621529562260.png'}
               name="휴대폰"
             />
             <CategoryButton
-              image={'uploads/' + 'hamburger1621529374043.jpg'}
+              image={'uploads/hamburger1621529374043.jpg'}
               name="햄버거"
             />
           </div>
