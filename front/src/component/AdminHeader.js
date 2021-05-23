@@ -10,7 +10,7 @@ const Header = () => {
       <Row>
         <Col>
           {/* <Link to="/"> */}
-          <Image src={logo} onClick={() => history.push('/')}></Image>
+          <Image src={logo} onClick={() => history.push('/') }></Image>
           {/* </Link> */}
         </Col>
         <Col className="text-center">

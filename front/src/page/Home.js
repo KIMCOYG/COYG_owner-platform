@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const Home = () => {
 
-  let address = 'DB에 저장된 유저 위치정보';
+  let address = window.localStorage.getItem('addr');
   let history = useHistory();
   const [category, setCategory] = useState([]);
   useEffect(() => {

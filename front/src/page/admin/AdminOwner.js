@@ -70,8 +70,8 @@ const AdminCategory = () => {
                     <button type="button" class="btn btn-primary">네</button>
                     </div>
                 </div>
-                </div>
             </div>
+        </div>
 
             <div class="modal fade StoreModal" tabindex="-1" role="dialog" aria-labelledby="StoreModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
