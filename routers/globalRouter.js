@@ -4,6 +4,7 @@ import {
   getCategoryImage,
   getCategoryList,
   getDetailEvent,
+  getLikeList,
   HomeBanner,
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
@@ -37,6 +38,9 @@ globalRouter.post(routes.cusPwUpdate(), updateUserPw);
 
 // 스크랩 리스트
 globalRouter.get(routes.scrapList(), scrapList);
+
+// 좋아요 리스트
+globalRouter.get(routes.likeList(), getLikeList);
 
 // Category List
 globalRouter.get(routes.categoryList(), getCategoryList);

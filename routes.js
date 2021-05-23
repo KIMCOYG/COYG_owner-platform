@@ -31,6 +31,7 @@ const logout = "/logout";
 const cusUpdate = "/mypage/:id/update";
 const cusPwUpdate = "/mypage/:id/update/password";
 const scrapList = "/scrap/:id/list";
+const likeList = "/like/:id/list";
 
 //owner
 const owner = "/owner";
@@ -159,6 +160,13 @@ const routes = {
       return `/scrap/${id}/list`;
     } else {
       return scrapList;
+    }
+  },
+  likeList: (id) => {
+    if (id) {
+      return `/like/${id}/list`;
+    } else {
+      return likeList;
     }
   },
   img,

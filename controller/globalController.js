@@ -4,6 +4,7 @@ const Category = models.Category;
 const Image = models.Image;
 const Event = models.Event;
 const Shop = models.Shop;
+const Like = models.Like;
 
 export const hello = (req, res, next) => {
   res.send("sfsdfsdf");
@@ -84,6 +85,38 @@ export const getDetailEvent = async (req, res, next) => {
       include: [Image, Shop],
       raw: true,
     });
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+export const getLikeList = async (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    if (!id) {
+      res.send({ notFound: 1 });
+    }
+    let likes = await Like.findAll({
+      where: { user_id: id },
+      attributes: [["event_id", "event_id"]],
+      raw: true,
+    });
+    likes = likes.map((i) => i.event_id);
+
+    const result = await Event.findAll({
+      where: {
+        event_id: {
+          [Op.or]: likes,
+        },
+      },
+      include: Image,
+      order: [["likes_count", "DESC"]],
+    });
+
     res.send(result);
   } catch (err) {
     console.log(err);
