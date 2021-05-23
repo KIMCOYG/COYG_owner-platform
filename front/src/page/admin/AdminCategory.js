@@ -75,9 +75,9 @@ const AdminCategory = () => {
         
         <div style={{marginLeft : 30, float:'left',marginTop: 30 , width:'33%'}}>
         <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1060 }}>
-            <button style ={{marginRight : 10, marginLeft : 950, marginBottom : 10}}type = "button" data-toggle="modal" data-target="#AddModal" >추가</button>
+            <button className = "btn btn-outline-dark btn-sm" style ={{marginRight : 10, marginLeft : 950, marginBottom : 10}}type = "button" data-toggle="modal" data-target="#AddModal" >추가</button>
 
-            <button style = {{marginBottom : 10}}type = "button" data-toggle="modal" data-target="#DeleteModal" >삭제</button>
+            <button className = "btn btn-outline-dark btn-sm" style = {{marginBottom : 10}}type = "button" data-toggle="modal" data-target="#DeleteModal" >삭제</button>
 
             <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">

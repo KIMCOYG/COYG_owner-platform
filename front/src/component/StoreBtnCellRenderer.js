@@ -11,7 +11,7 @@ class StoreBtnCellRenderer extends Component {
     render() {
       return (
         <div>
-          <button type="button" data-toggle="modal" data-target=".StoreModal">조회</button>
+          <button className = "btn btn-outline-dark btn-sm" type="button" data-toggle="modal" data-target=".StoreModal">조회</button>
         </div>
         
       )

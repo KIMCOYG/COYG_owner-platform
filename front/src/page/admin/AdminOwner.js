@@ -51,7 +51,7 @@ const AdminCategory = () => {
             
         <div style={{marginLeft : 30, float:'left',marginTop: 30 , width:'33%'}}>
         <div className="ag-theme-alpine" style={{ height: 400, width: 1010 }}>
-        <button style ={{marginRight : 10, marginLeft : 950, marginBottom: 10}}type = "button" data-toggle="modal" data-target="#DeleteModal2" >삭제</button>
+        <button className = "btn btn-outline-dark btn-sm" style ={{marginRight : 10, marginLeft : 950, marginBottom: 10}}type = "button" data-toggle="modal" data-target="#DeleteModal2" >삭제</button>
 
         <div class="modal fade" id="DeleteModal2" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
                 <div class="modal-dialog" role="document">
