@@ -3,8 +3,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './page/Home';
 import React from 'react';
-import OwnerMainPageMobile from './page/OwnerMainPageMobile';
-import EvnetRegist from './page/EventRegist';
+import EventRegist from './page/EventRegist';
 import Login from './page/login/Login';
 import CustomerJoin from './page/login/CustomerJoin';
 import OwnerJoin from './page/login/OwnerJoin';
@@ -55,7 +54,7 @@ const App = () => {
 
           <Route
             path="/mobile/owner/event/regist"
-            component={EvnetRegist}
+            component={EventRegist}
             exact
           />
           <Route

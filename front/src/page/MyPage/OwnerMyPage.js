@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
-import myInfoIcon from '../../static/image/laptop.jpg';
-import scrapIcon from '../../static/image/vegetables.jpg';
+import myInfoIcon from '../../static/image/myInfo.png';
+import scrapIcon from '../../static/image/scrap.png';
 import HeaderOwner from '../../component/HeaderOwner';
 import { useHistory } from 'react-router-dom';
 import shopIcon from '../../static/image/categories/mart.png';
