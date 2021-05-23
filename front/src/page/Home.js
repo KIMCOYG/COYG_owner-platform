@@ -44,7 +44,7 @@ const Home = () => {
         <div className="mt-3 mb-3">
           <div className="d-flex mt-2">
             <CategoryButton
-              image={'uploads/like.png'}
+              image={'uploads/like1621529554334.png'}
               name="좋아요"
               className="col-xs-4"
             />
