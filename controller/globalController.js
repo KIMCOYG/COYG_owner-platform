@@ -92,16 +92,19 @@ export const getDetailEvent = async (req, res, next) => {
   }
 };
 
+// 좋아요 리스트 조회
 export const getLikeList = async (req, res, next) => {
   const {
     params: { id },
   } = req;
   try {
-    if (!id) {
-      res.send({ notFound: 1 });
+    let Id = parseInt(id);
+    if (isNaN(Id)) {
+      return res.send({ error: 1 });
     }
+    console.log(Id);
     let likes = await Like.findAll({
-      where: { user_id: id },
+      where: { user_id: Id },
       attributes: [["event_id", "event_id"]],
       raw: true,
     });
@@ -117,7 +120,19 @@ export const getLikeList = async (req, res, next) => {
       order: [["likes_count", "DESC"]],
     });
 
-    res.send(result);
+    return res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 이벤트 좋아요 버튼
+export const addLikeEvent = async (req, res, next) => {
+  const {
+    body: { event_id, user_id },
+  } = req;
+  try {
   } catch (err) {
     console.log(err);
     next(err);
