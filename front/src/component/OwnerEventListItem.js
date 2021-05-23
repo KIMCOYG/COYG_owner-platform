@@ -11,8 +11,9 @@ const MinDiv = styled.div`
 const OwnerEventListItem = ({ lists }) => {
   let history = useHistory();
   console.log(typeof lists);
-  return lists.map((e) => (
+  return lists.map((e, index) => (
     <div
+      key={index}
       className="d-flex"
       onClick={() =>
         history.push({
