@@ -11,7 +11,7 @@ class BtnCellRenderer extends Component {
     render() {
       return (
         <div>
-        <button className="btn btn-primary" data-toggle="modal" data-target="#UpdateModal">수정</button>
+        <button data-toggle="modal" data-target="#UpdateModal">수정</button>
 
         
         </div>

@@ -10,7 +10,10 @@ class StoreBtnCellRenderer extends Component {
     }
     render() {
       return (
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".StoreModal">조회</button>
+        <div>
+          <button type="button" data-toggle="modal" data-target=".StoreModal">조회</button>
+        </div>
+        
       )
     }
   }

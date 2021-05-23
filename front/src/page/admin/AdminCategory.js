@@ -97,272 +97,115 @@ const AdminCategory = () => {
                     <AdminHeader />
           </div>
           <div className="row" style={{height: "1000px"}}>
-                <AdminLayout/>
-          <div style={{ float: 'left', marginTop: 30, width: '33%' }}>
-            <div
-              className="ag-theme-alpine mx-auto"
-              style={{ height: 400, width: 1060 }}
-            >
-              <button
-                style={{ marginRight: 10, marginLeft: 900, marginBottom: 10 }}
-                type="button"
-                data-toggle="modal"
-                data-target="#AddModal"
-                className="btn btn-primary"
-              >
-                추가
-              </button>
+            <AdminLayout/>
+            <div style={{float:'left',marginTop: 30 , width:'33%'}}>
+        <div className="ag-theme-alpine mx-auto" style={{ height: 400, width: 1060 }}>
+            <button style ={{marginRight : 10, marginLeft : 900, marginBottom : 10}}type = "button" data-toggle="modal" data-target="#AddModal" className="btn btn-primary">추가</button>
 
-              <button
-                style={{ marginBottom: 10 }}
-                type="button"
-                data-toggle="modal"
-                data-target="#DeleteModal"
-                className="btn btn-primary"
-              >
-                삭제
-              </button>
+            <button style = {{marginBottom : 10}}type = "button" data-toggle="modal" data-target="#DeleteModal" className="btn btn-primary">삭제</button>
 
-              <div
-                class="modal fade"
-                id="AddModal"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="AddModalLabel"
-                aria-hidden="true"
-              >
+            <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                  <div class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="AddModalLabel">
-                        카테고리 추가
-                      </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
+                    <h5 class="modal-title" id="AddModalLabel">카테고리 추가</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
+                    </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                    <form>
                         <div class="form-group">
-                          <label for="category-name" class="col-form-label">
-                            카테고리명
-                          </label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="category-name"
-                          />
+                            <label for="category-name" class="col-form-label">카테고리명</label>
+                            <input type="text" class="form-control" id="category-name"/>
                         </div>
                         <div class="form-group">
-                          <label for="category-image" class="col-form-label">
-                            카테고리 이미지
-                          </label>
-                          <div>
-                            <input
-                              type="file"
-                              onChange={onChange}
-                              id="category-image"
-                              accept="image/jpeg,.png"
-                            />
-                          </div>
+                            <label for="category-image" class="col-form-label">카테고리 이미지</label>
+                            <div><input type="file" onChange={onChange} id="category-image" accept="image/jpeg,.png"/></div>
+                            
                         </div>
-                      </form>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button
-                        type="button"
-                        onClick={onClick}
-                        name="img"
-                        class="btn btn-primary"
-                      >
-                        추가
-                      </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onClick={onClick} name = "img" class="btn btn-primary">추가</button>
                     </div>
-                  </div>
                 </div>
-              </div>
-
-              <div
-                class="modal fade"
-                id="DeleteModal"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="DeleteModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="DeleteModalLabel">
-                        카테고리 삭제
-                      </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">삭제하시겠습니까?</div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        네
-                      </button>
-                    </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
-              <div
-                class="modal fade"
-                id="UpdateModal"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="UpdateModalLabel"
-                aria-hidden="true"
-              >
+            <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                  <div class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="UpdateModalLabel">
-                        카테고리 수정
-                      </h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
+                    <h5 class="modal-title" id="DeleteModalLabel">카테고리 삭제</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
+                    </button>
                     </div>
                     <div class="modal-body">
-                      <form>
-                        <div class="form-group">
-                          <label for="category-name" class="col-form-label">
-                            카테고리명
-                          </label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="category-name"
-                          />
-                        </div>
-                        <div class="form-group">
-                          <label for="category-image" class="col-form-label">
-                            카테고리 이미지
-                          </label>
-                          <div>
-                            <input
-                              type="file"
-                              id="category-image"
-                              accept="image/jpeg,.png"
-                            />
-                          </div>
-                        </div>
-                      </form>
+                        삭제하시겠습니까?
                     </div>
                     <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        네
-                      </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">네</button>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <AgGridReact
+                </div>
+            </div>
+
+            <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="UpdateModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="UpdateModalLabel">카테고리 수정</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="category-name" class="col-form-label">카테고리명</label>
+                            <input type="text" class="form-control" id="category-name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="category-image" class="col-form-label">카테고리 이미지</label>
+                            <div><input type="file" id="category-image" accept="image/jpeg,.png"/></div>
+                            
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">네</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <AgGridReact
                 onGridReady={onGridReady}
                 rowData={rowData}
                 rowSelection="multiple"
-                frameworkComponents={{
-                  btnCellRenderer: BtnCellRenderer,
+                frameworkComponents = {{
+                    btnCellRenderer : BtnCellRenderer
                 }}
-              >
-                <AgGridColumn
-                  field="id"
-                  resizable="true"
-                  width="100px"
-                  sortable={true}
-                  filter={true}
-                  checkboxSelection={true}
-                  headerCheckboxSelection={true}
-                ></AgGridColumn>
-                <AgGridColumn
-                  field="name"
-                  resizable="true"
-                  width="100px"
-                  sortable={true}
-                  filter={true}
-                ></AgGridColumn>
-                <AgGridColumn
-                  field="icon"
-                  resizable="true"
-                  sortable={true}
-                  filter={true}
-                ></AgGridColumn>
-                <AgGridColumn
-                  field="createdAt"
-                  resizable="true"
-                  sortable={true}
-                  filter={true}
-                ></AgGridColumn>
-                <AgGridColumn
-                  field="updatedAt"
-                  resizable="true"
-                  sortable={true}
-                  filter={true}
-                ></AgGridColumn>
-                <AgGridColumn
-                  field="location"
-                  resizable="true"
-                  width="150px"
-                  sortable={true}
-                  filter={true}
-                ></AgGridColumn>
-                <AgGridColumn
-                  field="수정"
-                  resizable="true"
-                  width="100px"
-                  sortable={true}
-                  filter={true}
-                  cellRenderer="btnCellRenderer"
-                  cellRendererParams={{
-                    clicked: function (field) {
-                      alert(`${field} was clicked`);
-                    },
-                  }}
-                ></AgGridColumn>
-              </AgGridReact>
-            </div>
-          </div>
+                >
+                <AgGridColumn field="id" resizable="true" width = "100px" sortable={ true } filter={ true } checkboxSelection = {true} headerCheckboxSelection = {true}></AgGridColumn>
+                <AgGridColumn field="name" resizable="true" width = "100px" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="icon" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="createdAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="updatedAt" resizable="true" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="location" resizable="true" width = "150px" sortable={ true } filter={ true }></AgGridColumn>
+                <AgGridColumn field="수정" resizable="true" width = "100px" sortable={ true } filter={ true } cellRenderer="btnCellRenderer"
+                cellRendererParams = {{
+                    clicked: function(field){
+                        alert('${field} was clicked');
+                    }
+                }}></AgGridColumn>
+            </AgGridReact>
+        </div>
+    </div>
         </div>
       </div>
       <div style={{ position: 'fixed', bottom: 0, left: '50%' }}>
