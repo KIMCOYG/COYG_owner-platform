@@ -31,6 +31,7 @@ const logout = "/logout";
 const cusUpdate = "/mypage/:id/update";
 const cusPwUpdate = "/mypage/:id/update/password";
 const scrapList = "/scrap/:id/list";
+const likeList = "/like/:id/list";
 
 //owner
 const owner = "/owner";
@@ -45,6 +46,8 @@ const categoryList = "/category/:id/list";
 
 //detail event
 const detailEvent = "/event/:id/detail";
+const likeCreateBtn = "/event/like-cnt/create";
+const likeRemoveBtn = "/event/like-cnt/remove";
 
 // post image
 const post = "/post";
@@ -162,6 +165,13 @@ const routes = {
       return scrapList;
     }
   },
+  likeList: (id) => {
+    if (id) {
+      return `/like/${id}/list`;
+    } else {
+      return likeList;
+    }
+  },
   img,
   banner,
   admin,
@@ -173,6 +183,8 @@ const routes = {
       return ownerShopList;
     }
   },
+  likeCreateBtn,
+  likeRemoveBtn,
 };
 
 export default routes;

@@ -75,6 +75,7 @@ export const postJoin = async (req, res, next) => {
   }
 };
 
+// 고객 회원가입
 export const postCustomerJoin = async (req, res, next) => {
   const { email, password, name, phone, role } = req.body;
   try {

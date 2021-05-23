@@ -4,6 +4,7 @@ const Category = models.Category;
 const Image = models.Image;
 const Event = models.Event;
 const Shop = models.Shop;
+const Like = models.Like;
 
 export const hello = (req, res, next) => {
   res.send("sfsdfsdf");
@@ -82,6 +83,106 @@ export const getDetailEvent = async (req, res, next) => {
       include: [Image, Shop],
     });
     res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 좋아요 리스트 조회
+export const getLikeList = async (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const Id = parseInt(id);
+    if (isNaN(Id)) {
+      return res.send({ error: 1 });
+    }
+    console.log(Id);
+    let likes = await Like.findAll({
+      where: { user_id: Id },
+      attributes: [["event_id", "event_id"]],
+      raw: true,
+    });
+    likes = likes.map((i) => i.event_id);
+
+    const result = await Event.findAll({
+      where: {
+        event_id: {
+          [Op.or]: likes,
+        },
+      },
+      include: Image,
+      order: [["likes_count", "DESC"]],
+    });
+
+    return res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 이벤트 좋아요 버튼
+export const addLikeEvent = async (req, res, next) => {
+  const {
+    body: { event_id, user_id },
+  } = req;
+  try {
+    const likeResult = await Like.create({
+      user_id,
+      event_id,
+    });
+    let likeCnt = await Event.findOne({
+      where: { event_id },
+      attributes: ["likes_count"],
+    });
+    likeCnt = parseInt(likeCnt.likes_count) + 1;
+    // console.log(likeCnt);
+
+    const eventResult = await Event.update(
+      {
+        likes_count: likeCnt,
+      },
+      {
+        where: { event_id },
+      }
+    );
+    res.send({ likeResult, eventResult });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+export const removeLikeEvent = async (req, res, next) => {
+  const {
+    body: { event_id, user_id },
+  } = req;
+  try {
+    const likeResult = await Like.destroy({
+      where: {
+        event_id,
+        user_id,
+      },
+    });
+
+    let likeCnt = await Event.findOne({
+      where: { event_id },
+      attributes: ["likes_count"],
+    });
+    likeCnt = parseInt(likeCnt.likes_count) - 1;
+
+    const eventResult = await Event.update(
+      {
+        likes_count: likeCnt,
+      },
+      {
+        where: { event_id },
+      }
+    );
+    res.send({ likeResult, eventResult });
   } catch (err) {
     console.log(err);
     next(err);
