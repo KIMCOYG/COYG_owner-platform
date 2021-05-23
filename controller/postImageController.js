@@ -2,6 +2,7 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import models from "../models";
+import { UV_FS_O_FILEMAP } from "constants";
 const Image = models.Image;
 
 export const mkFolder = async (req, res, next) => {
@@ -48,12 +49,22 @@ export const imgDefine = async (req, res, next) => {
     });
     req.body.image_id = result.dataValues.image_id;
     console.log(req.file);
-    res.json({ url: `/img/${req.file.filename}` });
+    res.json({ url: `/img/${req.file.filename}` }); 
   } catch (err) {
     console.log(err);
     next(err);
   }
 };
+
+export const getPostImage = (req, res, next) => {
+
+  fs.readFile('uploads/Dog1621419428094.jpg',function(err,data){
+      res.writeHead(200, {'Content-Type' : 'image/jpg'});
+      res.write(data);
+      res.end();
+
+  });
+}
 
 // export const uploadAll = multer();
 // export const imgDefineAll = async (req, res, next) => {

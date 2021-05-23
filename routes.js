@@ -52,6 +52,7 @@ const likeRemoveBtn = "/event/like-cnt/remove";
 // post image
 const post = "/post";
 
+
 const test = "/test";
 const img = "/img";
 const banner = "/banner";

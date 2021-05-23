@@ -8,6 +8,7 @@ import CategoryButton from '../component/CategoryButton';
 import axios from 'axios';
 
 const Home = () => {
+
   let address = 'DB에 저장된 유저 위치정보';
   let history = useHistory();
   const [category, setCategory] = useState([]);
@@ -43,6 +44,7 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3 mb-3">
           <div className="d-flex mt-2">
+
             <CategoryButton
               image={'uploads/like1621529554334.png'}
               name="좋아요"
