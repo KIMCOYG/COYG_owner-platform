@@ -7,32 +7,31 @@ const SecondHeader = ({ title, buttonName, link }) => {
   let history = useHistory();
 
   return (
-    <Row>
-      <Col xs={1}>
-        <button
-          onClick={() => history.goBack()}
-          type="button"
-          className="btn btn-link border-dark"
-        >
-          <BsChevronLeft className="text-dark" />
-        </button>
-      </Col>
-      {/* <Button>등록</Button> */}
-      <Col xs={8}>
-        <h4 style={{ marginLeft: '10px', fontSize: '20px' }}>{title}</h4>
-      </Col>
-      <Col xs={2}>
-        <button
-          className="btn btn-primary"
-          style={{ fontSize: '6px' }}
-          onClick={() => history.push(link)}
-        >
-          {buttonName}
-        </button>
-      </Col>
-
-      {/* <Button onClick={() => this.handleSubmit()}></Button> */}
-    </Row>
+    <>
+      <div className="row">
+        <div className="col-xs-2 pl-3 text-center">
+          <button
+            onClick={() => history.goBack()}
+            type="button"
+            className="btn btn-link border-dark"
+          >
+            <BsChevronLeft className="text-dark" />
+          </button>
+        </div>
+        <div className="col-xs-4 pl-3 pt-1">
+          <h5 className="font-weight-bold">{title}</h5>
+        </div>
+        <div className="col-xs-4 text-center ml-4">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => history.push(link)}
+          >
+            {buttonName}
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 
