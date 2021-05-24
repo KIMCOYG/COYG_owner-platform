@@ -10,7 +10,6 @@ import { ExpressionService } from 'ag-grid-community';
 // import textFit from "textfit";
 
 const Home = () => {
-
   let address = window.localStorage.getItem('addr');
   let history = useHistory();
   const [category, setCategory] = useState([]);
@@ -27,6 +26,7 @@ const Home = () => {
     fetchCategory();
   }, [category]);//warning 떠서 임의로 수정
   // textFit(document.getElementsByClassName("addr"), {multiLine: true});
+
   return (
     <>
       <Header />
@@ -47,22 +47,24 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3 mb-3">
           <div className="d-flex mt-2">
-
             <CategoryButton
-              image={'uploads/like.png'}
+              image={'uploads/like1621529554334.png'}
               name="좋아요"
               className="col-xs-4"
             />
+
             <CategoryButton
               image={'uploads/electronic1621529546700.png'}
               name="가전제품"
               className="col-xs-4"
             />
+
             <CategoryButton
               image={'uploads/dosirac1621529538417.png'}
               name="도시락"
               className="col-xs-4"
             />
+
             <CategoryButton
               image={'uploads/desert1621529530613.png'}
               name="디저트"

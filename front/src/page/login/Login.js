@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 import '../../App.css';
 import Header from '../../component/Header';
@@ -57,6 +57,7 @@ const Login = () => {
               사장님 회원가입
             </Button>
           </div>
+
           <div className="text-center mt-3">
             {/* <Link to="/mypage/customer"> */}
             <Button

@@ -1,13 +1,11 @@
 import express from "express";
-import {
-  getEvents,
-  getEvent,
+import { getEvents, getEvent,
   createEvent,
   updateEvent,
-  deleteEvent,
-} from "../../controller/models/eventController";
-import { createImage } from "../../controller/models/imageController";
+  deleteEvent } from "../../controller/models/eventController";
+
 import routes from "../../routes";
+import {createImage} from "../../controller/models/imageController";
 
 const eventRouter = express.Router();
 

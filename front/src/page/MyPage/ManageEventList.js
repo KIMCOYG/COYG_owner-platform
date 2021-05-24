@@ -1,32 +1,15 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-// import {BsChevronLeft} from 'react-icons/bs';
-// import {Link} from 'react-router-dom';
 
 import Header from '../../component/HeaderOwner';
 import ListPagination from '../../component/ListPagination';
-import EventListItem from '../../component/OwnerEventListItem';
 import SecondHeader from '../../component/SecondHeader';
+import EventListOwnerContainer from "../../container/EventListOwnerContainer";
 
-/*const SecondHeader = ({props}) => {
-    return (
-        <Row>
-            <button onClick={() => window.history.back()}>
-                <BsChevronLeft className="text-dark"/>
-            </button>
-            {/!* <Button>등록</Button> *!/}
 
-            <h4>이벤트 관리</h4>
-            <Link to="/mobile/owner/event/regist">
-                <Button>추가</Button>
-            </Link>
 
-        </Row>
-    )
-}*/
+const ManageEventList = () => {
 
-const ManageEventList = ({ history }) => {
-  //   let listName = '치킨';
   return (
     <>
       <Header />
@@ -40,16 +23,7 @@ const ManageEventList = ({ history }) => {
         </Row>
         <div className="row">
           <div className="row mt-3">
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
-            <EventListItem />
+            <EventListOwnerContainer uId={1} />
           </div>
           <div className="d-flex justify-content-center mt-3">
             <ListPagination />

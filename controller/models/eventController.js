@@ -11,6 +11,26 @@ export const getEvents = (req, res, next) => {
       next(err);
     });
 };
+export const getEventsJoin = (req, res, next) => {
+    Event.findAll({
+        include:[
+            {
+                model: Image, // join 할 테이블 명
+                required: false, // fasle - left outer join, true - inner join
+                attributes: ['*'], //select 컬럼
+                where: ["image_id = image_id"]
+            }
+        ]
+    })
+        .then((list) => {
+            res.send(list);
+        })
+        .catch((err) => {
+            console.err(err);
+            next(err);
+        });
+};
+
 
 export const getEvent = (req, res, next) => {
   const {

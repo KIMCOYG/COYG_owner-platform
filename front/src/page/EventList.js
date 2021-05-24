@@ -1,19 +1,19 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-// import { useHistory } from 'react-router-dom';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/Header';
-import EventListItem from '../component/EventListItem';
 import ListPagination from '../component/ListPagination';
+import { useHistory } from 'react-router-dom';
+import CategoryEventListContainer from '../container/CategoryEventListContainer';
 
-const EventList = ({ history }) => {
-  // let history = useHistory();
-
+const EventList = ({match, location}) => {
+  let history = useHistory();
+  const listName = location.state.name
+  console.log(location)
   const goBack = () => {
     history.goBack();
   };
-  let listName = '생활용품';
-
+  const { id } = match.params;
   return (
     <>
       <Header />
@@ -72,16 +72,7 @@ const EventList = ({ history }) => {
           </div>
         </div>
         <div className="row mt-3">
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
-          <EventListItem />
+          <CategoryEventListContainer cId={parseInt(id, 10)} />
         </div>
         <div className="d-flex justify-content-center mt-3">
           <ListPagination />

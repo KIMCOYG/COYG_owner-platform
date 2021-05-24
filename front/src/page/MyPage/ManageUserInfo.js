@@ -1,9 +1,9 @@
 import React from 'react'
-import {Button, Container, Form, Row} from 'react-bootstrap'
+import { Container, Row} from 'react-bootstrap'
 import {BsChevronLeft} from 'react-icons/bs';
 import {useHistory} from 'react-router-dom';
-import userData from "../../dummy/dummyDataUser";
 import Header from "../../component/HeaderCustomer";
+import UserInfoContainer from "../../container/UserInfoContainer";
 
 const SecondHeader = ({props}) => {
       
@@ -21,7 +21,6 @@ const SecondHeader = ({props}) => {
 
 const ManageUserInfo = () => {
     let history = useHistory();
-    const userInfo = userData[0]
     return (
         <>
             <Header/>
@@ -29,32 +28,9 @@ const ManageUserInfo = () => {
                 <Row className="col-xs-2 pl-3 text-center">
                     <SecondHeader/>
                 </Row>
-                <Form>
-                    <Form.Group>
-                        <Form.Label>이름</Form.Label>
-                        <Form.Control type="input" defaultValue={userInfo.name} onChange={(event) => {
-                            userInfo.name = event.target.value
-                        }}></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>전화번호</Form.Label>
-                        <Form.Control type="input" defaultValue={userInfo.phone} onChange={(event) => {
-                            userInfo.phone = event.target.value
-                        }}></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>이메일</Form.Label>
-                        <Form.Control type="email" value={userInfo.email} disabled></Form.Control>
-                    </Form.Group>
-                    <Row>
-                    <text onClick={() => history.push("/owner/mypage/changepw")}>비밀번호 변경</text>
-                    </Row>
-                    <Row>
-                        <Button type="submit">적용하기</Button>
-                    </Row>
-                </Form>
+                <UserInfoContainer uId={1}/>
             </Container>
-            <text onClick={() => history.push("owner/change-password")}></text>)
+            <text onClick={() => history.push("owner/change-password")}></text>
         </>
     )
 }

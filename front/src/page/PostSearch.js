@@ -97,13 +97,13 @@ const PostSearch = ({history}) => {
               <BiMap className="mr-3" />
               현재 위치
             </Button>
-            <div class="modal fade" id="PostModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
+            {/* <div class="modal fade" id="PostModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel2" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     
                     <div class="modal-body">
-                      {/* <p>이 주소가 맞습니까?</p>
-                      <p>{window.localStorage.getItem('addr')}</p> */}
+                      <p>이 주소가 맞습니까?</p>
+                      <p>{window.localStorage.getItem('addr')}</p>
                       
                     </div>
                     <div class="modal-footer">
@@ -111,7 +111,7 @@ const PostSearch = ({history}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
           </div>
         </div>
         <DaumPostcode style={postCodeStyle} onComplete={handleComplete} />
