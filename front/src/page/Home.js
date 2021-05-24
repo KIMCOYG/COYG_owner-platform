@@ -24,6 +24,7 @@ const Home = () => {
       }
     };
     fetchCategory();
+
   }, [category]);//warning 떠서 임의로 수정
   // textFit(document.getElementsByClassName("addr"), {multiLine: true});
 
@@ -38,7 +39,11 @@ const Home = () => {
           block
           onClick={() => history.push('/post')}
         >
-          <div style = {{fontSize : "1.5vh"}}>
+          <div style = {{ width:"100%",
+              height : "20px",
+              textOverflow:"ellipsis",
+              overflow:"hidden", // 글자 넘치는 것을 자름
+              whiteSpace:"nowrap"}}> 
           <BiMap className="mr-3" />
           {address}</div>
         </Button>
