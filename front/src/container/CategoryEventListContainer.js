@@ -9,7 +9,6 @@ const CategoryEventListContainer = ({ cId }) => {
 
   const { data, loading, error } = useSelector(
     (state) => state.posts.post[cId] || reducerUtils.initial(),
-    shallowEqual,
   );
 
   useEffect(() => {

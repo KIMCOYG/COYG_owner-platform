@@ -44,22 +44,23 @@ export const getCategoryList = async (req, res, next) => {
     params: { id },
   } = req;
   try {
-    // const result = await Event.findAll({
-    //   where: { category_id: id },
-    //   order: [["likes_count", "DESC"]],
-    //   raw: true,
-    // });
-    // res.send(result);
+    console.log(typeof id);
     let shops = await Shop.findAll({
-      where: { category_id: id },
+      where: { category_id: parseInt(id, 10) },
       attributes: [["shop_id", "shop_id"]],
     });
+    console.log(shops);
     shops = shops.map((i) => i.shop_id);
+    console.log(shops);
+
+    if (shops.length === 0) {
+      return res.send({ result: [] });
+    }
 
     const result = await Event.findAll({
       where: {
         shop_id: {
-          [Op.or]: [1,4],
+          [Op.or]: shops,
         },
       },
       include: [Image, Shop],
