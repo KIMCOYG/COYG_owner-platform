@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React, useEffect, useState, useCallback } from 'react';
 import { BiMap } from 'react-icons/bi';
 import { Container, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -6,24 +6,27 @@ import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 import axios from 'axios';
-import { ExpressionService } from 'ag-grid-community';
-// import textFit from "textfit";
 
 const Home = () => {
   let address = window.localStorage.getItem('addr');
   let history = useHistory();
   const [category, setCategory] = useState([]);
+
+  const fetchCategory = useCallback(async () => {
+    try {
+      const result = await axios.get('http://localhost:5000/category/read-all');
+      setCategory(result.data);
+      console.log(category);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [category]);
+
   useEffect(() => {
-    const fetchCategory = async () => {
-      try {
-        const result = await axios('http://localhost:5000/category/read-all');
-        setCategory(result.data);
-        console.log(category);
-      } catch (err) {
-        console.log(err);
-      }
-    };
     fetchCategory();
+    return () => {
+      console.log('dsf');
+    };
   }, []); //warning 떠서 임의로 수정
   // textFit(document.getElementsByClassName("addr"), {multiLine: true});
 
