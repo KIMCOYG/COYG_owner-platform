@@ -6,6 +6,7 @@ import DaumPostcode from 'react-daum-postcode';
 import Header from '../component/Header';
 import Geocode from 'react-geocode';
 
+
 Geocode.setApiKey('AIzaSyCNDPEwEVKChg2oF0Yzb7ttIBmiM-pl-NQ');
 Geocode.setLanguage('ko');
 Geocode.enableDebug();
@@ -19,9 +20,12 @@ const postCodeStyle = {
   padding: '7px',
 };
 
-const PostSearch = ({ history }) => {
+const PostSearch = ({history}) => {
   const goBack = () => {
     history.goBack();
+  };
+  const goHome = () => {
+    history.push('/');
   };
   const handleComplete = (data) => {
     let fullAddress = data.address;
@@ -45,6 +49,7 @@ const PostSearch = ({ history }) => {
     Geocode.fromLatLng(lat, lon).then(
       (response) => {
         const address = response.results[0].formatted_address;
+        window.alert(address + '\n로 설정되었습니다.');
         window.localStorage.setItem('addr',address);
         return address;
       },
@@ -53,6 +58,8 @@ const PostSearch = ({ history }) => {
       },
     );
   };
+
+  
 
   return (
     <>
@@ -70,13 +77,16 @@ const PostSearch = ({ history }) => {
           </div>
           <div className="col-9 text-center">
             <Button
-              data-toggle="modal"
-              data-target="#PostModal"
+              // data-toggle="modal"
+              // data-target="#PostModal"
               onClick={() => {
                 navigator.geolocation.getCurrentPosition(function (pos) {
                   var lat = pos.coords.latitude;
                   var lon = pos.coords.longitude;
+                  window.localStorage.setItem('lat',lat);
+                  window.localStorage.setItem('lon',lon);
                   getAddressFromLatLng(lat, lon);
+                  goHome();
                 });
               }}
               variant="light"
@@ -92,12 +102,12 @@ const PostSearch = ({ history }) => {
                 <div class="modal-content">
                     
                     <div class="modal-body">
-                      <p>이 주소가 맞습니까?</p>
-                      <p>{window.localStorage.getItem('addr')}</p>
+                      {/* <p>이 주소가 맞습니까?</p>
+                      <p>{window.localStorage.getItem('addr')}</p> */}
                       
                     </div>
                     <div class="modal-footer">
-                    <button style ={{textAlign : "center"}} type="button" class="btn btn-primary">현재 위치로 설정</button>
+                    <button type="button" class="btn btn-primary">현재 위치로 설정</button>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,8 @@ import Header from '../component/Header';
 import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 import axios from 'axios';
+import { ExpressionService } from 'ag-grid-community';
+// import textFit from "textfit";
 
 const Home = () => {
 
@@ -24,7 +26,7 @@ const Home = () => {
     };
     fetchCategory();
   }, [category]);//warning 떠서 임의로 수정
-
+  // textFit(document.getElementsByClassName("addr"), {multiLine: true});
   return (
     <>
       <Header />
@@ -36,8 +38,9 @@ const Home = () => {
           block
           onClick={() => history.push('/post')}
         >
+          <div style = {{fontSize : "1.5vh"}}>
           <BiMap className="mr-3" />
-          {address}
+          {address}</div>
         </Button>
         {/* </Link> */}
         <Slider />
