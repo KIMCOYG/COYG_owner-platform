@@ -123,42 +123,48 @@ const AdminCategory = () => {
             </button>
 
             <div
-              class="modal fade"
+              className="modal fade"
               id="AddModal"
-              tabindex="-1"
+              tabIndex="-1"
               role="dialog"
               aria-labelledby="AddModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="AddModalLabel">
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="AddModalLabel">
                       카테고리 추가
                     </h5>
                     <button
                       type="button"
-                      class="close"
+                      className="close"
                       data-dismiss="modal"
                       aria-label="Close"
                     >
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
+                  <div className="modal-body">
                     <form>
-                      <div class="form-group">
-                        <label for="category-name" class="col-form-label">
+                      <div className="form-group">
+                        <label
+                          htmlFor="category-name"
+                          className="col-form-label"
+                        >
                           카테고리명
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           id="category-name"
                         />
                       </div>
-                      <div class="form-group">
-                        <label for="category-image" class="col-form-label">
+                      <div className="form-group">
+                        <label
+                          htmlFor="category-image"
+                          className="col-form-label"
+                        >
                           카테고리 이미지
                         </label>
                         <div>
@@ -172,10 +178,10 @@ const AdminCategory = () => {
                       </div>
                     </form>
                   </div>
-                  <div class="modal-footer">
+                  <div className="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       data-dismiss="modal"
                     >
                       Close
@@ -184,7 +190,7 @@ const AdminCategory = () => {
                       type="button"
                       onClick={onClick}
                       name="img"
-                      class="btn btn-primary"
+                      className="btn btn-primary"
                     >
                       추가
                     </button>
@@ -194,38 +200,38 @@ const AdminCategory = () => {
             </div>
 
             <div
-              class="modal fade"
+              className="modal fade"
               id="DeleteModal"
-              tabindex="-1"
+              tabIndex="-1"
               role="dialog"
               aria-labelledby="DeleteModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="DeleteModalLabel">
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="DeleteModalLabel">
                       카테고리 삭제
                     </h5>
                     <button
                       type="button"
-                      class="close"
+                      className="close"
                       data-dismiss="modal"
                       aria-label="Close"
                     >
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">삭제하시겠습니까?</div>
-                  <div class="modal-footer">
+                  <div className="modal-body">삭제하시겠습니까?</div>
+                  <div className="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       data-dismiss="modal"
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" className="btn btn-primary">
                       네
                     </button>
                   </div>
@@ -234,42 +240,48 @@ const AdminCategory = () => {
             </div>
 
             <div
-              class="modal fade"
+              className="modal fade"
               id="UpdateModal"
-              tabindex="-1"
+              tabIndex="-1"
               role="dialog"
               aria-labelledby="UpdateModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="UpdateModalLabel">
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="UpdateModalLabel">
                       카테고리 수정
                     </h5>
                     <button
                       type="button"
-                      class="close"
+                      className="close"
                       data-dismiss="modal"
                       aria-label="Close"
                     >
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
+                  <div className="modal-body">
                     <form>
-                      <div class="form-group">
-                        <label for="category-name" class="col-form-label">
+                      <div className="form-group">
+                        <label
+                          htmlFor="category-name"
+                          className="col-form-label"
+                        >
                           카테고리명
                         </label>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           id="category-name"
                         />
                       </div>
-                      <div class="form-group">
-                        <label for="category-image" class="col-form-label">
+                      <div className="form-group">
+                        <label
+                          htmlFor="category-image"
+                          className="col-form-label"
+                        >
                           카테고리 이미지
                         </label>
                         <div>
@@ -282,15 +294,15 @@ const AdminCategory = () => {
                       </div>
                     </form>
                   </div>
-                  <div class="modal-footer">
+                  <div className="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       data-dismiss="modal"
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" className="btn btn-primary">
                       네
                     </button>
                   </div>
