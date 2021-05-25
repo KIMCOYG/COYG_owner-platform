@@ -25,7 +25,7 @@ const EventListItemScrap = ({lists}) => {
                         </div>
                         <div className="col-8">
                             <div className="font-weight-bold">
-                                <h5>{e.name}<Link to="/delete">x</Link></h5>
+                                <h5>{e.name}<button onClick={() => history.push(`/scrap/delete/${e.event_id}`)}>x</button></h5>
 
                             </div>
                             <div className="d-flex">

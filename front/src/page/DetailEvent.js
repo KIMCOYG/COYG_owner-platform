@@ -5,6 +5,15 @@ import { Container } from 'react-bootstrap';
 import KakaoMap from './KakaoMap';
 import { useHistory } from 'react-router-dom';
 import EventDetailContainer from '../container/EventDetailContainer';
+import axios from "axios";
+
+const handleScrap = (uId) => {
+  const data = {
+    user_id : 6,
+    event_id: uId
+  }
+  axios.post("http://localhost:5000/scrap/create", data)
+}
 
 const DetailEvent = ({ match, location }) => {
   let history = useHistory();
@@ -36,6 +45,7 @@ const DetailEvent = ({ match, location }) => {
           >
             <BsHeart style={{ color: 'red' }} />
           </button>
+          <button onClick={(handleScrap(id))}>스크랩</button>
         </div>
         {/* 이미지 시작 */}
         <img src="uploads/버거킹1621554310515.jpg" alt="" />

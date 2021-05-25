@@ -41,6 +41,7 @@ const data = [
   },
 ];
 
+
 const AdminCategory = () => {
   const [gridApi, setGridApi] = useState(null);
   const [gridColumnApi, setGridColumnApi] = useState(null);
