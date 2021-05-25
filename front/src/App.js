@@ -33,25 +33,22 @@ const App = () => {
     <BrowserRouter>
       <div>
         <Switch>
+          {/* Customer */}
           <Route path="/" component={Home} exact />
-          <Route path="/customer" component={HomeCustomer} exact />
-          <Route path="/owner" component={HomeOwner} exact />
+          {/* <Route path="/customer" component={HomeCustomer} exact /> */}
           <Route path="/category/:id/event" component={EventList} exact />
-
           <Route path="/event/detail/:id" component={DetailEvent} exact />
 
-          <Route path="/mypage/customer" component={CustomerMyPage} exact />
-          <Route path="/mypage/customer/scrap" component={ScrapList} exact />
           {/* <Route path="/mypage/customer/scrap" component={CustomerScrap} exact /> */}
           <Route path="/post" component={PostSearch} exact />
 
           {/* Owner */}
+          <Route path="/owner" component={HomeOwner} exact />
           <Route
             path="/mobile/owner/detail/:id"
             component={OwnerEventDetailPageMobile}
             exact
           />
-
           <Route
             path="/mobile/owner/event/regist"
             component={EventRegist}
@@ -63,7 +60,14 @@ const App = () => {
             exact
           />
 
+          {/* Admin */}
+          <Route path="/admin" component={AdminPage} exact />
+          <Route path="/admin/category" component={AdminCategory} exact />
+          <Route path="/admin/owner" component={AdminOwner} exact />
+
           {/* Mypage */}
+          <Route path="/mypage/customer" component={CustomerMyPage} exact />
+          <Route path="/mypage/customer/scrap" component={ScrapList} exact />
           <Route path="/owner/mypage" component={OwnerMyPage} exact />
           <Route
             path="/owner/mypage/userinfo"
@@ -88,8 +92,8 @@ const App = () => {
             exact
           />
 
+          {/* 로그인, 회원가입 */}
           <Route path="/login" component={Login} />
-
           <Route path="/customer/join" component={CustomerJoin}></Route>
           <Route path="/owner/join" component={OwnerJoin}></Route>
           <Route
@@ -97,9 +101,6 @@ const App = () => {
             component={PasswordChange}
             exact
           ></Route>
-          <Route path="/admin" component={AdminPage} exact />
-          <Route path="/admin/category" component={AdminCategory} exact />
-          <Route path="/admin/owner" component={AdminOwner} exact />
         </Switch>
       </div>
     </BrowserRouter>
