@@ -26,16 +26,6 @@ const Login = () => {
               로그인
             </Button>
           </Form>
-          <div className="text-center mt-3">
-            {/* <Link to="/mypage/customer"> */}
-            <Button
-              variant="link"
-              onClick={() => history.push('/mypage/customer')}
-            >
-              마이페이지
-            </Button>
-            {/* </Link> */}
-          </div>
           <div className="text-center                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ter mt-3">
             <Button
               variant="link"
