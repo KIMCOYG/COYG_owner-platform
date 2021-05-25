@@ -9,9 +9,16 @@ import {createStore, applyMiddleware} from 'redux';
 import rootReducer from './modules';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk'
+import axios from "axios";
 const store = createStore(rootReducer, composeWithDevTools(
     applyMiddleware(ReduxThunk)
 ));
+
+axios.create({
+    baseURL: 'http://localhost:5000',
+    headers: {'Content-Type': 'multipart/form-data'},
+    timeout: 1000
+});
 
 ReactDOM.render(
     <React.StrictMode>

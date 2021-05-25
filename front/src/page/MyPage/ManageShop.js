@@ -39,5 +39,4 @@ const ManageShop = ({match}) => {
     </>
   );
 };
-
 export default ManageShop;
