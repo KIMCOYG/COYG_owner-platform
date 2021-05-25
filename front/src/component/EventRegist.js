@@ -1,43 +1,70 @@
 import React from "react";
-import {Col, Form} from "react-bootstrap";
+import {Button, Col, Form} from "react-bootstrap";
+import axios from "axios";
 
+const handleOnSubmit = (e) =>{
+    console.log("handle", e.target[1].value)
+    e.preventDefault()
+
+    axios.post({
+
+        url: 'http://localhost:5000/owner/event/create',
+        headers: {'Content-Type': 'multipart/form-data'},
+        data:{
+            /*shop_id: 1,
+            name: e.target[1].value,
+            start_datetime: e.target[2].value,
+            end_datetime: e.target[3].value,
+            event_content: e.target[4].value,
+            image_id: 40*/
+            "shop_id": 1,
+            "name": "이벤트 1",
+            "start_datetime": 20210525,
+            "end_datetime": 20210525,
+            "event_content": "이런저런 상세설명",
+            "image_id": 40
+        }
+    })
+}
 
 
 const EventRegist = ({uId, sId, sName}) => {
     return (
 
-                <Form  id="registEvent">
+                <Form onSubmit={handleOnSubmit} name="registEvent" id="registEvent">
                     <Form.Group controlId="formShopName">
                         <Form.Label>가게명</Form.Label>
-                        <Form.Control type="input" placeholder="가게명 입력" defaultValue={sName}/>
+                        <Form.Control name="sName" type="input" placeholder="가게명 입력" defaultValue={sName}/>
                     </Form.Group>
 
                     <Form.Group controlId="formEventName">
                         <Form.Label>이벤트명</Form.Label>
-                        <Form.Control type="input" placeholder="이벤트명 입력"/>
+                        <Form.Control name="eName" type="input" placeholder="이벤트명 입력"/>
                     </Form.Group>
 
                     <Form.Label>이벤트 기간</Form.Label>
                     <Form.Row className="align-items-center">
                         <Form.Group as={Col} controlId="formEventStart">
                             <Form.Label>시작일</Form.Label>
-                            <Form.Control type="date"/>
+                            <Form.Control name="startDate" type="date"/>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formEventEnd">
                             <Form.Label>종료일</Form.Label>
-                            <Form.Control type="date"/>
+                            <Form.Control name="endDate" type="date"/>
                         </Form.Group>
                     </Form.Row>
 
                     <Form.Group controlId="formEventDetail">
                         <Form.Label>이벤트 내용</Form.Label>
-                        <Form.Control as="textarea" rows={4}/>
+                        <Form.Control name="eContent" as="textarea" rows={4}/>
                     </Form.Group>
 
                     <Form.Group controlId="formEventDetail">
-                        <Form.File id="formFile" label="사진첨부"/>
+                        <Form.File name="eFile" id="formFile" label="사진첨부"/>
                     </Form.Group>
-                </Form>
+                    <Button type="submit">저장</Button>
+
+               </Form>
 
 
 

@@ -44,7 +44,17 @@ const EventDetail = ({lists}) => {
                             <div className="border-bottom border-dark pl-3">
                                 <div className="font-weight-bold">상세</div>
                                 <MidDiv className="mt-1">
-                                    {lists.event_content}
+                                    <p>1. 행사명 : 와퍼 3500원</p>
+                                    <p>2. 제품 : 와퍼, 치즈와퍼(4,100원)</p>
+                                    <p>3. 행사 기간 : 21년 3월 15일(월) ~ 28일(일), 2주간</p>
+                                    <p>4. 행사 시간 : 매장 운영시간에 따라 상이 합니다.</p>
+                                    <p>5. 유의 사항 :</p>
+                                    <p>*1인 5개까지만 판매</p>
+                                    <p>*다른 할인 및 쿠폰과 중복 혜택 불가</p>
+                                    <p>*딜리버리 주문 불가 및 예약 주문 불가</p>
+                                    <p>*일부 매장은 행사에서 제외될 수 있습니다.</p>
+                                    <p>*단체주문에서는 제외됩니다.</p>
+                                    <p>*본 제품은 실제 이미지와 다를 수 있습니다.</p>
                                 </MidDiv>
                             </div>
                         </div>
@@ -81,7 +91,9 @@ const EventDetail = ({lists}) => {
                             </div>
                             <div className="border-bottom border-dark pl-3">
                                 <div className="font-weight-bold">상세 설명</div>
-                                <MidDiv>{lists.shop.shop_content}</MidDiv>
+                                <MidDiv><p>배달이 많아 가끔 제품이 빠질 수가 있습니다</p>
+                                <p>가게로 연락주시면 바로 가져다 드립니다</p>
+                                </MidDiv>
                             </div>
                         </div>
                     </div>
