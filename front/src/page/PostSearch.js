@@ -41,7 +41,9 @@ const PostSearch = ({history}) => {
       }
       fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
     }
-
+    window.localStorage.setItem('addr',fullAddress);
+    window.alert(fullAddress + '\n로 설정되었습니다.');
+    goHome();
     console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
   };
 
