@@ -40,20 +40,30 @@ export const upload = multer({
 export const imgDefine = async (req, res, next) => {
   const image_name = req.file.filename;
   const image_path = req.file.path;
-  try{
+  try {
     const result = await Image.create({
       image_name,
       image_path,
-      enabled: true
-    })
+      enabled: true,
+    });
+    req.body.image_id = result.dataValues.image_id;
     console.log(req.file);
     res.json({ url: `/img/${req.file.filename}` }); 
-  } catch(err) {
+  } catch (err) {
     console.log(err);
     next(err);
   }
 };
 
+export const getPostImage = (req, res, next) => {
+
+  fs.readFile('uploads/Dog1621419428094.jpg',function(err,data){
+      res.writeHead(200, {'Content-Type' : 'image/jpg'});
+      res.write(data);
+      res.end();
+
+  });
+}
 
 // export const uploadAll = multer();
 // export const imgDefineAll = async (req, res, next) => {

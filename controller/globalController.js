@@ -4,6 +4,7 @@ const Category = models.Category;
 const Image = models.Image;
 const Event = models.Event;
 const Shop = models.Shop;
+const Like = models.Like;
 
 export const hello = (req, res, next) => {
   res.send("sfsdfsdf");
@@ -12,23 +13,22 @@ export const hello = (req, res, next) => {
 
 export const HomeBanner = async (req, res, next) => {
   //현재 날짜, 위치, 이벤트 정보 비교 후 이미지 가져오기
-  const {
-    body: { longitude, latitude },
-  } = req;
   try {
-    if (!latitude || !longitude) {
-      res.send({ message: "유효성 검사 실패" });
-    }
-    const shops = Shop.findAll({
-      attributes: ["id", "name", [sequelize.fn("ST_Distance")]],
+    const events = await Event.findAll({
+      limit: 4,
+      include: Image,
     });
-  } catch (err) {}
+    res.send(events);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
 };
 
 // 홈 화면 카테고리 이미지 조회
 export const getCategoryImage = async (req, res, next) => {
   try {
-    const result = await Category.findAll({ include: Image, raw: true });
+    const result = await Category.findAll({ include: Image });
     if (result) {
       res.send(result);
     }
@@ -44,22 +44,27 @@ export const getCategoryList = async (req, res, next) => {
     params: { id },
   } = req;
   try {
-    // const result = await Event.findAll({
-    //   where: { category_id: id },
-    //   order: [["likes_count", "DESC"]],
-    //   raw: true,
-    // });
-    // res.send(result);
+    console.log(typeof id);
     let shops = await Shop.findAll({
-      where: { category_id: id },
+      where: { category_id: parseInt(id, 10) },
       attributes: [["shop_id", "shop_id"]],
     });
+    console.log(shops);
     shops = shops.map((i) => i.shop_id);
+    console.log(shops);
+
+    if (shops.length === 0) {
+      return res.send({ result: [] });
+    }
 
     const result = await Event.findAll({
       where: {
         shop_id: {
+<<<<<<< HEAD
           [Op.or]: [1,2,3,4,5,6,7,8],
+=======
+          [Op.or]: shops,
+>>>>>>> d3a12a0c2f8369fa7d0b55b21cb591f6f1adb094
         },
       },
       include: [Image, Shop],
@@ -83,6 +88,106 @@ export const getDetailEvent = async (req, res, next) => {
       include: [Image, Shop],
     });
     res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 좋아요 리스트 조회
+export const getLikeList = async (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const Id = parseInt(id);
+    if (isNaN(Id)) {
+      return res.send({ error: 1 });
+    }
+    console.log(Id);
+    let likes = await Like.findAll({
+      where: { user_id: Id },
+      attributes: [["event_id", "event_id"]],
+      raw: true,
+    });
+    likes = likes.map((i) => i.event_id);
+
+    const result = await Event.findAll({
+      where: {
+        event_id: {
+          [Op.or]: likes,
+        },
+      },
+      include: Image,
+      order: [["likes_count", "DESC"]],
+    });
+
+    return res.send(result);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+// 이벤트 좋아요 버튼
+export const addLikeEvent = async (req, res, next) => {
+  const {
+    body: { event_id, user_id },
+  } = req;
+  try {
+    const likeResult = await Like.create({
+      user_id,
+      event_id,
+    });
+    let likeCnt = await Event.findOne({
+      where: { event_id },
+      attributes: ["likes_count"],
+    });
+    likeCnt = parseInt(likeCnt.likes_count) + 1;
+    // console.log(likeCnt);
+
+    const eventResult = await Event.update(
+      {
+        likes_count: likeCnt,
+      },
+      {
+        where: { event_id },
+      }
+    );
+    res.send({ likeResult, eventResult });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+export const removeLikeEvent = async (req, res, next) => {
+  const {
+    body: { event_id, user_id },
+  } = req;
+  try {
+    const likeResult = await Like.destroy({
+      where: {
+        event_id,
+        user_id,
+      },
+    });
+
+    let likeCnt = await Event.findOne({
+      where: { event_id },
+      attributes: ["likes_count"],
+    });
+    likeCnt = parseInt(likeCnt.likes_count) - 1;
+
+    const eventResult = await Event.update(
+      {
+        likes_count: likeCnt,
+      },
+      {
+        where: { event_id },
+      }
+    );
+    res.send({ likeResult, eventResult });
   } catch (err) {
     console.log(err);
     next(err);

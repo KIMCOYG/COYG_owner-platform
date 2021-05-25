@@ -1,3 +1,5 @@
+import { ownerShopList } from "./controller/adminController";
+
 const home = "/";
 
 //db rest api
@@ -29,6 +31,7 @@ const logout = "/logout";
 const cusUpdate = "/mypage/:id/update";
 const cusPwUpdate = "/mypage/:id/update/password";
 const scrapList = "/scrap/:id/list";
+const likeList = "/like/:id/list";
 
 //owner
 const owner = "/owner";
@@ -43,12 +46,21 @@ const categoryList = "/category/:id/list";
 
 //detail event
 const detailEvent = "/event/:id/detail";
+const likeCreateBtn = "/event/like-cnt/create";
+const likeRemoveBtn = "/event/like-cnt/remove";
 
 // post image
 const post = "/post";
 
+
 const test = "/test";
 const img = "/img";
+const banner = "/banner";
+
+//admin
+const admin = "/admin";
+const ownerList = "/owner/list";
+const ownerShop = "/owner/:id/shop/list";
 
 const routes = {
   home,
@@ -153,7 +165,26 @@ const routes = {
       return scrapList;
     }
   },
+  likeList: (id) => {
+    if (id) {
+      return `/like/${id}/list`;
+    } else {
+      return likeList;
+    }
+  },
   img,
+  banner,
+  admin,
+  ownerList,
+  ownerShop: (id) => {
+    if (id) {
+      return `/owner/${id}/shop/list`;
+    } else {
+      return ownerShopList;
+    }
+  },
+  likeCreateBtn,
+  likeRemoveBtn,
 };
 
 export default routes;

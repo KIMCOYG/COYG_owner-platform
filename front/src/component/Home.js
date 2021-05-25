@@ -19,6 +19,7 @@ const Home = ({ lists }) => {
           n += 1;
           return n % 4 === 0 ? (
             <CategoryButton
+              key={e.category_id}
               onClick={() =>
                 history.push(
                   `http://localhost:5000/category/${e.category_id}/list`,

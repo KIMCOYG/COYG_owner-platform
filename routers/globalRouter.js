@@ -1,9 +1,13 @@
 import express from "express";
 import routes from "../routes";
 import {
+  addLikeEvent,
   getCategoryImage,
   getCategoryList,
   getDetailEvent,
+  getLikeList,
+  HomeBanner,
+  removeLikeEvent,
 } from "../controller/globalController";
 import { isLoggedIn, isNotLoggedIn } from "../middlewares/authMiddleware";
 import {
@@ -37,6 +41,11 @@ globalRouter.post(routes.cusPwUpdate(), updateUserPw);
 // 스크랩 리스트
 globalRouter.get(routes.scrapList(), scrapList);
 
+// 좋아요 리스트
+globalRouter.get(routes.likeList(), getLikeList);
+globalRouter.post(routes.likeCreateBtn, addLikeEvent);
+globalRouter.post(routes.likeRemoveBtn, removeLikeEvent);
+
 // Category List
 globalRouter.get(routes.categoryList(), getCategoryList);
 
@@ -46,5 +55,7 @@ globalRouter.get(routes.detailEvent(), getDetailEvent);
 //홈
 //카테고리 리스트 조회
 globalRouter.get(routes.home, getCategoryImage);
+
+globalRouter.get(routes.banner, HomeBanner);
 
 export default globalRouter;
