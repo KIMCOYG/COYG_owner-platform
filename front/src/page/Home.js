@@ -33,7 +33,7 @@ import hamburger from '../static/image/upload/hamburger1621529374043.jpg'
 
 
 const Home = () => {
-  let address = '경기도 용인시 처인구 모현읍 외대로 81';
+  let address = localStorage.getItem('addr');
   let history = useHistory();
   const [category, setCategory] = useState([]);
 
@@ -120,7 +120,6 @@ const Home = () => {
               image={'uploads/bunsic1621529513166.png'}
               name="분식"
             />
-            <CategoryButton cId={6} image={bunsic} name="분식" />
             <CategoryButton cId={7}
               image={sports}
               name="스포츠"
@@ -154,9 +153,6 @@ const Home = () => {
               name="주류"
               cId={12}
             />
-            <CategoryButton cId={10} image={wear} name="의류" />
-            <CategoryButton cId={11} image={japan} name="일식" />
-            <CategoryButton cId={12} image={drink} name="주류" />
           </div>
           <div className="d-flex mt-2">
             <CategoryButton cId={13}
@@ -170,7 +166,6 @@ const Home = () => {
               name="피자"
               cId={14}
             />
-            <CategoryButton cId={14} image={pizza} name="피자" />
             <CategoryButton cId={15}
               image={phone}
               name="휴대폰"

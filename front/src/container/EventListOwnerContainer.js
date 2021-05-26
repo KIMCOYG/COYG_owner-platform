@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getEventById, getEvents, getOwnerEventListById} from '../modules/posts';
+import { getEvents} from '../modules/posts';
 import {reducerUtils} from "../lib/asyncUtils";
 import OwnerEventListItem from "../component/OwnerEventListItem";
 

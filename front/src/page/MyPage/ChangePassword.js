@@ -1,22 +1,9 @@
 import React from 'react';
-import { Button, Container, Form, Row } from 'react-bootstrap';
-// import {BsChevronLeft} from 'react-icons/bs';
+import { Button, Container, Form } from 'react-bootstrap';
 import Header from '../../component/HeaderOwner';
-import SecondHeader from "../../component/SecondHeader";
-import {BsChevronLeft, BsHeart} from "react-icons/bs";
+import {BsChevronLeft} from "react-icons/bs";
 import {useHistory} from "react-router-dom";
 
-// const SecondHeader = ({props}) => {
-//     return (
-//         <Row>
-//             <button onClick={() => window.history.back()}>
-//                 <BsChevronLeft className="text-dark"/>
-//             </button>
-//             {/* <Button>등록</Button> */}
-//             <h4>비밀번호 변경</h4>
-//         </Row>
-//     )
-// }
 
 const checkPW = () => {
   const pw1 = document.getElementById('pw1').value;

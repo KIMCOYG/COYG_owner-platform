@@ -1,17 +1,8 @@
-import logo from '../static/image/chicken.jpg';
 import { AiFillHeart } from 'react-icons/ai';
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-import logo1 from '../static/image/upload/버거킹1621554310515.jpg'
-import logo2 from '../static/image/upload/버거헌터 더위사냥.jpg'
-import logo3 from '../static/image/upload/노브랜드버거이벤트.jpg'
-import logo4 from '../static/image/upload/네파X버거보이.jpg'
-import logo5 from '../static/image/upload/30주년 한정메뉴.jpg'
-import logo6 from '../static/image/upload/굿바이보스버거.jpg'
-import logo7 from '../static/image/upload/싸이버거 배달주문.jpg'
-import logo8 from '../static/image/upload/와퍼주니어1900원.jpg'
 
 
 const MinDiv = styled.div`
@@ -34,7 +25,7 @@ const CategoryEventList = ({ lists }) => {
           }
         >
           <div className="col-4">
-            <img src={logo} alt="" style={{ width: '100%', heigh: '100%' }} />
+            <img src={`upload/${e.image.name}`} alt="" style={{ width: '100%', heigh: '100%' }} />
           </div>
           <div className="col-8">
             <div className="font-weight-bold">

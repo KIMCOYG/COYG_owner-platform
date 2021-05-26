@@ -17,7 +17,7 @@ const event = "/event";
 const image = "/image";
 const like = "/like";
 const scrap = "/scrap";
-const shop = "/shon";
+const shop = "/shop";
 const user = "/user";
 
 //login, join, profile

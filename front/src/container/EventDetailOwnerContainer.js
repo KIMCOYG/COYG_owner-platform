@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getEventById} from '../modules/posts';
-import EventDetail from "../component/EventDetail";
 import {reducerUtils} from "../lib/asyncUtils";
 import EventDetailOwner from "../component/EventDetailOwner";
 

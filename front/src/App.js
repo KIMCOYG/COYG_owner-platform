@@ -23,7 +23,6 @@ import DetailEvent from './page/DetailEvent';
 import ScrapList from './page/MyPage/ScrapList';
 import RegistShop from './page/MyPage/RegistShop';
 import OwnerEventDetailPageMobile from './page/OwnerEventDetailPageMobile';
-import HomeCustomer from './page/HomeCustomer';
 import HomeOwner from './page/HomeOwner';
 import ManageMyShops from './page/MyPage/ManageMyShops';
 import PasswordChange from './page/login/PasswordChange';

@@ -7,26 +7,6 @@ import KakaoMap from './KakaoMap';
 import { useHistory } from 'react-router-dom';
 import EventDetailOwnerContainer from '../container/EventDetailOwnerContainer';
 
-/*const SecondHeader = ({props}) => {
-    return (
-        <Row>
-            <Col xs={1}>
-                <button onClick={() => window.history.back()}>
-                    <BsChevronLeft className="text-dark"/>
-                </button>
-            </Col>
-            {/!* <Button>등록</Button> *!/}
-            <Col xs={8}>
-                <h4 style={{fontSize: '20px'}}>점심 할인 특가 이벤트</h4>
-            </Col>
-            <Col xs={3}>
-                <Link to="/mobile/owner/event/modify"><Button style={{fontSize: '6px', blockSize: '5em'}}>수정</Button></Link>
-            </Col>
-
-            {/!* <Button onClick={() => this.handleSubmit()}></Button> *!/}
-        </Row>
-    )
-}*/
 
 const OwnerEventDetailPageMobile = ({ match, location }) => {
   let history = useHistory();

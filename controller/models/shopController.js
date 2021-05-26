@@ -79,7 +79,7 @@ export const updateShop = (req, res, next) => {
       latitude: req.body.latitude,
       longitude: req.body.longitude,
       category_id: req.body.category_id,
-      user_id: req.body.usr_id,
+      user_id: req.body.user_id,
       updated_datetime: Date.now(),
     },
     {

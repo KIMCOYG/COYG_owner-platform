@@ -13,31 +13,9 @@ const handleOnSubmit = async (e) =>{
         end_datetime: e.target[3].value,
         event_content: e.target[4].value,
         image_id: 40
+
     }
     axios.post("http://localhost:5000/owner/event/create", data)
-    /*await axios.post({
-
-        url: "http://localhost:5000/owner/event/create",
-        withCredentials: true,
-        data:{
-            /!*shop_id: 1,
-            name: e.target[1].value,
-            start_datetime: e.target[2].value,
-            end_datetime: e.target[3].value,
-            event_content: e.target[4].value,
-            image_id: 40*!/
-            "shop_id": 1,
-            "name": "이벤트 1",
-            "start_datetime": 20210525,
-            "end_datetime": 20210525,
-            "event_content": "이런저런 상세설명",
-            "image_id": 40
-        },
-        proxy:{
-            host: 'localhost',
-            port: 5000
-        }
-    })*/
 }
 
 

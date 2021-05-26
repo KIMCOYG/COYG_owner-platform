@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {AiFillHeart} from 'react-icons/ai';
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import logo from '../static/image/chicken.jpg';
 
 const MinDiv = styled.div`
