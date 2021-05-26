@@ -37,7 +37,7 @@ const likeList = "/like/:id/list";
 const owner = "/owner";
 const shopList = "/shop/:id/list";
 const updateShop = "/shop/:id/update";
-const createEvent = "/event/create";
+const createEvent = "/:id/event/create";
 const updateEvent = "/event/:id/update";
 const eventList = "/event/:id/list";
 
@@ -51,7 +51,6 @@ const likeRemoveBtn = "/event/like-cnt/remove";
 
 // post image
 const post = "/post";
-
 
 const test = "/test";
 const img = "/img";
@@ -142,7 +141,13 @@ const routes = {
       return updateShop;
     }
   },
-  createEvent,
+  createEvent: (id) => {
+    if (id) {
+      return `/:id/event/create`;
+    } else {
+      return createEvent;
+    }
+  },
   updateEvent: (id) => {
     if (id) {
       return `/event/${id}/update`;

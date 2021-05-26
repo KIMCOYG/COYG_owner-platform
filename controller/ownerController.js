@@ -92,3 +92,42 @@ export const getOwnerEventList = async (req, res, next) => {
     next(err);
   }
 };
+
+export const ownerCreateEvent = async (req, res, next) => {
+  const {
+    params: { id }, //shop_id
+    body: { name, start_datetime, end_datetime, event_content, image_id },
+  } = req;
+  try {
+    console.log("test");
+    console.log(req.body);
+    // const result = await Event.create({
+    //   name,
+    //   start_datetime,
+    //   end_datetime,
+    //   event_content,
+    //   shop_id: id,
+    //   image_id,
+    //   enabled: true,
+    // });
+    // res.send(result);
+    next();
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+export const saveEventForm = async (req, res, next) => {
+  const {
+    params: { id },
+    // body: { name, start_datetime, end_datetime, event_content },
+  } = req;
+  try {
+    console.log(req);
+    next();
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};

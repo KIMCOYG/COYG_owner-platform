@@ -46,9 +46,12 @@ export const imgDefine = async (req, res, next) => {
       image_path,
       enabled: true,
     });
+    console.log("test");
+    console.log(req.form);
     req.body.image_id = result.dataValues.image_id;
-    console.log(req.file);
-    res.json({ url: `/img/${req.file.filename}` }); 
+    // console.log(req.file);
+    // res.json({ url: `/img/${req.file.filename}` });
+    next();
   } catch (err) {
     console.log(err);
     next(err);
@@ -56,20 +59,9 @@ export const imgDefine = async (req, res, next) => {
 };
 
 export const getPostImage = (req, res, next) => {
-
-  fs.readFile('uploads/Dog1621419428094.jpg',function(err,data){
-      res.writeHead(200, {'Content-Type' : 'image/jpg'});
-      res.write(data);
-      res.end();
-
+  fs.readFile("uploads/Dog1621419428094.jpg", function (err, data) {
+    res.writeHead(200, { "Content-Type": "image/jpg" });
+    res.write(data);
+    res.end();
   });
-}
-
-// export const uploadAll = multer();
-// export const imgDefineAll = async (req, res, next) => {
-//   try{
-//     const post = await models.Image.create({
-//       image_id: req.body.image_id,
-//     });
-//   }
-// };
+};
