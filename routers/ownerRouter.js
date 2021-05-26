@@ -5,9 +5,11 @@ import { createShop } from "../controller/models/shopController";
 import {
   getOwnerEventList,
   getShopList,
+  ownerCreateEvent,
+  saveEventForm,
   updateShop,
 } from "../controller/ownerController";
-import { imgDefine, upload } from "../controller/postImageController";
+import { imgDefine, mkFolder, upload } from "../controller/postImageController";
 import routes from "../routes";
 
 const ownerRouter = express.Router();
@@ -29,10 +31,12 @@ ownerRouter.get(routes.detailEvent(), getDetailEvent);
 
 //이벤트 등록
 ownerRouter.post(
-  routes.createEvent,
+  routes.createEvent(),
+  mkFolder,
+  saveEventForm,
   upload.single("img"),
   imgDefine,
-  createEvent
+  ownerCreateEvent
 );
 
 //이벤트 수정
