@@ -1,5 +1,5 @@
 import React from 'react';
-import {  useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 import '../../App.css';
 import Header from '../../component/Header';
@@ -27,14 +27,12 @@ const Login = () => {
             </Button>
           </Form>
           <div className="text-center mt-3">
-            {/* <Link to="/mypage/customer"> */}
             <Button
               variant="link"
               onClick={() => history.push('/mypage/customer')}
             >
               마이페이지
             </Button>
-            {/* </Link> */}
           </div>
           <div className="text-center                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ter mt-3">
             <Button

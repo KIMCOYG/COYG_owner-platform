@@ -22,36 +22,37 @@ const data = [
 
 
 const AdminCategory = () => {
-    const [gridApi, setGridApi] = useState(null);
+    // const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
     
-    const [rowData, setRowData] = useState(data);
+    const rowData = data;
     
     const onGridReady = params => {
-        setGridApi(params.api);
+       // setGridApi(params.api);
         setGridColumnApi(params.columnApi);
+        console.log(gridColumnApi)
     }
     
-    const gridOptions = { //그리드 옵션
+    /*const gridOptions = { //그리드 옵션
         columnDefs: data,
         DefaultColDef:{
             headerCheckboxSelection: isFirstColumn,
             checkboxSelection: isFirstColumn,
         }
       };
-
-      function isFirstColumn(params) {
+*/
+     /* function isFirstColumn(params) {
         var displayedColumns = params.columnApi.getAllDisplayedColumns();
         var thisIsFirstColumn = displayedColumns[0] === params.column;
         return thisIsFirstColumn;
-      }
+      }*/
 
-    const onButtonClick = e => { //checkbox된 데이터 추출 양식
+   /* const onButtonClick = e => { //checkbox된 데이터 추출 양식
         const selectedNodes = gridApi.getSelectedNodes()
         const selectedData = selectedNodes.map( node => node.data )
         const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
         alert(`Selected nodes: ${selectedDataStringPresentation}`)
-    }
+    }*/
     const [img, setImage] = useState(null);
     const onChange = (e) => {
         setImage(e.target.files[0]);

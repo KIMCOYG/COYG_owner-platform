@@ -28,22 +28,23 @@ const storeInfo = [
 
 
 const AdminCategory = () => {
-    const [gridApi, setGridApi] = useState(null);
+    // const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
-    
-    const [rowData, setRowData] = useState(data);
-    
+
+    const rowData = data;
+
     const onGridReady = params => {
-        setGridApi(params.api);
+        // setGridApi(params.api);
         setGridColumnApi(params.columnApi);
+        console.log(gridColumnApi)
     }
 
-    const onButtonClick = e => {
+    /*const onButtonClick = e => {
         const selectedNodes = gridApi.getSelectedNodes()
         const selectedData = selectedNodes.map( node => node.data )
         const selectedDataStringPresentation = selectedData.map( node => `${node.name} ${node.email}`).join(', ')
         alert(`${selectedDataStringPresentation}를 삭제하시겠습니까?`)
-    }
+    }*/
 
     return (
         <>

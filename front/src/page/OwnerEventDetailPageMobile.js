@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { Container } from 'react-bootstrap';
 import { BsChevronLeft } from 'react-icons/bs';
 import Header from '../component/HeaderOwner';
@@ -11,10 +11,8 @@ import EventDetailOwnerContainer from '../container/EventDetailOwnerContainer';
 const OwnerEventDetailPageMobile = ({ match, location }) => {
   let history = useHistory();
   const eName = location.state.eName;
-  const [markerPositions, setMarkerPositions] = useState([
-    [37.50802, 127.062835],
-  ]);
-  const [mapSize, setMapSize] = useState([100, 400]);
+  const markerPositions = [[37.50802, 127.062835]]
+  const mapSize = [100, 400];
   const { id } = match.params; // URL 파라미터 조회하기
 
   return (
