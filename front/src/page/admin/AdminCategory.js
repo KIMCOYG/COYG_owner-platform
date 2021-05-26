@@ -1,13 +1,12 @@
 import Header from '../../component/AdminHeader';
 import Sidebar from '../../component/Sidebar';
-
 import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import BtnCellRenderer from '../../component/BtnCellRenderer.js';
 import ListPagination from '../../component/ListPagination';
-import axios from 'axios';
+// import axios from 'axios';
 
 //https://www.ag-grid.com/react-grid/getting-started/ 그리드 참고
 
@@ -41,70 +40,50 @@ const data = [
 ];
 
 const AdminCategory = () => {
-  const [gridApi, setGridApi] = useState(null);
+  // const [gridApi, setGridApi] = useState(null);
   const [gridColumnApi, setGridColumnApi] = useState(null);
 
-  const [rowData, setRowData] = useState(data);
+  const rowData = data;
 
   const onGridReady = (params) => {
-    setGridApi(params.api);
+    // setGridApi(params.api);
     setGridColumnApi(params.columnApi);
+    console.log(gridColumnApi);
   };
 
-  const gridOptions = {
-    //그리드 옵션
-    columnDefs: data,
-    DefaultColDef: {
-      headerCheckboxSelection: isFirstColumn,
-      checkboxSelection: isFirstColumn,
-    },
-  };
+  /*const gridOptions = { //그리드 옵션
+        columnDefs: data,
+        DefaultColDef:{
+            headerCheckboxSelection: isFirstColumn,
+            checkboxSelection: isFirstColumn,
+        }
+      };
+*/
+  /* function isFirstColumn(params) {
+        var displayedColumns = params.columnApi.getAllDisplayedColumns();
+        var thisIsFirstColumn = displayedColumns[0] === params.column;
+        return thisIsFirstColumn;
+      }*/
 
-  function isFirstColumn(params) {
-    var displayedColumns = params.columnApi.getAllDisplayedColumns();
-    var thisIsFirstColumn = displayedColumns[0] === params.column;
-    return thisIsFirstColumn;
-  }
-
-  const onButtonClick = (e) => {
-    //checkbox된 데이터 추출 양식
-    const selectedNodes = gridApi.getSelectedNodes();
-    const selectedData = selectedNodes.map((node) => node.data);
-    const selectedDataStringPresentation = selectedData
-      .map((node) => `${node.id} ${node.name}`)
-      .join(', ');
-    alert(`Selected nodes: ${selectedDataStringPresentation}`);
-  };
-  const [name, setName] = useState('');
-  const [img, setImage] = useState(null);
+  /* const onButtonClick = e => { //checkbox된 데이터 추출 양식
+        const selectedNodes = gridApi.getSelectedNodes()
+        const selectedData = selectedNodes.map( node => node.data )
+        const selectedDataStringPresentation = selectedData.map( node => `${node.id} ${node.name}`).join(', ')
+        alert(`Selected nodes: ${selectedDataStringPresentation}`)
+    }*/
+  // const [img, setImage] = useState(null);
   const onChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-  const onSubmit = (e) => {
-    const url = 'http://localhost:5000/admin/create';
-    e.preventDefault();
-    // console.log(e.target[0].value);
-    // console.log(e.target[1].files[0]);
-    axios
-      .post(url, {
-        name: e.target[0].value,
-        img: e.target[1].files[0],
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    console.log(e.target.files[0]);
   };
 
-  const onClick = async () => {
-    const formData = new FormData();
-    formData.append('img', img);
-    // 서버의 upload API 호출
-    const res = await axios.post('/post/img', formData);
-    console.log(res);
-  };
+  // const onClick = async () => {
+  //   const formData = new FormData();
+  //   formData.append('img', img);
+  //   // 서버의 upload API 호출
+  //   const res = await axios.post('/post/img', formData);
+  //   console.log(res);
+  // };
+  // };
 
   return (
     <>
@@ -163,7 +142,7 @@ const AdminCategory = () => {
                     </button>
                   </div>
                   <div className="modal-body">
-                    <form onSubmit={onSubmit}>
+                    <form>
                       <div className="form-group">
                         <label
                           htmlFor="category-name"
@@ -384,7 +363,7 @@ const AdminCategory = () => {
                 cellRenderer="btnCellRenderer"
                 cellRendererParams={{
                   clicked: function (field) {
-                    alert('${field} was clicked');
+                    alert(`${field} was clicked`);
                   },
                 }}
               ></AgGridColumn>

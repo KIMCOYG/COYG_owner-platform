@@ -6,34 +6,7 @@ let lat;
 let lon;
 
 let categoryId
-const data = [
-    {category: "일식",
-    id: 10},
-    {category: "치킨",
-        id: 11},
-    {category: "피자",
-        id: 12},
-    {category: "가전제품",
-        id: 13},
-    {category: "도시락",
-        id: 14},
-    {category: "디저트",
-        id: 15},
-    {category: "마트",
-        id: 16},
-    {category: "분식",
-        id: 17},
-    {category: "스포츠",
-        id: 18},
-    {category: "아시안",
-        id: 19},
-    {category: "양식",
-        id: 20},
-    {category: "의류",
-        id: 21},
-    {category: "주류",
-        id: 22}
-]
+
 const Categories = ({lists}) => {
     // TODO : 2021.04.20 usestate 글로벌하게 만들기 - sunbo
     const [selected, setSelected] = useState('');
@@ -42,7 +15,6 @@ const Categories = ({lists}) => {
         <select
             value={selected}
             onChange={(event) => {
-                console.log(event.target.value)
                 setSelected(event.target.value)
                 getCId(event.target.value)
             }}
@@ -58,13 +30,10 @@ const Categories = ({lists}) => {
 
 const getCId = (cId) => {
     categoryId = cId
-    console.log("categoryId " , categoryId)
 }
 
 const handleOnSubmit = async (e) =>{
-    console.log("handle", e.target[11].value)
     e.preventDefault()
-    console.log("handle", categoryId)
 
     const data = {
         name: e.target[0].value,

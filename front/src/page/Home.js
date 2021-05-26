@@ -7,31 +7,6 @@ import Slider from '../component/Slider';
 import CategoryButton from '../component/CategoryButton';
 import axios from 'axios';
 
-import like from '../static/image/upload/like1621529554334.png'
-import elec from '../static/image/upload/electronic1621529546700.png'
-import dosirac from '../static/image/upload/dosirac1621529538417.png'
-import desert from '../static/image/upload/desert1621529530613.png'
-
-import mart from '../static/image/upload/mart1621529558596.png'
-import bunsic from '../static/image/upload/bunsic1621529513166.png'
-import sports from '../static/image/upload/sports1621529570250.png'
-import asian from '../static/image/upload/asian1621529509447.png'
-
-import yangsic from '../static/image/upload/yangsic1621529578325.png'
-import wear from '../static/image/upload/wear1621529574142.png'
-import japan from '../static/image/upload/japan1621529550796.png'
-import drink from '../static/image/upload/drink1621529542800.png'
-
-import chicken from '../static/image/upload/chicken1621529524444.png'
-import pizza from '../static/image/upload/pizza1621529566724.png'
-import phone from '../static/image/upload/phone1621529562260.png'
-import hamburger from '../static/image/upload/hamburger1621529374043.jpg'
-
-
-
-
-
-
 const Home = () => {
   let address = localStorage.getItem('addr');
   let history = useHistory();
@@ -84,34 +59,37 @@ const Home = () => {
         {/* <CategoryButton className="col-1"/> */}
         <div className="mt-3 mb-3">
           <div className="d-flex mt-2">
-            <CategoryButton cId={1}
-              image={like}
+            <CategoryButton
+              image={'uploads/like1621529554334.png'}
               name="좋아요"
               className="col-xs-4"
               cId={2}
             />
-            <CategoryButton cId={2}
-              image={elec}
+
+            <CategoryButton
+              image={'uploads/electronic1621529546700.png'}
               name="가전제품"
               className="col-xs-4"
               cId={3}
             />
-            <CategoryButton cId={3}
-              image={dosirac}
+
+            <CategoryButton
+              image={'uploads/dosirac1621529538417.png'}
               name="도시락"
               className="col-xs-4"
               cId={4}
             />
-            <CategoryButton cId={4}
-              image={desert}
+
+            <CategoryButton
+              image={'uploads/desert1621529530613.png'}
               name="디저트"
               className="col-xs-4"
               cId={5}
             />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton cId={5}
-              image={mart}
+            <CategoryButton
+              image={'uploads/mart1621529558596.png'}
               name="마트"
               className="mr-3"
               cId={6}
@@ -120,20 +98,20 @@ const Home = () => {
               image={'uploads/bunsic1621529513166.png'}
               name="분식"
             />
-            <CategoryButton cId={7}
-              image={sports}
+            <CategoryButton
+              image={'uploads/sports1621529570250.png'}
               name="스포츠"
               cId={7}
             />
-            <CategoryButton cId={8}
-              image={asian}
+            <CategoryButton
+              image={'uploads/asian1621529509447.png'}
               name="아시안"
               cId={8}
             />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton cId={9}
-              image={yangsic}
+            <CategoryButton
+              image={'uploads/yangsic1621529578325.png'}
               name="양식"
               className="mr-3"
               cId={9}
@@ -155,8 +133,8 @@ const Home = () => {
             />
           </div>
           <div className="d-flex mt-2">
-            <CategoryButton cId={13}
-              image={chicken}
+            <CategoryButton
+              image={'uploads/chicken1621529353710.jpg'}
               name="치킨"
               className="mr-3"
               cId={13}
@@ -166,13 +144,13 @@ const Home = () => {
               name="피자"
               cId={14}
             />
-            <CategoryButton cId={15}
-              image={phone}
+            <CategoryButton
+              image={'uploads/phone1621529562260.png'}
               name="휴대폰"
               cId={15}
             />
-            <CategoryButton cId={16}
-              image={hamburger}
+            <CategoryButton
+              image={'uploads/hamburger1621529374043.jpg'}
               name="햄버거"
               cId={16}
             />
